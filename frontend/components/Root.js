@@ -1,5 +1,6 @@
 import React from "react";
-
+import NavigationBarContainer from "./navbar/NavigationBarContainer";
+import Footer from "./footer/FooterContainer";
 class Root extends React.Component {
     constructor(props) {
         super(props);
@@ -8,7 +9,10 @@ class Root extends React.Component {
     render() {
         return (
             <div>
-                <h1>Here is Root Page</h1>
+                <NavigationBarContainer />
+
+                {this.props.children}
+                <Footer />
             </div>
         );
     }
