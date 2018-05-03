@@ -20,31 +20,48 @@ class SignUp extends React.Component {
         });
     }
 
+    // validUserName(username) {
+    //     this.props.checkusername(username).then(respond => {
+    //         debugger;
+    //         return respond.data.exist;
+    //     });
+    // }
+
     submitForm() {
         // console.log(this.state);
-        // debugger;
-        if (this.state.password !== this.state.password_confirm) {
-            let errors = this.state.errors;
-            errors.password_confirm = "Password does not match";
-            this.setState({
-                errors: errors
-            });
-        } else if (!this.state.email.includes("@")) {
-            let errors = this.state.errors;
-            errors.email = "the emmail is invalid";
-            this.setState({
-                errors: errors
-            });
-        } else {
-            let obj = {};
-            obj.username = this.state.username;
-            obj.email = this.state.email;
-            obj.password = this.state.password;
-            this.props.signup(obj).then(() => {
-                console.log("create success");
-                this.context.router.push("/");
-            });
-        }
+        this.props.checkusername(this.state.username).then(respond => {
+            debugger;
+            if (respond.data.exist) {
+                let errors = this.state.errors;
+                errors.username =
+                    "this username is existed, please choose another one";
+                this.setState({
+                    errors: errors
+                });
+            } else if (this.state.password !== this.state.password_confirm) {
+                let errors = this.state.errors;
+                errors.password_confirm = "Password does not match";
+                this.setState({
+                    errors: errors
+                });
+            } else if (!this.state.email.includes("@")) {
+                let errors = this.state.errors;
+                errors.email = "the emmail is invalid";
+                this.setState({
+                    errors: errors
+                });
+            } else {
+                let obj = {};
+                obj.username = this.state.username;
+                obj.email = this.state.email;
+                obj.password = this.state.password;
+                debugger;
+                this.props.signup(obj).then(() => {
+                    console.log("create success");
+                    this.context.router.push("/");
+                });
+            }
+        });
     }
 
     render() {
