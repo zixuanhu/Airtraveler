@@ -9,13 +9,11 @@ import webpackHotMiddleware from "webpack-hot-middleware";
 import webpackConfig from "../webpack.config.dev";
 
 import auth from "./routes/auth";
-import usernamechecker from "./routes/usernamechecker";
 
 let app = express();
 app.use(bodyParser.json());
 
 app.use("/api/auth", auth);
-app.use("/api/usernamechecker", usernamechecker);
 
 const compiler = webpack(webpackConfig);
 app.use(webpackHotMiddleware(compiler));

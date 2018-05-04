@@ -4,7 +4,7 @@ class NavigationBar extends React.Component {
     constructor(props) {
         super(props);
     }
-    signUp() {}
+
     render() {
         return (
             <div>

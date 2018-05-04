@@ -2,13 +2,17 @@ import React from "react";
 import { Route, IndexRoute } from "react-router";
 import Root from "../components/Root";
 import HomepageContainer from "../components/homepage/HomepageContainer";
-import signUpContainer from "../components/signUp/signUpContainer";
-import logInContainer from "../components/logIn/logInContainer";
-
+import SignUpContainer from "../components/signup/SignUpContainer";
+import LoginContainer from "../components/login/LoginContainer";
+import authorizedContainer from "../components/authorized/authoriedContainer";
 export default (
     <Route path="/" component={Root}>
         <IndexRoute component={HomepageContainer} />
-        <Route path="/signup" component={signUpContainer} />
-        <Route path="/login" component={logInContainer} />
+        <Route path="/signup" component={SignUpContainer} />
+        <Route path="/login" component={LoginContainer} />
+        <Route
+            path="/authoried/:authitem/:identifer"
+            component={authorizedContainer}
+        />
     </Route>
 );

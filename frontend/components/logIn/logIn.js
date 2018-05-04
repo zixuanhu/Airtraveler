@@ -1,67 +1,147 @@
 import React from "react";
+import classnames from "classnames";
+class Login extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            identifier: "",
+            password: "",
+            errors: {}
+        };
+    }
 
-class logIn extends React.Component {
+    updateForm(e) {
+        e.preventDefault();
+        this.setState({
+            [e.target.name]: e.target.value
+        });
+    }
+
+    submitForm() {
+        this.setState({
+            errors: {}
+        });
+        const loginData = {
+            identifier: this.state.identifier,
+            password: this.state.password
+        };
+        if (loginData.identifier === "") {
+            let errors = {};
+            errors.identifier = "the username cannot be empty";
+            this.setState({
+                errors: errors
+            });
+            return;
+        }
+        if (loginData.password === "") {
+            let errors = {};
+            errors.password = "the password cannot be empty";
+            this.setState({
+                errors: errors
+            });
+            return;
+        }
+        this.props.login(loginData).then(respond => {
+            if (respond.data.error === undefined) {
+                console.log("login success");
+                this.context.router.push(
+                    `/authoried/login/${this.state.identifier}`
+                );
+            } else {
+                if (respond.data.error.user !== undefined) {
+                    let errors = this.state.errors;
+                    errors.identifier = "this username or email does not exist";
+                    this.setState({
+                        errors: errors
+                    });
+                } else {
+                    let errors = this.state.errors;
+                    errors.password = "the password does not match";
+                    this.setState({
+                        errors: errors
+                    });
+                }
+            }
+        });
+    }
+
+    onAutoFill() {
+        this.setState({
+            identifier: "zixuan",
+            password: "password"
+        });
+    }
     render() {
         return (
             <div className="container">
                 <div className="omb_login">
                     <h3 className="omb_authTitle">
-                        Login or <a href="#">Sign up</a>
+                        Login or <a href="/signup">Sign up</a>
                     </h3>
 
                     <div className="row omb_row-sm-offset-3">
                         <div className="col-xs-12 col-sm-6">
-                            <form
-                                className="omb_loginForm"
-                                action=""
-                                autocomplete="off"
-                                method="POST"
+                            <div
+                                className={classnames("form-group", {
+                                    "has-error": this.state.errors.identifier
+                                })}
                             >
                                 <div className="input-group">
                                     <span className="input-group-addon">
                                         <i className="fa fa-user" />
                                     </span>
                                     <input
-                                        type="text"
                                         className="form-control"
-                                        name="username"
-                                        placeholder="email address"
+                                        placeholder="username or email address"
+                                        name="identifier"
+                                        onChange={e => this.updateForm(e)}
+                                        value={this.state.identifier}
                                     />
                                 </div>
-                                <span className="help-block" />
-
+                                {this.state.errors.identifier && (
+                                    <span className="help-block">
+                                        {this.state.errors.identifier}
+                                    </span>
+                                )}
+                            </div>
+                            <br />
+                            <div
+                                className={classnames("form-group", {
+                                    "has-error": this.state.errors.password
+                                })}
+                            >
                                 <div className="input-group">
                                     <span className="input-group-addon">
                                         <i className="fa fa-lock" />
                                     </span>
                                     <input
-                                        type="password"
                                         className="form-control"
-                                        name="password"
                                         placeholder="Password"
+                                        name="password"
+                                        type="password"
+                                        onChange={e => this.updateForm(e)}
+                                        value={this.state.password}
                                     />
                                 </div>
-                                <br />
-                                <button
-                                    className="btn btn-lg btn-primary btn-block"
-                                    type="submit"
-                                >
-                                    Login
-                                </button>
-                            </form>
-                        </div>
-                    </div>
-                    <div className="row omb_row-sm-offset-3">
-                        <div className="col-xs-12 col-sm-3">
-                            <label className="checkbox">
-                                <input type="checkbox" value="remember-me" />Remember
-                                Me
-                            </label>
-                        </div>
-                        <div className="col-xs-12 col-sm-3">
-                            <p className="omb_forgotPwd">
-                                <a href="#">Forgot password?</a>
-                            </p>
+                                {this.state.errors.password && (
+                                    <span className="help-block">
+                                        {this.state.errors.password}
+                                    </span>
+                                )}
+                            </div>
+                            <br />
+                            <button
+                                className="btn btn-primary"
+                                onClick={() => this.submitForm()}
+                            >
+                                Login
+                            </button>
+                            <button
+                                className="btn btn-info pull-right"
+                                onClick={() => this.onAutoFill()}
+                            >
+                                Demo
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -70,4 +150,8 @@ class logIn extends React.Component {
     }
 }
 
-export default logIn;
+Login.contextTypes = {
+    router: React.PropTypes.object.isRequired
+};
+
+export default Login;

@@ -20,17 +20,35 @@ class SignUp extends React.Component {
         });
     }
 
-    // validUserName(username) {
-    //     this.props.checkusername(username).then(respond => {
-    //         debugger;
-    //         return respond.data.exist;
-    //     });
-    // }
+    onAutoFill(e) {
+        this.setState({
+            username: "zixuan",
+            email: "zixuan@mit.edu",
+            password: "password",
+            password_confirm: "password"
+        });
+    }
 
     submitForm() {
         // console.log(this.state);
-        this.props.checkusername(this.state.username).then(respond => {
-            debugger;
+        this.setState({
+            errors: {}
+        });
+        let readyToSubmit = true;
+        this.props.checkExist(this.state.username).then(respond => {
+            if (
+                this.state.username.includes(
+                    "@" || "#" || " " || "$" || "%" || "^" || "+" || "-" || "="
+                )
+            ) {
+                let errors = this.state.errors;
+                errors.username =
+                    "please DO NOT includes special symbols like (@ # $ ^ * ) or space in username";
+                this.setState({
+                    errors: errors
+                });
+                readyToSubmit = false;
+            }
             if (respond.data.exist) {
                 let errors = this.state.errors;
                 errors.username =
@@ -38,27 +56,43 @@ class SignUp extends React.Component {
                 this.setState({
                     errors: errors
                 });
-            } else if (this.state.password !== this.state.password_confirm) {
+                readyToSubmit = false;
+            }
+            if (this.state.password.length < 5) {
+                let errors = this.state.errors;
+                errors.password = "Password too short";
+                this.setState({
+                    errors: errors
+                });
+                readyToSubmit = false;
+            }
+            if (this.state.password !== this.state.password_confirm) {
                 let errors = this.state.errors;
                 errors.password_confirm = "Password does not match";
                 this.setState({
                     errors: errors
                 });
-            } else if (!this.state.email.includes("@")) {
+                readyToSubmit = false;
+            }
+            if (!this.state.email.includes("@")) {
                 let errors = this.state.errors;
-                errors.email = "the emmail is invalid";
+                errors.email = "the email is invalid";
                 this.setState({
                     errors: errors
                 });
-            } else {
+                readyToSubmit = false;
+            }
+            if (readyToSubmit) {
                 let obj = {};
                 obj.username = this.state.username;
                 obj.email = this.state.email;
                 obj.password = this.state.password;
-                debugger;
+
                 this.props.signup(obj).then(() => {
                     console.log("create success");
-                    this.context.router.push("/");
+                    this.context.router.push(
+                        `/authoried/signup/${this.state.username}`
+                    );
                 });
             }
         });
@@ -162,6 +196,12 @@ class SignUp extends React.Component {
                             onClick={() => this.submitForm()}
                         >
                             Submit
+                        </button>
+                        <button
+                            className="btn btn-warning pull-right"
+                            onClick={e => this.onAutoFill(e)}
+                        >
+                            Demo
                         </button>
                     </div>
                 </div>
