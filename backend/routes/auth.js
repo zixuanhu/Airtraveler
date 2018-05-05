@@ -4,7 +4,28 @@ import jwt from "jsonwebtoken";
 import jwtSecret from "../config/jwtSecret";
 import User from "../models/user";
 let router = express.Router();
+router.post("/editprofile", (req, res) => {
+    const username = req.body.username;
+    const email = req.body.email;
+    const oldusername = req.body.oldusername;
+    console.log("****** pass POST /api/auth/editProfile!!******");
 
+    User.query({ where: { username: oldusername } })
+        .fetch()
+        .then(user => {
+            user
+                .set({ username: username }, User)
+                .save()
+                .then(user => {
+                    console.log("pass here");
+                    return res.json({ user: user });
+                })
+                .catch(error => {
+                    console.log("******POST /api/auth/editProfile!!******");
+                    return res.json({ error: error });
+                });
+        });
+});
 router.post("/finduserexists", (req, res) => {
     const identifer = req.body.identifer;
     User.query({
@@ -90,17 +111,28 @@ router.post("/login", (req, res) => {
 // POST api/auth/checkexists
 router.post("/checkexists", (req, res) => {
     console.log("******POST /api/auth/checkexists PASS!!******");
-    const username = req.body.username;
 
-    User.forge({
-        username: username
+    const username = req.body.username;
+    const email = req.body.email;
+    //console.log(email);
+    User.query({
+        where: { username: username },
+        orWhere: { email: email }
     })
         .fetch()
         .then(user => {
             console.log(
-                "******POST /api/usernamechecker/signup FindUsername!!******"
+                "******POST /api/usernamechecker/checker FindUsername!!******"
             );
-            return res.json({ exist: !(user === null) });
+            if (user === null) {
+                return res.json({ exist: false });
+            }
+            const usernameexist = user.get("username") === username;
+            const emailexist = user.get("email") === email;
+            return res.json({
+                usernameexist: usernameexist,
+                emailexist: emailexist
+            });
         })
         .catch(error => {
             console.log(

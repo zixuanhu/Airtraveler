@@ -34,68 +34,97 @@ class SignUp extends React.Component {
         this.setState({
             errors: {}
         });
-        let readyToSubmit = true;
-        this.props.checkExist(this.state.username).then(respond => {
-            if (
-                this.state.username.includes(
-                    "@" || "#" || " " || "$" || "%" || "^" || "+" || "-" || "="
-                )
-            ) {
-                let errors = this.state.errors;
-                errors.username =
-                    "please DO NOT includes special symbols like (@ # $ ^ * ) or space in username";
-                this.setState({
-                    errors: errors
-                });
-                readyToSubmit = false;
-            }
-            if (respond.data.exist) {
-                let errors = this.state.errors;
-                errors.username =
-                    "this username is existed, please choose another one";
-                this.setState({
-                    errors: errors
-                });
-                readyToSubmit = false;
-            }
-            if (this.state.password.length < 5) {
-                let errors = this.state.errors;
-                errors.password = "Password too short";
-                this.setState({
-                    errors: errors
-                });
-                readyToSubmit = false;
-            }
-            if (this.state.password !== this.state.password_confirm) {
-                let errors = this.state.errors;
-                errors.password_confirm = "Password does not match";
-                this.setState({
-                    errors: errors
-                });
-                readyToSubmit = false;
-            }
-            if (!this.state.email.includes("@")) {
-                let errors = this.state.errors;
-                errors.email = "the email is invalid";
-                this.setState({
-                    errors: errors
-                });
-                readyToSubmit = false;
-            }
-            if (readyToSubmit) {
-                let obj = {};
-                obj.username = this.state.username;
-                obj.email = this.state.email;
-                obj.password = this.state.password;
 
-                this.props.signup(obj).then(() => {
-                    console.log("create success");
-                    this.context.router.push(
-                        `/authoried/signup/${this.state.username}`
-                    );
-                });
-            }
-        });
+        if (this.state.username === "") {
+            let errors = {};
+            errors.username = "the username cannot be empty";
+            this.setState({
+                errors: errors
+            });
+            return;
+        }
+
+        let readyToSubmit = true;
+        this.props
+            .checkExist(this.state.username, this.state.email)
+            .then(respond => {
+                if (
+                    this.state.username.includes(
+                        "@" ||
+                            "#" ||
+                            " " ||
+                            "$" ||
+                            "%" ||
+                            "^" ||
+                            "+" ||
+                            "-" ||
+                            "="
+                    )
+                ) {
+                    let errors = this.state.errors;
+                    errors.username =
+                        "please DO NOT includes special symbols like (@ # $ ^ * ) or space in username";
+                    this.setState({
+                        errors: errors
+                    });
+                    readyToSubmit = false;
+                }
+                if (respond.data.usernameexist) {
+                    let errors = this.state.errors;
+                    errors.username =
+                        "this username is existed, please choose another one";
+                    this.setState({
+                        errors: errors
+                    });
+                    readyToSubmit = false;
+                }
+                if (respond.data.emailexist) {
+                    let errors = this.state.errors;
+                    errors.email =
+                        "this email is existed, please choose another one";
+                    this.setState({
+                        errors: errors
+                    });
+                    readyToSubmit = false;
+                }
+                if (this.state.password.length < 5) {
+                    let errors = this.state.errors;
+                    errors.password = "Password too short";
+                    this.setState({
+                        errors: errors
+                    });
+                    readyToSubmit = false;
+                }
+                if (this.state.password !== this.state.password_confirm) {
+                    let errors = this.state.errors;
+                    errors.password_confirm = "Password does not match";
+                    this.setState({
+                        errors: errors
+                    });
+                    readyToSubmit = false;
+                }
+                if (!this.state.email.includes("@")) {
+                    let errors = this.state.errors;
+                    errors.email = "the email is invalid";
+                    this.setState({
+                        errors: errors
+                    });
+                    readyToSubmit = false;
+                }
+                if (readyToSubmit) {
+                    let obj = {};
+                    obj.username = this.state.username;
+                    obj.email = this.state.email;
+                    obj.password = this.state.password;
+
+                    this.props.signup(obj).then(() => {
+                        console.log("create success");
+                        this.context.router.push(
+                            `/authoried/signup/${this.state.username}`
+                        );
+                    });
+                }
+            });
     }
 
     render() {

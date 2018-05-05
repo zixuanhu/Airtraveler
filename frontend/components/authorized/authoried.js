@@ -2,18 +2,14 @@ import React from "react";
 class authorised extends React.Component {
     componentWillMount() {
         this.props.findUser(this.props.routeParams.identifer);
-        setTimeout(() => {
-            this.context.router.push("/");
-        }, 5000);
     }
-    userInfo() {
-        const user = this.props.user;
+    userProfile() {
         return (
             <div className="container-fluid well span6">
                 <div className="row-fluid">
                     <div className="span8">
-                        <h3>{user.username}</h3>
-                        <h6>{user.email}</h6>
+                        <h3>{this.props.user.username}</h3>
+                        <h6>{this.props.user.email}</h6>
                     </div>
                 </div>
             </div>
@@ -22,9 +18,12 @@ class authorised extends React.Component {
     render() {
         const authitem = this.props.routeParams.authitem;
         if (authitem === "login") {
+            setTimeout(() => {
+                this.context.router.push("/");
+            }, 5000);
             return (
                 <div>
-                    {this.userInfo()}
+                    {this.userProfile()}
                     <div>
                         Your browser should automatically take you to homepage
                         in 5 seconds
@@ -32,15 +31,34 @@ class authorised extends React.Component {
                     <div>log in succeeed</div>
                 </div>
             );
-        } else {
+        } else if (authitem === "signup") {
+            setTimeout(() => {
+                this.context.router.push("/");
+            }, 5000);
             return (
                 <div>
-                    {this.userInfo()}
+                    {this.userProfile()}
                     <div>
                         Your browser should automatically take you to homepage
                         in 5 seconds
                     </div>
                     <div>sign up succeed</div>
+                </div>
+            );
+        } else if (authitem === "editProfile") {
+            setTimeout(() => {
+                this.context.router.push(
+                    `/userProfile/${this.props.user.username}`
+                );
+            }, 5000);
+            return (
+                <div>
+                    {this.userProfile()}
+                    <div>
+                        Your browser should automatically take you to homepage
+                        in 5 seconds
+                    </div>
+                    <div>upadate succeed</div>
                 </div>
             );
         }

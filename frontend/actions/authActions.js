@@ -17,9 +17,9 @@ export const login = userData => {
     };
 };
 
-export const checkExist = username => {
+export const checkExist = userData => {
     return dispatch => {
-        return AuthApiUtil.checkUtil(username);
+        return AuthApiUtil.checkUtil(userData);
     };
 };
 
@@ -29,5 +29,11 @@ export const findUser = userData => {
             const user = respond.data.user;
             dispatch(updateUser(user));
         });
+    };
+};
+
+export const editProfile = userData => {
+    return dispatch => {
+        return AuthApiUtil.editProfileUtil(userData);
     };
 };

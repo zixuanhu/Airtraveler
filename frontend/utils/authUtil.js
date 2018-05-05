@@ -8,10 +8,14 @@ export const loginUtil = userData => {
     return axios.post("/api/auth/login", userData);
 };
 
-export const checkUtil = username => {
-    return axios.post("/api/auth/checkexists", { username: username });
+export const checkUtil = userData => {
+    return axios.post("/api/auth/checkexists", userData);
 };
 
 export const findUserUtil = userData => {
     return axios.post("/api/auth/finduserexists", userData);
+};
+
+export const editProfileUtil = userData => {
+    return axios.post("/api/auth/editprofile", userData);
 };

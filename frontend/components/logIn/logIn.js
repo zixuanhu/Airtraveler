@@ -137,7 +137,7 @@ class Login extends React.Component {
                                 Login
                             </button>
                             <button
-                                className="btn btn-info pull-right"
+                                className="btn btn-Profile pull-right"
                                 onClick={() => this.onAutoFill()}
                             >
                                 Demo

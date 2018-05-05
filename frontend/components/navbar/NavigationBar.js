@@ -25,7 +25,12 @@ class NavigationBar extends React.Component {
                                 <span className="icon-bar" />
                                 <span className="icon-bar" />
                             </button>
-                            <a className="navbar-brand">AirTaveler</a>
+                            <a
+                                className="navbar-brand"
+                                onClick={() => this.context.router.push("/")}
+                            >
+                                AirTaveler
+                            </a>
                         </div>
 
                         <div
