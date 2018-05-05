@@ -1,7 +1,10 @@
 import * as authUtil from "../utils/authUtil";
 const authDefaultState = {
     isAuthenticated: false,
-    user: {}
+    LogIn: false,
+    user: {},
+    logInusername: "",
+    error: {}
 };
 
 export default (state = authDefaultState, action = {}) => {
@@ -9,11 +12,20 @@ export default (state = authDefaultState, action = {}) => {
     let user;
     switch (action.type) {
         case authUtil.UPDATE_User:
-            user = action.user;
+            const user = action.user;
             const newUserState = Object.assign({}, state, {
                 user: user
             });
             return newUserState;
+        case authUtil.UPDATE_LogIn:
+            const logInusername = action.logInusername;
+            const error = action.error;
+            const newLogInState = Object.assign({}, state, {
+                LogIn: true,
+                logInusername: logInusername,
+                error: error
+            });
+            return newLogInState;
         default:
             return state;
     }

@@ -41,6 +41,7 @@ class userProfile extends React.Component {
             });
             return;
         }
+
         let readyToSubmit = true;
         this.props
             .checkExist(this.state.username, this.state.email)
@@ -80,7 +81,7 @@ class userProfile extends React.Component {
                         .editProfile(obj)
                         .then(() =>
                             this.context.router.push(
-                                `/authoried/editProfile/${this.state.username}`
+                                `/authoried/userProfile/${this.state.username}`
                             )
                         );
                 }

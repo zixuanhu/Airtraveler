@@ -14,7 +14,7 @@ router.post("/editprofile", (req, res) => {
         .fetch()
         .then(user => {
             user
-                .set({ username: username }, User)
+                .set({ username: username, email: email }, User)
                 .save()
                 .then(user => {
                     console.log("pass here");
@@ -82,6 +82,7 @@ router.post("/login", (req, res) => {
         .then(user => {
             if (user) {
                 if (bcrypt.compareSync(password, user.get("password_digest"))) {
+                    const username = user.get("username");
                     const token = jwt.sign(
                         {
                             id: user.get("id"),
@@ -90,7 +91,8 @@ router.post("/login", (req, res) => {
                         jwtSecret.jwtSecret
                     );
                     console.log("******POST /api/auth/login SUCCESS!!******");
-                    return res.json({ token });
+
+                    return res.json({ token, username });
                 } else {
                     console.log("******POST /api/auth/login FAIL!!******");
                     return res.json({

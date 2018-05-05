@@ -41,14 +41,14 @@ class Login extends React.Component {
             });
             return;
         }
-        this.props.login(loginData).then(respond => {
-            if (respond.data.error === undefined) {
+        this.props.login(loginData).then(() => {
+            if (this.props.error === undefined) {
                 console.log("login success");
                 this.context.router.push(
                     `/authoried/login/${this.state.identifier}`
                 );
             } else {
-                if (respond.data.error.user !== undefined) {
+                if (this.props.error.user !== undefined) {
                     let errors = this.state.errors;
                     errors.identifier = "this username or email does not exist";
                     this.setState({

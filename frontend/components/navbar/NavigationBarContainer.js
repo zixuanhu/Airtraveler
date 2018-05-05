@@ -2,7 +2,10 @@ import { connect } from "react-redux";
 import NavigationBar from "./NavigationBar";
 
 export const mapStateToProps = state => {
-    return {};
+    return {
+        logInusername: state.auth.logInusername,
+        LogIn: state.auth.LogIn
+    };
 };
 
 export const mapDispatchToProps = dispatch => {

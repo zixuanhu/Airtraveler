@@ -1,5 +1,6 @@
 import axios from "axios";
 export const UPDATE_User = "UPDATE_User";
+export const UPDATE_LogIn = "UPDATE_LogIn";
 export const signupUtil = userData => {
     return axios.post("/api/auth/signup", userData);
 };

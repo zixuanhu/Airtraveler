@@ -3,7 +3,9 @@ import * as authActions from "../../actions/authActions";
 import Login from "./Login";
 
 export const mapStateToProps = state => {
-    return {};
+    return {
+        error: state.auth.error
+    };
 };
 
 export const mapDispatchToProps = dispatch => {

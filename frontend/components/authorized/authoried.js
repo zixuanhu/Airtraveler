@@ -17,6 +17,7 @@ class authorised extends React.Component {
     }
     render() {
         const authitem = this.props.routeParams.authitem;
+
         if (authitem === "login") {
             setTimeout(() => {
                 this.context.router.push("/");
@@ -45,11 +46,9 @@ class authorised extends React.Component {
                     <div>sign up succeed</div>
                 </div>
             );
-        } else if (authitem === "editProfile") {
+        } else if (authitem === "userProfile") {
             setTimeout(() => {
-                this.context.router.push(
-                    `/userProfile/${this.props.user.username}`
-                );
+                this.context.router.push(`/`);
             }, 5000);
             return (
                 <div>

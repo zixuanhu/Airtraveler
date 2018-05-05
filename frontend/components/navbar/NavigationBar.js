@@ -41,6 +41,19 @@ class NavigationBar extends React.Component {
                                 <li>
                                     <a
                                         onClick={() =>
+                                            this.context.router.push(
+                                                `/userprofile/${
+                                                    this.props.logInusername
+                                                }`
+                                            )
+                                        }
+                                    >
+                                        {this.props.logInusername}
+                                    </a>
+                                </li>
+                                <li>
+                                    <a
+                                        onClick={() =>
                                             this.context.router.push("/login")
                                         }
                                     >
