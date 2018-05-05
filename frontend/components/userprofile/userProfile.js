@@ -69,7 +69,7 @@ class userProfile extends React.Component {
                     });
                     readyToSubmit = false;
                 }
-                debugger;
+
                 if (readyToSubmit) {
                     let obj = {};
                     obj.oldusername = this.state.user.username;
