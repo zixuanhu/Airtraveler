@@ -1,12 +1,20 @@
 import axios from "axios";
 export const UPDATE_User = "UPDATE_User";
-export const UPDATE_LogIn = "UPDATE_LogIn";
+export const SET_CURRENT_USER = "SET_CURRENT_USER";
+export const SET_AUTH_ERROR = "SET_AUTH_ERROR";
+
 export const signupUtil = userData => {
     return axios.post("/api/auth/signup", userData);
 };
 
 export const loginUtil = userData => {
     return axios.post("/api/auth/login", userData);
+};
+
+export const logoutUtil = () => {
+    return new Promise((res, rej) => {
+        res();
+    });
 };
 
 export const checkUtil = userData => {
@@ -18,5 +26,5 @@ export const findUserUtil = userData => {
 };
 
 export const editProfileUtil = userData => {
-    return axios.post("/api/auth/editprofile", userData);
+    return axios.put("/api/auth/editprofile", userData);
 };

@@ -6,6 +6,68 @@ class NavigationBar extends React.Component {
     }
 
     render() {
+        // debugger;
+        if (this.props.isAuthenticated) {
+            // debugger;
+        }
+        const userLink = (
+            <div className="nav navbar-nav navbar-right">
+                <li className="dropdown">
+                    <a
+                        className="dropdown-toggle"
+                        data-toggle="dropdown"
+                        role="button"
+                        aria-haspopup="true"
+                        aria-expanded="false"
+                    >
+                        {this.props.user.username} <span className="caret" />
+                    </a>
+                    <ul className="dropdown-menu">
+                        <li>
+                            <a
+                                onClick={() =>
+                                    this.context.router.push(
+                                        `/userprofile/${
+                                            this.props.user.username
+                                        }`
+                                    )
+                                }
+                            >
+                                Edit Profile
+                            </a>
+                        </li>
+                        <li role="separator" className="divider" />
+                        <li>
+                            <a
+                                onClick={() =>
+                                    this.props.logout().then(() => {
+                                        this.context.router.push("/");
+                                    })
+                                }
+                            >
+                                Log Out
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </div>
+        );
+
+        const guestLink = (
+            <div className="nav navbar-nav navbar-right">
+                <li>
+                    <a onClick={() => this.context.router.push("/login")}>
+                        Log in
+                    </a>
+                </li>
+                <li>
+                    <a onClick={() => this.context.router.push("/signup")}>
+                        Sign up
+                    </a>
+                </li>
+            </div>
+        );
+
         return (
             <div>
                 <nav className="navbar navbar-default ">
@@ -37,39 +99,7 @@ class NavigationBar extends React.Component {
                             className="collapse navbar-collapse"
                             id="bs-example-navbar-collapse-1"
                         >
-                            <div className="nav navbar-nav navbar-right">
-                                <li>
-                                    <a
-                                        onClick={() =>
-                                            this.context.router.push(
-                                                `/userprofile/${
-                                                    this.props.logInusername
-                                                }`
-                                            )
-                                        }
-                                    >
-                                        {this.props.logInusername}
-                                    </a>
-                                </li>
-                                <li>
-                                    <a
-                                        onClick={() =>
-                                            this.context.router.push("/login")
-                                        }
-                                    >
-                                        Log in
-                                    </a>
-                                </li>
-                                <li>
-                                    <a
-                                        onClick={() =>
-                                            this.context.router.push("/signup")
-                                        }
-                                    >
-                                        Sign up
-                                    </a>
-                                </li>
-                            </div>
+                            {this.props.isAuthenticated ? userLink : guestLink}
                         </div>
                     </div>
                 </nav>

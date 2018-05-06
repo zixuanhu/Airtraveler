@@ -4,7 +4,7 @@ import jwt from "jsonwebtoken";
 import jwtSecret from "../config/jwtSecret";
 import User from "../models/user";
 let router = express.Router();
-router.post("/editprofile", (req, res) => {
+router.put("/editprofile", (req, res) => {
     const username = req.body.username;
     const email = req.body.email;
     const oldusername = req.body.oldusername;
@@ -18,7 +18,16 @@ router.post("/editprofile", (req, res) => {
                 .save()
                 .then(user => {
                     console.log("pass here");
-                    return res.json({ user: user });
+                    const token = jwt.sign(
+                        {
+                            id: user.get("id"),
+                            username: user.get("username")
+                        },
+                        jwtSecret.jwtSecret
+                    );
+                    console.log("******POST /api/auth/edit SUCCESS!!******");
+
+                    return res.json({ token });
                 })
                 .catch(error => {
                     console.log("******POST /api/auth/editProfile!!******");
@@ -82,7 +91,6 @@ router.post("/login", (req, res) => {
         .then(user => {
             if (user) {
                 if (bcrypt.compareSync(password, user.get("password_digest"))) {
-                    const username = user.get("username");
                     const token = jwt.sign(
                         {
                             id: user.get("id"),
@@ -92,16 +100,14 @@ router.post("/login", (req, res) => {
                     );
                     console.log("******POST /api/auth/login SUCCESS!!******");
 
-                    return res.json({ token, username });
+                    return res.json({ token });
                 } else {
                     console.log("******POST /api/auth/login FAIL!!******");
-                    return res.json({
-                        error: { password: "Invalid Passowrd" }
-                    });
+                    return res.json({ error: "password" });
                 }
             } else {
                 console.log("******POST /api/auth/login FAIL!!******");
-                return res.json({ error: { user: "user not find!" } });
+                return res.json({ error: "user" });
             }
         })
         .catch(error => {

@@ -34,10 +34,7 @@ legend {
     background-image: linear-gradient(to bottom, #79bc64, #5e7056);
     text-decoration: none;
 }
-.navbar-default .navbar-brand {
-    color: #fff;
-    font-size: 30px;
-}
+
 .form .form-control {
     margin-bottom: 10px;
 }

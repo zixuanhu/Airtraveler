@@ -42,19 +42,21 @@ class Login extends React.Component {
             return;
         }
         this.props.login(loginData).then(() => {
-            if (this.props.error === undefined) {
+            if (this.props.error === "") {
                 console.log("login success");
                 this.context.router.push(
                     `/authoried/login/${this.state.identifier}`
                 );
             } else {
-                if (this.props.error.user !== undefined) {
+                if (this.props.error === "user") {
                     let errors = this.state.errors;
                     errors.identifier = "this username or email does not exist";
+                    // debugger;
                     this.setState({
                         errors: errors
                     });
                 } else {
+                    // debugger;
                     let errors = this.state.errors;
                     errors.password = "the password does not match";
                     this.setState({
@@ -76,9 +78,8 @@ class Login extends React.Component {
             <div className="container">
                 <div className="omb_login">
                     <h3 className="omb_authTitle">
-                        Login or <a href="/signup">Sign up</a>
+                        Login or <a href="/signup"> Sign up </a>
                     </h3>
-
                     <div className="row omb_row-sm-offset-3">
                         <div className="col-xs-12 col-sm-6">
                             <div
@@ -137,7 +138,7 @@ class Login extends React.Component {
                                 Login
                             </button>
                             <button
-                                className="btn btn-Profile pull-right"
+                                className="btn btn-warning pull-right"
                                 onClick={() => this.onAutoFill()}
                             >
                                 Demo
