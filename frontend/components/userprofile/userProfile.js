@@ -7,7 +7,7 @@ class userProfile extends React.Component {
             user: {},
             username: "",
             email: "",
-            editing: false,
+            editing: true,
             errors: {}
         };
     }

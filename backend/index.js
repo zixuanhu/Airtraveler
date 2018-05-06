@@ -9,11 +9,13 @@ import webpackHotMiddleware from "webpack-hot-middleware";
 import webpackConfig from "../webpack.config.dev";
 
 import auth from "./routes/auth";
+import homes from "./routes/homes";
 
 let app = express();
 app.use(bodyParser.json());
 
 app.use("/api/auth", auth);
+app.use("/api/homes", homes);
 
 const compiler = webpack(webpackConfig);
 app.use(webpackHotMiddleware(compiler));

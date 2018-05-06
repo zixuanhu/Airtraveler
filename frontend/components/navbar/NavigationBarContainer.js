@@ -2,7 +2,6 @@ import { connect } from "react-redux";
 import * as authActions from "../../actions/authActions";
 import NavigationBar from "./NavigationBar";
 export const mapStateToProps = state => {
-    debugger;
     return {
         user: state.auth.user,
         isAuthenticated: state.auth.isAuthenticated,

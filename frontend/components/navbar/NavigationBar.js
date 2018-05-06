@@ -12,6 +12,12 @@ class NavigationBar extends React.Component {
         }
         const userLink = (
             <div className="nav navbar-nav navbar-right">
+                <li>
+                    <a>Homes</a>
+                </li>
+                <li>
+                    <a>Host a new place</a>
+                </li>
                 <li className="dropdown">
                     <a
                         className="dropdown-toggle"

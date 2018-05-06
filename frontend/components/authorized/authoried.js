@@ -4,9 +4,6 @@ class authorised extends React.Component {
         this.props.findUser(this.props.routeParams.identifer);
     }
     userProfile() {
-        setTimeout(() => {
-            this.context.router.push("/");
-        }, 5000);
         return (
             <div>
                 <div className="container-fluid well span6">
@@ -16,10 +13,6 @@ class authorised extends React.Component {
                             <h6>{this.props.user.email}</h6>
                         </div>
                     </div>
-                </div>
-                <div>
-                    Your browser should automatically take you to homepage in 5
-                    seconds
                 </div>
             </div>
         );
