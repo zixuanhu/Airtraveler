@@ -7,16 +7,18 @@ class NavigationBar extends React.Component {
 
     render() {
         // debugger;
-        if (this.props.isAuthenticated) {
-            // debugger;
-        }
+
         const userLink = (
             <div className="nav navbar-nav navbar-right">
                 <li>
-                    <a>Homes</a>
+                    <a onClick={() => this.context.router.push(`/homes`)}>
+                        Homes
+                    </a>
                 </li>
                 <li>
-                    <a>Host a new place</a>
+                    <a onClick={() => this.context.router.push(`/newhome`)}>
+                        Host a new place
+                    </a>
                 </li>
                 <li className="dropdown">
                     <a

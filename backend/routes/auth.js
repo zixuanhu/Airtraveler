@@ -5,10 +5,10 @@ import jwtSecret from "../config/jwtSecret";
 import User from "../models/user";
 let router = express.Router();
 router.put("/editprofile", (req, res) => {
+    console.log("****** pass POST /api/auth/editProfile!!******");
     const username = req.body.username;
     const email = req.body.email;
     const oldusername = req.body.oldusername;
-    console.log("****** pass POST /api/auth/editProfile!!******");
 
     User.query({ where: { username: oldusername } })
         .fetch()

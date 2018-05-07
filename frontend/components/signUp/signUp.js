@@ -9,6 +9,7 @@ class SignUp extends React.Component {
             email: "",
             password: "",
             password_confirm: "",
+            infoconfirmed: true,
             errors: {}
         };
     }
@@ -26,6 +27,20 @@ class SignUp extends React.Component {
             email: "zixuan@mit.edu",
             password: "password",
             password_confirm: "password"
+        });
+    }
+
+    confirmForm() {
+        let obj = {};
+        obj.username = this.state.username;
+        obj.email = this.state.email;
+        obj.password = this.state.password;
+
+        this.props.signup(obj).then(() => {
+            console.log("create success");
+            this.context.router.push(
+                `/authoried/signup/${this.state.username}`
+            );
         });
     }
 
@@ -112,22 +127,14 @@ class SignUp extends React.Component {
                     readyToSubmit = false;
                 }
                 if (readyToSubmit) {
-                    let obj = {};
-                    obj.username = this.state.username;
-                    obj.email = this.state.email;
-                    obj.password = this.state.password;
-
-                    this.props.signup(obj).then(() => {
-                        console.log("create success");
-                        this.context.router.push(
-                            `/authoried/signup/${this.state.username}`
-                        );
+                    this.setState({
+                        infoconfirmed: false
                     });
                 }
             });
     }
 
-    render() {
+    signUppage() {
         return (
             <div className="container">
                 <h2>Please Sign Up</h2>
@@ -236,6 +243,35 @@ class SignUp extends React.Component {
                 </div>
             </div>
         );
+    }
+
+    confirmpage() {
+        return (
+            <div>
+                <div className="container-fluid well span6">
+                    <div className="row-fluid">
+                        <div className="span8">
+                            <h3>{this.state.username}</h3>
+                            <h6>{this.state.email}</h6>
+                        </div>
+                    </div>
+                </div>
+                <button
+                    className="btn btn-primary"
+                    onClick={() => this.confirmForm()}
+                >
+                    comfirm
+                </button>
+            </div>
+        );
+    }
+
+    render() {
+        if (this.state.infoconfirmed === true) {
+            return this.signUppage();
+        } else {
+            return this.confirmpage();
+        }
     }
 }
 
