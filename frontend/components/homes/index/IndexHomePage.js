@@ -26,6 +26,11 @@ class indexhomePage extends React.Component {
                     }
                 >
                     <div className="caption">
+                        <img
+                            style={{ width: "100%", height: "150px" }}
+                            src="https://res.cloudinary.com/airtraveler/image/upload/v1525745617/iyz58cvqqpmtkvynynyb.jpg"
+                        />
+                        <div>ID: {home.id}</div>
                         <div>title: {home.title} </div>
                         <div>description:{home.description}</div>
                         <br />

@@ -137,10 +137,10 @@ class SignUp extends React.Component {
     signUppage() {
         return (
             <div className="container">
-                <h2>Please Sign Up</h2>
                 <br />
                 <div className="row">
                     <div className="col-md-6 col-md-offset-3">
+                        <h2>Please Sign Up</h2>
                         <div
                             className={classnames("form-group", {
                                 "has-error": this.state.errors.username

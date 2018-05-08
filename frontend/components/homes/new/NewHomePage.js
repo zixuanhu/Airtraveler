@@ -7,7 +7,7 @@ class newhome extends React.Component {
         this.state = {
             title: "",
             description: "",
-            confirmed: true,
+            image: "",
             errors: {}
         };
     }
@@ -17,24 +17,14 @@ class newhome extends React.Component {
             [e.target.name]: e.target.value
         });
     }
-    submitForm() {
-        // console.log(this.state);
-        this.setState({
-            errors: {}
-        });
-
-        this.setState({
-            confirmed: false
-        });
-    }
-    confirmForm() {
+    onSubmit() {
         let obj = {};
         obj.title = this.state.title;
         obj.description = this.state.description;
 
         this.props.createhome(obj).then(() => {
             console.log("create success");
-            this.context.router.push(`/`);
+            this.context.router.push(`/homes`);
         });
     }
 
@@ -45,34 +35,70 @@ class newhome extends React.Component {
         });
     }
 
-    confirmpage() {
-        //debugger;
-        return (
-            <div>
-                <div className="container-fluid well span6">
-                    <div className="row-fluid">
-                        <div className="span8">
-                            <h3>{this.state.title}</h3>
-                            <h6>{this.state.description}</h6>
-                        </div>
-                    </div>
-                </div>
-                <button
-                    className="btn btn-primary"
-                    onClick={() => this.confirmForm()}
-                >
-                    comfirm
-                </button>
-            </div>
+    onUploadImage(e) {
+        e.preventDefault();
+        cloudinary.openUploadWidget(
+            {
+                cloud_name: "airtraveler",
+                upload_preset: "airtraveler",
+                theme: "minimal"
+            },
+            (errors, response) => {
+                if (!errors) {
+                    console.log("******UPLOAD IMAGE SUCCESS!!******");
+                    console.log(response[0].url);
+                    this.setState({
+                        image: response[0].url
+                    });
+                }
+            }
         );
     }
-    Createpage() {
+
+    render() {
+        const readyToSubmit = Boolean(
+            this.state.title && this.state.description
+        );
+        const imageComponent = this.state.image ? (
+            <div
+                style={{
+                    padding: "5px",
+                    cursor: "pointer",
+                    border: "1px solid #ccc",
+                    borderRadius: "5px",
+                    maxWidth: "360px"
+                }}
+            >
+                <img
+                    src={this.state.image}
+                    className="img-rounded"
+                    style={{ width: "100%", maxHeight: "200px" }}
+                />
+            </div>
+        ) : (
+            <div
+                style={{
+                    color: "#ccc",
+                    border: "2px dashed",
+                    borderColor: "#ccc",
+                    lineHeight: "150px",
+                    textAlign: "center",
+                    cursor: "pointer",
+                    backgroundColor: "#fff"
+                }}
+                onClick={e => this.onUploadImage(e)}
+            >
+                <span className="glyphicon glyphicon-upload" />
+                Click to upload Image
+            </div>
+        );
         return (
             <div className="container">
-                <h2>Please Create your home</h2>
                 <br />
                 <div className="row">
                     <div className="col-md-6 col-md-offset-3">
+                        <h2>Please Create your home</h2>
+                        <hr />
                         <div
                             className={classnames("form-group", {
                                 "has-error": this.state.errors.title
@@ -115,29 +141,34 @@ class newhome extends React.Component {
                             )}
                         </div>
 
+                        {imageComponent}
+                        <br />
+
                         <button
                             className="btn btn-primary"
-                            onClick={() => this.submitForm()}
+                            onClick={() => this.onSubmit()}
                         >
                             Submit
                         </button>
-                        <button
-                            className="btn btn-warning pull-right"
-                            onClick={e => this.onAutoFill(e)}
-                        >
-                            Demo
-                        </button>
+                        {readyToSubmit ? (
+                            <button
+                                className="btn btn-success pull-right"
+                                onClick={e => this.onSubmit(e)}
+                            >
+                                Go
+                            </button>
+                        ) : (
+                            <button
+                                className="btn btn-warning pull-right"
+                                onClick={e => this.onAutoFill(e)}
+                            >
+                                Demo
+                            </button>
+                        )}
                     </div>
                 </div>
             </div>
         );
-    }
-    render() {
-        if (this.state.confirmed) {
-            return this.Createpage();
-        } else {
-            return this.confirmpage();
-        }
     }
 }
 newhome.contextTypes = {
