@@ -5,12 +5,16 @@ let router = express.Router();
 // POST /api/homes
 router.post("/create", (req, res) => {
     console.log("******POST /api/homes/create PASS!!******");
+
     const title = req.body.title;
     const description = req.body.description;
+    const img = req.body.img;
+
     Home.forge(
         {
             title: title,
-            description: description
+            description: description,
+            img: img
         },
         { hasTimestamps: true }
     )

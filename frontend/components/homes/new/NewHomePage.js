@@ -7,7 +7,7 @@ class newhome extends React.Component {
         this.state = {
             title: "",
             description: "",
-            image: "",
+            image: "http://pic.uzzf.com/up/2017-3/14901722897158766.jpg",
             errors: {}
         };
     }
@@ -21,6 +21,7 @@ class newhome extends React.Component {
         let obj = {};
         obj.title = this.state.title;
         obj.description = this.state.description;
+        obj.img = this.state.image;
 
         this.props.createhome(obj).then(() => {
             console.log("create success");
@@ -59,39 +60,41 @@ class newhome extends React.Component {
         const readyToSubmit = Boolean(
             this.state.title && this.state.description
         );
-        const imageComponent = this.state.image ? (
-            <div
-                style={{
-                    padding: "5px",
-                    cursor: "pointer",
-                    border: "1px solid #ccc",
-                    borderRadius: "5px",
-                    maxWidth: "360px"
-                }}
-            >
-                <img
-                    src={this.state.image}
-                    className="img-rounded"
-                    style={{ width: "100%", maxHeight: "200px" }}
-                />
-            </div>
-        ) : (
-            <div
-                style={{
-                    color: "#ccc",
-                    border: "2px dashed",
-                    borderColor: "#ccc",
-                    lineHeight: "150px",
-                    textAlign: "center",
-                    cursor: "pointer",
-                    backgroundColor: "#fff"
-                }}
-                onClick={e => this.onUploadImage(e)}
-            >
-                <span className="glyphicon glyphicon-upload" />
-                Click to upload Image
-            </div>
-        );
+        const imageComponent =
+            this.state.image !==
+            "http://pic.uzzf.com/up/2017-3/14901722897158766.jpg" ? (
+                <div
+                    style={{
+                        padding: "5px",
+                        cursor: "pointer",
+                        border: "1px solid #ccc",
+                        borderRadius: "5px",
+                        maxWidth: "360px"
+                    }}
+                >
+                    <img
+                        src={this.state.image}
+                        className="img-rounded"
+                        style={{ width: "100%", maxHeight: "200px" }}
+                    />
+                </div>
+            ) : (
+                <div
+                    style={{
+                        color: "#ccc",
+                        border: "2px dashed",
+                        borderColor: "#ccc",
+                        lineHeight: "150px",
+                        textAlign: "center",
+                        cursor: "pointer",
+                        backgroundColor: "#fff"
+                    }}
+                    onClick={e => this.onUploadImage(e)}
+                >
+                    <span className="glyphicon glyphicon-upload" />
+                    Click to upload Image
+                </div>
+            );
         return (
             <div className="container">
                 <br />

@@ -3,6 +3,7 @@ exports.up = function(knex, Promise) {
         table.increments();
         table.string("title").notNullable();
         table.text("description").notNullable();
+        table.string("img");
         table.timestamps();
     });
 };

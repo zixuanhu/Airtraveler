@@ -8,6 +8,7 @@ class indexhomePage extends React.Component {
             errors: {}
         };
     }
+
     componentWillMount() {
         this.props.homeList();
     }
@@ -20,19 +21,15 @@ class indexhomePage extends React.Component {
             homeCards.push(
                 <div
                     key={i}
-                    className="col-sm-6 col-md-4 gallery-card gallery-card-vimeo"
+                    className="col-sm-6 col-md-4 gallery-card "
                     onClick={() =>
                         this.context.router.push(`/homedetail/${home.id}`)
                     }
                 >
                     <div className="caption">
-                        <img
-                            style={{ width: "100%", height: "150px" }}
-                            src="https://res.cloudinary.com/airtraveler/image/upload/v1525745617/iyz58cvqqpmtkvynynyb.jpg"
-                        />
-                        <div>ID: {home.id}</div>
-                        <div>title: {home.title} </div>
-                        <div>description:{home.description}</div>
+                        <img className="homeimg " src={home.img} />
+                        <div className="hometitle">{home.title} </div>
+                        <div className="homeprice">$100 per night</div>
                         <br />
                         <hr />
                     </div>
@@ -42,7 +39,7 @@ class indexhomePage extends React.Component {
         return homeCards;
     }
     render() {
-        return <div>{this.homeCards()}</div>;
+        return <div className="container cards">{this.homeCards()}</div>;
     }
 }
 

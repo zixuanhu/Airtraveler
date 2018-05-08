@@ -1,0 +1,20 @@
+body {
+    margin: 0;
+    font-family: "Roboto", sans-serif;
+}
+
+#viewPhotos:active {
+    background-color: #f0eeee !important;
+}
+
+#viewPhotos:hover {
+    border-color: #878787 !important;
+}
+
+.link:hover {
+    text-decoration: underline !important;
+}
+
+.link:active {
+    color: red !important;
+}
