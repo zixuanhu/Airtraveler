@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import * as authActions from "../../actions/authActions";
+import * as userActions from "../../actions/userActions";
 import authorised from "./authoried";
 
 export const mapStateToProps = state => {
@@ -10,8 +10,8 @@ export const mapStateToProps = state => {
 
 export const mapDispatchToProps = dispatch => {
     return {
-        findUser: identifer => {
-            return dispatch(authActions.findUser({ identifer: identifer }));
+        findUser: id => {
+            return dispatch(userActions.findUser(id));
         }
     };
 };

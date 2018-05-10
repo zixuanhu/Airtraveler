@@ -21,16 +21,18 @@ class indexhomePage extends React.Component {
             homeCards.push(
                 <div
                     key={i}
-                    className="col-sm-6 col-md-4 gallery-card "
+                    className="col-sm-6 col-md-4 "
                     onClick={() =>
                         this.context.router.push(`/homedetail/${home.id}`)
                     }
                 >
-                    <div className="caption">
+                    <div className="caption gallery-card ">
                         <img className="homeimg " src={home.img} />
-                        <div className="hometitle">{home.title} </div>
-                        <div className="homeprice">$100 per night</div>
+
                         <br />
+                        <p className="hometitle">ID: {home.id} </p>
+                        <p className="hometitle">{home.title} </p>
+                        <p className="homeprice">$100 per night</p>
                         <hr />
                     </div>
                 </div>

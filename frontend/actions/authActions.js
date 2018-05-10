@@ -1,6 +1,7 @@
 import * as AuthApiUtil from "../utils/authUtil";
 import jwtDecode from "jwt-decode";
 export const setCurrentUser = user => {
+    //debugger;
     return {
         type: AuthApiUtil.SET_CURRENT_USER,
         user
@@ -36,6 +37,7 @@ export const login = userData => {
                 const token = respond.data.token;
                 const userInfo = jwtDecode(token);
                 localStorage.setItem("jwtToken", token);
+
                 dispatch(setCurrentUser(userInfo));
             }
         });
@@ -54,25 +56,5 @@ export const logout = () => {
 export const checkExist = userData => {
     return dispatch => {
         return AuthApiUtil.checkUtil(userData);
-    };
-};
-
-export const findUser = userData => {
-    return dispatch => {
-        return AuthApiUtil.findUserUtil(userData).then(respond => {
-            const user = respond.data.user;
-            dispatch(updateUser(user));
-        });
-    };
-};
-
-export const editProfile = userData => {
-    return dispatch => {
-        return AuthApiUtil.editProfileUtil(userData).then(respond => {
-            const token = respond.data.token;
-            const userInfo = jwtDecode(token);
-            localStorage.setItem("jwtToken", token);
-            dispatch(setCurrentUser(userInfo));
-        });
     };
 };

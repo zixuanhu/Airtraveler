@@ -20,11 +20,3 @@ export const logoutUtil = () => {
 export const checkUtil = userData => {
     return axios.post("/api/auth/checkexists", userData);
 };
-
-export const findUserUtil = userData => {
-    return axios.post("/api/auth/finduserexists", userData);
-};
-
-export const editProfileUtil = userData => {
-    return axios.put("/api/auth/editprofile", userData);
-};

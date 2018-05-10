@@ -56,13 +56,14 @@ router.post("/signup", (req, res) => {
     // console.log(req.body);
     const username = req.body.username;
     const email = req.body.email;
+    const img = req.body.img;
     const password = req.body.password;
-
     const password_digest = bcrypt.hashSync(password, 10);
     User.forge(
         {
             username: username,
             email: email,
+            img: img,
             password_digest: password_digest
         },
         { hasTimestamps: true }
@@ -94,7 +95,8 @@ router.post("/login", (req, res) => {
                     const token = jwt.sign(
                         {
                             id: user.get("id"),
-                            username: user.get("username")
+                            username: user.get("username"),
+                            img: user.get("img")
                         },
                         jwtSecret.jwtSecret
                     );

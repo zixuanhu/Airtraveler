@@ -6,8 +6,6 @@ class NavigationBar extends React.Component {
     }
 
     render() {
-        // debugger;
-
         const userLink = (
             <div className="nav navbar-nav navbar-right">
                 <li>
@@ -20,24 +18,32 @@ class NavigationBar extends React.Component {
                         Host a new place
                     </a>
                 </li>
+
                 <li className="dropdown">
                     <a
                         className="dropdown-toggle"
+                        id="dropdown-img"
                         data-toggle="dropdown"
                         role="button"
                         aria-haspopup="true"
                         aria-expanded="false"
                     >
-                        {this.props.user.username} <span className="caret" />
+                        <img
+                            style={{
+                                width: 35,
+                                borderRadius: 50
+                            }}
+                            src={this.props.user.img}
+                            alt="profilpic"
+                        />
+                        <span className="caret" />
                     </a>
                     <ul className="dropdown-menu">
                         <li>
                             <a
                                 onClick={() =>
                                     this.context.router.push(
-                                        `/userprofile/${
-                                            this.props.user.username
-                                        }`
+                                        `/userprofile/${this.props.user.id}`
                                     )
                                 }
                             >

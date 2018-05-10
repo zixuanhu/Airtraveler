@@ -11,5 +11,5 @@ export const homelistUtil = () => {
 };
 
 export const gethomeUtil = home_id => {
-    return axios.post("/api/homes/gethome", home_id);
+    return axios.get(`/api/homes/${home_id}`);
 };

@@ -28,9 +28,8 @@ export const homelist = () => {
 
 export const gethome = home_id => {
     return dispatch => {
-        return homeApiUtil.gethomeUtil({ home_id: home_id }).then(respond => {
+        return homeApiUtil.gethomeUtil(home_id).then(respond => {
             const home = respond.data.home;
-
             dispatch(updateHome(home));
         });
     };

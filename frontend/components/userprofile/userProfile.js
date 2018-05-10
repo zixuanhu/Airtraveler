@@ -5,9 +5,10 @@ class userProfile extends React.Component {
         super(props);
         this.state = {
             user: {},
+            editing: true,
             username: "",
             email: "",
-            editing: true,
+            img: "",
             errors: {}
         };
     }
@@ -48,7 +49,7 @@ class userProfile extends React.Component {
             .then(respond => {
                 if (
                     respond.data.usernameexist &&
-                    this.state.username !== this.props.user.username
+                    this.state.user.username !== this.state.username
                 ) {
                     let errors = this.state.errors;
                     errors.username =
@@ -60,7 +61,7 @@ class userProfile extends React.Component {
                 }
                 if (
                     respond.data.emailexist &&
-                    this.state.email !== this.props.user.email
+                    this.state.email !== this.state.user.email
                 ) {
                     let errors = this.state.errors;
                     errors.email =
@@ -73,7 +74,7 @@ class userProfile extends React.Component {
 
                 if (readyToSubmit) {
                     let obj = {};
-                    obj.oldusername = this.state.user.username;
+                    obj.id = this.state.user.id;
                     obj.username = this.state.username;
                     obj.email = this.state.email;
 
@@ -81,20 +82,21 @@ class userProfile extends React.Component {
                         .editProfile(obj)
                         .then(() =>
                             this.context.router.push(
-                                `/authoried/userProfile/${this.state.username}`
+                                `/authoried/userProfile/${this.state.user.id}`
                             )
                         );
                 }
             });
     }
     componentWillMount() {
-        this.props.findUser(this.props.routeParams.identifer).then(() =>
+        this.props.findUser(this.props.routeParams.identifer).then(() => {
             this.setState({
                 user: this.props.user,
+                email: this.props.user.email,
                 username: this.props.user.username,
-                email: this.props.user.email
-            })
-        );
+                img: this.props.user.img
+            });
+        });
     }
 
     updateForm(e) {
@@ -164,7 +166,7 @@ class userProfile extends React.Component {
         );
     }
     userProfile() {
-        const user = this.props.user;
+        const user = this.state.user;
         return (
             <div className="container-fluid well span6">
                 <div className="row-fluid">

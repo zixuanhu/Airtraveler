@@ -10,6 +10,7 @@ exports.up = function(knex, Promise) {
             .notNullable()
             .unique();
         table.string("password_digest").notNullable();
+        table.string("img").notNullable();
         table.timestamps();
     });
 };

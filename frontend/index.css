@@ -1,6 +1,6 @@
 @import url("./css/logInpage.css");
 @import url("./css/homeIndex.css");
-
+@import url("./css/navbar.css");
 a:hover {
     cursor: pointer;
 }

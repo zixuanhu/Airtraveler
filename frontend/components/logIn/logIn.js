@@ -44,9 +44,7 @@ class Login extends React.Component {
         this.props.login(loginData).then(() => {
             if (this.props.error === "") {
                 console.log("login success");
-                this.context.router.push(
-                    `/authoried/login/${this.state.identifier}`
-                );
+                this.context.router.push(`/`);
             } else {
                 if (this.props.error === "user") {
                     let errors = this.state.errors;
@@ -137,12 +135,21 @@ class Login extends React.Component {
                             >
                                 Login
                             </button>
-                            <button
-                                className="btn btn-warning pull-right"
-                                onClick={() => this.onAutoFill()}
-                            >
-                                Demo
-                            </button>
+                            {this.state.identifier ? (
+                                <button
+                                    className="btn btn-success pull-right"
+                                    onClick={() => this.submitForm()}
+                                >
+                                    Go
+                                </button>
+                            ) : (
+                                <button
+                                    className="btn btn-warning pull-right"
+                                    onClick={e => this.onAutoFill(e)}
+                                >
+                                    Demo
+                                </button>
+                            )}
                         </div>
                     </div>
                 </div>

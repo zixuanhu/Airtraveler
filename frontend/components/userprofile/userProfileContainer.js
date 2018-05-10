@@ -1,8 +1,10 @@
 import { connect } from "react-redux";
 import * as authActions from "../../actions/authActions";
+import * as userActions from "../../actions/userActions";
 import userProfile from "./userProfile";
 
 export const mapStateToProps = state => {
+    // debugger;
     return {
         user: state.auth.user
     };
@@ -10,15 +12,15 @@ export const mapStateToProps = state => {
 
 export const mapDispatchToProps = dispatch => {
     return {
-        findUser: identifer => {
-            return dispatch(authActions.findUser({ identifer: identifer }));
+        findUser: id => {
+            return dispatch(userActions.findUser(id));
         },
         checkExist: (username, email) => {
             const userData = { username: username, email, email };
             return dispatch(authActions.checkExist(userData));
         },
         editProfile: userData => {
-            return dispatch(authActions.editProfile(userData));
+            return dispatch(userActions.editProfile(userData));
         }
     };
 };

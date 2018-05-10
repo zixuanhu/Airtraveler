@@ -1,11 +1,8 @@
 import React from "react";
 import classnames from "classnames";
 
-const profilePic =
-    "https://a0.muscache.com/im/pictures/5c660f61-f3f0-4fba-a1bb-7a6ca78556d2.jpg?aki_policy=profile_x_medium";
 const price = "$175";
 
-const hostName = "Luxury Villas";
 const rentalSize = "Entire home/apt";
 const guests = "2 guests";
 const bedrooms = "1 bedroom";
@@ -355,7 +352,9 @@ class PageNav extends React.Component {
     }
 }
 
-const ProfileLink = () => {
+const ProfileLink = user => {
+    if (user.user === undefined) return <div />;
+
     const divStyle = {
         display: "inline-block",
         textAlign: "center",
@@ -375,13 +374,13 @@ const ProfileLink = () => {
 
     return (
         <div style={divStyle}>
-            <img style={imgStyle} src={profilePic} />
-            <p style={nameStyle}>{hostName}</p>
+            <img style={imgStyle} src={user.user.img} />
+            <p style={nameStyle}>{user.user.username}</p>
         </div>
     );
 };
 
-const TitleSection = title => {
+const TitleSection = info => {
     const divStyle = {
         display: "inline-block",
         margin: "10px 120px 20px 0"
@@ -407,7 +406,7 @@ const TitleSection = title => {
     return (
         <Section>
             <div style={divStyle}>
-                <p style={titleStyle}>{title.title}</p>
+                <p style={titleStyle}>{info.title}</p>
                 <br />
                 <a href="#" style={linkStyle}>
                     <span>{airbnbLocation}</span>
@@ -417,7 +416,7 @@ const TitleSection = title => {
                     <span>{reviews} Reviews</span>
                 </a>
             </div>
-            <ProfileLink />
+            <ProfileLink user={info.hostprofile} />
         </Section>
     );
 };
@@ -760,6 +759,7 @@ class HomeDetailPage extends React.Component {
 
         this.props.gethome(home_id).then(respond => {
             this.setState({
+                user: this.props.home.user,
                 home_title: this.props.home.title,
                 home_img: this.props.home.img,
                 home_description: this.props.home.description
@@ -777,7 +777,10 @@ class HomeDetailPage extends React.Component {
                 <Hero heroPic={this.state.home_img} />
                 <div style={marginStyle}>
                     <PageNav margin={this.state.marginLeft} />
-                    <TitleSection title={this.state.home_title} />
+                    <TitleSection
+                        title={this.state.home_title}
+                        hostprofile={this.state.user}
+                    />
                     <IconInfo />
                     <OverviewInfo
                         overviewInfoText={this.state.home_description}

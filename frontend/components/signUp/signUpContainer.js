@@ -11,9 +11,11 @@ export const mapDispatchToProps = dispatch => {
         signup: userData => {
             return dispatch(authActions.signup(userData));
         },
+        login: userData => {
+            return dispatch(authActions.login(userData));
+        },
         checkExist: (username, email) => {
             const userData = { username: username, email, email };
-
             return dispatch(authActions.checkExist(userData));
         }
     };

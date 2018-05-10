@@ -3,7 +3,7 @@ import NewHomePage from "./NewHomePage";
 import * as homeActions from "../../../actions/homeActions";
 
 export const mapStateToProps = state => {
-    return {};
+    return { user: state.auth.user };
 };
 
 export const mapDispatchToProps = dispatch => {

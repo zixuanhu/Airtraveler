@@ -8,14 +8,18 @@ import webpackMiddleware from "webpack-dev-middleware";
 import webpackHotMiddleware from "webpack-hot-middleware";
 import webpackConfig from "../webpack.config.dev";
 
+import user from "./routes/user";
 import auth from "./routes/auth";
 import homes from "./routes/homes";
+import manage from "./routes/manage";
 
 let app = express();
 app.use(bodyParser.json());
 
 app.use("/api/auth", auth);
 app.use("/api/homes", homes);
+app.use("/api/user", user);
+app.use("/api/manage", manage);
 
 const compiler = webpack(webpackConfig);
 app.use(webpackHotMiddleware(compiler));

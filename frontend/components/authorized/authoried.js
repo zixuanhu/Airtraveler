@@ -1,8 +1,5 @@
 import React from "react";
 class authorised extends React.Component {
-    componentWillMount() {
-        this.props.findUser(this.props.routeParams.identifer);
-    }
     userProfile() {
         return (
             <div>
