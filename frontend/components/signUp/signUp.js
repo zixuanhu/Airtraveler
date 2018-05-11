@@ -5,6 +5,7 @@ class SignUp extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
+            id: "",
             username: "",
             email: "",
             password: "",
@@ -121,17 +122,18 @@ class SignUp extends React.Component {
                     obj.password = this.state.password;
                     obj.img = this.state.img;
 
-                    this.props.signup(obj).then(() => {
-                        console.log("create success");
-                        this.context.router.push(
-                            `/authoried/signup/${this.state.username}`
-                        );
+                    this.props.signup(obj).then(respond => {
+                        const loginData = {
+                            identifier: this.state.username,
+                            password: this.state.password
+                        };
+                        this.props.login(loginData).then(() => {
+                            console.log("create success");
+                            this.context.router.push(
+                                `/authoried/signup/${respond.data.user.id}`
+                            );
+                        });
                     });
-                    const loginData = {
-                        identifier: this.state.username,
-                        password: this.state.password
-                    };
-                    this.props.login(loginData);
                 }
             });
     }

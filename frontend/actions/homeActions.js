@@ -1,9 +1,4 @@
 import * as homeApiUtil from "../utils/homeUtil";
-export const createhome = homeData => {
-    return dispatch => {
-        return homeApiUtil.createhomeUtil(homeData);
-    };
-};
 
 export const updateHomes = homes => {
     return {
@@ -17,10 +12,28 @@ export const updateHome = home => {
         home
     };
 };
+export const createhome = homeData => {
+    return dispatch => {
+        return homeApiUtil.createhomeUtil(homeData);
+    };
+};
+export const edithome = homeData => {
+    return dispatch => {
+        return homeApiUtil.edithomeUtil(homeData);
+    };
+};
 export const homelist = () => {
     return dispatch => {
         return homeApiUtil.homelistUtil().then(respond => {
             const homes = respond.data.homes;
+            dispatch(updateHomes(homes));
+        });
+    };
+};
+export const userhomelist = id => {
+    return dispatch => {
+        return homeApiUtil.userhomelist(id).then(respond => {
+            const homes = respond.data;
             dispatch(updateHomes(homes));
         });
     };

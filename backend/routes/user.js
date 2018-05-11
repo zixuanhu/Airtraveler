@@ -10,16 +10,22 @@ router.put("/editprofile", (req, res) => {
     const email = req.body.email;
     const id = req.body.id;
 
-    User.query({ where: { id: id } })
+    User.query({
+            where: {
+                id: id
+            }
+        })
         .fetch()
         .then(user => {
             user
-                .set({ username: username, email: email }, User)
+                .set({
+                    username: username,
+                    email: email
+                }, User)
                 .save()
                 .then(user => {
                     console.log("pass here");
-                    const token = jwt.sign(
-                        {
+                    const token = jwt.sign({
                             id: user.get("id"),
                             username: user.get("username"),
                             email: user.get("email"),
@@ -31,14 +37,24 @@ router.put("/editprofile", (req, res) => {
                         "******POST /api/user/editProfile SUCCESS!!******"
                     );
 
-                    return res.json({ token });
+                    return res.json({
+                        token
+                    });
                 })
                 .catch(error => {
                     console.log(
-                        "******POST /api/user/editProfileProfile!!******"
+                        "******POST /api/user/editProfile fail!!******"
                     );
-                    return res.json({ error: error });
+                    return res.json({
+                        error: error
+                    });
                 });
+        })
+        .catch(error => {
+            console.log("******POST /api/user/editProfileProfile!!******");
+            return res.json({
+                error: error
+            });
         });
 });
 
@@ -46,15 +62,14 @@ router.get("/:id", (req, res) => {
     console.log("******POST /api/user/getUser/:id Pass!!******");
     const id = req.params.id;
     User.query({
-        where: {
-            id: id
-        }
-    })
+            where: {
+                id: id
+            }
+        })
         .fetch()
         .then(user => {
             console.log("******POST /api/user/getUser/:id SUCCESS!!******");
-            const token = jwt.sign(
-                {
+            const token = jwt.sign({
                     id: user.get("id"),
                     username: user.get("username"),
                     email: user.get("email"),
@@ -63,11 +78,15 @@ router.get("/:id", (req, res) => {
                 jwtSecret.jwtSecret
             );
 
-            return res.json({ token });
+            return res.json({
+                token
+            });
         })
         .catch(error => {
             console.log("******POST /api/user/getUser/:id fail!!******");
-            return res.json({ error: error });
+            return res.json({
+                error: error
+            });
         });
 });
 export default router;

@@ -47,6 +47,7 @@ class userProfile extends React.Component {
         this.props
             .checkExist(this.state.username, this.state.email)
             .then(respond => {
+                debugger;
                 if (
                     respond.data.usernameexist &&
                     this.state.user.username !== this.state.username
@@ -78,13 +79,11 @@ class userProfile extends React.Component {
                     obj.username = this.state.username;
                     obj.email = this.state.email;
 
-                    this.props
-                        .editProfile(obj)
-                        .then(() =>
-                            this.context.router.push(
-                                `/authoried/userProfile/${this.state.user.id}`
-                            )
+                    this.props.editProfile(obj).then(() => {
+                        this.context.router.push(
+                            `/authoried/userProfile/${this.state.user.id}`
                         );
+                    });
                 }
             });
     }

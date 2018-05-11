@@ -9,6 +9,8 @@ import userProfileContainer from "../components/userProfile/userProfileContainer
 import newHomeContainer from "../components/homes/new/NewHomePageContainer";
 import indexHomeContainer from "../components/homes/index/IndexHomePageContainer";
 import HomeDetailPageContainer from "../components/homes/homedetailpage/HomeDetailPageContainer";
+import hostmanagerContainer from "../components/hostmanager/hostmanagerlist/hostmanagerContainer";
+import homemanagereditContainer from "../components/hostmanager/homemanageredit/homemanagereditContainer";
 export default (
     <Route path="/" component={Root}>
         <IndexRoute component={HomepageContainer} />
@@ -27,6 +29,8 @@ export default (
         <Route
             path="/homedetail/:home_id"
             component={HomeDetailPageContainer}
-        />>
+        />
+        <Route path="/manage/:user_id" component={hostmanagerContainer} />
+        <Route path="/homeedit/:home_id" component={homemanagereditContainer} />
     </Route>
 );

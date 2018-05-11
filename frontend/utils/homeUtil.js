@@ -5,9 +5,14 @@ export const UPDATE_HOME = "UPDATE_HOME";
 export const createhomeUtil = homeData => {
     return axios.post("/api/homes/create", homeData);
 };
-
+export const edithomeUtil = homeData => {
+    return axios.put("/api/manage/edithome", homeData);
+};
 export const homelistUtil = () => {
     return axios.get("/api/homes/homelist");
+};
+export const userhomelist = id => {
+    return axios.get(`/api/manage/${id}`);
 };
 
 export const gethomeUtil = home_id => {

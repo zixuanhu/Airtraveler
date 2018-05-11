@@ -30,7 +30,9 @@ router.put("/editprofile", (req, res) => {
                     return res.json({ token });
                 })
                 .catch(error => {
-                    console.log("******POST /api/auth/editProfile!!******");
+                    console.log(
+                        "******POST /api/auth/editProfile!! fail******"
+                    );
                     return res.json({ error: error });
                 });
         });
@@ -96,6 +98,7 @@ router.post("/login", (req, res) => {
                         {
                             id: user.get("id"),
                             username: user.get("username"),
+                            email: user.get("email"),
                             img: user.get("img")
                         },
                         jwtSecret.jwtSecret
