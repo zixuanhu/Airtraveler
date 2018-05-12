@@ -5,9 +5,9 @@ import HomepageContainer from "../components/homepage/HomepageContainer";
 import SignUpContainer from "../components/signup/SignUpContainer";
 import LoginContainer from "../components/login/LoginContainer";
 import authorizedContainer from "../components/authorized/authoriedContainer";
-import userProfileContainer from "../components/userProfile/userProfileContainer";
-import newHomeContainer from "../components/homes/new/NewHomePageContainer";
-import indexHomeContainer from "../components/homes/index/IndexHomePageContainer";
+import UserProfileContainer from "../components/userprofile/UserProfileContainer";
+import NewHomeContainer from "../components/homes/new/NewHomePageContainer";
+import IndexHomeContainer from "../components/homes/index/IndexHomePageContainer";
 import HomeDetailPageContainer from "../components/homes/homedetailpage/HomeDetailPageContainer";
 import hostmanagerContainer from "../components/hostmanager/hostmanagerlist/hostmanagerContainer";
 import homemanagereditContainer from "../components/hostmanager/homemanageredit/homemanagereditContainer";
@@ -22,10 +22,10 @@ export default (
         />
         <Route
             path="/userprofile/:identifer"
-            component={userProfileContainer}
+            component={UserProfileContainer}
         />
-        <Route path="/newhome" component={newHomeContainer} />
-        <Route path="/homes" component={indexHomeContainer} />
+        <Route path="/newhome" component={NewHomeContainer} />
+        <Route path="/homes" component={IndexHomeContainer} />
         <Route
             path="/homedetail/:home_id"
             component={HomeDetailPageContainer}

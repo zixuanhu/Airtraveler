@@ -29,7 +29,13 @@ class hostmanger extends React.Component {
                     }
                 >
                     <div className="caption gallery-card ">
-                        <img className="homeimg " src={home.img[0]} />
+                        <img
+                            className="homeimg"
+                            src={
+                                home.img[0] ||
+                                "http://pic.uzzf.com/up/2017-3/14901722897158766.jpg"
+                            }
+                        />
 
                         <br />
                         <p className="hometitle">ID: {home.id} </p>

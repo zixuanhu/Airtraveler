@@ -77,30 +77,34 @@ class newhome extends React.Component {
         let imgs = [];
         for (let i = 0; i < this.state.img.length; i++) {
             imgs.push(
-                <img
-                    src={this.state.img[i]}
-                    className="img-rounded"
-                    key={i}
-                    style={{
-                        width: "100%",
-                        maxHeight: "200px",
-                        padding: 3
-                    }}
-                    onClick={e => this.deletimg(e, i)}
-                />
+                <div className="col-md-4" key={i}>
+                    <img
+                        src={this.state.img[i]}
+                        className="img-rounded"
+                        style={{
+                            width: "100%",
+                            maxHeight: "200px",
+                            padding: 3
+                        }}
+                        onClick={e => this.deletimg(e, i)}
+                    />
+                </div>
             );
         }
-        if (this.state.img.length <= 3) {
+        if (this.state.img.length < 6) {
             imgs.push(
                 <div
+                    className="col-md-4"
                     style={{
+                        fontSize: "10px",
                         color: "#ccc",
                         border: "2px dashed",
                         borderColor: "#ccc",
-                        lineHeight: "150px",
+                        lineHeight: "95px",
                         textAlign: "center",
                         cursor: "pointer",
-                        backgroundColor: "#fff"
+                        backgroundColor: "#fff",
+                        width: "151px"
                     }}
                     key={this.state.img.length}
                     onClick={e => this.onUploadimg(e)}
@@ -121,12 +125,12 @@ class newhome extends React.Component {
         const imgComponent =
             this.state.img.length !== 0 ? (
                 <div
+                    className="form-group row"
                     style={{
                         padding: "5px",
-                        cursor: "pointer",
                         border: "1px solid #ccc",
-                        borderRadius: "5px",
-                        maxWidth: "360px"
+                        width: "100%",
+                        margin: "0"
                     }}
                 >
                     {this.imgs()}

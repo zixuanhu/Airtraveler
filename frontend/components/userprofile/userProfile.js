@@ -1,6 +1,6 @@
 import React from "react";
 import classnames from "classnames";
-class userProfile extends React.Component {
+class UserProfile extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -8,12 +8,29 @@ class userProfile extends React.Component {
             firstname: "",
             lastname: "",
             username: "",
-            gender: "",
+            gender: false,
             description: "",
             email: "",
             img: "",
             errors: {}
         };
+    }
+
+    componentWillMount() {
+        this.props.findUser(this.props.routeParams.identifer);
+    }
+
+    componentWillReceiveProps(nextProps) {
+        this.setState({
+            user: nextProps.user,
+            email: nextProps.user.email,
+            username: nextProps.user.username,
+            img: nextProps.user.img,
+            description: nextProps.user.description,
+            firstname: nextProps.user.firstname,
+            lastname: nextProps.user.lastname,
+            gender: nextProps.user.gender
+        });
     }
 
     onUploadImage(e) {
@@ -112,20 +129,6 @@ class userProfile extends React.Component {
                 }
             });
     }
-    componentWillMount() {
-        this.props.findUser(this.props.routeParams.identifer).then(() => {
-            this.setState({
-                user: this.props.user,
-                email: this.props.user.email,
-                username: this.props.user.username,
-                img: this.props.user.img,
-                description: this.props.user.description,
-                firstname: this.props.user.firstname,
-                lastname: this.props.user.lastname,
-                gender: this.props.user.gender
-            });
-        });
-    }
 
     updateForm(e) {
         e.preventDefault();
@@ -161,6 +164,23 @@ class userProfile extends React.Component {
                 onClick={e => this.onUploadImage(e)}
             />
         );
+
+        const {
+            firstname,
+            lastname,
+            username,
+            gender,
+            description,
+            email
+        } = this.state;
+        console.log("*********");
+
+        console.log(firstname);
+        console.log(lastname);
+        console.log(username);
+        console.log(email);
+        console.log(gender);
+        console.log(description);
         return (
             <div className="container">
                 <br />
@@ -185,7 +205,7 @@ class userProfile extends React.Component {
                                 type="text"
                                 name="username"
                                 placeholder="username"
-                                value={this.state.username}
+                                value={this.state.username || "useranme"}
                                 onChange={e => this.updateForm(e)}
                             />
                             {this.state.errors.username && (
@@ -206,7 +226,7 @@ class userProfile extends React.Component {
                                 type="text"
                                 name="email"
                                 placeholder="email"
-                                value={this.state.email}
+                                value={this.state.email || "email"}
                                 onChange={e => this.updateForm(e)}
                             />
                             {this.state.errors.email && (
@@ -222,7 +242,7 @@ class userProfile extends React.Component {
                                 type="text"
                                 name="firstname"
                                 placeholder="firstname"
-                                value={this.state.firstname}
+                                value={this.state.firstname || ""}
                                 onChange={e => this.updateForm(e)}
                             />
                         </div>
@@ -234,7 +254,7 @@ class userProfile extends React.Component {
                                 type="text"
                                 name="lastname"
                                 placeholder="lastname"
-                                value={this.state.lastname}
+                                value={this.state.lastname || ""}
                                 onChange={e => this.updateForm(e)}
                             />
                         </div>
@@ -246,7 +266,7 @@ class userProfile extends React.Component {
                                     type="radio"
                                     id="male"
                                     value="male"
-                                    checked={this.state.gender}
+                                    checked={this.state.gender === true}
                                     name="optionsRadiosinline"
                                     onChange={() =>
                                         this.setState({
@@ -261,8 +281,8 @@ class userProfile extends React.Component {
                                     type="radio"
                                     id="female"
                                     value="female"
-                                    name="optionsRadiosinline"
                                     checked={this.state.gender === false}
+                                    name="optionsRadiosinline"
                                     onChange={() =>
                                         this.setState({
                                             gender: false
@@ -284,7 +304,7 @@ class userProfile extends React.Component {
                                 type="text"
                                 name="description"
                                 placeholder="description"
-                                value={this.state.description}
+                                value={this.state.description || ""}
                                 onChange={e => this.updateForm(e)}
                             />
                         </div>
@@ -306,7 +326,7 @@ class userProfile extends React.Component {
     }
 }
 
-userProfile.contextTypes = {
+UserProfile.contextTypes = {
     router: React.PropTypes.object.isRequired
 };
-export default userProfile;
+export default UserProfile;

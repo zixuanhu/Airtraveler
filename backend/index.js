@@ -15,6 +15,7 @@ import manage from "./routes/manage";
 
 let app = express();
 app.use(bodyParser.json());
+app.use(express.static(path.join(__dirname, "src")));
 
 app.use("/api/auth", auth);
 app.use("/api/homes", homes);
@@ -27,7 +28,7 @@ app.use(
     webpackMiddleware(compiler, {
         hot: true,
         publicPath: webpackConfig.output.publicPath,
-        noProfile: true
+        noInfo: true
     })
 );
 
