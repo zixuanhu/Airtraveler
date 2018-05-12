@@ -8,7 +8,7 @@ class edithome extends React.Component {
             home: {},
             title: "",
             description: "",
-            img: "",
+            img: [],
             home_id: this.props.params.home_id,
             errors: {}
         };
@@ -44,8 +44,15 @@ class edithome extends React.Component {
             this.context.router.push(`/manage/${this.props.home.user_id}`);
         });
     }
-
-    onUploadImage(e) {
+    deletimg(e, key) {
+        e.preventDefault();
+        let imgs = this.state.img;
+        imgs.splice(key, 1);
+        this.setState({
+            img: imgs
+        });
+    }
+    onUploadimg(e) {
         e.preventDefault();
         cloudinary.openUploadWidget(
             {
@@ -55,51 +62,91 @@ class edithome extends React.Component {
             },
             (errors, response) => {
                 if (!errors) {
-                    console.log("******UPLOAD IMAGE SUCCESS!!******");
+                    console.log("******UPLOAD img SUCCESS!!******");
                     console.log(response[0].url);
+                    let imgs = this.state.img;
+
+                    imgs.push(response[0].url);
+
                     this.setState({
-                        img: response[0].url
+                        img: imgs
                     });
                 }
             }
         );
     }
+    imgs() {
+        let imgs = [];
+        for (let i = 0; i < this.state.img.length; i++) {
+            imgs.push(
+                <img
+                    src={this.state.img[i]}
+                    className="img-rounded"
+                    key={i}
+                    style={{
+                        width: "100%",
+                        maxHeight: "200px",
+                        padding: 3
+                    }}
+                    onClick={e => this.deletimg(e, i)}
+                />
+            );
+        }
+        if (this.state.img.length <= 3) {
+            imgs.push(
+                <div
+                    style={{
+                        color: "#ccc",
+                        border: "2px dashed",
+                        borderColor: "#ccc",
+                        lineHeight: "150px",
+                        textAlign: "center",
+                        cursor: "pointer",
+                        backgroundColor: "#fff"
+                    }}
+                    key={this.state.img.length}
+                    onClick={e => this.onUploadimg(e)}
+                >
+                    <span className="glyphicon glyphicon-upload" />
+                    Click to upload Image
+                </div>
+            );
+        }
+
+        return imgs;
+    }
 
     render() {
-        const imageComponent = this.state.img ? (
-            <div
-                style={{
-                    padding: "5px",
-                    cursor: "pointer",
-                    border: "1px solid #ccc",
-                    borderRadius: "5px",
-                    maxWidth: "360px"
-                }}
-                onClick={e => this.onUploadImage(e)}
-            >
-                <img
-                    src={this.state.img}
-                    className="img-rounded"
-                    style={{ width: "100%", maxHeight: "200px" }}
-                />
-            </div>
-        ) : (
-            <div
-                style={{
-                    color: "#ccc",
-                    border: "2px dashed",
-                    borderColor: "#ccc",
-                    lineHeight: "150px",
-                    textAlign: "center",
-                    cursor: "pointer",
-                    backgroundColor: "#fff"
-                }}
-                onClick={e => this.onUploadImage(e)}
-            >
-                <span className="glyphicon glyphicon-upload" />
-                Click to upload Image
-            </div>
-        );
+        const imgComponent =
+            this.state.img.length !== 0 ? (
+                <div
+                    style={{
+                        padding: "5px",
+                        cursor: "pointer",
+                        border: "1px solid #ccc",
+                        borderRadius: "5px",
+                        maxWidth: "360px"
+                    }}
+                >
+                    {this.imgs()}
+                </div>
+            ) : (
+                <div
+                    style={{
+                        color: "#ccc",
+                        border: "2px dashed",
+                        borderColor: "#ccc",
+                        lineHeight: "150px",
+                        textAlign: "center",
+                        cursor: "pointer",
+                        backgroundColor: "#fff"
+                    }}
+                    onClick={e => this.onUploadimg(e)}
+                >
+                    <span className="glyphicon glyphicon-upload" />
+                    Click to upload Image
+                </div>
+            );
         return (
             <div className="container">
                 <br />
@@ -149,7 +196,7 @@ class edithome extends React.Component {
                             )}
                         </div>
 
-                        {imageComponent}
+                        {imgComponent}
                         <br />
 
                         <button

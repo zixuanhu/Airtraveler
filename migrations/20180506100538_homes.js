@@ -3,7 +3,7 @@ exports.up = function(knex, Promise) {
         table.increments();
         table.string("title").notNullable();
         table.text("description").notNullable();
-        table.string("img").notNullable();
+        table.specificType("img", "TEXT[]").notNullable();
         table.integer("user_id").unsigned();
         table
             .foreign("user_id")

@@ -11,6 +11,11 @@ exports.up = function(knex, Promise) {
             .unique();
         table.string("password_digest").notNullable();
         table.string("img").notNullable();
+        table.string("integer");
+        table.string("firstname");
+        table.string("lastname");
+        table.boolean("gender");
+        table.string("description");
         table.timestamps();
     });
 };

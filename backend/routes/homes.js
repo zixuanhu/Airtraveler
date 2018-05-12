@@ -10,7 +10,7 @@ router.post("/create", (req, res) => {
     const description = req.body.description;
     const img = req.body.img;
     const user_id = req.body.user_id;
-
+    console.log(req.body);
     Home.forge(
         {
             title: title,
@@ -33,6 +33,7 @@ router.post("/create", (req, res) => {
         })
         .catch(err => {
             console.log("******POST /api/home/create FAIL!!******");
+            console.log(error);
             return res.json({
                 success: false,
                 error: err

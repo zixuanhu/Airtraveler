@@ -130,7 +130,7 @@ class SignUp extends React.Component {
                         this.props.login(loginData).then(() => {
                             console.log("create success");
                             this.context.router.push(
-                                `/authoried/signup/${respond.data.user.id}`
+                                `/userprofile/${respond.data.user.id}`
                             );
                         });
                     });

@@ -6,26 +6,40 @@ import User from "../models/user";
 let router = express.Router();
 router.put("/editprofile", (req, res) => {
     console.log("****** pass POST /api/user/editProfile!!******");
+    const firstname = req.body.firstname;
+    const lastname = req.body.lastname;
+    const description = req.body.description;
+    const gender = req.body.gender;
     const username = req.body.username;
     const email = req.body.email;
+    const img = req.body.img;
     const id = req.body.id;
 
     User.query({
-            where: {
-                id: id
-            }
-        })
+        where: {
+            id: id
+        }
+    })
         .fetch()
         .then(user => {
             user
-                .set({
-                    username: username,
-                    email: email
-                }, User)
+                .set(
+                    {
+                        username: username,
+                        email: email,
+                        img: img,
+                        gender: gender,
+                        firstname: firstname,
+                        lastname: lastname,
+                        description: description
+                    },
+                    User
+                )
                 .save()
                 .then(user => {
                     console.log("pass here");
-                    const token = jwt.sign({
+                    const token = jwt.sign(
+                        {
                             id: user.get("id"),
                             username: user.get("username"),
                             email: user.get("email"),
@@ -52,6 +66,7 @@ router.put("/editprofile", (req, res) => {
         })
         .catch(error => {
             console.log("******POST /api/user/editProfileProfile!!******");
+            console.log(error);
             return res.json({
                 error: error
             });
@@ -62,18 +77,23 @@ router.get("/:id", (req, res) => {
     console.log("******POST /api/user/getUser/:id Pass!!******");
     const id = req.params.id;
     User.query({
-            where: {
-                id: id
-            }
-        })
+        where: {
+            id: id
+        }
+    })
         .fetch()
         .then(user => {
             console.log("******POST /api/user/getUser/:id SUCCESS!!******");
-            const token = jwt.sign({
+            const token = jwt.sign(
+                {
                     id: user.get("id"),
                     username: user.get("username"),
                     email: user.get("email"),
-                    img: user.get("img")
+                    img: user.get("img"),
+                    gender: user.get("gender"),
+                    firstname: user.get("firstname"),
+                    lastname: user.get("lastname"),
+                    description: user.get("description")
                 },
                 jwtSecret.jwtSecret
             );

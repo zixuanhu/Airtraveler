@@ -5,7 +5,7 @@ class Footer extends React.Component {
             <div>
                 <footer
                     style={{
-                        position: "fixed",
+                        //position: "fixed",
                         bottom: 0,
                         backgroundColor: "#F2F4F5",
                         width: "100%"

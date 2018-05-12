@@ -31,6 +31,7 @@ class NavigationBar extends React.Component {
                         <img
                             style={{
                                 width: 35,
+                                height: 35,
                                 borderRadius: 50
                             }}
                             src={this.props.user.img}

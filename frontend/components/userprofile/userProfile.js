@@ -5,12 +5,35 @@ class userProfile extends React.Component {
         super(props);
         this.state = {
             user: {},
-            editing: true,
+            firstname: "",
+            lastname: "",
             username: "",
+            gender: "",
+            description: "",
             email: "",
             img: "",
             errors: {}
         };
+    }
+
+    onUploadImage(e) {
+        e.preventDefault();
+        cloudinary.openUploadWidget(
+            {
+                cloud_name: "airtraveler",
+                upload_preset: "airtraveler",
+                theme: "minimal"
+            },
+            (errors, response) => {
+                if (!errors) {
+                    console.log("******UPLOAD IMAGE SUCCESS!!******");
+                    console.log(response[0].url);
+                    this.setState({
+                        img: response[0].url
+                    });
+                }
+            }
+        );
     }
 
     submitForm() {
@@ -47,7 +70,7 @@ class userProfile extends React.Component {
         this.props
             .checkExist(this.state.username, this.state.email)
             .then(respond => {
-                debugger;
+                //debugger;
                 if (
                     respond.data.usernameexist &&
                     this.state.user.username !== this.state.username
@@ -78,11 +101,13 @@ class userProfile extends React.Component {
                     obj.id = this.state.user.id;
                     obj.username = this.state.username;
                     obj.email = this.state.email;
-
+                    obj.img = this.state.img;
+                    obj.gender = this.state.gender;
+                    obj.firstname = this.state.firstname;
+                    obj.lastname = this.state.lastname;
+                    obj.description = this.state.description;
                     this.props.editProfile(obj).then(() => {
-                        this.context.router.push(
-                            `/authoried/userProfile/${this.state.user.id}`
-                        );
+                        this.context.router.push(`/`);
                     });
                 }
             });
@@ -93,7 +118,11 @@ class userProfile extends React.Component {
                 user: this.props.user,
                 email: this.props.user.email,
                 username: this.props.user.username,
-                img: this.props.user.img
+                img: this.props.user.img,
+                description: this.props.user.description,
+                firstname: this.props.user.firstname,
+                lastname: this.props.user.lastname,
+                gender: this.props.user.gender
             });
         });
     }
@@ -105,12 +134,46 @@ class userProfile extends React.Component {
         });
     }
     editProfile() {
+        const imageComponent = this.state.img ? (
+            <div
+                style={{
+                    cursor: "pointer"
+                }}
+                onClick={e => this.onUploadImage(e)}
+            >
+                <img
+                    src={this.state.img}
+                    className="img-rounded"
+                    style={{
+                        width: 50,
+                        height: 50,
+                        borderRadius: 50
+                    }}
+                />
+            </div>
+        ) : (
+            <div
+                style={{
+                    width: 50,
+                    height: 50,
+                    borderRadius: 50
+                }}
+                onClick={e => this.onUploadImage(e)}
+            />
+        );
         return (
             <div className="container">
-                <h2>Please Edit</h2>
                 <br />
+
                 <div className="row">
                     <div className="col-md-6 col-md-offset-3">
+                        <h2>Please Edit</h2>
+                        <div>
+                            <label className="control-label">
+                                Profile picture
+                            </label>
+                            {imageComponent}
+                        </div>
                         <div
                             className={classnames("form-group", {
                                 "has-error": this.state.errors.username
@@ -152,7 +215,80 @@ class userProfile extends React.Component {
                                 </span>
                             )}
                         </div>
-
+                        <div>
+                            <label className="control-label">First Name</label>
+                            <input
+                                className="form-control"
+                                type="text"
+                                name="firstname"
+                                placeholder="firstname"
+                                value={this.state.firstname}
+                                onChange={e => this.updateForm(e)}
+                            />
+                        </div>
+                        <br />
+                        <div>
+                            <label className="control-label">Last Name</label>
+                            <input
+                                className="form-control"
+                                type="text"
+                                name="lastname"
+                                placeholder="lastname"
+                                value={this.state.lastname}
+                                onChange={e => this.updateForm(e)}
+                            />
+                        </div>
+                        <br />
+                        <div>
+                            <label className="control-label">Gender</label>
+                            <label className="checkbox-inline">
+                                <input
+                                    type="radio"
+                                    id="male"
+                                    value="male"
+                                    checked={this.state.gender}
+                                    name="optionsRadiosinline"
+                                    onChange={() =>
+                                        this.setState({
+                                            gender: true
+                                        })
+                                    }
+                                />
+                                male
+                            </label>
+                            <label className="checkbox-inline">
+                                <input
+                                    type="radio"
+                                    id="female"
+                                    value="female"
+                                    name="optionsRadiosinline"
+                                    checked={this.state.gender === false}
+                                    onChange={() =>
+                                        this.setState({
+                                            gender: false
+                                        })
+                                    }
+                                />
+                                female
+                            </label>
+                        </div>
+                        <br />
+                        <div>
+                            <label className="control-label">
+                                Self Instruction
+                            </label>
+                            <textarea
+                                rows="5"
+                                cols="20"
+                                className="form-control"
+                                type="text"
+                                name="description"
+                                placeholder="description"
+                                value={this.state.description}
+                                onChange={e => this.updateForm(e)}
+                            />
+                        </div>
+                        <br />
                         <button
                             className="btn btn-primary"
                             onClick={() => this.submitForm()}
@@ -164,35 +300,9 @@ class userProfile extends React.Component {
             </div>
         );
     }
-    userProfile() {
-        const user = this.state.user;
-        return (
-            <div className="container-fluid well span6">
-                <div className="row-fluid">
-                    <div className="span8">
-                        <h3>{user.username}</h3>
-                        <h6>{user.email}</h6>
-                    </div>
-                </div>
-            </div>
-        );
-    }
+
     render() {
-        const authitem = this.props.routeParams.authitem;
-        if (!this.state.editing) {
-            return (
-                <div>
-                    {this.userProfile()}
-                    <div>
-                        <a onClick={() => this.setState({ editing: true })}>
-                            click here to edit Profile
-                        </a>
-                    </div>
-                </div>
-            );
-        } else {
-            return <div>{this.editProfile()}</div>;
-        }
+        return <div>{this.editProfile()}</div>;
     }
 }
 

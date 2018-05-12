@@ -7,7 +7,7 @@ class newhome extends React.Component {
         this.state = {
             title: "",
             description: "",
-            image: "",
+            img: [],
             user_id: this.props.user.id,
             errors: {}
         };
@@ -23,7 +23,7 @@ class newhome extends React.Component {
         let obj = {};
         obj.title = this.state.title;
         obj.description = this.state.description;
-        obj.img = this.state.image;
+        obj.img = this.state.img;
         obj.user_id = this.state.user_id;
 
         this.props.createhome(obj).then(() => {
@@ -33,14 +33,15 @@ class newhome extends React.Component {
     }
 
     onAutoFill(e) {
+        let img = [];
         this.setState({
             title: "zixuan's home",
             description: "good good",
-            image: "http://pic.uzzf.com/up/2017-3/14901722897158766.jpg"
+            img: ["http://pic.uzzf.com/up/2017-3/14901722897158766.jpg"]
         });
     }
 
-    onUploadImage(e) {
+    onUploadimg(e) {
         e.preventDefault();
         cloudinary.openUploadWidget(
             {
@@ -50,67 +51,115 @@ class newhome extends React.Component {
             },
             (errors, response) => {
                 if (!errors) {
-                    console.log("******UPLOAD IMAGE SUCCESS!!******");
+                    console.log("******UPLOAD img SUCCESS!!******");
                     console.log(response[0].url);
+                    let imgs = this.state.img;
+
+                    imgs.push(response[0].url);
+
                     this.setState({
-                        image: response[0].url
+                        img: imgs
                     });
                 }
             }
         );
+    }
+    deletimg(e, key) {
+        e.preventDefault();
+        let imgs = this.state.img;
+        imgs.splice(key, 1);
+        this.setState({
+            img: imgs
+        });
+    }
+
+    imgs() {
+        let imgs = [];
+        for (let i = 0; i < this.state.img.length; i++) {
+            imgs.push(
+                <img
+                    src={this.state.img[i]}
+                    className="img-rounded"
+                    key={i}
+                    style={{
+                        width: "100%",
+                        maxHeight: "200px",
+                        padding: 3
+                    }}
+                    onClick={e => this.deletimg(e, i)}
+                />
+            );
+        }
+        if (this.state.img.length <= 3) {
+            imgs.push(
+                <div
+                    style={{
+                        color: "#ccc",
+                        border: "2px dashed",
+                        borderColor: "#ccc",
+                        lineHeight: "150px",
+                        textAlign: "center",
+                        cursor: "pointer",
+                        backgroundColor: "#fff"
+                    }}
+                    key={this.state.img.length}
+                    onClick={e => this.onUploadimg(e)}
+                >
+                    <span className="glyphicon glyphicon-upload" />
+                    Click to upload Image
+                </div>
+            );
+        }
+
+        return imgs;
     }
 
     render() {
         const readyToSubmit = Boolean(
             this.state.title && this.state.description
         );
-        const imageComponent = this.state.image ? (
-            <div
-                style={{
-                    padding: "5px",
-                    cursor: "pointer",
-                    border: "1px solid #ccc",
-                    borderRadius: "5px",
-                    maxWidth: "360px"
-                }}
-                onClick={e => this.onUploadImage(e)}
-            >
-                <img
-                    src={this.state.image}
-                    className="img-rounded"
-                    style={{ width: "100%", maxHeight: "200px" }}
-                />
-            </div>
-        ) : (
-            <div
-                style={{
-                    color: "#ccc",
-                    border: "2px dashed",
-                    borderColor: "#ccc",
-                    lineHeight: "150px",
-                    textAlign: "center",
-                    cursor: "pointer",
-                    backgroundColor: "#fff"
-                }}
-                onClick={e => this.onUploadImage(e)}
-            >
-                <span className="glyphicon glyphicon-upload" />
-                Click to upload Image
-            </div>
-        );
+        const imgComponent =
+            this.state.img.length !== 0 ? (
+                <div
+                    style={{
+                        padding: "5px",
+                        cursor: "pointer",
+                        border: "1px solid #ccc",
+                        borderRadius: "5px",
+                        maxWidth: "360px"
+                    }}
+                >
+                    {this.imgs()}
+                </div>
+            ) : (
+                <div
+                    style={{
+                        color: "#ccc",
+                        border: "2px dashed",
+                        borderColor: "#ccc",
+                        lineHeight: "150px",
+                        textAlign: "center",
+                        cursor: "pointer",
+                        backgroundColor: "#fff"
+                    }}
+                    onClick={e => this.onUploadimg(e)}
+                >
+                    <span className="glyphicon glyphicon-upload" />
+                    Click to upload Image
+                </div>
+            );
         return (
             <div className="container">
                 <br />
                 <div className="row">
                     <div className="col-md-6 col-md-offset-3">
-                        <h2>Please Create your home</h2>
-                        <hr />
+                        <h2> Please Create your home </h2> <hr />
                         <div
                             className={classnames("form-group", {
                                 "has-error": this.state.errors.title
                             })}
                         >
-                            <label className="control-label">title</label>
+                            <label className="control-label"> title </label>
                             <input
                                 className="form-control"
                                 type="text"
@@ -125,7 +174,6 @@ class newhome extends React.Component {
                                 </span>
                             )}
                         </div>
-
                         <div
                             className={classnames("form-group", {
                                 "has-error": this.state.errors.description
@@ -146,10 +194,7 @@ class newhome extends React.Component {
                                 </span>
                             )}
                         </div>
-
-                        {imageComponent}
-                        <br />
-
+                        {imgComponent} <br />
                         <button
                             className="btn btn-primary"
                             onClick={() => this.onSubmit()}
