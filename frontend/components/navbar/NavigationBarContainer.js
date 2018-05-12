@@ -1,6 +1,7 @@
 import { connect } from "react-redux";
-import * as authActions from "../../actions/authActions";
 import NavigationBar from "./NavigationBar";
+import * as authActions from "../../actions/authActions";
+
 export const mapStateToProps = state => {
     return {
         user: state.auth.user,
