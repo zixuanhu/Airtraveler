@@ -1,5 +1,6 @@
 import * as userApiUtil from "../utils/userUtil";
 import jwtDecode from "jwt-decode";
+
 export const updateUser = user => {
     return {
         type: userApiUtil.UPDATE_User,

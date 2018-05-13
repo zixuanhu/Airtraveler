@@ -318,7 +318,7 @@ class PageNav extends React.Component {
 
         return (
             <div>
-                <div style={placeHolder(this.state.navBar)} />
+                <div style={placeHolder(this.state.navBar)}/>
                 <div style={pageNavStyle(this.state.navBar)}>
                     <Link
                         linkUrl="#overview"
@@ -327,7 +327,7 @@ class PageNav extends React.Component {
                     >
                         <span style={linkStyle("overview")}> Overview</span>
                     </Link>
-                    <Dot />
+                    <Dot/>
                     <Link
                         linkUrl="#reviews"
                         id="reviews"
@@ -335,11 +335,11 @@ class PageNav extends React.Component {
                     >
                         <span style={linkStyle("reviews")}> Reviews</span>
                     </Link>
-                    <Dot />
+                    <Dot/>
                     <Link id="host" onClick={() => this.pageNavClick("host")}>
                         <span style={linkStyle("host")}> The Host</span>
                     </Link>
-                    <Dot />
+                    <Dot/>
                     <Link
                         id="location"
                         onClick={() => this.pageNavClick("location")}
@@ -353,7 +353,7 @@ class PageNav extends React.Component {
 }
 
 const ProfileLink = user => {
-    if (user.user === undefined) return <div />;
+    if (user.user === undefined) return <div/>;
 
     const divStyle = {
         display: "inline-block",
@@ -374,7 +374,7 @@ const ProfileLink = user => {
 
     return (
         <div style={divStyle}>
-            <img style={imgStyle} src={user.user.img} />
+            <img style={imgStyle} src={user.user.img}/>
             <p style={nameStyle}>{user.user.username}</p>
         </div>
     );
@@ -407,7 +407,7 @@ const TitleSection = info => {
         <Section>
             <div style={divStyle}>
                 <p style={titleStyle}>{info.title}</p>
-                <br />
+                <br/>
                 <a href="#" style={linkStyle}>
                     <span>{airbnbLocation}</span>
                 </a>
@@ -416,7 +416,7 @@ const TitleSection = info => {
                     <span>{reviews} Reviews</span>
                 </a>
             </div>
-            <ProfileLink user={info.hostprofile} />
+            <ProfileLink user={info.hostprofile}/>
         </Section>
     );
 };
@@ -437,7 +437,7 @@ const Icon = props => {
 
     return (
         <div style={divStyle}>
-            <i className={cName} aria-hidden="true" />
+            <i className={cName} aria-hidden="true"/>
             <p style={paraStyle}>{props.children}</p>
         </div>
     );
@@ -498,8 +498,8 @@ const TextConverter = props => {
 
 const OverviewInfo = overviewInfoText => (
     <Section>
-        <a name="overview" />
-        <br />
+        <a name="overview"/>
+        <br/>
         <TextConverter
             textBlock={overviewInfoText.overviewInfoText}
             idName={OverviewInfo}
@@ -552,7 +552,7 @@ const Space = () => {
                 </SpaceDetail>
                 <SpaceDetail section="Room type: ">{roomTypeD}</SpaceDetail>
             </div>
-            <br />
+            <br/>
             <Link linkUrl="#houseRules">House rules</Link>
         </Section>
     );
@@ -585,7 +585,7 @@ const AmenitiesList = () => {
             <Section idName="amenities">
                 {amenities.map((amenity, idx) => {
                     if (amenitiesIncluded[idx] === 1) {
-                        return <Amenity key={idx} amenity={amenity} />;
+                        return <Amenity key={idx} amenity={amenity}/>;
                     } else {
                         return (
                             <Amenity
@@ -631,7 +631,7 @@ const Prices = () => {
             </div>
             <div style={msgStyle}>
                 <span style={boldStyle}>Always communicate through Airbnb</span>
-                <br />
+                <br/>
                 <span>
                     To protect your payment, never transfer money or communicate
                     outside of the Airbnb website or app.
@@ -662,7 +662,7 @@ const Bedroom = props => {
 
     return (
         <div style={divStyle}>
-            <i className="fa fa-2x fa-bed" aria-hidden="true" />
+            <i className="fa fa-2x fa-bed" aria-hidden="true"/>
             <p style={bedroomsStyle}>Bedroom {props.number}</p>
             <span>{props.bed}</span>
         </div>
@@ -690,34 +690,34 @@ const SleepingArrangements = () => {
 
 const HouseRules = () => (
     <Section title="House rules">
-        <a name="houseRules" />
-        <TextConverter textBlock={houseRules} idName="house" />
+        <a name="houseRules"/>
+        <TextConverter textBlock={houseRules} idName="house"/>
     </Section>
 );
 
 const Cancellations = () => (
     <Section title="Cancellations">
-        <TextConverter textBlock={cancellations} idName="cancel" />
+        <TextConverter textBlock={cancellations} idName="cancel"/>
     </Section>
 );
 
 const SafetyFeatures = () => (
     <Section title="Safety featuers">
-        <TextConverter textBlock={safetyFeatures} idName="safe" />
+        <TextConverter textBlock={safetyFeatures} idName="safe"/>
     </Section>
 );
 
 const Accessibility = () => (
     <Section title="Accessibility">
-        <TextConverter textBlock={accessibility} idName="access" />
+        <TextConverter textBlock={accessibility} idName="access"/>
     </Section>
 );
 
 //UPDATE: remove reviews when section added
 const Availability = () => (
     <Section title="Availability">
-        <TextConverter textBlock={availability} idName="avail" />
-        <a name="reviews" />
+        <TextConverter textBlock={availability} idName="avail"/>
+        <a name="reviews"/>
     </Section>
 );
 
@@ -754,9 +754,9 @@ class HomeDetailPage extends React.Component {
             });
         }
     }
+
     componentWillMount() {
         const home_id = this.props.params.home_id;
-
         this.props.gethome(home_id).then(respond => {
             this.setState({
                 user: this.props.home.user,
@@ -766,6 +766,7 @@ class HomeDetailPage extends React.Component {
             });
         });
     }
+
     render() {
         const marginStyle = {
             marginLeft: this.state.marginLeft,
@@ -774,26 +775,26 @@ class HomeDetailPage extends React.Component {
 
         return (
             <div>
-                <Hero heroPic={this.state.home_img} />
+                <Hero heroPic={this.state.home_img}/>
                 <div style={marginStyle}>
-                    <PageNav margin={this.state.marginLeft} />
+                    <PageNav margin={this.state.marginLeft}/>
                     <TitleSection
                         title={this.state.home_title}
                         hostprofile={this.state.user}
                     />
-                    <IconInfo />
+                    <IconInfo/>
                     <OverviewInfo
                         overviewInfoText={this.state.home_description}
                     />
-                    <Space />
-                    <AmenitiesList />
-                    <Prices />
-                    <SleepingArrangements />
-                    <HouseRules />
-                    <Cancellations />
-                    <SafetyFeatures />
-                    <Accessibility />
-                    <Availability />
+                    <Space/>
+                    <AmenitiesList/>
+                    <Prices/>
+                    <SleepingArrangements/>
+                    <HouseRules/>
+                    <Cancellations/>
+                    <SafetyFeatures/>
+                    <Accessibility/>
+                    <Availability/>
                 </div>
             </div>
         );

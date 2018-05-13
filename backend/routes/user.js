@@ -3,6 +3,7 @@ import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 import jwtSecret from "../config/jwtSecret";
 import User from "../models/user";
+
 let router = express.Router();
 router.put("/editprofile", (req, res) => {
     console.log("****** pass POST /api/user/editProfile!!******");
@@ -14,6 +15,7 @@ router.put("/editprofile", (req, res) => {
     const email = req.body.email;
     const img = req.body.img;
     const id = req.body.id;
+    const phonenumber = req.body.phonenumber;
 
     User.query({
         where: {
@@ -31,7 +33,8 @@ router.put("/editprofile", (req, res) => {
                         gender: gender,
                         firstname: firstname,
                         lastname: lastname,
-                        description: description
+                        description: description,
+                        phonenumber: phonenumber
                     },
                     User
                 )
@@ -93,6 +96,7 @@ router.get("/:id", (req, res) => {
                     gender: user.get("gender"),
                     firstname: user.get("firstname"),
                     lastname: user.get("lastname"),
+                    phonenumber: user.get("phonenumber"),
                     description: user.get("description")
                 },
                 jwtSecret.jwtSecret

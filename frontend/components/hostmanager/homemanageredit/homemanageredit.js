@@ -13,6 +13,7 @@ class edithome extends React.Component {
             errors: {}
         };
     }
+
     componentWillMount() {
         this.props.gethome(this.state.home_id).then(() => {
             const home = this.props.home;
@@ -31,6 +32,7 @@ class edithome extends React.Component {
             [e.target.name]: e.target.value
         });
     }
+
     onSubmit() {
         let obj = {};
         obj.title = this.state.title;
@@ -44,6 +46,7 @@ class edithome extends React.Component {
             this.context.router.push(`/manage/${this.props.home.user_id}`);
         });
     }
+
     deletimg(e, key) {
         e.preventDefault();
         let imgs = this.state.img;
@@ -52,6 +55,7 @@ class edithome extends React.Component {
             img: imgs
         });
     }
+
     onUploadimg(e) {
         e.preventDefault();
         cloudinary.openUploadWidget(
@@ -75,6 +79,7 @@ class edithome extends React.Component {
             }
         );
     }
+
     imgs() {
         let imgs = [];
         for (let i = 0; i < this.state.img.length; i++) {
@@ -107,7 +112,7 @@ class edithome extends React.Component {
                     key={this.state.img.length}
                     onClick={e => this.onUploadimg(e)}
                 >
-                    <span className="glyphicon glyphicon-upload" />
+                    <span className="glyphicon glyphicon-upload"/>
                     Click to upload Image
                 </div>
             );
@@ -116,9 +121,10 @@ class edithome extends React.Component {
         return imgs;
     }
 
-    render() {
-        const imgComponent =
-            this.state.img.length !== 0 ? (
+
+    imgComponent() {
+        if (this.state.img.length !== 0) {
+            return (
                 <div
                     style={{
                         padding: "5px",
@@ -130,7 +136,10 @@ class edithome extends React.Component {
                 >
                     {this.imgs()}
                 </div>
-            ) : (
+            )
+        }
+        else {
+            return (
                 <div
                     style={{
                         color: "#ccc",
@@ -143,17 +152,22 @@ class edithome extends React.Component {
                     }}
                     onClick={e => this.onUploadimg(e)}
                 >
-                    <span className="glyphicon glyphicon-upload" />
+                    <span className="glyphicon glyphicon-upload"/>
                     Click to upload Image
                 </div>
             );
+        }
+    }
+
+
+    render() {
         return (
             <div className="container">
-                <br />
+                <br/>
                 <div className="row">
                     <div className="col-md-6 col-md-offset-3">
                         <h2>Please Create your home</h2>
-                        <hr />
+                        <hr/>
                         <div
                             className={classnames("form-group", {
                                 "has-error": this.state.errors.title
@@ -196,8 +210,8 @@ class edithome extends React.Component {
                             )}
                         </div>
 
-                        {imgComponent}
-                        <br />
+                        {this.imgComponent()}
+                        <br/>
 
                         <button
                             className="btn btn-success pull-right"
@@ -211,6 +225,7 @@ class edithome extends React.Component {
         );
     }
 }
+
 edithome.contextTypes = {
     router: React.PropTypes.object.isRequired
 };

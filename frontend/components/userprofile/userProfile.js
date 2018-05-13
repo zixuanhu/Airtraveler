@@ -1,5 +1,6 @@
 import React from "react";
 import classnames from "classnames";
+
 class UserProfile extends React.Component {
     constructor(props) {
         super(props);
@@ -10,6 +11,7 @@ class UserProfile extends React.Component {
             username: "",
             gender: false,
             description: "",
+            phonenumber: "",
             email: "",
             img: "",
             errors: {}
@@ -17,21 +19,27 @@ class UserProfile extends React.Component {
     }
 
     componentWillMount() {
-        this.props.findUser(this.props.routeParams.identifer);
+        this.props.findUser(this.props.routeParams.identifer).then(respond => {
+
+                this.setState({
+                    user: this.props.user,
+                    email: this.props.user.email,
+                    username: this.props.user.username,
+                    img: this.props.user.img,
+                    description: this.props.user.description,
+                    firstname: this.props.user.firstname,
+                    lastname: this.props.user.lastname,
+                    gender: this.props.user.gender
+                })
+                if (this.props.user.phonenumber !== null) {
+                    this.setState({
+                        phonenumber: this.props.user.phonenumber
+                    })
+                }
+            }
+        )
     }
 
-    componentWillReceiveProps(nextProps) {
-        this.setState({
-            user: nextProps.user,
-            email: nextProps.user.email,
-            username: nextProps.user.username,
-            img: nextProps.user.img,
-            description: nextProps.user.description,
-            firstname: nextProps.user.firstname,
-            lastname: nextProps.user.lastname,
-            gender: nextProps.user.gender
-        });
-    }
 
     onUploadImage(e) {
         e.preventDefault();
@@ -82,6 +90,14 @@ class UserProfile extends React.Component {
             });
             return;
         }
+        if (isNaN((this.state.phonenumber).replace(/(\s*$)/g, ""))) {
+            let errors = this.state.errors;
+            errors.phonenumber = "the phonenumber is invalid";
+            this.setState({
+                errors: errors
+            });
+            return;
+        }
 
         let readyToSubmit = true;
         this.props
@@ -123,6 +139,7 @@ class UserProfile extends React.Component {
                     obj.firstname = this.state.firstname;
                     obj.lastname = this.state.lastname;
                     obj.description = this.state.description;
+                    obj.phonenumber = this.state.phonenumber;
                     this.props.editProfile(obj).then(() => {
                         this.context.router.push(`/`);
                     });
@@ -136,9 +153,10 @@ class UserProfile extends React.Component {
             [e.target.name]: e.target.value
         });
     }
-    editProfile() {
-        const imageComponent = this.state.img ? (
-            <div
+
+    image() {
+        if (this.state.img) {
+            return (<div
                 style={{
                     cursor: "pointer"
                 }}
@@ -153,37 +171,27 @@ class UserProfile extends React.Component {
                         borderRadius: 50
                     }}
                 />
-            </div>
-        ) : (
-            <div
-                style={{
-                    width: 50,
-                    height: 50,
-                    borderRadius: 50
-                }}
-                onClick={e => this.onUploadImage(e)}
-            />
-        );
+            </div>);
+        } else
+            return (
+                <div
+                    style={{
+                        width: 50,
+                        height: 50,
+                        borderRadius: 50
+                    }}
+                    onClick={e => this.onUploadImage(e)}
+                />
 
-        const {
-            firstname,
-            lastname,
-            username,
-            gender,
-            description,
-            email
-        } = this.state;
-        console.log("*********");
+            );
 
-        console.log(firstname);
-        console.log(lastname);
-        console.log(username);
-        console.log(email);
-        console.log(gender);
-        console.log(description);
+    }
+
+
+    editProfile() {
         return (
             <div className="container">
-                <br />
+                <br/>
 
                 <div className="row">
                     <div className="col-md-6 col-md-offset-3">
@@ -192,7 +200,7 @@ class UserProfile extends React.Component {
                             <label className="control-label">
                                 Profile picture
                             </label>
-                            {imageComponent}
+                            {this.image()}
                         </div>
                         <div
                             className={classnames("form-group", {
@@ -205,7 +213,7 @@ class UserProfile extends React.Component {
                                 type="text"
                                 name="username"
                                 placeholder="username"
-                                value={this.state.username || "useranme"}
+                                value={this.state.username}
                                 onChange={e => this.updateForm(e)}
                             />
                             {this.state.errors.username && (
@@ -226,7 +234,7 @@ class UserProfile extends React.Component {
                                 type="text"
                                 name="email"
                                 placeholder="email"
-                                value={this.state.email || "email"}
+                                value={this.state.email}
                                 onChange={e => this.updateForm(e)}
                             />
                             {this.state.errors.email && (
@@ -242,11 +250,11 @@ class UserProfile extends React.Component {
                                 type="text"
                                 name="firstname"
                                 placeholder="firstname"
-                                value={this.state.firstname || ""}
+                                value={this.state.firstname}
                                 onChange={e => this.updateForm(e)}
                             />
                         </div>
-                        <br />
+                        <br/>
                         <div>
                             <label className="control-label">Last Name</label>
                             <input
@@ -254,11 +262,11 @@ class UserProfile extends React.Component {
                                 type="text"
                                 name="lastname"
                                 placeholder="lastname"
-                                value={this.state.lastname || ""}
+                                value={this.state.lastname}
                                 onChange={e => this.updateForm(e)}
                             />
                         </div>
-                        <br />
+                        <br/>
                         <div>
                             <label className="control-label">Gender</label>
                             <label className="checkbox-inline">
@@ -292,7 +300,27 @@ class UserProfile extends React.Component {
                                 female
                             </label>
                         </div>
-                        <br />
+                        <br/>
+                        <div
+                            className={classnames("form-group", {
+                                "has-error": this.state.errors.username
+                            })}
+                        >
+                            <label className="control-label">Phone number</label>
+                            <input
+                                className="form-control"
+                                type="text"
+                                name="phonenumber"
+                                placeholder="phonenumber"
+                                value={this.state.phonenumber}
+                                onChange={e => this.updateForm(e)}
+                            />
+                            {this.state.errors.phonenumber && (
+                                <span className="help-block">
+                                    {this.state.errors.phonenumber}
+                                </span>
+                            )}
+                        </div>
                         <div>
                             <label className="control-label">
                                 Self Instruction
@@ -304,11 +332,12 @@ class UserProfile extends React.Component {
                                 type="text"
                                 name="description"
                                 placeholder="description"
-                                value={this.state.description || ""}
+                                value={this.state.description}
                                 onChange={e => this.updateForm(e)}
                             />
                         </div>
-                        <br />
+                        <br/>
+
                         <button
                             className="btn btn-primary"
                             onClick={() => this.submitForm()}
@@ -326,7 +355,8 @@ class UserProfile extends React.Component {
     }
 }
 
-UserProfile.contextTypes = {
+UserProfile
+    .contextTypes = {
     router: React.PropTypes.object.isRequired
 };
 export default UserProfile;

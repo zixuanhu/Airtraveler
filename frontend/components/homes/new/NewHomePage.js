@@ -9,6 +9,13 @@ class newhome extends React.Component {
             description: "",
             img: [],
             user_id: this.props.user.id,
+            price: "",
+            EntirePlace: true,
+            guest_availability: 0,
+            room_availability: 0,
+            bed_availability: 0,
+            bedrooms: 0,
+            bathrooms: 0,
             errors: {}
         };
     }
@@ -19,11 +26,49 @@ class newhome extends React.Component {
             [e.target.name]: e.target.value
         });
     }
+
     onSubmit() {
+        this.setState({
+            errors: {}
+        });
+
+        if (this.state.title === "") {
+            let errors = {};
+            errors.title = "the tile cannot be empty";
+            this.setState({
+                errors: errors
+            });
+            return;
+        }
+        if (isNaN(this.state.price)) {
+            let errors = {};
+            errors.description = "the price is inValid";
+            this.setState({
+                errors: errors
+            });
+            return;
+        }
+        if (this.state.description === "") {
+            let errors = {};
+            errors.price = "the description cannot be empty";
+            this.setState({
+                errors: errors
+            });
+            return;
+        }
+        debugger
+        let img;
+        if (this.state.img.length === 0) {
+            img = ["http://pic.uzzf.com/up/2017-3/14901722897158766.jpg"]
+        } else {
+            img = this.state.img
+        }
+
+
         let obj = {};
         obj.title = this.state.title;
         obj.description = this.state.description;
-        obj.img = this.state.img;
+        obj.img = img;
         obj.user_id = this.state.user_id;
 
         this.props.createhome(obj).then(() => {
@@ -33,7 +78,7 @@ class newhome extends React.Component {
     }
 
     onAutoFill(e) {
-        let img = [];
+        e.preventDefault();
         this.setState({
             title: "zixuan's home",
             description: "good good",
@@ -64,6 +109,7 @@ class newhome extends React.Component {
             }
         );
     }
+
     deletimg(e, key) {
         e.preventDefault();
         let imgs = this.state.img;
@@ -80,12 +126,8 @@ class newhome extends React.Component {
                 <div className="col-md-4" key={i}>
                     <img
                         src={this.state.img[i]}
-                        className="img-rounded"
-                        style={{
-                            width: "100%",
-                            maxHeight: "200px",
-                            padding: 3
-                        }}
+                        className="img-rounded imgComponent-imgs"
+
                         onClick={e => this.deletimg(e, i)}
                     />
                 </div>
@@ -94,22 +136,11 @@ class newhome extends React.Component {
         if (this.state.img.length < 6) {
             imgs.push(
                 <div
-                    className="col-md-4"
-                    style={{
-                        fontSize: "10px",
-                        color: "#ccc",
-                        border: "2px dashed",
-                        borderColor: "#ccc",
-                        lineHeight: "95px",
-                        textAlign: "center",
-                        cursor: "pointer",
-                        backgroundColor: "#fff",
-                        width: "151px"
-                    }}
+                    className="col-md-4 imgComponent-imgs-upload"
                     key={this.state.img.length}
                     onClick={e => this.onUploadimg(e)}
                 >
-                    <span className="glyphicon glyphicon-upload" />
+                    <span className="glyphicon glyphicon-upload"/>
                     Click to upload Image
                 </div>
             );
@@ -118,46 +149,42 @@ class newhome extends React.Component {
         return imgs;
     }
 
+    imgComponent() {
+        if (this.state.img.length !== 0) {
+            return (
+                <div
+                    className="form-group row"
+                    id="imgComponent-imgdiv"
+                >
+                    {this.imgs()}
+                </div>
+            )
+        }
+        else {
+            return (
+                <div
+
+                    className="imgComponent-upload"
+                    onClick={e => this.onUploadimg(e)}
+                >
+                    <span className="glyphicon glyphicon-upload"/>
+                    Click to upload Image
+                </div>
+            );
+        }
+    }
+
     render() {
         const readyToSubmit = Boolean(
             this.state.title && this.state.description
         );
-        const imgComponent =
-            this.state.img.length !== 0 ? (
-                <div
-                    className="form-group row"
-                    style={{
-                        padding: "5px",
-                        border: "1px solid #ccc",
-                        width: "100%",
-                        margin: "0"
-                    }}
-                >
-                    {this.imgs()}
-                </div>
-            ) : (
-                <div
-                    style={{
-                        color: "#ccc",
-                        border: "2px dashed",
-                        borderColor: "#ccc",
-                        lineHeight: "150px",
-                        textAlign: "center",
-                        cursor: "pointer",
-                        backgroundColor: "#fff"
-                    }}
-                    onClick={e => this.onUploadimg(e)}
-                >
-                    <span className="glyphicon glyphicon-upload" />
-                    Click to upload Image
-                </div>
-            );
         return (
             <div className="container">
-                <br />
+                <br/>
                 <div className="row">
                     <div className="col-md-6 col-md-offset-3">
-                        <h2> Please Create your home </h2> <hr />
+                        <h2> Please Create your home </h2>
+                        <hr/>
                         <div
                             className={classnames("form-group", {
                                 "has-error": this.state.errors.title
@@ -178,17 +205,135 @@ class newhome extends React.Component {
                                 </span>
                             )}
                         </div>
+
+                        <div>
+                            <label className="control-label">Type of space</label>
+                            <label className="checkbox-inline">
+                                <input
+                                    type="radio"
+                                    id="male"
+                                    value="male"
+                                    checked={this.state.EntirePlace === true}
+                                    name="optionsRadiosinline"
+                                    onChange={() =>
+                                        this.setState({
+                                            EntirePlace: true
+                                        })
+                                    }
+                                />
+                                Entire Place
+                            </label>
+                            <label className="checkbox-inline">
+                                <input
+                                    type="radio"
+                                    id="female"
+                                    value="female"
+                                    checked={this.state.EntirePlace === false}
+                                    name="optionsRadiosinline"
+                                    onChange={() =>
+                                        this.setState({
+                                            EntirePlace: false
+                                        })
+                                    }
+                                />
+                                Private Room
+                            </label>
+                        </div>
+                        <div>
+                            <label className="control-label"> Guest Availability </label>
+                            <select className="form-control selectWidth">
+                                <option>0</option>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                                <option>6</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label className="control-label"> Rooms Availability </label>
+                            <select className="form-control selectWidth">
+                                <option>0</option>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                                <option>6</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label className="control-label"> bedrooms </label>
+                            <select className="form-control selectWidth">
+                                <option>0</option>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                                <option>6</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label className="control-label"> bathrooms </label>
+                            <select className="form-control selectWidth">
+                                <option>0</option>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                                <option>6</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label className="control-label"> beds Availability </label>
+                            <select className="form-control selectWidth">
+                                <option>0</option>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                                <option>6</option>
+                            </select>
+                        </div>
+                        <div
+
+                            className={classnames("form-group", {
+                                "has-error": this.state.errors.price
+                            })}
+                        >
+                            <label className="control-label"> Pirce (dollar/day) </label>
+                            <input
+                                className="form-control"
+                                type="text"
+                                name="price"
+                                placeholder="Your price"
+                                value={this.state.price}
+                                onChange={e => this.updateForm(e)}
+                            />
+                            {this.state.errors.title && (
+                                <span className="help-block">
+                                    {this.state.errors.title}
+                                </span>
+                            )}
+                        </div>
                         <div
                             className={classnames("form-group", {
                                 "has-error": this.state.errors.description
                             })}
                         >
                             <label className="control-label">description</label>
-                            <input
+                            <textarea
+                                rows="5"
+                                cols="20"
                                 className="form-control"
                                 type="text"
                                 name="description"
-                                placeholder="Your description"
+                                placeholder="description"
                                 value={this.state.description}
                                 onChange={e => this.updateForm(e)}
                             />
@@ -198,7 +343,11 @@ class newhome extends React.Component {
                                 </span>
                             )}
                         </div>
-                        {imgComponent} <br />
+
+                        <div>
+                            {this.imgComponent()}
+                        </div>
+                        <br/>
                         <button
                             className="btn btn-primary"
                             onClick={() => this.onSubmit()}
@@ -226,7 +375,9 @@ class newhome extends React.Component {
         );
     }
 }
-newhome.contextTypes = {
+
+newhome
+    .contextTypes = {
     router: React.PropTypes.object.isRequired
 };
 export default newhome;

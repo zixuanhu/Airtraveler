@@ -54,14 +54,14 @@ class SignUp extends React.Component {
                 if (
                     this.state.username.includes(
                         "@" ||
-                            "#" ||
-                            " " ||
-                            "$" ||
-                            "%" ||
-                            "^" ||
-                            "+" ||
-                            "-" ||
-                            "="
+                        "#" ||
+                        " " ||
+                        "$" ||
+                        "%" ||
+                        "^" ||
+                        "+" ||
+                        "-" ||
+                        "="
                     )
                 ) {
                     let errors = this.state.errors;
@@ -141,16 +141,16 @@ class SignUp extends React.Component {
     signUppage() {
         return (
             <div className="container">
-                <br />
+                <br/>
                 <div className="row">
                     <div className="col-md-6 col-md-offset-3">
-                        <h2> Please Sign Up </h2>{" "}
+                        <h2> Please Sign Up </h2>
                         <div
                             className={classnames("form-group", {
                                 "has-error": this.state.errors.username
                             })}
                         >
-                            <label className="control-label"> Username </label>{" "}
+                            <label className="control-label"> Username </label>
                             <input
                                 className="form-control"
                                 type="text"
@@ -158,20 +158,20 @@ class SignUp extends React.Component {
                                 placeholder="Your Username"
                                 value={this.state.username}
                                 onChange={e => this.updateForm(e)}
-                            />{" "}
+                            />
                             {this.state.errors.username && (
                                 <span className="help-block">
-                                    {" "}
-                                    {this.state.errors.username}{" "}
+
+                                    {this.state.errors.username}
                                 </span>
-                            )}{" "}
+                            )}
                         </div>
                         <div
                             className={classnames("form-group", {
                                 "has-error": this.state.errors.email
                             })}
                         >
-                            <label className="control-label"> Email </label>{" "}
+                            <label className="control-label"> Email </label>
                             <input
                                 className="form-control"
                                 type="text"
@@ -179,20 +179,20 @@ class SignUp extends React.Component {
                                 placeholder="Your Email"
                                 value={this.state.email}
                                 onChange={e => this.updateForm(e)}
-                            />{" "}
+                            />
                             {this.state.errors.email && (
                                 <span className="help-block">
-                                    {" "}
-                                    {this.state.errors.email}{" "}
+
+                                    {this.state.errors.email}
                                 </span>
-                            )}{" "}
+                            )}
                         </div>
                         <div
                             className={classnames("form-group", {
                                 "has-error": this.state.errors.password
                             })}
                         >
-                            <label className="control-label"> Password </label>{" "}
+                            <label className="control-label"> Password </label>
                             <input
                                 className="form-control"
                                 type="password"
@@ -200,13 +200,13 @@ class SignUp extends React.Component {
                                 placeholder="Password"
                                 value={this.state.password}
                                 onChange={e => this.updateForm(e)}
-                            />{" "}
+                            />
                             {this.state.errors.password && (
                                 <span className="help-block">
-                                    {" "}
-                                    {this.state.errors.password}{" "}
+
+                                    {this.state.errors.password}
                                 </span>
-                            )}{" "}
+                            )}
                         </div>
                         <div
                             className={classnames("form-group", {
@@ -214,8 +214,8 @@ class SignUp extends React.Component {
                             })}
                         >
                             <label className="control-label">
-                                Confirm Password{" "}
-                            </label>{" "}
+                                Confirm Password
+                            </label>
                             <input
                                 className="form-control"
                                 type="password"
@@ -223,37 +223,40 @@ class SignUp extends React.Component {
                                 placeholder="Confirm Password"
                                 value={this.state.password_confirm}
                                 onChange={e => this.updateForm(e)}
-                            />{" "}
+                            />
                             {this.state.errors.password_confirm && (
                                 <span className="help-block">
-                                    {" "}
-                                    {this.state.errors.password_confirm}{" "}
+
+                                    {this.state.errors.password_confirm}
                                 </span>
-                            )}{" "}
+                            )}
                         </div>
                         <button
                             className="btn btn-primary"
                             onClick={() => this.submitForm()}
                         >
-                            Submit{" "}
-                        </button>{" "}
+                            Submit
+                        </button>
+
                         {this.state.username ? (
                             <button
                                 className="btn btn-success pull-right"
                                 onClick={() => this.submitForm()}
                             >
-                                Go{" "}
+                                Go
                             </button>
                         ) : (
                             <button
                                 className="btn btn-warning pull-right"
                                 onClick={e => this.onAutoFill(e)}
                             >
-                                Demo{" "}
+                                Demo
                             </button>
-                        )}{" "}
-                    </div>{" "}
-                </div>{" "}
+                        )}
+                    </div>
+
+                </div>
+
             </div>
         );
     }

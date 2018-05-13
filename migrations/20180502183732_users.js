@@ -1,4 +1,4 @@
-exports.up = function(knex, Promise) {
+exports.up = function (knex, Promise) {
     return knex.schema.createTable("users", table => {
         table.increments();
         table
@@ -11,15 +11,15 @@ exports.up = function(knex, Promise) {
             .unique();
         table.string("password_digest").notNullable();
         table.string("img").notNullable();
-        table.string("integer");
-        table.string("firstname");
-        table.string("lastname");
+        table.bigint("phonenumber");
+        table.string("firstname").default("");
+        table.string("lastname").default("");
         table.boolean("gender");
-        table.string("description");
+        table.string("description").default("");
         table.timestamps();
     });
 };
 
-exports.down = function(knex, Promise) {
+exports.down = function (knex, Promise) {
     return knex.schema.dropTable("users");
 };

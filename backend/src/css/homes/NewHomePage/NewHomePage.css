@@ -1,0 +1,32 @@
+#imgComponent-imgdiv {
+
+    padding: 5px;
+    border: 1px solid #ccc;
+    width: 100%;
+    margin: 0;
+
+}
+
+.imgComponent-upload {
+    color: #ccc;
+    border: 2px dashed;
+    line-height: 114px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.imgComponent-imgs {
+    width: 100%;
+    max-height: 200px;
+    padding: 3px;
+}
+
+.imgComponent-imgs-upload {
+    font-size: 10px;
+    color: #ccc;
+    border: 2px dashed;
+    line-height: 95px;
+    text-align: center;
+    cursor: pointer;
+    width: 151px;
+}
