@@ -9,7 +9,7 @@ const authDefaultState = {
 
 export default (state = authDefaultState, action = {}) => {
     Object.freeze(state);
-    let user;
+
     switch (action.type) {
         case authUtil.SET_CURRENT_USER:
             const newAuthObj = {
@@ -25,13 +25,6 @@ export default (state = authDefaultState, action = {}) => {
             };
             const newErrorState = Object.assign({}, state, newAuthError);
             return newErrorState;
-        case authUtil.UPDATE_User:
-            const user = action.user;
-            const newUserState = Object.assign({}, state, {
-                user: user
-            });
-            return newUserState;
-
         default:
             return state;
     }

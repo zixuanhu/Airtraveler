@@ -22,7 +22,7 @@ class indexhomePage extends React.Component {
                     key={i}
                     className="col-sm-6 col-md-4 "
                     onClick={() =>
-                        this.context.router.push(`/homedetail/${home.id}`)
+                        this.context.router.push(`/homes/${home.id}`)
                     }
                 >
                     <div className="caption gallery-card ">

@@ -11,11 +11,9 @@ export default (state = homeDefaultState, action = {}) => {
         case homeUtil.UPDATE_HOMELIST:
             const homes = action.homes;
             const newHomelistState = Object.assign({}, state, { homes: homes });
-
             return newHomelistState;
         case homeUtil.UPDATE_HOME:
             const home = action.home;
-
             const newHomeState = Object.assign({}, state, { home: home });
             return newHomeState;
         default:

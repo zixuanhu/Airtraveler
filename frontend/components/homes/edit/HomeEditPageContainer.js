@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import homemanageredit from "./homemanageredit";
+import HomeEditPage from "./HomeEditPage";
 import * as homeActions from "../../../actions/homeActions";
 
 export const mapStateToProps = state => {
@@ -17,4 +17,4 @@ export const mapDispatchToProps = dispatch => {
     };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(homemanageredit);
+export default connect(mapStateToProps, mapDispatchToProps)(HomeEditPage);

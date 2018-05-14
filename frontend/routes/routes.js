@@ -8,9 +8,9 @@ import authorizedContainer from "../components/authorized/authoriedContainer";
 import UserProfileContainer from "../components/userprofile/UserProfileContainer";
 import NewHomeContainer from "../components/homes/new/NewHomePageContainer";
 import IndexHomeContainer from "../components/homes/index/IndexHomePageContainer";
-import HomeDetailPageContainer from "../components/homes/homedetailpage/HomeDetailPageContainer";
-import hostmanagerContainer from "../components/hostmanager/hostmanagerlist/hostmanagerContainer";
-import homemanagereditContainer from "../components/hostmanager/homemanageredit/homemanagereditContainer";
+import HomeDetailPageContainer from "../components/homes/detail/HomeDetailPageContainer";
+import HomeEditPageContainer from "../components/homes/edit/HomeEditPageContainer";
+import ManageHomePageContainer from "../components/manage/ManageHomePageContainer";
 export default (
     <Route path="/" component={Root}>
         <IndexRoute component={HomepageContainer} />
@@ -24,13 +24,10 @@ export default (
             path="/userprofile/:identifer"
             component={UserProfileContainer}
         />
-        <Route path="/newhome" component={NewHomeContainer} />
         <Route path="/homes" component={IndexHomeContainer} />
-        <Route
-            path="/homedetail/:home_id"
-            component={HomeDetailPageContainer}
-        />
-        <Route path="/manage/:user_id" component={hostmanagerContainer} />
-        <Route path="/homeedit/:home_id" component={homemanagereditContainer} />
+        <Route path="/homes/new" component={NewHomeContainer} />
+        <Route path="/homes/:home_id" component={HomeDetailPageContainer} />
+        <Route path="/homes/:home_id/edit" component={HomeEditPageContainer} />
+        <Route path="/manage/:user_id" component={ManageHomePageContainer} />
     </Route>
 );

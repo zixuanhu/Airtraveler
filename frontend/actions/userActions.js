@@ -1,9 +1,9 @@
 import * as userApiUtil from "../utils/userUtil";
 import jwtDecode from "jwt-decode";
 
-export const updateUser = user => {
+export const getUser = user => {
     return {
-        type: userApiUtil.UPDATE_User,
+        type: userApiUtil.GET_User,
         user
     };
 };
@@ -19,7 +19,7 @@ export const findUser = userData => {
         return userApiUtil.findUserUtil(userData).then(respond => {
             const token = respond.data.token;
             const user = jwtDecode(token);
-            dispatch(updateUser(user));
+            dispatch(getUser(user));
         });
     };
 };

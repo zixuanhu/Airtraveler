@@ -2,17 +2,28 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e3827670-0343-43de-b235-158dbff8bf01" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/backend/src/css/homes/NewHomePage/NewHomePage.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/reducers/userReducer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/routes/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/routes/user.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/routes/homes.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/routes/homes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/css/homes/NewHomePage/NewHomePage.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/actions/authActions.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/actions/authActions.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/actions/userActions.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/actions/userActions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/components/homes/homedetailpage/HomeDetailPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/homes/homedetailpage/HomeDetailPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/components/homes/homedetailpage/HomeDetailPage.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/components/homes/homedetailpage/HomeDetailPageContainer.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/components/homes/index/IndexHomePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/homes/index/IndexHomePage.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/components/homes/new/NewHomePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/homes/new/NewHomePage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/components/hostmanager/homemanageredit/homemanageredit.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/hostmanager/homemanageredit/homemanageredit.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/components/signUp/signUp.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/signUp/signUp.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/components/userprofile/userProfile.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/userprofile/userProfile.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/components/hostmanager/homemanageredit/homemanageredit.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/components/hostmanager/homemanageredit/homemanagereditContainer.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/components/hostmanager/hostmanagerlist/hostmanager.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/components/hostmanager/hostmanagerlist/hostmanagerContainer.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/components/navbar/NavigationBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/navbar/NavigationBar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/components/userprofile/UserProfile.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/userprofile/UserProfile.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/reducers/authReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/reducers/authReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/reducers/homeReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/reducers/homeReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/reducers/rootReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/reducers/rootReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/routes/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/routes/routes.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/utils/userUtil.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/utils/userUtil.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/20180502183732_users.js" beforeDir="false" afterPath="$PROJECT_DIR$/migrations/20180502183732_users.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/20180506100538_homes.js" beforeDir="false" afterPath="$PROJECT_DIR$/migrations/20180506100538_homes.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -28,14 +39,67 @@
     <splitter split-orientation="horizontal" split-proportion="0.5">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="NewHomePage.js" pinned="false" current-in-tab="true">
+          <file leaf-file-name="NewHomePage.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/frontend/components/homes/new/NewHomePage.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="18">
-                  <caret line="11" column="22" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
+                <state relative-caret-position="1263">
+                  <caret line="96" column="30" lean-forward="true" selection-start-line="96" selection-start-column="30" selection-end-line="96" selection-end-column="30" />
                   <folding>
                     <element signature="e#0#26#0" expanded="true" />
                   </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="homes.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/backend/routes/homes.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="139">
+                  <caret line="81" column="9" lean-forward="true" selection-start-line="81" selection-start-column="9" selection-end-line="81" selection-end-column="9" />
+                  <folding>
+                    <element signature="e#0#30#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="UserProfileContainer.js" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/frontend/components/userprofile/UserProfileContainer.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="-24">
+                  <folding>
+                    <element signature="e#0#38#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="userActions.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/frontend/actions/userActions.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="497">
+                  <caret line="30" column="35" selection-start-line="30" selection-start-column="35" selection-end-line="30" selection-end-column="35" />
+                  <folding>
+                    <element signature="e#0#49#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="authActions.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/frontend/actions/authActions.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="-15">
+                  <caret line="1" column="33" lean-forward="true" selection-start-line="1" selection-start-column="33" selection-end-line="1" selection-end-column="33" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="authReducer.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/frontend/reducers/authReducer.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="450">
+                  <caret line="26" column="33" selection-start-line="26" selection-start-column="33" selection-end-line="26" selection-end-column="33" />
                 </state>
               </provider>
             </entry>
@@ -47,8 +111,8 @@
           <file leaf-file-name="UserProfile.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/frontend/components/userprofile/UserProfile.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="289">
-                  <caret line="293" column="15" selection-start-line="293" selection-start-column="15" selection-end-line="293" selection-end-column="15" />
+                <state relative-caret-position="171">
+                  <caret line="21" column="69" selection-start-line="21" selection-start-column="69" selection-end-line="21" selection-end-column="69" />
                 </state>
               </provider>
             </entry>
@@ -77,14 +141,19 @@
         <option value="$PROJECT_DIR$/backend/routes/user.js" />
         <option value="$PROJECT_DIR$/migrations/20180502183732_users.js" />
         <option value="$PROJECT_DIR$/frontend/components/homes/homedetailpage/HomeDetailPage.js" />
-        <option value="$PROJECT_DIR$/frontend/actions/userActions.js" />
-        <option value="$PROJECT_DIR$/frontend/utils/userUtil.js" />
-        <option value="$PROJECT_DIR$/frontend/components/userprofile/UserProfile.js" />
         <option value="$PROJECT_DIR$/frontend/components/hostmanager/homemanageredit/homemanageredit.js" />
         <option value="$PROJECT_DIR$/backend/src/css/main.css" />
         <option value="$PROJECT_DIR$/backend/src/css/homes/NewHomePage/NewHomePage.css" />
         <option value="$PROJECT_DIR$/frontend/components/signup/SignUp.js" />
         <option value="$PROJECT_DIR$/frontend/components/homes/new/NewHomePage.js" />
+        <option value="$PROJECT_DIR$/backend/routes/homes.js" />
+        <option value="$PROJECT_DIR$/frontend/actions/userActions.js" />
+        <option value="$PROJECT_DIR$/frontend/utils/userUtil.js" />
+        <option value="$PROJECT_DIR$/frontend/reducers/userReducer.js" />
+        <option value="$PROJECT_DIR$/frontend/reducers/rootReducer.js" />
+        <option value="$PROJECT_DIR$/frontend/actions/authActions.js" />
+        <option value="$PROJECT_DIR$/frontend/reducers/authReducer.js" />
+        <option value="$PROJECT_DIR$/frontend/components/userprofile/UserProfile.js" />
       </list>
     </option>
   </component>
@@ -105,7 +174,7 @@
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1058" />
+    <option name="x" value="1357" />
     <option name="y" value="23" />
     <option name="width" value="2445" />
     <option name="height" value="969" />
@@ -115,128 +184,59 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="Airtraveler_05122018" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Airtraveler_05122018" type="462c0819:PsiDirectoryNode" />
+              <item name="Airtraveler_05132018 " type="b2602c69:ProjectViewProjectNode" />
+              <item name="Airtraveler_05132018 " type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="Airtraveler_05122018" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Airtraveler_05122018" type="462c0819:PsiDirectoryNode" />
+              <item name="Airtraveler_05132018 " type="b2602c69:ProjectViewProjectNode" />
+              <item name="Airtraveler_05132018 " type="462c0819:PsiDirectoryNode" />
               <item name="backend" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="Airtraveler_05122018" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Airtraveler_05122018" type="462c0819:PsiDirectoryNode" />
+              <item name="Airtraveler_05132018 " type="b2602c69:ProjectViewProjectNode" />
+              <item name="Airtraveler_05132018 " type="462c0819:PsiDirectoryNode" />
               <item name="backend" type="462c0819:PsiDirectoryNode" />
               <item name="routes" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="Airtraveler_05122018" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Airtraveler_05122018" type="462c0819:PsiDirectoryNode" />
-              <item name="backend" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Airtraveler_05122018" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Airtraveler_05122018" type="462c0819:PsiDirectoryNode" />
-              <item name="backend" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Airtraveler_05122018" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Airtraveler_05122018" type="462c0819:PsiDirectoryNode" />
-              <item name="backend" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
-              <item name="homes" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Airtraveler_05122018" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Airtraveler_05122018" type="462c0819:PsiDirectoryNode" />
+              <item name="Airtraveler_05132018 " type="b2602c69:ProjectViewProjectNode" />
+              <item name="Airtraveler_05132018 " type="462c0819:PsiDirectoryNode" />
               <item name="frontend" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="Airtraveler_05122018" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Airtraveler_05122018" type="462c0819:PsiDirectoryNode" />
-              <item name="frontend" type="462c0819:PsiDirectoryNode" />
-              <item name="actions" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Airtraveler_05122018" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Airtraveler_05122018" type="462c0819:PsiDirectoryNode" />
+              <item name="Airtraveler_05132018 " type="b2602c69:ProjectViewProjectNode" />
+              <item name="Airtraveler_05132018 " type="462c0819:PsiDirectoryNode" />
               <item name="frontend" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="Airtraveler_05122018" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Airtraveler_05122018" type="462c0819:PsiDirectoryNode" />
-              <item name="frontend" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="homes" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Airtraveler_05122018" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Airtraveler_05122018" type="462c0819:PsiDirectoryNode" />
-              <item name="frontend" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="homes" type="462c0819:PsiDirectoryNode" />
-              <item name="new" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Airtraveler_05122018" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Airtraveler_05122018" type="462c0819:PsiDirectoryNode" />
-              <item name="frontend" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="hostmanager" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Airtraveler_05122018" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Airtraveler_05122018" type="462c0819:PsiDirectoryNode" />
-              <item name="frontend" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="hostmanager" type="462c0819:PsiDirectoryNode" />
-              <item name="homemanageredit" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Airtraveler_05122018" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Airtraveler_05122018" type="462c0819:PsiDirectoryNode" />
-              <item name="frontend" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="signup" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Airtraveler_05122018" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Airtraveler_05122018" type="462c0819:PsiDirectoryNode" />
+              <item name="Airtraveler_05132018 " type="b2602c69:ProjectViewProjectNode" />
+              <item name="Airtraveler_05132018 " type="462c0819:PsiDirectoryNode" />
               <item name="frontend" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
               <item name="userprofile" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="Airtraveler_05122018" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Airtraveler_05122018" type="462c0819:PsiDirectoryNode" />
+              <item name="Airtraveler_05132018 " type="b2602c69:ProjectViewProjectNode" />
+              <item name="Airtraveler_05132018 " type="462c0819:PsiDirectoryNode" />
               <item name="frontend" type="462c0819:PsiDirectoryNode" />
               <item name="reducers" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="Airtraveler_05122018" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Airtraveler_05122018" type="462c0819:PsiDirectoryNode" />
+              <item name="Airtraveler_05132018 " type="b2602c69:ProjectViewProjectNode" />
+              <item name="Airtraveler_05132018 " type="462c0819:PsiDirectoryNode" />
               <item name="frontend" type="462c0819:PsiDirectoryNode" />
               <item name="utils" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Airtraveler_05122018" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Airtraveler_05122018" type="462c0819:PsiDirectoryNode" />
-              <item name="shortcut" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -290,6 +290,8 @@
       <workItem from="1526181715076" duration="7000" />
       <workItem from="1526182166361" duration="7460000" />
       <workItem from="1526244483554" duration="599000" />
+      <workItem from="1526247724781" duration="60000" />
+      <workItem from="1526278124804" duration="894000" />
     </task>
     <task id="LOCAL-00001" summary="push">
       <created>1526109273634</created>
@@ -305,24 +307,32 @@
       <option name="project" value="LOCAL" />
       <updated>1526159979941</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="push">
+      <created>1526247742943</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1526247742943</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15222000" />
+    <option name="totallyTimeSpent" value="16176000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1058" y="23" width="2445" height="969" extended-state="0" />
+    <frame x="1357" y="23" width="2445" height="969" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.7698962" visible="true" weight="0.12236461" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.766436" visible="true" weight="0.19594873" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32902467" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info id="npm" order="2" side_tool="true" />
-      <window_info id="Structure" order="1" sideWeight="0.2301038" side_tool="true" visible="true" weight="0.12236461" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.32079905" />
+      <window_info id="Structure" order="1" sideWeight="0.23356402" side_tool="true" visible="true" weight="0.19594873" />
+      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.32079905" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -448,9 +458,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/components/navbar/NavigationBarContainer.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/frontend/components/navbar/NavigationBar.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="450">
@@ -485,9 +492,6 @@
           <caret line="9" column="37" selection-start-line="9" selection-start-column="7" selection-end-line="9" selection-end-column="37" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/components/navbar/NavigationBarContainer.js">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/frontend/components/navbar/NavigationBar.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -524,9 +528,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/components/navbar/NavigationBarContainer.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/frontend/components/navbar/NavigationBar.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="324">
@@ -562,9 +563,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/components/navbar/NavigationBarContainer.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/frontend/components/navbar/NavigationBar.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="414">
@@ -593,11 +591,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/reducers/authReducer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-250" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/shortcut/reset_db.sh">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -619,9 +612,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/components/homes/homedetailpage/HomeDetailPageContainer.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/frontend/routes/routes.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
@@ -632,51 +622,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/actions/userActions.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="281">
-          <caret line="20" column="42" selection-start-line="20" selection-start-column="42" selection-end-line="20" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/routes/user.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1">
-          <caret line="20" column="16" lean-forward="true" selection-start-line="20" selection-start-column="16" selection-end-line="20" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/components/homes/homedetailpage/HomeDetailPage.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="169">
-          <caret line="758" column="50" selection-start-line="758" selection-start-column="50" selection-end-line="758" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/utils/userUtil.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/components/hostmanager/homemanageredit/homemanageredit.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="133" column="41" lean-forward="true" selection-start-line="133" selection-start-column="41" selection-end-line="133" selection-end-column="41" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/src/css/homes/NewHomePage/NewHomePage.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="522">
-          <caret line="29" column="20" selection-start-line="29" selection-start-column="20" selection-end-line="29" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/components/homes/homedetailpage/HomeDetailPage.js" />
+    <entry file="file://$PROJECT_DIR$/frontend/components/hostmanager/homemanageredit/homemanageredit.js" />
+    <entry file="file://$PROJECT_DIR$/backend/src/css/homes/NewHomePage/NewHomePage.css" />
     <entry file="file://$PROJECT_DIR$/backend/src/css/main.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="72">
@@ -698,20 +646,91 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/components/userprofile/UserProfile.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="293" column="15" selection-start-line="293" selection-start-column="15" selection-end-line="293" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/frontend/components/homes/new/NewHomePage.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="11" column="22" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
+        <state relative-caret-position="1263">
+          <caret line="96" column="30" lean-forward="true" selection-start-line="96" selection-start-column="30" selection-end-line="96" selection-end-column="30" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/reducers/rootReducer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/reducers/userReducer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="22" column="2" selection-start-line="22" selection-start-column="2" selection-end-line="22" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/utils/userUtil.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/routes/user.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1022">
+          <caret line="20" column="16" lean-forward="true" selection-start-line="20" selection-start-column="16" selection-end-line="20" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/reducers/authReducer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="26" column="33" selection-start-line="26" selection-start-column="33" selection-end-line="26" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/actions/authActions.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-15">
+          <caret line="1" column="33" lean-forward="true" selection-start-line="1" selection-start-column="33" selection-end-line="1" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/actions/userActions.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="497">
+          <caret line="30" column="35" selection-start-line="30" selection-start-column="35" selection-end-line="30" selection-end-column="35" />
+          <folding>
+            <element signature="e#0#49#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/routes/homes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="139">
+          <caret line="81" column="9" lean-forward="true" selection-start-line="81" selection-start-column="9" selection-end-line="81" selection-end-column="9" />
+          <folding>
+            <element signature="e#0#30#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/components/userprofile/UserProfileContainer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-24">
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/components/userprofile/UserProfile.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="21" column="69" selection-start-line="21" selection-start-column="69" selection-end-line="21" selection-end-column="69" />
         </state>
       </provider>
     </entry>

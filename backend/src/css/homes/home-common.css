@@ -1,13 +1,14 @@
+/* For homes images */
 #imgComponent-imgdiv {
-
+    background-color: #fff;
     padding: 5px;
     border: 1px solid #ccc;
     width: 100%;
     margin: 0;
-
 }
 
 .imgComponent-upload {
+    background-color: #fff;
     color: #ccc;
     border: 2px dashed;
     line-height: 114px;
@@ -17,16 +18,17 @@
 
 .imgComponent-imgs {
     width: 100%;
-    max-height: 200px;
+    height: 200px;
     padding: 3px;
 }
 
 .imgComponent-imgs-upload {
-    font-size: 10px;
     color: #ccc;
     border: 2px dashed;
-    line-height: 95px;
+    line-height: 180px;
     text-align: center;
     cursor: pointer;
-    width: 151px;
+    width: 100%;
+    margin: 3px;
+    height: 200px;
 }

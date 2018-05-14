@@ -1,5 +1,6 @@
 import * as AuthApiUtil from "../utils/authUtil";
 import jwtDecode from "jwt-decode";
+
 export const setCurrentUser = user => {
     //debugger;
     return {
@@ -14,12 +15,6 @@ export const setAuthError = error => {
     };
 };
 
-export const updateUser = user => {
-    return {
-        type: AuthApiUtil.UPDATE_User,
-        user
-    };
-};
 
 export const signup = userData => {
     return dispatch => {
@@ -37,7 +32,6 @@ export const login = userData => {
                 const token = respond.data.token;
                 const userInfo = jwtDecode(token);
                 localStorage.setItem("jwtToken", token);
-
                 dispatch(setCurrentUser(userInfo));
             }
         });

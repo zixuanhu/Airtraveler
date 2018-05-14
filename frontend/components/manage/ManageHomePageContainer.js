@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
-import hostmanger from "./hostmanager";
-import * as homeActions from "../../../actions/homeActions";
+import ManageHomePage from "./ManageHomePage";
+import * as homeActions from "../../actions/homeActions";
 
 export const mapStateToProps = state => {
     return {
@@ -16,4 +16,4 @@ export const mapDispatchToProps = dispatch => {
     };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(hostmanger);
+export default connect(mapStateToProps, mapDispatchToProps)(ManageHomePage);

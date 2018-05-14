@@ -2,7 +2,7 @@ import React from "react";
 import classnames from "classnames";
 import { debug } from "util";
 
-class hostmanger extends React.Component {
+class ManageHomePage extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -25,7 +25,7 @@ class hostmanger extends React.Component {
                     key={i}
                     className="col-sm-6 col-md-4 "
                     onClick={() =>
-                        this.context.router.push(`/homeedit/${home.id}`)
+                        this.context.router.push(`/homes/${home.id}/edit`)
                     }
                 >
                     <div className="caption gallery-card ">
@@ -53,8 +53,8 @@ class hostmanger extends React.Component {
     }
 }
 
-hostmanger.contextTypes = {
+ManageHomePage.contextTypes = {
     router: React.PropTypes.object.isRequired
 };
 
-export default hostmanger;
+export default ManageHomePage;
