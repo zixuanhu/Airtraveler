@@ -8,7 +8,7 @@ import authorizedContainer from "../components/authorized/authoriedContainer";
 import UserProfileContainer from "../components/userprofile/UserProfileContainer";
 import NewHomeContainer from "../components/homes/new/NewHomePageContainer";
 import IndexHomeContainer from "../components/homes/index/IndexHomePageContainer";
-import HomeDetailPageContainer from "../components/homes/detail/HomeDetailPageContainer";
+import HomeDetailPageContainer from "../components/homes/detail/detail_index/HomeDetailPageContainer";
 import HomeEditPageContainer from "../components/homes/edit/HomeEditPageContainer";
 import ManageHomePageContainer from "../components/manage/ManageHomePageContainer";
 export default (

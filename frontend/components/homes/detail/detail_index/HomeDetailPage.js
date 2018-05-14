@@ -1,69 +1,14 @@
 import React from "react";
-import classnames from "classnames";
+import Hero from "../detail_asset/Hero";
+import IconInfo from "../detail_asset/Iconinfo"
 
-const price = "$175";
 
-const rentalSize = "Entire home/apt";
-const guests = "2 guests";
-const bedrooms = "1 bedroom";
-const beds = "1 bed";
-const bedTypes = "1 king bed";
-const houseRules =
-    "No smoking\b\
-Not suitable for pets\b\
-No parties or events\b\
-Check in time is 3PM - 10PM\b\
-We would like to bring your attention to a few request while you enjoy your stay:\b\
-\
-1. As this is a private home, your respectful use of furnishings, decor, facilities is truly appreciated. Quiet hours 11 pm-8 am. Max occupancy determined at the time of your reservation. US 50 per night per person will be charge when default on notifying the correct number of parties.\b\
-\
-2. Suntan lotion easily damages furnishings. Please keep this on mind when sitting down.\b\
-\
-3. This is a NON SMOKING property but you are welcome to do so in the balcony area. Thank you for your respect for future visitors staying after you.\b\
-\
-4. No PETS allowed.\b\
-\
-5. AC is operated with associated remote control in the room. Please don't leave the air conditioning running while not in the condo or in the room or while windows are open. It only takes a few minutes to cool down the room when the air conditioning is turned on. We attempt to keep our rental rates competitive, so your assistance in limiting the use of AC is truly appreciated.\b\
-\
-6. Wi Fi Network provided while checking in.\b\
-\
-7. GARBAGE is to be placed at the white garbage bins located on guest parking space on highway 200 entrance door.\b\
-\
-8. MAID SERVICES provided once per week. If maid services are required more than this, arrangements can be made at an additional price.\b\
-\
-9. ROOF GARDEN use of the infinity pool, Jacuzzi, BBQ, GYM and the rest of amenities are available 8 am-10 pm. Please notice, you are required to keep the area clean after use.\b\
-\
-10. PARKING allowed only at the assigned spot (next to the elevator). We require advanced notice you will use the parking to provide a remote control to operate garage door.\b\
-\
-11. Interphone provided when checking in.\b\
-\
-A second misbehavior warning will result in guest vacating the Premises with no refund.\b\
-\
-Additional information about rental rates\n\
-*Approximate Monthly rates, actual rate will depend on the days of the month you stay\b\
-\
-Property Policy: Romantic Amapas under no circumstance will be held responsible for any guest who does not respect said policies, failure to abide will result in the cancellation of the reservation and/or eviction from the vacation property without any right of refund.\b\
-\
-Check-in: The normal check-in time is 3:00 pm and check-out time is 12:00 pm. We will meet you at the property and give you one set of keys and inspect the property with you to assure that all is well. If you will need more than one set of keys or if you need a special check-in or check-out time please let us know and we will do our best to accommodate you.\b\
-\
-Hold Harmless: Romantic Amapas and the property owners will be held harmless for any problems, injuries, loss or damage to the property or to any persons occupying the rental property. Problems relating to construction and construction noises are not controllable by Romantic Amapas or the property owners and we will in no way be held responsible.\b\
-\
-Number of Guests: The number of guests shown on your booking confirmation is the maximum allowed to occupy the rental property. If you exceed the max capacity of the unit you will be charged an additional $50 USD per night per additional person and will be allowed to occupy the property only if the property owner and/or representative approves and if the property can properly accommodate you. If guest fails to notify Romantic Amapas or anyone and brings more people into the property, the guest will have to leave the property immediately without any refund including the security deposit if applicable.\b\
-\
-Should you require anything during your stay you can (EMAIL HIDDEN) or call +(PHONE NUMBER HIDDEN)\b\
-\
-Enjoy your stay.";
-const cancellations =
-    "Super Strict 60\b\
-\
-Cancel up to 60 days before check in and get a 50% refund (minus service fees). Cancel within 60 days of your trip and the reservation is non-refundable. Service fees are refunded when cancellation happens before check in and within 48 hours of booking.";
-const safetyFeatures = "First aid kit";
 const accessibility = "Elevator";
 const availability = "5 nights minimum stay";
 const accomodatesD = 3;
-const bathroomsD = 2;
+const bath_availabilityD = 2;
 const bedroomsD = 1;
-const bedsD = 1;
+
 const checkInD = "3PM - 10PM";
 const checkOutD = "12PM (noon)";
 const propertyTypeD = "Apartment";
@@ -136,42 +81,10 @@ const amenitiesIncluded = [
     0,
     0
 ];
-const extraPeople = "No Charge";
-const securityDeposit = "$500";
+
 const airbnbLocation = "Puerto Vallarta, Jalisco, Mexico";
 const reviews = 46;
 
-const Hero = heroPic => {
-    const divStyle = {
-        position: "relative",
-        backgroundImage: "url(" + heroPic.heroPic + ")",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        height: 320
-    };
-
-    const photosButtonStyle = {
-        position: "absolute",
-        bottom: 0,
-        margin: "0 0 15px 15px",
-        fontSize: 13,
-        padding: "8px 20px",
-        fontFamily: "Poppins, sans-serif",
-        color: "#484848",
-        fontWeight: 500,
-        borderRadius: 4,
-        backgroundColor: "white",
-        border: "1px solid #c4c4c4"
-    };
-
-    return (
-        <div style={divStyle}>
-            <button id="viewPhotos" style={photosButtonStyle}>
-                View Photos
-            </button>
-        </div>
-    );
-};
 
 const Section = props => {
     const divStyle = {
@@ -353,6 +266,7 @@ class PageNav extends React.Component {
 }
 
 const ProfileLink = user => {
+
     if (user.user === undefined) return <div/>;
 
     const divStyle = {
@@ -406,7 +320,7 @@ const TitleSection = info => {
     return (
         <Section>
             <div style={divStyle}>
-                <p style={titleStyle}>{info.title}</p>
+                <p style={titleStyle}>{info.info.title}</p>
                 <br/>
                 <a href="#" style={linkStyle}>
                     <span>{airbnbLocation}</span>
@@ -416,43 +330,11 @@ const TitleSection = info => {
                     <span>{reviews} Reviews</span>
                 </a>
             </div>
-            <ProfileLink user={info.hostprofile}/>
+            <ProfileLink user={info.info.hostprofile}/>
         </Section>
     );
 };
 
-const Icon = props => {
-    const cName = "fa fa-2x fa-" + props.cName;
-    const divStyle = {
-        display: "inline-block",
-        padding: "10px 20px",
-        margin: "0 45px 0 0",
-        textAlign: "center"
-    };
-
-    const paraStyle = {
-        margin: "0 0 5px 0",
-        fontSize: 14
-    };
-
-    return (
-        <div style={divStyle}>
-            <i className={cName} aria-hidden="true"/>
-            <p style={paraStyle}>{props.children}</p>
-        </div>
-    );
-};
-
-const IconInfo = () => {
-    return (
-        <Section>
-            <Icon cName="home">{rentalSize}</Icon>
-            <Icon cName="users">{guests}</Icon>
-            <Icon cName="bath">{bedrooms}</Icon>
-            <Icon cName="bed">{beds}</Icon>
-        </Section>
-    );
-};
 
 const TextConverter = props => {
     const titleStyle = {
@@ -540,9 +422,9 @@ const Space = () => {
                 <SpaceDetail section="Accomodates: ">
                     {accomodatesD}
                 </SpaceDetail>
-                <SpaceDetail section="Bathrooms: ">{bathroomsD}</SpaceDetail>
+                <SpaceDetail section="Bathrooms: ">{bath_availabilityD}</SpaceDetail>
                 <SpaceDetail section="Bedrooms: ">{bedroomsD}</SpaceDetail>
-                <SpaceDetail section="Beds: ">{bedsD}</SpaceDetail>
+                <SpaceDetail section="Beds: ">{1}</SpaceDetail>
             </div>
             <div style={tableDivStyle}>
                 <SpaceDetail section="Check In: ">{checkInD}</SpaceDetail>
@@ -602,110 +484,6 @@ const AmenitiesList = () => {
     //UPDATE: add family amenities
 };
 
-const Prices = () => {
-    const msgStyle = {
-        fontSize: 14
-    };
-
-    const boldStyle = {
-        fontWeight: 400
-    };
-
-    const divStyle = {
-        width: 300,
-        display: "inline-block",
-        marginBottom: 20
-    };
-
-    return (
-        <Section title="Prices">
-            <div>
-                <div style={divStyle}>
-                    <span>Extra people </span>
-                    <span style={boldStyle}>{extraPeople}</span>
-                </div>
-                <div style={divStyle}>
-                    <span>Security Deposit </span>
-                    <span style={boldStyle}>{securityDeposit}</span>
-                </div>
-            </div>
-            <div style={msgStyle}>
-                <span style={boldStyle}>Always communicate through Airbnb</span>
-                <br/>
-                <span>
-                    To protect your payment, never transfer money or communicate
-                    outside of the Airbnb website or app.
-                </span>
-                <Link
-                    linkUrl="https://www.airbnb.com/help/article/199"
-                    target="_blank"
-                >
-                    Learn more
-                </Link>
-            </div>
-        </Section>
-    );
-};
-
-const Bedroom = props => {
-    const divStyle = {
-        borderRadius: 5,
-        width: 140,
-        margin: "0 10px 20px 0",
-        display: "inline-block"
-    };
-
-    const bedroomsStyle = {
-        margin: "5px 0 0 0",
-        fontWeight: 400
-    };
-
-    return (
-        <div style={divStyle}>
-            <i className="fa fa-2x fa-bed" aria-hidden="true"/>
-            <p style={bedroomsStyle}>Bedroom {props.number}</p>
-            <span>{props.bed}</span>
-        </div>
-    );
-};
-
-const SleepingArrangements = () => {
-    // Redux Update
-    const bedroomDetails = ["1 king bed", "2 twin beds"];
-
-    return (
-        <Section title="Sleeping arrangements">
-            {bedroomDetails.map((bed, idx) => {
-                return (
-                    <Bedroom
-                        bed={bed}
-                        key={idx}
-                        number={bedroomDetails.indexOf(bed) + 1}
-                    />
-                );
-            })}
-        </Section>
-    );
-};
-
-const HouseRules = () => (
-    <Section title="House rules">
-        <a name="houseRules"/>
-        <TextConverter textBlock={houseRules} idName="house"/>
-    </Section>
-);
-
-const Cancellations = () => (
-    <Section title="Cancellations">
-        <TextConverter textBlock={cancellations} idName="cancel"/>
-    </Section>
-);
-
-const SafetyFeatures = () => (
-    <Section title="Safety featuers">
-        <TextConverter textBlock={safetyFeatures} idName="safe"/>
-    </Section>
-);
 
 const Accessibility = () => (
     <Section title="Accessibility">
@@ -727,9 +505,16 @@ class HomeDetailPage extends React.Component {
 
         this.state = {
             marginLeft: "10%",
-            home_title: "",
-            home_img: "",
-            home_description: ""
+            title: "",
+            description: "",
+            img: [],
+            user: {},
+            price: "",
+            room_type: "",
+            guest_availability: "",
+            room_availability: "",
+            beds_availability: "",
+            bath_availability: ""
         };
 
         this.marginChange = this.marginChange.bind(this);
@@ -756,14 +541,31 @@ class HomeDetailPage extends React.Component {
     }
 
     componentWillMount() {
-        const home_id = this.props.params.home_id;
-        this.props.gethome(home_id).then(respond => {
-            this.setState({
-                user: this.props.home.user,
-                home_title: this.props.home.title,
-                home_img: this.props.home.img,
-                home_description: this.props.home.description
-            });
+        const id = this.props.params.home_id;
+        this.props.gethome(id).then(() => {
+
+            this.props.findUser(this.props.home.user_id).then(() => {
+                const home = this.props.home;
+
+                const user = this.props.user;
+
+                this.setState({
+                    user: user,
+                    title: home.title,
+                    description: home.description,
+                    img: home.img,
+                    price: home.price,
+                    room_type: home.room_type,
+                    guest_availability: home.guest_availability,
+                    room_availability: home.rooms_availability,
+                    beds_availability: home.beds_availability,
+                    bath_availability: home.bath_availability,
+                    target: home.target,
+                    setup_for_guest: home.setup_for_guest,
+                });
+
+            })
+
         });
     }
 
@@ -772,33 +574,41 @@ class HomeDetailPage extends React.Component {
             marginLeft: this.state.marginLeft,
             marginRight: 50
         };
+        const heroPic = this.state.img;
+        const title = this.state.title;
+        const hostprofile = this.state.user;
+        const info = {title, hostprofile}
+        const homeinfo = {
+            beds_availability: this.state.room_availability,
+            bath_availability: this.state.bath_availability,
+            guest: this.state.guest_availability,
+            room_type: this.state.room_type
+        }
 
         return (
             <div>
-                <Hero heroPic={this.state.home_img}/>
+                <Hero heroPic={heroPic}/>
                 <div style={marginStyle}>
                     <PageNav margin={this.state.marginLeft}/>
                     <TitleSection
-                        title={this.state.home_title}
-                        hostprofile={this.state.user}
+                        info={info}
                     />
-                    <IconInfo/>
+                    <IconInfo homeinfo={homeinfo}/>
                     <OverviewInfo
-                        overviewInfoText={this.state.home_description}
+                        overviewInfoText={this.state.description}
                     />
                     <Space/>
                     <AmenitiesList/>
-                    <Prices/>
-                    <SleepingArrangements/>
-                    <HouseRules/>
-                    <Cancellations/>
-                    <SafetyFeatures/>
+
                     <Accessibility/>
                     <Availability/>
                 </div>
             </div>
-        );
+        )
+            ;
     }
 }
 
 export default HomeDetailPage;
+
+

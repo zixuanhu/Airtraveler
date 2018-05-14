@@ -13,6 +13,7 @@ import bathAvailabilityOptions from "../asset/availbility/bath";
 import setupForGuestOptions from "../asset/setup/guestsetup";
 import targetOptions from "../asset/target/target";
 import isEmpty from "lodash/isEmpty";
+
 class Newhome extends React.Component {
     constructor(props) {
         super(props);
@@ -177,7 +178,7 @@ class Newhome extends React.Component {
                     onClick={e => this.onUploadimg(e)}
                 >
                     <div className="imgComponent-imgs-upload">
-                        <span className="glyphicon glyphicon-upload" />
+                        <span className="glyphicon glyphicon-upload"/>
                         Click to upload Image
                     </div>
                 </div>
@@ -199,7 +200,7 @@ class Newhome extends React.Component {
                     className="imgComponent-upload"
                     onClick={e => this.onUploadimg(e)}
                 >
-                    <span className="glyphicon glyphicon-upload" />
+                    <span className="glyphicon glyphicon-upload"/>
                     Click to upload Image
                 </div>
             );
@@ -209,9 +210,9 @@ class Newhome extends React.Component {
     render() {
         return (
             <div className="container">
-                <br />
+                <br/>
                 <h2> Please Create your home </h2>
-                <hr />
+                <hr/>
                 <p>
                     <button
                         className="btn btn-primary"
@@ -237,7 +238,7 @@ class Newhome extends React.Component {
                 </p>
                 <div className="jumbotron">
                     <h3>#1 Basic Information</h3>
-                    <hr />
+                    <hr/>
                     <div
                         className={classnames("form-group", {
                             "has-error": this.state.errors.title
@@ -306,7 +307,7 @@ class Newhome extends React.Component {
 
                 <div className="jumbotron">
                     <h3>#2 Discover your place</h3>
-                    <hr />
+                    <hr/>
                     <OptionFieldGroup
                         label="Property Type"
                         name="property_type"
@@ -327,7 +328,7 @@ class Newhome extends React.Component {
 
                 <div className="jumbotron">
                     <h3>#3 Space Capacity</h3>
-                    <hr />
+                    <hr/>
                     <OptionFieldGroup
                         label="Guest Availability"
                         name="guest_availability"
@@ -363,7 +364,7 @@ class Newhome extends React.Component {
                 </div>
                 <div className="jumbotron">
                     <h3>#4 Customization</h3>
-                    <hr />
+                    <hr/>
                     <OptionFieldGroup
                         label="Setup Plan"
                         name="setup_for_guest"
@@ -384,7 +385,7 @@ class Newhome extends React.Component {
 
                 <div className="jumbotron">
                     <h3>#5 Images</h3>
-                    <hr />
+                    <hr/>
                     <div>
                         <label className="control-label">Images</label>
                         {this.imgComponent()}
