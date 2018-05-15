@@ -1,6 +1,6 @@
 import express from "express";
 import Home from "../models/home";
-import guest from "../../frontend/components/homes/asset/availbility/guest";
+
 
 let router = express.Router();
 
@@ -60,7 +60,7 @@ router.post("/create", (req, res) => {
 
 router.get("/homelist", (req, res) => {
     console.log("******POST /api/homes/homelist PASS!!******");
-    Home.fetchAll()
+    Home.fetchPage({page: 1, pageSize: 18})
         .then(homes => {
             return res.json({
                 homes: homes
@@ -105,7 +105,7 @@ router.get("/searchhomelist/:keyword", (req, res) => {
         home.where('title', 'LIKE', `%${keyword}%`);
         home.orWhere('description', 'LIKE', `%${keyword}%`);
     })
-        .fetchAll()
+        .fetchPage({page: 1, pageSize: 18})
         .then(homes => {
             return res.json({
                 homes: homes

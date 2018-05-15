@@ -11,6 +11,10 @@ export const edithomeUtil = homeData => {
 export const homelistUtil = () => {
     return axios.get("/api/homes/homelist");
 };
+export const searchhomesUtil = keyword => {
+
+    return axios.get(`/api/homes/searchhomelist/${keyword}`);
+};
 export const userhomelist = id => {
     return axios.get(`/api/manage/${id}`);
 };

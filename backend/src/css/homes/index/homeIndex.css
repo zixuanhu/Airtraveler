@@ -5,6 +5,7 @@
     transition: 0.5s ease;
     backface-visibility: hidden;
 }
+
 .homeimg:hover {
     opacity: 0.6;
 }
@@ -15,10 +16,12 @@
     line-height: 120%;
     margin-top: 5px;
 }
+
 .homeprice {
     font-size: 14px;
     font-weight: 300;
 }
+
 .gallery-card {
     height: 370px;
     overflow: hidden;
@@ -28,3 +31,4 @@
     position: relative;
     transition: all 0.3s;
 }
+

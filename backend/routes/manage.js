@@ -17,7 +17,7 @@ router.get("/:user_id", (req, res) => {
             user_id: user_id
         }
     })
-        .fetchAll()
+        .fetchPage({page: 1, pageSize: 18})
         .then(homes => {
             console.log("******POST /api/manage/:user_id SUCCESS!!******");
             return res.json(homes);

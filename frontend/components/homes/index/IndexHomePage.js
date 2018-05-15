@@ -5,12 +5,34 @@ class indexhomePage extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
+            keyword: "",
+            homes: [],
             errors: {}
         };
     }
 
     componentWillMount() {
         this.props.homeList();
+    }
+
+    keyDown(e) {
+        const keycode = e.which; //取得对应的键值（数字）
+
+        if (keycode === 13) {
+            this.search(e);
+        }
+    }
+
+    search(e) {
+        e.preventDefault();
+        this.props.searchhomes(this.state.keyword);
+    }
+
+    updateForm(e) {
+        e.preventDefault();
+        this.setState({
+            [e.target.name]: e.target.value
+        });
     }
 
     homeCards() {
@@ -37,7 +59,7 @@ class indexhomePage extends React.Component {
                         <br/>
                         <p className="hometitle">ID: {home.id} </p>
                         <p className="hometitle">{home.title} </p>
-                        <p className="homeprice">$100 per night</p>
+                        <p className="homeprice">${home.price}</p>
                         <hr/>
                     </div>
                 </div>
@@ -46,21 +68,43 @@ class indexhomePage extends React.Component {
         return homeCards;
     }
 
+    searchBar() {
+        return (
+
+            <div className="row">
+                <div className="col-xs-6 col-md-4">
+                    <div className="input-group"
+                         onKeyDown={e => this.keyDown(e)}>
+                        <input type="text"
+                               name="keyword"
+                               className="form-control"
+                               placeholder="Search"
+                               id="txtSearch"
+                               value={this.state.keyword}
+                               onChange={e => this.updateForm(e)}/>
+
+                        <div className="input-group-btn">
+                            <button className="btn btn-primary" type="submit" onClick={e => this.search(e)}>
+                                <span className="glyphicon glyphicon-search"></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        );
+
+
+    }
+
     render() {
         return (
             <div>
-
                 <div className="container cards">
 
-                    <div>
-                        <form role="search">
-                            <div className="form-group">
-                                <input type="text" className="form-control" placeholder="Search"/>
-                            </div>
-                            <button type="submit" className="btn btn-default">Submit</button>
-                        </form>
-                    </div>
-                    {this.homeCards()}</div>
+                    {this.searchBar()}
+                    {this.homeCards()}
+                </div>
             </div>
         );
     }

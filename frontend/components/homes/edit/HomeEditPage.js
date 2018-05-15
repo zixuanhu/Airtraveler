@@ -183,6 +183,7 @@ class HomeEdit extends React.Component {
 
     imgs() {
         let imgs = [];
+        //debugger
         for (let i = 0; i < this.state.img.length; i++) {
             imgs.push(
                 <div className="col-md-4" key={i}>
@@ -212,7 +213,8 @@ class HomeEdit extends React.Component {
     }
 
     imgComponent() {
-        if (this.state.img.length !== 0) {
+
+        if (this.state.img) {
             return (
                 <div className="form-group row" id="imgComponent-imgdiv">
                     {this.imgs()}
@@ -232,6 +234,7 @@ class HomeEdit extends React.Component {
     }
 
     render() {
+        //debugger
         return (
             <div className="container">
                 <br/>

@@ -31,6 +31,14 @@ export const homelist = () => {
         });
     };
 };
+export const searchhomes = keyword => {
+    return dispatch => {
+        return homeApiUtil.searchhomesUtil(keyword).then(respond => {
+            const homes = respond.data.homes;
+            dispatch(updateHomes(homes));
+        });
+    };
+};
 export const userhomelist = id => {
     return dispatch => {
         return homeApiUtil.userhomelist(id).then(respond => {
