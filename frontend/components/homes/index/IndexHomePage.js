@@ -34,19 +34,35 @@ class indexhomePage extends React.Component {
                             }
                         />
 
-                        <br />
+                        <br/>
                         <p className="hometitle">ID: {home.id} </p>
                         <p className="hometitle">{home.title} </p>
                         <p className="homeprice">$100 per night</p>
-                        <hr />
+                        <hr/>
                     </div>
                 </div>
             );
         }
         return homeCards;
     }
+
     render() {
-        return <div className="container cards">{this.homeCards()}</div>;
+        return (
+            <div>
+
+                <div className="container cards">
+
+                    <div>
+                        <form role="search">
+                            <div className="form-group">
+                                <input type="text" className="form-control" placeholder="Search"/>
+                            </div>
+                            <button type="submit" className="btn btn-default">Submit</button>
+                        </form>
+                    </div>
+                    {this.homeCards()}</div>
+            </div>
+        );
     }
 }
 

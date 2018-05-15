@@ -96,3 +96,26 @@ router.get("/:home_id", (req, res) => {
         });
 });
 export default router;
+
+router.get("/searchhomelist/:keyword", (req, res) => {
+    console.log("******POST /api/homes/searchhomelist PASS!!******");
+    const keyword = req.params.keyword;
+    console.log(keyword);
+    Home.query(function (home) {
+        home.where('title', 'LIKE', `%${keyword}%`);
+        home.orWhere('description', 'LIKE', `%${keyword}%`);
+    })
+        .fetchAll()
+        .then(homes => {
+            return res.json({
+                homes: homes
+            });
+        })
+        .catch(error => {
+            console.log("******POST  /api/homes/searchhomelist FAIL!!******");
+            console.log(error)
+            return res.json({
+                error: error
+            });
+        });
+});

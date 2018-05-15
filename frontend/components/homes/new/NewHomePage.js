@@ -89,12 +89,10 @@ class Newhome extends React.Component {
         if (!target) {
             errors.target = "Please select the your target promotion";
         }
-        if (this.state.img.length === 0) {
-            this.setState({
-                img: ["http://pic.uzzf.com/up/2017-3/14901722897158766.jpg"]
-            })
-        }
         if (isEmpty(errors)) {
+            if (this.state.img.length === 0) {
+                this.state.img = ["http://pic.uzzf.com/up/2017-3/14901722897158766.jpg"];
+            }
             this.props.createhome(this.state).then(() => {
                 console.log("create success");
                 this.context.router.push(`/homes`);

@@ -1,5 +1,5 @@
 import React from "react";
-import { debug } from "util";
+import {debug} from "util";
 
 class NavigationBar extends React.Component {
     constructor(props) {
@@ -38,7 +38,7 @@ class NavigationBar extends React.Component {
                             src={this.props.user.img}
                             alt="profilpic"
                         />
-                        <span className="caret" />
+                        <span className="caret"/>
                     </a>
                     <ul className="dropdown-menu">
                         <li>
@@ -63,7 +63,7 @@ class NavigationBar extends React.Component {
                                 Edit Profile
                             </a>
                         </li>
-                        <li role="separator" className="divider" />
+                        <li role="separator" className="divider"/>
                         <li>
                             <a
                                 onClick={() =>
@@ -110,9 +110,9 @@ class NavigationBar extends React.Component {
                                 <span className="sr-only">
                                     Toggle navigation
                                 </span>
-                                <span className="icon-bar" />
-                                <span className="icon-bar" />
-                                <span className="icon-bar" />
+                                <span className="icon-bar"/>
+                                <span className="icon-bar"/>
+                                <span className="icon-bar"/>
                             </button>
                             <a
                                 className="navbar-brand"
