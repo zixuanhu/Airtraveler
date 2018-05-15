@@ -1,6 +1,6 @@
 import React from "react";
 import classnames from "classnames";
-import { debug } from "util";
+import {debug} from "util";
 
 class ManageHomePage extends React.Component {
     constructor(props) {
@@ -15,7 +15,7 @@ class ManageHomePage extends React.Component {
     }
 
     homeCards() {
-        if (this.props.homes === undefined) return <div />;
+        if (this.props.homes === undefined) return <div/>;
         let homeCards = [];
         for (let i = 0; i < this.props.homes.length; i++) {
             const home = this.props.homes[i];
@@ -37,17 +37,18 @@ class ManageHomePage extends React.Component {
                             }
                         />
 
-                        <br />
+                        <br/>
                         <p className="hometitle">ID: {home.id} </p>
                         <p className="hometitle">{home.title} </p>
                         <p className="homeprice">$100 per night</p>
-                        <hr />
+                        <hr/>
                     </div>
                 </div>
             );
         }
         return homeCards;
     }
+
     render() {
         return <div className="container cards">{this.homeCards()}</div>;
     }

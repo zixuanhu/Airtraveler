@@ -20,7 +20,7 @@ class UserProfile extends React.Component {
 
     componentWillMount() {
         this.props.findUser(this.props.routeParams.identifer).then(() => {
-
+              
                 this.setState({
                     user: this.props.user,
                     email: this.props.user.email,

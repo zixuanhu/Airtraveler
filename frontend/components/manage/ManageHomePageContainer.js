@@ -1,4 +1,4 @@
-import { connect } from "react-redux";
+import {connect} from "react-redux";
 import ManageHomePage from "./ManageHomePage";
 import * as homeActions from "../../actions/homeActions";
 

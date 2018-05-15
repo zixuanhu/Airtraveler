@@ -32,3 +32,12 @@
     margin: 3px;
     height: 200px;
 }
+
+.delet-icon {
+    position: absolute;
+    top: 1px;
+    right: 20px;
+    z-index: 100;
+    cursor: pointer;
+    color: white;
+}

@@ -89,11 +89,10 @@ class Newhome extends React.Component {
         if (!target) {
             errors.target = "Please select the your target promotion";
         }
-        let img;
         if (this.state.img.length === 0) {
-            img = ["http://pic.uzzf.com/up/2017-3/14901722897158766.jpg"];
-        } else {
-            img = this.state.img;
+            this.setState({
+                img: ["http://pic.uzzf.com/up/2017-3/14901722897158766.jpg"]
+            })
         }
         if (isEmpty(errors)) {
             this.props.createhome(this.state).then(() => {
@@ -162,10 +161,11 @@ class Newhome extends React.Component {
         for (let i = 0; i < this.state.img.length; i++) {
             imgs.push(
                 <div className="col-md-4" key={i}>
+                    <span className="delet-icon"
+                          onClick={e => this.deletimg(e, i)}>&times;</span>
                     <img
                         src={this.state.img[i]}
                         className="img-rounded imgComponent-imgs"
-                        onClick={e => this.deletimg(e, i)}
                     />
                 </div>
             );
