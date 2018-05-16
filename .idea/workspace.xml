@@ -2,18 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e3827670-0343-43de-b235-158dbff8bf01" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/orm/bookshelf.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/orm/bookshelf.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/routes/homes.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/routes/homes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/routes/manage.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/routes/manage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/css/homes/index/homeIndex.css" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/css/homes/index/homeIndex.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/actions/homeActions.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/actions/homeActions.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/components/homes/edit/HomeEditPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/homes/edit/HomeEditPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/components/homes/index/IndexHomePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/homes/index/IndexHomePage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/components/homes/index/IndexHomePageContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/homes/index/IndexHomePageContainer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/utils/homeUtil.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/utils/homeUtil.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -32,8 +21,8 @@
           <file leaf-file-name="IndexHomePage.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/frontend/components/homes/index/IndexHomePage.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="293">
-                  <caret line="40" column="45" selection-start-line="40" selection-start-column="45" selection-end-line="40" selection-end-column="45" />
+                <state relative-caret-position="185">
+                  <caret line="34" column="11" lean-forward="true" selection-start-line="34" selection-start-column="11" selection-end-line="34" selection-end-column="11" />
                 </state>
               </provider>
             </entry>
@@ -90,8 +79,8 @@
           <file leaf-file-name="HomeEditPage.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/frontend/components/homes/edit/HomeEditPage.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="68">
-                  <caret line="236" column="10" selection-start-line="236" selection-start-column="10" selection-end-line="236" selection-end-column="10" />
+                <state relative-caret-position="73">
+                  <caret line="235" column="14" selection-start-line="235" selection-start-column="14" selection-end-line="235" selection-end-column="14" />
                 </state>
               </provider>
             </entry>
@@ -198,8 +187,8 @@
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="721" />
-    <option name="y" value="182" />
+    <option name="x" value="1991" />
+    <option name="y" value="30" />
     <option name="width" value="2445" />
     <option name="height" value="969" />
   </component>
@@ -340,7 +329,7 @@
       <workItem from="1526386988162" duration="47000" />
       <workItem from="1526387050717" duration="352000" />
       <workItem from="1526387419325" duration="193000" />
-      <workItem from="1526387630310" duration="1043000" />
+      <workItem from="1526387630310" duration="1733000" />
     </task>
     <task id="LOCAL-00001" summary="push">
       <created>1526109273634</created>
@@ -363,17 +352,23 @@
       <option name="project" value="LOCAL" />
       <updated>1526247742943</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="push">
+      <created>1526389112123</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1526389112123</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="41290000" />
+    <option name="totallyTimeSpent" value="41980000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="721" y="182" width="2445" height="969" extended-state="0" />
-    <editor active="true" />
+    <frame x="1991" y="30" width="2445" height="969" extended-state="0" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.76297575" visible="true" weight="0.19594873" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.76297575" visible="true" weight="0.19594873" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
@@ -381,7 +376,7 @@
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Structure" order="1" sideWeight="0.23702422" side_tool="true" weight="0.19594873" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.32079905" />
+      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.32079905" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -740,13 +735,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/components/homes/index/IndexHomePage.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="293">
-          <caret line="40" column="45" selection-start-line="40" selection-start-column="45" selection-end-line="40" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/backend/orm/bookshelf.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="162">
@@ -791,10 +779,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/components/homes/index/IndexHomePage.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="185">
+          <caret line="34" column="11" lean-forward="true" selection-start-line="34" selection-start-column="11" selection-end-line="34" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/frontend/components/homes/edit/HomeEditPage.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="236" column="10" selection-start-line="236" selection-start-column="10" selection-end-line="236" selection-end-column="10" />
+        <state relative-caret-position="73">
+          <caret line="235" column="14" selection-start-line="235" selection-start-column="14" selection-end-line="235" selection-end-column="14" />
         </state>
       </provider>
     </entry>

@@ -234,7 +234,6 @@ class HomeEdit extends React.Component {
     }
 
     render() {
-        //debugger
         return (
             <div className="container">
                 <br/>
