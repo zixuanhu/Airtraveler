@@ -2,40 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e3827670-0343-43de-b235-158dbff8bf01" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/backend/src/css/trips/tripcard.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/actions/tripActions.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/components/homes/detail/detail_asset/Trip/Trip.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/components/homes/detail/detail_asset/Trip/TripContainer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/reducers/tripReducer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/utils/tripUtil.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/backend/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/models/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/models/user.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/routes/homes.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/routes/homes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/css/homes/detail/DetailHomePage.css" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/css/homes/detail/DetailHomePage.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/css/homes/home-common.css" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/css/homes/home-common.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/css/homes/index/homeIndex.css" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/css/homes/index/homeIndex.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/css/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/actions/homeActions.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/actions/homeActions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/components/homes/detail/detail_asset/Hero.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/homes/detail/detail_asset/Hero.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/components/homes/detail/detail_asset/Iconinfo.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/homes/detail/detail_asset/Iconinfo.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/components/homes/detail/detail_index/HomeDetailPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/homes/detail/detail_index/HomeDetailPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/components/homes/index/IndexHomePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/homes/index/IndexHomePage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/components/homes/index/IndexHomePageContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/homes/index/IndexHomePageContainer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/components/logIn/logIn.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/logIn/logIn.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/components/navbar/NavigationBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/navbar/NavigationBar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/reducers/homeReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/reducers/homeReducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/reducers/rootReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/reducers/rootReducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/reducers/userReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/reducers/userReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/routes/trips.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/routes/trips.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/css/trips/tripcard.css" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/css/trips/tripcard.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/actions/tripActions.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/actions/tripActions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/components/trips/detail/DetailTripPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/trips/detail/DetailTripPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/components/trips/detail/DetailTripPageContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/trips/detail/DetailTripPageContainer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/components/trips/index/IndexTripPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/trips/index/IndexTripPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/reducers/tripReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/reducers/tripReducer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/routes/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/routes/routes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/utils/homeUtil.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/utils/homeUtil.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/20180502183732_users.js" beforeDir="false" afterPath="$PROJECT_DIR$/migrations/20180502183732_users.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/seeds/homes.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shortcut/reset_db.sh" beforeDir="false" afterPath="$PROJECT_DIR$/shortcut/reset_db.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/utils/tripUtil.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/utils/tripUtil.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -51,25 +27,19 @@
     <splitter split-orientation="horizontal" split-proportion="0.5">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-          <file leaf-file-name="IndexTripPageContainer.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/frontend/components/trips/index/IndexTripPageContainer.js">
+          <file leaf-file-name="IndexTripPage.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/frontend/components/trips/index/IndexTripPage.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="198">
-                  <caret line="13" column="47" lean-forward="true" selection-start-line="13" selection-start-column="47" selection-end-line="13" selection-end-column="47" />
+                <state relative-caret-position="206">
+                  <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
+                  <folding>
+                    <element signature="e#0#26#0" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="Hero.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/frontend/components/homes/detail/detail_asset/Hero.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="173">
-                  <caret line="53" column="70" lean-forward="true" selection-start-line="53" selection-start-column="70" selection-end-line="53" selection-end-column="70" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="main.css" pinned="false" current-in-tab="true">
+          <file leaf-file-name="main.css" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/backend/src/css/main.css">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="90">
@@ -78,51 +48,66 @@
               </provider>
             </entry>
           </file>
+          <file leaf-file-name="tripcard.css" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/backend/src/css/trips/tripcard.css">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="421">
+                  <caret line="94" lean-forward="true" selection-start-line="94" selection-end-line="94" />
+                </state>
+              </provider>
+            </entry>
+          </file>
         </leaf>
       </split-first>
       <split-second>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-          <file leaf-file-name="IndexTripPage.js" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/frontend/components/trips/index/IndexTripPage.js">
+          <file leaf-file-name="DetailTripPage.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/frontend/components/trips/detail/DetailTripPage.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="113">
-                  <caret line="35" column="24" selection-start-line="35" selection-start-column="24" selection-end-line="35" selection-end-column="24" />
+                <state relative-caret-position="212">
+                  <caret line="20" column="10" lean-forward="true" selection-start-line="20" selection-start-column="10" selection-end-line="20" selection-end-column="10" />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="tripcard.css" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/backend/src/css/trips/tripcard.css">
+          <file leaf-file-name="trips.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/backend/routes/trips.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="493">
-                  <caret line="102" column="1" selection-start-line="102" selection-start-column="1" selection-end-line="102" selection-end-column="1" />
+                <state relative-caret-position="233">
+                  <caret line="64" column="38" selection-start-line="64" selection-start-column="38" selection-end-line="64" selection-end-column="38" />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="tripReducer.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/frontend/reducers/tripReducer.js">
+          <file leaf-file-name="DetailTripPageContainer.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/frontend/components/trips/detail/DetailTripPageContainer.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state>
-                  <caret column="46" lean-forward="true" selection-start-column="46" selection-end-column="46" />
+                <state relative-caret-position="108">
+                  <caret line="6" column="12" lean-forward="true" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="12" />
+                  <folding>
+                    <element signature="e#0#36#0" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="tripActions.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/frontend/actions/tripActions.js">
+          <file leaf-file-name="SignUp.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/frontend/components/signup/SignUp.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="349">
-                  <caret line="20" selection-start-line="20" selection-end-line="20" />
+                <state relative-caret-position="4806">
+                  <caret line="268" selection-start-line="268" selection-end-line="270" selection-end-column="2" />
+                  <folding>
+                    <element signature="e#0#26#0" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="rootReducer.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/frontend/reducers/rootReducer.js">
+          <file leaf-file-name="home-common.css" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/backend/src/css/homes/home-common.css">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="72">
-                  <caret line="4" column="9" lean-forward="true" selection-start-line="4" selection-start-column="9" selection-end-line="4" selection-end-column="9" />
+                <state relative-caret-position="348">
+                  <caret line="46" column="4" lean-forward="true" selection-start-line="46" selection-start-column="4" selection-end-line="46" selection-end-column="21" />
                 </state>
               </provider>
             </entry>
@@ -147,6 +132,9 @@
       <find>length</find>
       <find>margin</find>
       <find>debu</find>
+      <find>img</find>
+      <find>bottom</find>
+      <find>push</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -155,9 +143,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/frontend/components/homes/detail/detail_asset/s.js" />
-        <option value="$PROJECT_DIR$/frontend/components/homes/detail/detail_asset/Icon.js" />
-        <option value="$PROJECT_DIR$/frontend/components/homes/detail/detail_asset/IconInfo.js" />
         <option value="$PROJECT_DIR$/frontend/components/homes/detail/HomeDetailPage.js" />
         <option value="$PROJECT_DIR$/frontend/components/homes/detail/detail_asset/Price.js" />
         <option value="$PROJECT_DIR$/frontend/components/userprofile/UserProfileContainer.js" />
@@ -188,24 +173,27 @@
         <option value="$PROJECT_DIR$/migrations/20180517235706_trip.js" />
         <option value="$PROJECT_DIR$/frontend/components/homes/detail/detail_index/HomeDetailPage.js" />
         <option value="$PROJECT_DIR$/frontend/reducers/rootReducer.js" />
-        <option value="$PROJECT_DIR$/frontend/utils/tripUtil.js" />
         <option value="$PROJECT_DIR$/frontend/components/homes/detail/detail_asset/Trip/TripContainer.js" />
         <option value="$PROJECT_DIR$/frontend/reducers/userReducer.js" />
         <option value="$PROJECT_DIR$/frontend/index.js" />
-        <option value="$PROJECT_DIR$/frontend/routes/routes.js" />
         <option value="$PROJECT_DIR$/frontend/components/navbar/NavigationBar.js" />
-        <option value="$PROJECT_DIR$/frontend/actions/tripActions.js" />
         <option value="$PROJECT_DIR$/frontend/components/trips/index/IndexTripPageContainer.js" />
-        <option value="$PROJECT_DIR$/frontend/reducers/tripReducer.js" />
         <option value="$PROJECT_DIR$/backend/models/trip.js" />
-        <option value="$PROJECT_DIR$/backend/routes/trips.js" />
         <option value="$PROJECT_DIR$/frontend/components/homes/detail/detail_asset/Trip/Trip.js" />
         <option value="$PROJECT_DIR$/frontend/components/homes/index/IndexHomePage.js" />
         <option value="$PROJECT_DIR$/frontend/components/homes/detail/detail_asset/Hero.js" />
         <option value="$PROJECT_DIR$/backend/src/css/trips/tripcard.css.js" />
         <option value="$PROJECT_DIR$/backend/src/css/main.css" />
-        <option value="$PROJECT_DIR$/backend/src/css/trips/tripcard.css" />
+        <option value="$PROJECT_DIR$/frontend/utils/tripUtil.js" />
+        <option value="$PROJECT_DIR$/frontend/reducers/tripReducer.js" />
+        <option value="$PROJECT_DIR$/frontend/actions/tripActions.js" />
+        <option value="$PROJECT_DIR$/frontend/routes/routes.js" />
+        <option value="$PROJECT_DIR$/frontend/components/signup/SignUp.js" />
         <option value="$PROJECT_DIR$/frontend/components/trips/index/IndexTripPage.js" />
+        <option value="$PROJECT_DIR$/frontend/components/trips/detail/DetailTripPageContainer.js" />
+        <option value="$PROJECT_DIR$/frontend/components/trips/detail/DetailTripPage.js" />
+        <option value="$PROJECT_DIR$/backend/routes/trips.js" />
+        <option value="$PROJECT_DIR$/backend/src/css/trips/tripcard.css" />
       </list>
     </option>
   </component>
@@ -226,7 +214,7 @@
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="979" />
+    <option name="x" value="1020" />
     <option name="y" value="23" />
     <option name="width" value="2385" />
     <option name="height" value="975" />
@@ -268,6 +256,14 @@
               <item name="backend" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="css" type="462c0819:PsiDirectoryNode" />
+              <item name="homes" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Airtraveler_05232018" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Airtraveler_05232018" type="462c0819:PsiDirectoryNode" />
+              <item name="backend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
               <item name="trips" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -279,6 +275,12 @@
               <item name="Airtraveler_05232018" type="b2602c69:ProjectViewProjectNode" />
               <item name="Airtraveler_05232018" type="462c0819:PsiDirectoryNode" />
               <item name="frontend" type="462c0819:PsiDirectoryNode" />
+              <item name="actions" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Airtraveler_05232018" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Airtraveler_05232018" type="462c0819:PsiDirectoryNode" />
+              <item name="frontend" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -286,31 +288,7 @@
               <item name="Airtraveler_05232018" type="462c0819:PsiDirectoryNode" />
               <item name="frontend" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="homepage" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Airtraveler_05232018" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Airtraveler_05232018" type="462c0819:PsiDirectoryNode" />
-              <item name="frontend" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="homes" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Airtraveler_05232018" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Airtraveler_05232018" type="462c0819:PsiDirectoryNode" />
-              <item name="frontend" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="homes" type="462c0819:PsiDirectoryNode" />
-              <item name="detail" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Airtraveler_05232018" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Airtraveler_05232018" type="462c0819:PsiDirectoryNode" />
-              <item name="frontend" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="homes" type="462c0819:PsiDirectoryNode" />
-              <item name="detail" type="462c0819:PsiDirectoryNode" />
-              <item name="detail_asset" type="462c0819:PsiDirectoryNode" />
+              <item name="signup" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Airtraveler_05232018" type="b2602c69:ProjectViewProjectNode" />
@@ -350,6 +328,16 @@
               <item name="Airtraveler_05232018" type="462c0819:PsiDirectoryNode" />
               <item name="frontend" type="462c0819:PsiDirectoryNode" />
               <item name="utils" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Airtraveler_05232018" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Airtraveler_05232018" type="462c0819:PsiDirectoryNode" />
+              <item name="seeds" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Airtraveler_05232018" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Airtraveler_05232018" type="462c0819:PsiDirectoryNode" />
+              <item name="shortcut" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -445,7 +433,9 @@
       <workItem from="1526701581663" duration="1408000" />
       <workItem from="1527103539792" duration="24000" />
       <workItem from="1527103705383" duration="10077000" />
-      <workItem from="1527221048879" duration="2940000" />
+      <workItem from="1527221048879" duration="3060000" />
+      <workItem from="1527224638263" duration="653000" />
+      <workItem from="1527226891732" duration="4564000" />
     </task>
     <task id="LOCAL-00001" summary="push">
       <created>1526109273634</created>
@@ -479,10 +469,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="97018000" />
+    <option name="totallyTimeSpent" value="102355000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="979" y="23" width="2385" height="975" extended-state="0" />
+    <frame x="1020" y="23" width="2385" height="975" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.76297575" visible="true" weight="0.1458245" />
@@ -509,19 +499,19 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.76297575" visible="true" weight="0.19100499" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.76297575" visible="true" weight="0.1458245" />
       <window_info id="Structure" order="1" sideWeight="0.23702422" side_tool="true" weight="0.19594873" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="10" weight="0.32902467" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Terminal" order="8" visible="true" weight="0.3185531" />
-      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.3185531" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="10" weight="0.32902467" />
+      <window_info anchor="bottom" id="Message" order="0" />
       <window_info id="Favorites" order="3" side_tool="true" />
     </layout-to-restore>
   </component>
@@ -570,8 +560,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/frontend/components/trips/index/IndexTripPage.js</url>
-          <line>19</line>
-          <properties lambdaOrdinal="-1" />
+          <line>20</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>
@@ -579,17 +568,17 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/frontend/reducers/rootReducer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="4" column="9" lean-forward="true" selection-start-line="4" selection-start-column="9" selection-end-line="4" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/frontend/reducers/homeReducer.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
           <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/components/signup/SignUp.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="219" column="56" lean-forward="true" selection-start-line="219" selection-start-column="56" selection-end-line="219" selection-end-column="56" />
         </state>
       </provider>
     </entry>
@@ -600,24 +589,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/shortcut/reset_db.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="2" column="20" lean-forward="true" selection-start-line="2" selection-start-column="20" selection-end-line="2" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/frontend/components/homes/new/NewHomePage.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="305">
           <caret line="372" column="22" selection-start-line="372" selection-start-column="22" selection-end-line="372" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/src/css/homes/home-common.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="422">
-          <caret line="58" column="21" lean-forward="true" selection-start-line="53" selection-start-column="3" selection-end-line="58" selection-end-column="21" />
         </state>
       </provider>
     </entry>
@@ -632,13 +607,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-227">
           <caret line="23" column="28" lean-forward="true" selection-start-line="23" selection-start-column="28" selection-end-line="23" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/src/css/homes/index/homeIndex.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
         </state>
       </provider>
     </entry>
@@ -715,9 +683,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="162">
           <caret line="487" column="65" lean-forward="true" selection-start-line="487" selection-start-column="65" selection-end-line="487" selection-end-column="65" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -749,20 +714,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/seeds/seed.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/frontend/components/homes/detail/detail_asset/Trip/TripContainer.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
           <caret line="7" column="2" selection-start-line="7" selection-start-column="2" selection-end-line="7" selection-end-column="2" />
-          <folding>
-            <element signature="e#0#36#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -777,18 +732,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="450">
           <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
-          <folding>
-            <element signature="e#0#46#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/store/store.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#50#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -806,26 +749,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/reducers/authReducer.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/routes/routes.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="339">
-          <caret line="33" column="74" selection-start-line="33" selection-start-column="74" selection-end-line="33" selection-end-column="74" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/utils/tripUtil.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="8" column="24" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/frontend/components/navbar/NavigationBar.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="328">
@@ -833,29 +756,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/backend/models/home.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/routes/homes.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-751">
-          <caret line="15" column="27" selection-start-line="15" selection-start-column="27" selection-end-line="15" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/backend/models/trip.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
           <caret line="6" column="8" selection-start-line="6" selection-start-column="8" selection-end-line="6" selection-end-column="8" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -866,44 +770,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/backend/routes/trips.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1120">
-          <caret line="64" column="41" selection-start-line="64" selection-start-column="41" selection-end-line="64" selection-end-column="41" />
-          <folding>
-            <element signature="e#0#30#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/frontend/components/homes/index/IndexHomePage.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="349">
           <caret line="20" column="55" selection-start-line="20" selection-start-column="55" selection-end-line="20" selection-end-column="55" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/components/trips/index/IndexTripPageContainer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="13" column="47" lean-forward="true" selection-start-line="13" selection-start-column="47" selection-end-line="13" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/components/homes/detail/detail_asset/Hero.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="173">
-          <caret line="53" column="70" lean-forward="true" selection-start-line="53" selection-start-column="70" selection-end-line="53" selection-end-column="70" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/src/css/main.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="5" column="33" selection-start-line="5" selection-start-column="33" selection-end-line="5" selection-end-column="33" />
         </state>
       </provider>
     </entry>
@@ -914,31 +784,141 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/actions/tripActions.js">
+    <entry file="file://$PROJECT_DIR$/seeds/seed.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="349">
-          <caret line="20" selection-start-line="20" selection-end-line="20" />
+        <state relative-caret-position="58">
+          <caret line="21" column="38" lean-forward="true" selection-start-line="21" selection-start-column="38" selection-end-line="21" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/shortcut/reset_db.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="3" column="14" lean-forward="true" selection-start-line="3" selection-start-column="14" selection-end-line="3" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/utils/tripUtil.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="3" column="24" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/routes/routes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="14" column="63" selection-start-line="14" selection-start-column="63" selection-end-line="14" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/components/trips/index/IndexTripPageContainer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="21" selection-end-column="75" />
+          <folding>
+            <element signature="e#0#36#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/components/homes/detail/detail_asset/Hero.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="954">
+          <caret line="53" column="70" selection-start-line="53" selection-start-column="70" selection-end-line="53" selection-end-column="70" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/routes/homes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="798">
+          <caret line="92" column="26" lean-forward="true" selection-start-line="92" selection-start-column="26" selection-end-line="92" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/src/css/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="5" column="33" selection-start-line="5" selection-start-column="33" selection-end-line="5" selection-end-column="33" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/frontend/reducers/tripReducer.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="46" lean-forward="true" selection-start-column="46" selection-end-column="46" />
+        <state relative-caret-position="360">
+          <caret line="20" selection-start-line="20" selection-end-line="20" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/backend/src/css/trips/tripcard.css">
+    <entry file="file://$PROJECT_DIR$/frontend/actions/tripActions.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="102" column="1" selection-start-line="102" selection-start-column="1" selection-end-line="102" selection-end-column="1" />
+        <state relative-caret-position="222">
+          <caret line="24" column="43" selection-start-line="24" selection-start-column="43" selection-end-line="24" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/components/trips/detail/DetailTripPageContainer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="6" column="12" lean-forward="true" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="12" />
+          <folding>
+            <element signature="e#0#36#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/components/trips/detail/DetailTripPage.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="212">
+          <caret line="20" column="10" lean-forward="true" selection-start-line="20" selection-start-column="10" selection-end-line="20" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/routes/trips.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="233">
+          <caret line="64" column="38" selection-start-line="64" selection-start-column="38" selection-end-line="64" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/src/css/homes/index/homeIndex.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/frontend/components/trips/index/IndexTripPage.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="113">
-          <caret line="35" column="24" selection-start-line="35" selection-start-column="24" selection-end-line="35" selection-end-column="24" />
+        <state relative-caret-position="206">
+          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/components/signup/SignUp.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4806">
+          <caret line="268" selection-start-line="268" selection-end-line="270" selection-end-column="2" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/src/css/homes/home-common.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="348">
+          <caret line="46" column="4" lean-forward="true" selection-start-line="46" selection-start-column="4" selection-end-line="46" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/src/css/trips/tripcard.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="421">
+          <caret line="94" lean-forward="true" selection-start-line="94" selection-end-line="94" />
         </state>
       </provider>
     </entry>

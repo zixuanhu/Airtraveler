@@ -1,4 +1,5 @@
 import React from "react";
+import SignUp from "../../signup/SignUp";
 
 
 class Tripindex extends React.Component {
@@ -23,51 +24,46 @@ class Tripindex extends React.Component {
     }
 
     buildTripCard(trip, key) {
-        //debugger
-        // return (
-        //     <div key={key}>
-        //         reserved_id:{trip.reserved_id}
-        //         check_in:{trip.check_in}
-        //         check_out:{trip.check_out}
-        //         guest_number:{trip.guest_number}
-        //         home_id:{trip.home_id}
-        //         trip_id;{trip.id}
-        //     </div>);
-        console.log(trip)
         const img = trip.home.img[0];
+        const check_in = trip.check_in;
+        const check_out = trip.check_out;
 
 
         return (
-            <div className="container">
+            <div className="container" key={key}>
                 <div className="row">
 
-                    <div className="col-sm-6">
+                    <div>
 
                         <div className="card-wrap horizontal codepen">
 
                             <div className="card-img-container">
-                                <a href="#">
-                                    <figure>
-                                        <img src={this.img}/>
-                                    </figure>
-                                </a>
+
+                                <figure>
+                                    <img src={img}/>
+                                </figure>
+
                             </div>
 
                             <div className="card-info">
 
                                 <div className="card-address">
-                                    <a href="#">
+                                    <a onClick={() => {
+                                        this.context.router.push(
+                                            `/trip/${trip.id}`
+                                        )
+                                    }}>
                                         <p className="card-title">Long Beach, Ca</p>
                                         <p>111 W. Ocean Boulevard, <br/>
                                             Fourth Floor,<br/>
-
+                                            WA
                                         </p>
                                     </a>
                                 </div>
 
                                 <div className="card-phone">
-                                    <a><span>Phone</span>(562) 216-8270</a>
-                                    <a><span>Fax</span>(916) 924-1829</a>
+                                    <p><span> Check in</span>{check_in}</p>
+                                    <p><span>Check out</span>{check_out}</p>
                                 </div>
 
                             </div>
@@ -85,7 +81,6 @@ class Tripindex extends React.Component {
     TripCards() {
         const trips = this.state.trips;
         let tripCards = [];
-        debugger
         for (let i = 0; i < trips.length; i++) {
             tripCards.push(this.buildTripCard(trips[i], i))
         }
@@ -104,4 +99,7 @@ class Tripindex extends React.Component {
 
 }
 
+Tripindex.contextTypes = {
+    router: React.PropTypes.object.isRequired
+};
 export default Tripindex;

@@ -12,6 +12,7 @@ import HomeDetailPageContainer from "../components/homes/detail/detail_index/Hom
 import HomeEditPageContainer from "../components/homes/edit/HomeEditPageContainer";
 import ManageHomePageContainer from "../components/manage/ManageHomePageContainer";
 import IndexTripPageContainer from "../components/trips/index/IndexTripPageContainer";
+import DetailTripPageContainer from "../components/trips/detail/DetailTripPageContainer";
 
 export default (
     <Route path="/" component={Root}>
@@ -32,5 +33,6 @@ export default (
         <Route path="/homes/:home_id/edit" component={HomeEditPageContainer}/>
         <Route path="/manage/:user_id" component={ManageHomePageContainer}/>
         <Route path="/trips/:user_id" components={IndexTripPageContainer}/>
+        <Route path="/trip/:trip_id" components={DetailTripPageContainer}/>
     </Route>
 );

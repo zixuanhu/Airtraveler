@@ -9,9 +9,16 @@ export default (state = tripsDefaultState, action = {}) => {
 
     switch (action.type) {
         case  tripUtil.UPDATE_TRIPS:
-            const newTripObj = {
+            const newTripsObj = {
                 trips: action.trips
             };
+            const newTripsState = Object.assign({}, state, newTripsObj);
+            return newTripsState;
+        case tripUtil.UPDATE_TRIP:
+            const newTripObj = {
+                trip: action.trip
+            };
+
             const newTripState = Object.assign({}, state, newTripObj);
             return newTripState;
 
