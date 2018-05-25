@@ -1,4 +1,5 @@
 import * as userUtil from "../utils/userUtil";
+import IndexTripPageContainer from "../components/trips/index/IndexTripPageContainer";
 
 const userDefaultState = {
     user: {}
@@ -21,3 +22,4 @@ export default (state = userDefaultState, action = {}) => {
             return userDefaultState;
     }
 };
+

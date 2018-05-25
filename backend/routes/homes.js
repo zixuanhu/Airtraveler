@@ -58,12 +58,17 @@ router.post("/create", (req, res) => {
         });
 });
 
-router.get("/homelist", (req, res) => {
+router.get("/searchhomelist/:page", (req, res) => {
+    const page = req.params.page;
     console.log("******POST /api/homes/homelist PASS!!******");
-    Home.fetchPage({page: 1, pageSize: 18})
+    Home.query(function (qb) {
+        qb.orderBy('price', 'DESC');
+    })
+        .fetchPage({page: page, pageSize: 18})
         .then(homes => {
             return res.json({
-                homes: homes
+                homes: homes,
+                pagination: homes.pagination
             });
         })
         .catch(error => {
@@ -95,20 +100,27 @@ router.get("/:home_id", (req, res) => {
             });
         });
 });
-export default router;
 
-router.get("/searchhomelist/:keyword", (req, res) => {
+
+router.get("/searchhomelist/:keyword/:page", (req, res) => {
     console.log("******POST /api/homes/searchhomelist PASS!!******");
+
     const keyword = req.params.keyword;
-    console.log(keyword);
+    const page = req.params.page;
+
+
     Home.query(function (home) {
         home.where('title', 'LIKE', `%${keyword}%`);
         home.orWhere('description', 'LIKE', `%${keyword}%`);
+        home.orderBy('price', 'DESC');
     })
-        .fetchPage({page: 1, pageSize: 18})
+        .fetchPage({page: page, pageSize: 18})
         .then(homes => {
+            console.log(homes.pagination)
+
             return res.json({
-                homes: homes
+                homes: homes,
+                pagination: homes.pagination
             });
         })
         .catch(error => {
@@ -119,3 +131,4 @@ router.get("/searchhomelist/:keyword", (req, res) => {
             });
         });
 });
+export default router;

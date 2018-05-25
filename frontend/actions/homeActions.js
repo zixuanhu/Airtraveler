@@ -1,6 +1,6 @@
 import * as homeApiUtil from "../utils/homeUtil";
 
-export const updateHomes = homes => {
+export const updateHomes = (homes) => {
     return {
         type: homeApiUtil.UPDATE_HOMELIST,
         homes
@@ -23,18 +23,12 @@ export const edithome = homeData => {
         return homeApiUtil.edithomeUtil(homeData);
     };
 };
-export const homelist = () => {
+
+export const searchhomes = searchinfo => {
     return dispatch => {
-        return homeApiUtil.homelistUtil().then(respond => {
+        return homeApiUtil.searchhomesUtil(searchinfo).then(respond => {
             const homes = respond.data.homes;
-            dispatch(updateHomes(homes));
-        });
-    };
-};
-export const searchhomes = keyword => {
-    return dispatch => {
-        return homeApiUtil.searchhomesUtil(keyword).then(respond => {
-            const homes = respond.data.homes;
+            homes.pagination = respond.data.pagination;
             dispatch(updateHomes(homes));
         });
     };

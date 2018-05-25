@@ -1,5 +1,5 @@
 import React from "react";
-import classnames from "classnames";
+import {Pagination} from "react-bootstrap";
 
 class indexhomePage extends React.Component {
     constructor(props) {
@@ -7,12 +7,23 @@ class indexhomePage extends React.Component {
         this.state = {
             keyword: "",
             homes: [],
-            errors: {}
+            pagination: {},
+            activePage: 1,
+            errors: {},
+            searchingkeyword: ""
         };
     }
 
     componentWillMount() {
-        this.props.homeList();
+        let searchinfo = {};
+        searchinfo.keyword = "";
+        searchinfo.activePage = 1;
+        this.props.searchhomes(searchinfo).then(() => {
+            this.setState({
+                homes: this.props.homes,
+                pagination: this.props.homes.pagination
+            })
+        });
     }
 
     keyDown(e) {
@@ -25,7 +36,17 @@ class indexhomePage extends React.Component {
 
     search(e) {
         e.preventDefault();
-        this.props.searchhomes(this.state.keyword);
+        let searchinfo = {};
+        searchinfo.keyword = this.state.keyword;
+        searchinfo.activePage = 1;
+        this.props.searchhomes(searchinfo).then(() => {
+            this.setState({
+                homes: this.props.homes,
+                pagination: this.props.homes.pagination,
+                searchingkeyword: this.state.keyword,
+                activePage: 1
+            })
+        });
     }
 
     updateForm(e) {
@@ -35,10 +56,122 @@ class indexhomePage extends React.Component {
         });
     }
 
+    updatePage(e) {
+
+        e.preventDefault();
+        this.setState({
+            [e.target.name]: parseInt(e.target.text)
+        });
+
+        let searchinfo = {};
+        searchinfo.keyword = this.state.searchingkeyword;
+        searchinfo.activePage = parseInt(e.target.text);
+        this.props.searchhomes(searchinfo).then(() => {
+            this.setState({
+                homes: this.props.homes,
+                pagination: this.props.homes.pagination
+            })
+        });
+
+
+    }
+
+    pagination() {
+        let pages = [];
+
+        const pageCount = this.state.pagination.pageCount;
+        const activePage = this.state.activePage;
+        //debugger
+        pages.push(
+            <Pagination.Prev key="prev"/>
+        )
+
+        if (pageCount <= 8) {
+
+            for (let i = 1; i <= pageCount; i++) {
+                if (i === activePage) {
+                    pages.push(
+                        <Pagination.Item key={i} name="activePage"
+                                         active>{i}</Pagination.Item>);
+                } else (
+                    pages.push(
+                        <Pagination.Item key={i} name="activePage"
+                                         onClick={e => this.updatePage(e)}>{i}</Pagination.Item>));
+            }
+        }
+        if (pageCount > 8) {
+
+            if (activePage < 4) {
+                for (let i = 1; i < 5; i++) {
+                    if (i === activePage) {
+                        pages.push(
+                            <Pagination.Item key={i} name="activePage"
+                                             active>{i}</Pagination.Item>);
+                    } else (
+                        pages.push(
+                            <Pagination.Item key={i} name="activePage"
+                                             onClick={e => this.updatePage(e)}>{i}</Pagination.Item>));
+                }
+                pages.push(<Pagination.Ellipsis key="endellipsis"/>);
+                pages.push(
+                    <Pagination.Item key={pageCount} name="activePage"
+                                     onClick={e => this.updatePage(e)}>{pageCount}</Pagination.Item>);
+            }
+            else if (activePage > pageCount - 4) {
+
+                pages.push(
+                    <Pagination.Item key={1} name="activePage" onClick={e => this.updatePage(e)}>{1}</Pagination.Item>
+                )
+                pages.push(<Pagination.Ellipsis key="headellipsis"/>);
+                for (let i = pageCount - 4; i <= pageCount; i++) {
+                    if (i === activePage) {
+                        pages.push(
+                            <Pagination.Item key={i} name="activePage"
+                                             active>{i}</Pagination.Item>);
+                    } else (
+                        pages.push(
+                            <Pagination.Item key={i} name="activePage"
+                                             onClick={e => this.updatePage(e)}>{i}</Pagination.Item>));
+                }
+
+            } else {
+                pages.push(
+                    <Pagination.Item key={1} name="activePage" onClick={e => this.updatePage(e)}>{1}</Pagination.Item>
+                )
+                pages.push(<Pagination.Ellipsis key="headellipsis"/>);
+                for (let i = activePage - 2; i <= activePage + 2; i++) {
+                    if (i === activePage) {
+                        pages.push(
+                            <Pagination.Item key={i} name="activePage"
+                                             active>{i}</Pagination.Item>);
+                    } else (
+                        pages.push(
+                            <Pagination.Item key={i} name="activePage"
+                                             onClick={e => this.updatePage(e)}>{i}</Pagination.Item>));
+                }
+                pages.push(<Pagination.Ellipsis key="endellipsis"/>);
+                pages.push(
+                    <Pagination.Item key={pageCount} name="activePage"
+                                     onClick={e => this.updatePage(e)}>{pageCount}</Pagination.Item>
+                )
+            }
+
+
+        }
+
+        pages.push(<Pagination.Next key="next"/>)
+        return (
+
+            <Pagination>
+                {pages}
+            </Pagination>
+        );
+    }
+
     homeCards() {
         let homeCards = [];
-        for (let i = 0; i < this.props.homes.length; i++) {
-            const home = this.props.homes[i];
+        for (let i = 0; i < this.state.homes.length; i++) {
+            const home = this.state.homes[i];
             homeCards.push(
                 <div
                     key={i}
@@ -47,7 +180,7 @@ class indexhomePage extends React.Component {
                         this.context.router.push(`/homes/${home.id}`)
                     }
                 >
-                    <div className="caption gallery-card ">
+                    <div className="card">
                         <img
                             className="homeimg"
                             src={
@@ -60,7 +193,7 @@ class indexhomePage extends React.Component {
                         <p className="hometitle">ID: {home.id} </p>
                         <p className="hometitle">{home.title} </p>
                         <p className="homeprice">${home.price}</p>
-                        <hr/>
+
                     </div>
                 </div>
             );
@@ -69,6 +202,7 @@ class indexhomePage extends React.Component {
     }
 
     searchBar() {
+
         return (
 
             <div className="row">
@@ -98,10 +232,12 @@ class indexhomePage extends React.Component {
     }
 
     render() {
+
+
         return (
             <div>
                 <div className="container cards">
-
+                    {this.pagination()}
                     {this.searchBar()}
                     {this.homeCards()}
                 </div>

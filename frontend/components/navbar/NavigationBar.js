@@ -56,6 +56,17 @@ class NavigationBar extends React.Component {
                             <a
                                 onClick={() =>
                                     this.context.router.push(
+                                        `/trips/${this.props.user.id}`
+                                    )
+                                }
+                            >
+                                Trips
+                            </a>
+                        </li>
+                        <li>
+                            <a
+                                onClick={() =>
+                                    this.context.router.push(
                                         `/userprofile/${this.props.user.id}`
                                     )
                                 }

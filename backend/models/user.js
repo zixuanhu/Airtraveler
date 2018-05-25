@@ -1,8 +1,8 @@
 import bookshelf from "../orm/bookshelf";
-import home from "./home";
+import Home from "./home";
 export default bookshelf.Model.extend({
     tableName: "users",
     homes: function() {
-        return this.hasMany(home);
+        return this.hasMany(Home, "home_id");
     }
 });

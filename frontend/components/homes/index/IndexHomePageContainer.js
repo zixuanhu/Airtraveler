@@ -11,11 +11,8 @@ export const mapStateToProps = state => {
 
 export const mapDispatchToProps = dispatch => {
     return {
-        homeList: () => {
-            return dispatch(homeActions.homelist());
-        },
-        searchhomes: keyword => {
-            return dispatch(homeActions.searchhomes(keyword));
+        searchhomes: searchinfo => {
+            return dispatch(homeActions.searchhomes(searchinfo));
         }
     };
 };

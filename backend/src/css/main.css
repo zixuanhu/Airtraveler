@@ -3,10 +3,14 @@
 @import url("./navbar/navbar.css");
 @import url("./homes/detail/DetailHomePage.css");
 @import url("./homes/home-common.css");
+@import url('./trips/tripcard.css');
+
 a:hover {
     cursor: pointer;
 }
 
 .children-components {
     min-height: calc(100vh - 70px);
+    padding-bottom: 100px
 }
+

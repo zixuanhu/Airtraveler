@@ -1,6 +1,7 @@
 import React from "react";
 import Hero from "../detail_asset/Hero";
-import IconInfo from "../detail_asset/Iconinfo"
+import IconInfo from "../detail_asset/Iconinfo";
+import Trip from '../detail_asset/Trip/TripContainer';
 
 
 const accessibility = "Elevator";
@@ -13,78 +14,10 @@ const checkInD = "3PM - 10PM";
 const checkOutD = "12PM (noon)";
 const propertyTypeD = "Apartment";
 const roomTypeD = "Entire home/apt";
-const amenities = [
-    "Elevator",
-    "Pets allowed",
-    "Internet",
-    "Indoor fireplace",
-    "Breakfast",
-    "Buzzer/wireless intercom",
-    "Heating",
-    "Gym",
-    "Wheelchair accessible",
-    "Family/kid friendly",
-    "Doorman",
-    "Wireless Internet",
-    "Kitchen",
-    "Free parking on premises",
-    "Hot tub",
-    "Cable TV",
-    "Suitable for events",
-    "Iron",
-    "Smoking allowed",
-    "Hair dryer",
-    "Dryer",
-    "Washer",
-    "Shampoo",
-    "Laptop friendly workspace",
-    "Pool",
-    "TV",
-    "Air conditioning",
-    "Hangers",
-    "Essentials",
-    "Private entrance",
-    "Free parking on street",
-    "Paid parking off premises"
-];
-const amenitiesIncluded = [
-    1,
-    0,
-    1,
-    0,
-    0,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    0,
-    1,
-    0,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    0,
-    0,
-    0
-];
+
 
 const airbnbLocation = "Puerto Vallarta, Jalisco, Mexico";
 const reviews = 46;
-
 
 const Section = props => {
     const divStyle = {
@@ -265,9 +198,9 @@ class PageNav extends React.Component {
     }
 }
 
-const ProfileLink = user => {
-
-    if (user.user === undefined) return <div/>;
+const ProfileLink = ({user}) => {
+    // debugger
+    if (user === undefined) return <div/>;
 
     const divStyle = {
         display: "inline-block",
@@ -288,13 +221,14 @@ const ProfileLink = user => {
 
     return (
         <div style={divStyle}>
-            <img style={imgStyle} src={user.user.img}/>
-            <p style={nameStyle}>{user.user.username}</p>
+            <img style={imgStyle} src={user.img}/>
+            <p style={nameStyle}>{user.username}</p>
         </div>
     );
 };
 
-const TitleSection = info => {
+const TitleSection = ({info}) => {
+
     const divStyle = {
         display: "inline-block",
         margin: "10px 120px 20px 0"
@@ -320,7 +254,7 @@ const TitleSection = info => {
     return (
         <Section>
             <div style={divStyle}>
-                <p style={titleStyle}>{info.info.title}</p>
+                <p style={titleStyle}>{info.title}</p>
                 <br/>
                 <a href="#" style={linkStyle}>
                     <span>{airbnbLocation}</span>
@@ -330,11 +264,10 @@ const TitleSection = info => {
                     <span>{reviews} Reviews</span>
                 </a>
             </div>
-            <ProfileLink user={info.info.hostprofile}/>
+            <ProfileLink user={info.hostprofile}/>
         </Section>
     );
 };
-
 
 const TextConverter = props => {
     const titleStyle = {
@@ -378,12 +311,12 @@ const TextConverter = props => {
     );
 };
 
-const OverviewInfo = overviewInfoText => (
+const OverviewInfo = ({overviewInfoText}) => (
     <Section>
         <a name="overview"/>
         <br/>
         <TextConverter
-            textBlock={overviewInfoText.overviewInfoText}
+            textBlock={overviewInfoText}
             idName={OverviewInfo}
         />
         <Link linkUrl="#">Contact host</Link>
@@ -422,7 +355,9 @@ const Space = () => {
                 <SpaceDetail section="Accomodates: ">
                     {accomodatesD}
                 </SpaceDetail>
-                <SpaceDetail section="Bathrooms: ">{bath_availabilityD}</SpaceDetail>
+                <SpaceDetail section="Bathrooms: ">
+                    {bath_availabilityD}
+                </SpaceDetail>
                 <SpaceDetail section="Bedrooms: ">{bedroomsD}</SpaceDetail>
                 <SpaceDetail section="Beds: ">{1}</SpaceDetail>
             </div>
@@ -438,50 +373,6 @@ const Space = () => {
             <Link linkUrl="#houseRules">House rules</Link>
         </Section>
     );
-};
-
-const Amenity = props => {
-    const divStyle = {
-        display: "inline-block",
-        margin: "0 0 10px 0",
-        width: 300
-    };
-
-    return (
-        <div style={divStyle}>
-            <span style={props.style}>{props.amenity}</span>
-        </div>
-    );
-};
-
-// UPDATE: need a way to hide until expanded... maybe add to Redux data?... it's also not the same order as AirBnb...
-const AmenitiesList = () => {
-    const noStyle = {
-        textDecoration: "line-through",
-        color: "#767676",
-        fontWeight: 200
-    };
-
-    return (
-        <Section title="Amenities">
-            <Section idName="amenities">
-                {amenities.map((amenity, idx) => {
-                    if (amenitiesIncluded[idx] === 1) {
-                        return <Amenity key={idx} amenity={amenity}/>;
-                    } else {
-                        return (
-                            <Amenity
-                                key={idx}
-                                style={noStyle}
-                                amenity={amenity}
-                            />
-                        );
-                    }
-                })}
-            </Section>
-        </Section>
-    );
-    //UPDATE: add family amenities
 };
 
 
@@ -543,7 +434,6 @@ class HomeDetailPage extends React.Component {
     componentWillMount() {
         const id = this.props.params.home_id;
         this.props.gethome(id).then(() => {
-
             this.props.findUser(this.props.home.user_id).then(() => {
                 const home = this.props.home;
 
@@ -561,54 +451,60 @@ class HomeDetailPage extends React.Component {
                     beds_availability: home.beds_availability,
                     bath_availability: home.bath_availability,
                     target: home.target,
-                    setup_for_guest: home.setup_for_guest,
+                    setup_for_guest: home.setup_for_guest
                 });
-
-            })
-
+            });
         });
     }
+
 
     render() {
         const marginStyle = {
             marginLeft: this.state.marginLeft,
-            marginRight: 50
+            marginRight: 50,
+
         };
         const heroPic = this.state.img;
         const title = this.state.title;
         const hostprofile = this.state.user;
-        const info = {title, hostprofile}
+        const info = {title, hostprofile};
         const homeinfo = {
             beds_availability: this.state.room_availability,
             bath_availability: this.state.bath_availability,
             guest: this.state.guest_availability,
             room_type: this.state.room_type
-        }
+        };
+
 
         return (
             <div>
-                <Hero heroPic={heroPic}/>
-                <div style={marginStyle}>
-                    <PageNav margin={this.state.marginLeft}/>
-                    <TitleSection
-                        info={info}
-                    />
-                    <IconInfo homeinfo={homeinfo}/>
-                    <OverviewInfo
-                        overviewInfoText={this.state.description}
-                    />
-                    <Space/>
-                    <AmenitiesList/>
 
-                    <Accessibility/>
-                    <Availability/>
+                <Hero heroPic={heroPic}
+                      onChange={e => {
+                          this.change(e)
+                      }}/>
+                <div className="container-fluid">
+                    <div style={marginStyle} className="home-info">
+                        <PageNav margin={this.state.marginLeft}/>
+                        <TitleSection info={info}/>
+                        <IconInfo homeinfo={homeinfo}/>
+                        <OverviewInfo overviewInfoText={this.state.description}/>
+                        <Space/>
+
+                        <Accessibility/>
+                        <Availability/>
+                    </div>
+
+                    <Trip
+                        home_id={this.props.params.home_id}
+                        
+                    />
                 </div>
+
+
             </div>
-        )
-            ;
+        );
     }
 }
 
 export default HomeDetailPage;
-
-

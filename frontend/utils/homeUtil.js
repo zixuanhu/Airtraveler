@@ -8,12 +8,13 @@ export const createhomeUtil = homeData => {
 export const edithomeUtil = homeData => {
     return axios.put("/api/manage/edithome", homeData);
 };
-export const homelistUtil = () => {
-    return axios.get("/api/homes/homelist");
-};
-export const searchhomesUtil = keyword => {
 
-    return axios.get(`/api/homes/searchhomelist/${keyword}`);
+export const searchhomesUtil = searchinfo => {
+    if (searchinfo.keyword) {
+        return axios.get(`/api/homes/searchhomelist/${searchinfo.keyword}/${searchinfo.activePage}`);
+    } else {
+        return axios.get(`/api/homes/searchhomelist/${searchinfo.activePage}`);
+    }
 };
 export const userhomelist = id => {
     return axios.get(`/api/manage/${id}`);

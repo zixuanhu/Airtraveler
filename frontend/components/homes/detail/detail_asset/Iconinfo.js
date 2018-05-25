@@ -41,14 +41,14 @@ const Icon = props => {
         </div>
     );
 };
-const IconInfo = homeinfo => {
+const IconInfo = ({homeinfo}) => {
 
     return (
         <Section>
-            <Icon cName="home">{homeinfo.homeinfo.room_type}</Icon>
-            <Icon cName="users">{homeinfo.homeinfo.guest}guests</Icon>
-            <Icon cName="bath">{homeinfo.homeinfo.bath_availability}bathrooms</Icon>
-            <Icon cName="bed">{homeinfo.homeinfo.beds_availability}bedsrooms</Icon>
+            <Icon cName="home">{homeinfo.room_type}</Icon>
+            <Icon cName="users">{homeinfo.guest}guests</Icon>
+            <Icon cName="bath">{homeinfo.bath_availability}bathrooms</Icon>
+            <Icon cName="bed">{homeinfo.beds_availability}bedsrooms</Icon>
         </Section>
     );
 };

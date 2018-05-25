@@ -1,0 +1,67 @@
+.detail-imgs {
+    transition: 0.3s;
+
+}
+
+.trip-card {
+
+    height: 500px;
+    width: 376px;
+    margin: 30px -10px;
+    padding: 10px;
+    border-radius: 5px;
+    position: relative;
+    transition: 0.3s;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    float: left
+
+}
+
+.trip-card:hover {
+    padding-top: 5px;
+    height: 500px;
+    width: 376px;
+    margin: 5px -10px;
+    padding: 10px;
+    border-radius: 5px;
+    position: relative;
+    transition: 0.3s;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+
+}
+
+.home-info {
+    max-width: 800px;
+    float: left
+}
+
+.arrow {
+    width: 30px;
+    x: 0px;
+    y: 0px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-left: 5%;
+    margin-right: 5%;
+    z-index: 100;
+
+}
+
+.arrow:hover {
+    cursor: pointer;
+}
+
+#left-control {
+    float: left;
+}
+
+#right-control {
+    float: right;
+    right: 0;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+

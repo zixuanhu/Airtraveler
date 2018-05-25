@@ -5,7 +5,7 @@ import { Router, browserHistory } from "react-router";
 import { Provider } from "react-redux";
 import routes from "./routes/routes";
 import store from "./store/store";
-import * as AuthApiUtil from "./utils/authUtil";
+
 import * as authActions from "./actions/authActions";
 import jwtDecode from "jwt-decode";
 

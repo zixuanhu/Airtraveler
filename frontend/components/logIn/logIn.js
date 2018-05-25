@@ -67,7 +67,7 @@ class Login extends React.Component {
 
     onAutoFill() {
         this.setState({
-            identifier: "zixuan",
+            identifier: `User_${Math.floor(Math.random() * 100 + 1)}`,
             password: "password"
         });
     }

@@ -12,6 +12,7 @@ import user from "./routes/user";
 import auth from "./routes/auth";
 import homes from "./routes/homes";
 import manage from "./routes/manage";
+import trips from "./routes/trips";
 
 let app = express();
 app.use(bodyParser.json());
@@ -21,6 +22,7 @@ app.use("/api/auth", auth);
 app.use("/api/homes", homes);
 app.use("/api/user", user);
 app.use("/api/manage", manage);
+app.use("/api/trips", trips);
 
 const compiler = webpack(webpackConfig);
 app.use(webpackHotMiddleware(compiler));
