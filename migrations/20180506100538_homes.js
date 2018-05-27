@@ -13,6 +13,9 @@ exports.up = function(knex, Promise) {
         table.string("bath_availability").notNullable();
         table.string("setup_for_guest").notNullable();
         table.string("target").notNullable();
+        table.string("address").notNullable();
+        table.string("lat").notNullable();
+        table.string("lng").notNullable();
         table.integer("user_id").unsigned();
         table
             .foreign("user_id")

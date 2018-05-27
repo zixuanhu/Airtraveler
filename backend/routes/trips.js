@@ -27,6 +27,9 @@ router.post('/newtrip', (req, res) => {
         .save()
         .then(trip => {
             console.log(trip)
+            return res.json({
+                trip: trip
+            });
         })
         .catch(err => {
                 console.log("******POST /api/trips/newtrip FAIL!!******");
@@ -53,7 +56,20 @@ router.get("/", (req, res) => {
             return res.json(err);
         });
 });
-
+router.get("/delete/:trip_id", (req, res) => {
+    console.log("******GET api//trips/delete PASS!!******");
+    const id = req.params.trip_id;
+    Trip.query({where: {id: id}})
+        .destroy()
+        .then(trips => {
+            console.log("******GET api/trips/delete SUCCESS!!******");
+            return res.json(trips);
+        })
+        .catch(err => {
+            console.log("******GET api/trips/delete FAIL!!******");
+            return res.json(err);
+        });
+});
 router.get("/gettrip/:trip_id", (req, res) => {
     const id = req.params.trip_id;
     console.log("******GET api/trips PASS!!******");

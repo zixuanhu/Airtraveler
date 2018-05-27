@@ -1,5 +1,4 @@
 import React from "react";
-import SignUp from "../../signup/SignUp";
 
 
 class Tripindex extends React.Component {
@@ -15,19 +14,22 @@ class Tripindex extends React.Component {
     }
 
     componentWillMount() {
-        this.props.getTrips(this.state.user_id).then(() => {
-                this.setState({
-                    trips: this.props.trips
-                })
-            }
-        )
+
+        if (~~this.state.user_id === ~~this.props.user.id) {
+            this.props.getTrips(this.state.user_id).then(() => {
+                    this.setState({
+                        trips: this.props.trips
+                    })
+                }
+            )
+        }
     }
 
     buildTripCard(trip, key) {
         const img = trip.home.img[0];
-        const check_in = trip.check_in;
-        const check_out = trip.check_out;
-
+        const check_in = moment(trip.check_in).format('MMMM Do YYYY, h');
+        const check_out = moment(trip.check_out).format('MMMM Do YYYY, h');
+        //debugger
 
         return (
             <div className="container" key={key}>

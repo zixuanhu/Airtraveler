@@ -19,6 +19,11 @@ export const newtrip = tripData => {
         return tripApiUtil.newtripUtil(tripData);
     };
 };
+export const deletetrip = trip_id => {
+    return dispatch => {
+        return tripApiUtil.deletetripUtil(trip_id);
+    };
+};
 export const gettrip = trip_id => {
     return dispatch => {
         return tripApiUtil.gettripUtil(trip_id).then(respond => {

@@ -2,7 +2,7 @@ import React from "react";
 import classnames from "classnames";
 import DateTimeField from "react-datetime";
 import OptionFieldGroup from "../../../../common/OptionFieldGroup";
-import guestAvailabilityOptions from "../../../asset/availbility/guest";
+import guestAvailabilityOptions from "./guestavailbiity";
 import faker from "faker";
 
 class Trip extends React.Component {
@@ -29,7 +29,7 @@ class Trip extends React.Component {
             this.setState({
                 guest_availability: this.props.home.guest_availability,
                 price: this.props.home.price,
-                check_in: moment(new Date()).format("MMM DD YYYY h:mm A"),
+                check_in: moment(new Date()).format("MMM DD YYYY h"),
                 reserved_id: faker.random.uuid()
             });
         });
@@ -68,7 +68,7 @@ class Trip extends React.Component {
     }
 
     updatecheckinDate(e) {
-        const check_in_time = moment(e).format("MMM DD YYYY h:mm A");
+        const check_in_time = moment(e).format("MMM DD YYYY h");
         let error = this.state.errors;
         if (check_in_time != "Invalid date") {
             this.setState({
@@ -107,7 +107,13 @@ class Trip extends React.Component {
                 errors: error
             })
         } else {
-            this.props.newtrip(this.state)
+            this.props.newtrip(this.state).then(() => {
+                this.context.router.push(
+                    `/trips/${this.props.curUser.id}`
+                );
+            })
+
+
         }
 
 
@@ -152,7 +158,7 @@ class Trip extends React.Component {
                     <DateTimeField
                         name={"check_in"}
                         dateTime={this.state.check_in}
-                        format="MMM DD YYYY h:mm A"
+                        format="MMM DD YYYY h"
                         size="md"
                         isValidDate={this.validcheckin}
                         onChange={e => this.updatecheckinDate(e)}
@@ -175,7 +181,7 @@ class Trip extends React.Component {
                     <DateTimeField
                         name={"check_out"}
                         dateTime={this.state.check_out}
-                        format="MMM DD YYYY h:mm A"
+                        format="MMM DD YYYY h"
                         size="md"
                         isValidDate={this.validcheckout}
                         onChange={e => this.updatecheckoutDate(e)}
@@ -198,7 +204,7 @@ class Trip extends React.Component {
                         label="Number of Guest"
                         name="guest_number"
                         value={this.state.guest_number}
-                        options={guestAvailabilityOptions}
+                        options={guestAvailabilityOptions(this.state.guest_availability)}
                         onChange={e => this.updateguestnumber(e)}
                     />
                     {this.state.errors.guest_number && (

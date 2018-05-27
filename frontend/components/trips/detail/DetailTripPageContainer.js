@@ -15,6 +15,9 @@ export const mapDispatchToProps = dispatch => {
     return {
         getTrip: trip_id => {
             return dispatch(tripActions.gettrip(trip_id));
+        },
+        deletetrip: trip_id => {
+            return dispatch(tripActions.deletetrip(trip_id));
         }
     };
 };
