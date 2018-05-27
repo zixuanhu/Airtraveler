@@ -1,22 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e3827670-0343-43de-b235-158dbff8bf01" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/frontend/components/homes/detail/detail_asset/Trip/guestavailbiity.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/backend/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/routes/trips.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/routes/trips.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/actions/tripActions.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/actions/tripActions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/components/homes/detail/detail_asset/Trip/Trip.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/homes/detail/detail_asset/Trip/Trip.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/components/trips/detail/DetailTripPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/trips/detail/DetailTripPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/components/trips/detail/DetailTripPageContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/trips/detail/DetailTripPageContainer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/components/trips/index/IndexTripPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/trips/index/IndexTripPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/utils/tripUtil.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/utils/tripUtil.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/20180506100538_homes.js" beforeDir="false" afterPath="$PROJECT_DIR$/migrations/20180506100538_homes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/seeds/seed.js" beforeDir="false" afterPath="$PROJECT_DIR$/seeds/seed.js" afterDir="false" />
-    </list>
+    <list default="true" id="e3827670-0343-43de-b235-158dbff8bf01" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -143,8 +128,8 @@
           <file leaf-file-name="seed.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/seeds/seed.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="284">
-                  <caret line="104" column="144" selection-start-line="104" selection-start-column="141" selection-end-line="104" selection-end-column="144" />
+                <state relative-caret-position="309">
+                  <caret line="149" column="22" lean-forward="true" selection-start-line="149" selection-start-column="22" selection-end-line="149" selection-end-column="22" />
                 </state>
               </provider>
             </entry>
@@ -395,7 +380,7 @@
       <workItem from="1527224638263" duration="653000" />
       <workItem from="1527226891732" duration="4637000" />
       <workItem from="1527282458198" duration="4821000" />
-      <workItem from="1527309015193" duration="4396000" />
+      <workItem from="1527309015193" duration="4510000" />
     </task>
     <task id="LOCAL-00001" summary="push">
       <created>1526109273634</created>
@@ -429,11 +414,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="111645000" />
+    <option name="totallyTimeSpent" value="111759000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1175" y="23" width="2338" height="947" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.76297575" visible="true" weight="0.14878893" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -443,7 +427,7 @@
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Structure" order="1" sideWeight="0.23702422" side_tool="true" weight="0.19594873" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.21471652" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.46320868" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -895,8 +879,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/seeds/seed.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="284">
-          <caret line="104" column="144" selection-start-line="104" selection-start-column="141" selection-end-line="104" selection-end-column="144" />
+        <state relative-caret-position="309">
+          <caret line="149" column="22" lean-forward="true" selection-start-line="149" selection-start-column="22" selection-end-line="149" selection-end-column="22" />
         </state>
       </provider>
     </entry>
