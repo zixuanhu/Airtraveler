@@ -46,7 +46,7 @@ const IconInfo = ({homeinfo}) => {
     return (
         <Section>
             <Icon cName="home">{homeinfo.room_type}</Icon>
-            <Icon cName="users">{homeinfo.guest}guests</Icon>
+            <Icon cName="users">{homeinfo.guest_availability}guests</Icon>
             <Icon cName="bath">{homeinfo.bath_availability}bathrooms</Icon>
             <Icon cName="bed">{homeinfo.beds_availability}bedsrooms</Icon>
         </Section>

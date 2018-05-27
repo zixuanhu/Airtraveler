@@ -56,7 +56,7 @@ router.get("/", (req, res) => {
             return res.json(err);
         });
 });
-router.get("/delete/:trip_id", (req, res) => {
+router.delete("/delete/:trip_id", (req, res) => {
     console.log("******GET api//trips/delete PASS!!******");
     const id = req.params.trip_id;
     Trip.query({where: {id: id}})

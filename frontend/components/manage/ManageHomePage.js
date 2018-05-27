@@ -1,34 +1,37 @@
 import React from "react";
-import classnames from "classnames";
+
 import {debug} from "util";
 
 class ManageHomePage extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
+            homes: [],
             errors: {}
         };
     }
 
     componentWillMount() {
-        this.props.homeList(this.props.params.user_id);
+        this.props.homeList(this.props.params.user_id).then(() =>
+            this.setState({
+                homes: this.props.homes
+            }));
     }
 
     homeCards() {
-        if (this.props.homes === undefined) return <div/>;
-        let homeCards = [];
-        for (let i = 0; i < this.props.homes.length; i++) {
-            const home = this.props.homes[i];
 
+        let homeCards = [];
+        for (let i = 0; i < this.state.homes.length; i++) {
+            const home = this.state.homes[i];
             homeCards.push(
                 <div
                     key={i}
                     className="col-sm-6 col-md-4 "
                     onClick={() =>
-                        this.context.router.push(`/homes/${home.id}/edit`)
+                        this.context.router.push(`/homes/${home.id}`)
                     }
                 >
-                    <div className="caption gallery-card ">
+                    <div className="card">
                         <img
                             className="homeimg"
                             src={
@@ -40,8 +43,8 @@ class ManageHomePage extends React.Component {
                         <br/>
                         <p className="hometitle">ID: {home.id} </p>
                         <p className="hometitle">{home.title} </p>
-                        <p className="homeprice">$100 per night</p>
-                        <hr/>
+                        <p className="homeprice">${home.price}</p>
+
                     </div>
                 </div>
             );

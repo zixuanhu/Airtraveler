@@ -35,7 +35,6 @@ const images = [
     "http://47b1e16c5fc39d5c11d8-ae3a410e0c52cfb4720aed5a14698407.r7.cf1.rackcdn.com/lps/assets/u/oahu-hotel-rooms-ocean-front-king-room.jpg",
     "https://images.crateandbarrel.com/is/image/Crate/dLP_MdsyAfter_20170414?wid=1440",
     "https://roomshotels.com/wp-content/uploads/2016/09/Rooms-Hotels-Kazbegi-Interior-DSC_5753-1024x683.jpg",
-    "http://mesirci.com/living-rooms-models/living-rooms-models-for-designs-model-home-good-34-room-3d-free-download-house/",
     "http://www.tc.columbia.edu/housing/guest-and-conference-housing/guest-housing/rooms/ghRoom.jpg",
     "https://www.roomandboard.com/features/gallery/Jan_2018_dining/Jan_2018_dining.jpg",
     "http://meccafest.com/mec/simple-living-room-design-Simple-Living-Room-Design-For-Small-House-Chairs-Simple-Living-Room-For-Small-Space-Living-Room-Decorating.jpg",
@@ -205,6 +204,8 @@ function buildHomeSeed(knex) {
     for (let i = 1; i <= BUILD_HOME_NUM; i++) {
         const address = faker.random.arrayElement(geoValidLocations);
         let imgs = [];
+        imgs.push(faker.random.arrayElement(images));
+        imgs.push(faker.random.arrayElement(images));
         imgs.push(faker.random.arrayElement(images));
         imgs.push(faker.random.arrayElement(images));
         res.push(

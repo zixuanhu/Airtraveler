@@ -6,7 +6,7 @@ export const newtripUtil = tripData => {
     return axios.post("/api/trips/newtrip", tripData);
 };
 export const deletetripUtil = trip_id => {
-    return axios.get(`/api/trips/delete/${trip_id}`);
+    return axios.delete(`/api/trips/delete/${trip_id}`);
 };
 
 export const gettripsUtil = guest_id => {
