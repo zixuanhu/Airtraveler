@@ -3,7 +3,22 @@
   <component name="ChangeListManager">
     <list default="true" id="e3827670-0343-43de-b235-158dbff8bf01" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/components/signup/SignUpContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/signup/SignUpContainer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/routes/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/routes/auth.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/routes/homes.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/routes/homes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/css/homes/index/homeIndex.css" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/css/homes/index/homeIndex.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/actions/authActions.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/actions/authActions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/components/homes/detail/detail_asset/Hero.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/homes/detail/detail_asset/Hero.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/components/homes/index/IndexHomePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/homes/index/IndexHomePage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/components/homes/new/NewHomePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/homes/new/NewHomePage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/components/logIn/logIn.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/logIn/logIn.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/components/logIn/logInContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/logIn/logInContainer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/components/userprofile/userProfile.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/userprofile/userProfile.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/reducers/authReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/reducers/authReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/utils/authUtil.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/utils/authUtil.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/20180502183732_users.js" beforeDir="false" afterPath="$PROJECT_DIR$/migrations/20180502183732_users.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/seeds/seed.js" beforeDir="false" afterPath="$PROJECT_DIR$/seeds/seed.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -19,59 +34,29 @@
     <splitter split-orientation="horizontal" split-proportion="0.5">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-          <file leaf-file-name="datetimepicker.css" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/backend/src/css/datetimepicker.css">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="4320">
-                  <caret line="240" column="1" selection-start-line="240" selection-start-column="1" selection-end-line="240" selection-end-column="1" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="IndexTripPageContainer.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/frontend/components/trips/index/IndexTripPageContainer.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="90">
-                  <caret line="7" column="23" selection-end-line="21" selection-end-column="75" />
-                  <folding>
-                    <element signature="e#0#36#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="Trip.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/frontend/components/homes/detail/detail_asset/Trip/Trip.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="3618">
-                  <caret line="206" column="87" selection-start-line="206" selection-start-column="87" selection-end-line="206" selection-end-column="87" />
-                  <folding>
-                    <element signature="e#0#26#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="ManageHomePage.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/frontend/components/manage/ManageHomePage.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="14">
-                  <caret line="6" column="21" lean-forward="true" selection-start-line="6" selection-start-column="21" selection-end-line="6" selection-end-column="21" />
-                  <folding>
-                    <element signature="e#0#26#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="SignUpContainer.js" pinned="false" current-in-tab="true">
+          <file leaf-file-name="SignUpContainer.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/frontend/components/signup/SignUpContainer.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="306">
-                  <caret line="17" column="56" selection-start-line="17" selection-start-column="56" selection-end-line="17" selection-end-column="56" />
-                  <folding>
-                    <element signature="e#0#38#0" expanded="true" />
-                  </folding>
+                <state relative-caret-position="-12">
+                  <caret column="19" selection-start-column="19" selection-end-column="19" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="IndexHomePage.js" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/frontend/components/homes/index/IndexHomePage.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="178">
+                  <caret line="235" column="17" selection-start-line="235" selection-start-column="17" selection-end-line="235" selection-end-column="17" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="homeIndex.css" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/backend/src/css/homes/index/homeIndex.css">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="186">
+                  <caret line="15" column="12" lean-forward="true" selection-start-line="15" selection-start-column="12" selection-end-line="15" selection-end-column="12" />
                 </state>
               </provider>
             </entry>
@@ -80,7 +65,7 @@
       </split-first>
       <split-second>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-          <file leaf-file-name="DetailTripPageContainer.js" pinned="false" current-in-tab="false">
+          <file leaf-file-name="DetailTripPageContainer.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/frontend/components/trips/detail/DetailTripPageContainer.js">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="216">
@@ -92,23 +77,23 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="IndexHomePage.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/frontend/components/homes/index/IndexHomePage.js">
+          <file leaf-file-name="UserProfile.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/frontend/components/userprofile/UserProfile.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="3672">
-                  <caret line="205" column="16" lean-forward="true" selection-start-line="205" selection-start-column="16" selection-end-line="205" selection-end-column="16" />
+                <state relative-caret-position="133">
+                  <caret line="94" column="50" lean-forward="true" selection-start-line="94" selection-start-column="50" selection-end-line="94" selection-end-column="50" />
+                  <folding>
+                    <element signature="e#0#26#0" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="Login.js" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/frontend/components/login/Login.js">
+          <file leaf-file-name="homes.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/backend/routes/homes.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="199">
-                  <caret line="45" column="45" lean-forward="true" selection-start-line="45" selection-start-column="16" selection-end-line="45" selection-end-column="45" />
-                  <folding>
-                    <element signature="e#0#26#0" expanded="true" />
-                  </folding>
+                <state relative-caret-position="175">
+                  <caret line="34" column="45" lean-forward="true" selection-start-line="34" selection-start-column="45" selection-end-line="34" selection-end-column="45" />
                 </state>
               </provider>
             </entry>
@@ -139,6 +124,11 @@
       <find>over</find>
       <find>debu</find>
       <find>60</find>
+      <find>http://www.kosovamanagement.com/b56l/wa/decorations-chic-interior-brick-wall-decor-for-living-room-with_wall-decoration.jpg</find>
+      <find>http://www.kosovamanagement.com/b56l/wa/decorations-chic-interior-brick-wall-decor-for-living-room-with_wall-decoration.jp</find>
+      <find>a</find>
+      <find>pro</find>
+      <find>li</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -147,19 +137,14 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/backend/orm/bookshelf.js" />
-        <option value="$PROJECT_DIR$/backend/routes/manage.js" />
-        <option value="$PROJECT_DIR$/frontend/components/homes/edit/HomeEditPage.js" />
         <option value="$PROJECT_DIR$/frontend/reducers/homeReducer.js" />
         <option value="$PROJECT_DIR$/backend/index.html" />
         <option value="$PROJECT_DIR$/frontend/utils/homeUtil.js" />
         <option value="$PROJECT_DIR$/frontend/components/homes/index/IndexHomePageContainer.js" />
         <option value="$PROJECT_DIR$/frontend/actions/homeActions.js" />
-        <option value="$PROJECT_DIR$/backend/routes/homes.js" />
         <option value="$PROJECT_DIR$/seeds/homes.js" />
         <option value="$PROJECT_DIR$/shortcut/reset_db.sh" />
         <option value="$PROJECT_DIR$/backend/src/css/homes/home-common.css" />
-        <option value="$PROJECT_DIR$/backend/src/css/homes/index/homeIndex.css" />
         <option value="$PROJECT_DIR$/frontend/components/homes/detail/detail_asset/Trip.js" />
         <option value="$PROJECT_DIR$/frontend/components/homes/detail/detail_index/HomeDetailPageContainer.js" />
         <option value="$PROJECT_DIR$/backend/src/css/datetimepicker.css" />
@@ -173,13 +158,10 @@
         <option value="$PROJECT_DIR$/frontend/components/navbar/NavigationBar.js" />
         <option value="$PROJECT_DIR$/frontend/components/trips/index/IndexTripPageContainer.js" />
         <option value="$PROJECT_DIR$/backend/models/trip.js" />
-        <option value="$PROJECT_DIR$/frontend/components/homes/index/IndexHomePage.js" />
-        <option value="$PROJECT_DIR$/frontend/components/homes/detail/detail_asset/Hero.js" />
         <option value="$PROJECT_DIR$/backend/src/css/trips/tripcard.css.js" />
         <option value="$PROJECT_DIR$/backend/src/css/main.css" />
         <option value="$PROJECT_DIR$/frontend/reducers/tripReducer.js" />
         <option value="$PROJECT_DIR$/frontend/routes/routes.js" />
-        <option value="$PROJECT_DIR$/frontend/components/signup/SignUp.js" />
         <option value="$PROJECT_DIR$/backend/src/css/trips/tripcard.css" />
         <option value="$PROJECT_DIR$/frontend/actions/tripActions.js" />
         <option value="$PROJECT_DIR$/frontend/components/trips/detail/DetailTripPageContainer.js" />
@@ -187,7 +169,6 @@
         <option value="$PROJECT_DIR$/frontend/components/homes/detail/detail_asset/Trip/Trip.js" />
         <option value="$PROJECT_DIR$/frontend/components/homes/detail/detail_asset/Trip/guestavailbiity.js" />
         <option value="$PROJECT_DIR$/frontend/components/trips/index/IndexTripPage.js" />
-        <option value="$PROJECT_DIR$/seeds/seed.js" />
         <option value="$PROJECT_DIR$/backend/routes/trips.js" />
         <option value="$PROJECT_DIR$/frontend/utils/tripUtil.js" />
         <option value="$PROJECT_DIR$/frontend/components/homes/detail/detail_asset/TitleSection.js" />
@@ -198,6 +179,15 @@
         <option value="$PROJECT_DIR$/frontend/components/homes/detail/detail_asset/OverviewInfo.js" />
         <option value="$PROJECT_DIR$/frontend/components/manage/ManageHomePage.js" />
         <option value="$PROJECT_DIR$/frontend/components/signup/SignUpContainer.js" />
+        <option value="$PROJECT_DIR$/seeds/seed.js" />
+        <option value="$PROJECT_DIR$/frontend/components/homes/detail/detail_asset/Hero.js" />
+        <option value="$PROJECT_DIR$/migrations/20180502183732_users.js" />
+        <option value="$PROJECT_DIR$/backend/routes/homes.js" />
+        <option value="$PROJECT_DIR$/frontend/components/signup/SignUp.js" />
+        <option value="$PROJECT_DIR$/frontend/components/userprofile/UserProfile.js" />
+        <option value="$PROJECT_DIR$/frontend/components/homes/new/NewHomePage.js" />
+        <option value="$PROJECT_DIR$/backend/src/css/homes/index/homeIndex.css" />
+        <option value="$PROJECT_DIR$/frontend/components/homes/index/IndexHomePage.js" />
       </list>
     </option>
   </component>
@@ -218,8 +208,8 @@
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="9" />
-    <option name="y" value="69" />
+    <option name="x" value="1867" />
+    <option name="y" value="34" />
     <option name="width" value="2338" />
     <option name="height" value="947" />
   </component>
@@ -228,54 +218,96 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="Airtraveler_05252018" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Airtraveler_05252018" type="462c0819:PsiDirectoryNode" />
+              <item name="Airtraveler_05272018" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Airtraveler_05272018" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="Airtraveler_05252018" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Airtraveler_05252018" type="462c0819:PsiDirectoryNode" />
+              <item name="Airtraveler_05272018" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Airtraveler_05272018" type="462c0819:PsiDirectoryNode" />
               <item name="backend" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="Airtraveler_05252018" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Airtraveler_05252018" type="462c0819:PsiDirectoryNode" />
+              <item name="Airtraveler_05272018" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Airtraveler_05272018" type="462c0819:PsiDirectoryNode" />
+              <item name="backend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Airtraveler_05272018" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Airtraveler_05272018" type="462c0819:PsiDirectoryNode" />
+              <item name="backend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Airtraveler_05272018" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Airtraveler_05272018" type="462c0819:PsiDirectoryNode" />
+              <item name="backend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
+              <item name="homes" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Airtraveler_05272018" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Airtraveler_05272018" type="462c0819:PsiDirectoryNode" />
+              <item name="backend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
+              <item name="homes" type="462c0819:PsiDirectoryNode" />
+              <item name="index" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Airtraveler_05272018" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Airtraveler_05272018" type="462c0819:PsiDirectoryNode" />
               <item name="frontend" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="Airtraveler_05252018" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Airtraveler_05252018" type="462c0819:PsiDirectoryNode" />
+              <item name="Airtraveler_05272018" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Airtraveler_05272018" type="462c0819:PsiDirectoryNode" />
               <item name="frontend" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="Airtraveler_05252018" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Airtraveler_05252018" type="462c0819:PsiDirectoryNode" />
+              <item name="Airtraveler_05272018" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Airtraveler_05272018" type="462c0819:PsiDirectoryNode" />
               <item name="frontend" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="login" type="462c0819:PsiDirectoryNode" />
+              <item name="homes" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="Airtraveler_05252018" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Airtraveler_05252018" type="462c0819:PsiDirectoryNode" />
+              <item name="Airtraveler_05272018" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Airtraveler_05272018" type="462c0819:PsiDirectoryNode" />
               <item name="frontend" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="signup" type="462c0819:PsiDirectoryNode" />
+              <item name="homes" type="462c0819:PsiDirectoryNode" />
+              <item name="index" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="Airtraveler_05252018" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Airtraveler_05252018" type="462c0819:PsiDirectoryNode" />
+              <item name="Airtraveler_05272018" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Airtraveler_05272018" type="462c0819:PsiDirectoryNode" />
               <item name="frontend" type="462c0819:PsiDirectoryNode" />
-              <item name="reducers" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="userprofile" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Airtraveler_05272018" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Airtraveler_05272018" type="462c0819:PsiDirectoryNode" />
+              <item name="migrations" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Airtraveler_05272018" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Airtraveler_05272018" type="462c0819:PsiDirectoryNode" />
+              <item name="seeds" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -377,7 +409,9 @@
       <workItem from="1527380952578" duration="6507000" />
       <workItem from="1527396763428" duration="156000" />
       <workItem from="1527396934480" duration="1421000" />
-      <workItem from="1527399398162" duration="43000" />
+      <workItem from="1527399398162" duration="141000" />
+      <workItem from="1527399603955" duration="73000" />
+      <workItem from="1527463643740" duration="6909000" />
     </task>
     <task id="LOCAL-00001" summary="push">
       <created>1526109273634</created>
@@ -411,13 +445,13 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="119993000" />
+    <option name="totallyTimeSpent" value="127073000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="9" y="69" width="2338" height="947" extended-state="0" />
+    <frame x="1867" y="34" width="2338" height="947" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.76297575" visible="true" weight="0.14878893" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.76297575" visible="true" weight="0.14878893" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
@@ -425,7 +459,7 @@
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Structure" order="1" sideWeight="0.23702422" side_tool="true" weight="0.19594873" />
-      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.38480097" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.3835947" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -519,31 +553,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/frontend/components/homes/edit/HomeEditPage.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="196">
-          <caret line="271" column="21" lean-forward="true" selection-start-line="271" selection-start-column="21" selection-end-line="271" selection-end-column="21" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/migrations/20180506100538_homes.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="1" column="4" selection-start-line="1" selection-start-column="4" selection-end-line="21" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/migrations/20180502183732_users.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="11" column="37" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/seeds/homes.js" />
     <entry file="file://$PROJECT_DIR$/seeds/users.js" />
     <entry file="file://$PROJECT_DIR$/migrations/20180517235706_trip.js" />
     <entry file="file://$PROJECT_DIR$/backend/orm/bookshelf.js">
@@ -637,31 +646,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/components/homes/detail/detail_asset/Hero.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="954">
-          <caret line="53" column="70" selection-start-line="53" selection-start-column="70" selection-end-line="53" selection-end-column="70" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/frontend/reducers/tripReducer.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
           <caret line="20" selection-start-line="20" selection-end-line="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/src/css/homes/index/homeIndex.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/components/signup/SignUp.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4806">
-          <caret line="268" selection-start-line="268" selection-end-line="270" selection-end-column="2" />
         </state>
       </provider>
     </entry>
@@ -672,24 +660,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/components/navbar/NavigationBar.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="282">
-          <caret line="57" column="35" lean-forward="true" selection-start-line="57" selection-start-column="35" selection-end-line="59" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/frontend/components/homes/detail/detail_asset/Trip/TripContainer.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="72">
           <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/routes/homes.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="519">
-          <caret line="92" column="26" lean-forward="true" selection-start-line="92" selection-start-column="26" selection-end-line="92" selection-end-column="26" />
         </state>
       </provider>
     </entry>
@@ -745,13 +719,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/seeds/seed.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="129">
-          <caret line="38" column="52" selection-start-line="38" selection-start-column="52" selection-end-line="38" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/backend/routes/trips.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="141">
@@ -801,16 +768,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/components/trips/index/IndexTripPageContainer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="7" column="23" selection-end-line="21" selection-end-column="75" />
-          <folding>
-            <element signature="e#0#36#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/frontend/components/homes/detail/detail_index/HomeDetailPage.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1066">
@@ -832,6 +789,87 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/seeds/seed.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="358">
+          <caret line="64" column="191" selection-start-line="64" selection-start-column="191" selection-end-line="64" selection-end-column="191" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/components/homes/detail/detail_asset/Hero.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="389">
+          <caret line="68" column="41" lean-forward="true" selection-start-line="68" selection-start-column="41" selection-end-line="68" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/components/login/LoginContainer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/components/navbar/NavigationBar.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="343">
+          <caret line="108" column="16" lean-forward="true" selection-start-line="108" selection-start-column="16" selection-end-line="108" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/components/login/Login.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="347">
+          <caret line="59" column="23" lean-forward="true" selection-start-line="59" selection-start-column="23" selection-end-line="59" selection-end-column="23" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/components/trips/index/IndexTripPageContainer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="7" column="23" selection-end-line="21" selection-end-column="75" />
+          <folding>
+            <element signature="e#0#36#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/components/manage/ManageHomePage.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="6" column="21" selection-start-line="6" selection-start-column="21" selection-end-line="6" selection-end-column="21" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/migrations/20180502183732_users.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="148">
+          <caret line="13" column="36" selection-start-line="13" selection-start-column="36" selection-end-line="13" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/routes/homes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="34" column="45" lean-forward="true" selection-start-line="34" selection-start-column="45" selection-end-line="34" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/components/signup/SignUp.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1350">
+          <caret line="252" column="43" selection-start-line="252" selection-start-column="43" selection-end-line="252" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/frontend/components/trips/detail/DetailTripPageContainer.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
@@ -842,27 +880,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/components/homes/index/IndexHomePage.js">
+    <entry file="file://$PROJECT_DIR$/frontend/components/homes/new/NewHomePage.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3672">
-          <caret line="205" column="16" lean-forward="true" selection-start-line="205" selection-start-column="16" selection-end-line="205" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/components/login/Login.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="199">
-          <caret line="45" column="45" lean-forward="true" selection-start-line="45" selection-start-column="16" selection-end-line="45" selection-end-column="45" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/components/manage/ManageHomePage.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="14">
-          <caret line="6" column="21" lean-forward="true" selection-start-line="6" selection-start-column="21" selection-end-line="6" selection-end-column="21" />
+        <state relative-caret-position="257">
+          <caret line="125" column="31" lean-forward="true" selection-start-line="125" selection-start-column="31" selection-end-line="125" selection-end-column="31" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
@@ -871,11 +892,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/frontend/components/signup/SignUpContainer.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="17" column="56" selection-start-line="17" selection-start-column="56" selection-end-line="17" selection-end-column="56" />
+        <state relative-caret-position="-12">
+          <caret column="19" selection-start-column="19" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/components/userprofile/UserProfile.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="94" column="50" lean-forward="true" selection-start-line="94" selection-start-column="50" selection-end-line="94" selection-end-column="50" />
           <folding>
-            <element signature="e#0#38#0" expanded="true" />
+            <element signature="e#0#26#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/src/css/homes/index/homeIndex.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="186">
+          <caret line="15" column="12" lean-forward="true" selection-start-line="15" selection-start-column="12" selection-end-line="15" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/components/homes/index/IndexHomePage.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="178">
+          <caret line="235" column="17" selection-start-line="235" selection-start-column="17" selection-end-line="235" selection-end-column="17" />
         </state>
       </provider>
     </entry>

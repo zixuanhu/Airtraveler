@@ -8,13 +8,6 @@ export const setCurrentUser = user => {
         user
     };
 };
-export const setAuthError = error => {
-    return {
-        type: AuthApiUtil.SET_AUTH_ERROR,
-        error
-    };
-};
-
 
 export const signup = userData => {
     return dispatch => {
@@ -26,8 +19,7 @@ export const login = userData => {
     return dispatch => {
         return AuthApiUtil.loginUtil(userData).then(respond => {
             if ("error" in respond.data) {
-                const error = respond.data.error;
-                dispatch(setAuthError(error));
+                return respond.data.error;
             } else {
                 const token = respond.data.token;
                 const userInfo = jwtDecode(token);

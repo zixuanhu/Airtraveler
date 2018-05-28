@@ -16,15 +16,9 @@ export default (state = authDefaultState, action = {}) => {
                 isAuthenticated: !isEmpty(action.user),
                 user: action.user
             };
-
             const newAuthState = Object.assign({}, state, newAuthObj);
             return newAuthState;
-        case authUtil.SET_AUTH_ERROR:
-            const newAuthError = {
-                error: action.error
-            };
-            const newErrorState = Object.assign({}, state, newAuthError);
-            return newErrorState;
+
         default:
             return state;
     }

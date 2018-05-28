@@ -104,7 +104,6 @@ router.post("/login", (req, res) => {
                         jwtSecret.jwtSecret
                     );
                     console.log("******POST /api/auth/login SUCCESS!!******");
-
                     return res.json({ token });
                 } else {
                     console.log("******POST /api/auth/login FAIL!!******");

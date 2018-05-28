@@ -250,7 +250,7 @@ class SignUp extends React.Component {
                                 className="btn btn-warning pull-right"
                                 onClick={e => this.onAutoFill(e)}
                             >
-                                Demo
+                                Demo button
                             </button>
                         )}
                     </div>

@@ -21,6 +21,7 @@ class Newhome extends React.Component {
             user_id: this.props.user.id,
             title: "",
             description: "",
+            address: "",
             img: [],
             property_type: "",
             room_type: "",
@@ -91,7 +92,9 @@ class Newhome extends React.Component {
         }
         if (isEmpty(errors)) {
             if (this.state.img.length === 0) {
-                this.state.img = ["http://pic.uzzf.com/up/2017-3/14901722897158766.jpg"];
+                this.state.img = [
+                    "http://pic.uzzf.com/up/2017-3/14901722897158766.jpg"
+                ];
             }
             this.props.createhome(this.state).then(() => {
                 console.log("create success");
@@ -119,6 +122,7 @@ class Newhome extends React.Component {
             bath_availability: "6",
             setup_for_guest: "Pay to clean up",
             target: "Family",
+            address: "903 s 34th pl, renton, WA, USA",
             readyToSubmit: true
         });
     }
@@ -159,8 +163,12 @@ class Newhome extends React.Component {
         for (let i = 0; i < this.state.img.length; i++) {
             imgs.push(
                 <div className="col-md-4" key={i}>
-                    <span className="delet-icon"
-                          onClick={e => this.deletimg(e, i)}>&times;</span>
+                    <span
+                        className="delet-icon"
+                        onClick={e => this.deletimg(e, i)}
+                    >
+                        &times;
+                    </span>
                     <img
                         src={this.state.img[i]}
                         className="img-rounded imgComponent-imgs"
@@ -321,6 +329,16 @@ class Newhome extends React.Component {
                         onChange={e => this.updateForm(e)}
                         error={this.state.errors.room_type}
                         options={roomTypeOptions}
+                    />
+                    <label className="control-label">address</label>
+                    <input
+                        className="form-control"
+                        value={this.state.address}
+                        name="address"
+                        placeholder=''
+                        onChange={e => {
+                            this.updateForm(e)
+                        }}
                     />
                 </div>
 

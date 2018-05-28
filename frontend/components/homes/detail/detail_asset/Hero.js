@@ -54,7 +54,7 @@ class Hero extends React.Component {
             backgroundImage: "url(" + imgs[this.state.curIndex] + ")",
             backgroundSize: "cover",
             backgroundPosition: "center",
-            height: 320,
+            height: 500,
 
         };
 

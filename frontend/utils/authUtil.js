@@ -1,7 +1,6 @@
 import axios from "axios";
 export const UPDATE_User = "UPDATE_User";
 export const SET_CURRENT_USER = "SET_CURRENT_USER";
-export const SET_AUTH_ERROR = "SET_AUTH_ERROR";
 
 export const signupUtil = userData => {
     return axios.post("/api/auth/signup", userData);

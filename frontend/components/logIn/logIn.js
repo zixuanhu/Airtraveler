@@ -41,23 +41,21 @@ class Login extends React.Component {
             });
             return;
         }
-        this.props.login(loginData).then(() => {
-            if (this.props.error === "") {
+        this.props.login(loginData).then(res => {
+            if (res === undefined) {
                 console.log("login success");
-                this.context.router.push(`/`);
+                return this.context.router.push(`/`);
             } else {
-                if (this.props.error === "user") {
+                if (res.error === "user") {
                     let errors = this.state.errors;
                     errors.identifier = "this username or email does not exist";
-                    // debugger;
-                    this.setState({
+                    return this.setState({
                         errors: errors
                     });
                 } else {
-                    // debugger;
                     let errors = this.state.errors;
                     errors.password = "the password does not match";
-                    this.setState({
+                    return this.setState({
                         errors: errors
                     });
                 }
@@ -67,90 +65,81 @@ class Login extends React.Component {
 
     onAutoFill() {
         this.setState({
-            identifier: `User_${Math.floor(Math.random() * 100 + 1)}`,
+            identifier: `User_${Math.floor(Math.random() * 10 + 1)}`,
             password: "password"
         });
     }
     render() {
         return (
             <div className="container">
-                <div className="omb_login">
-                    <h3 className="omb_authTitle">
-                        Login or <a href="/signup"> Sign up </a>
-                    </h3>
-                    <div className="row omb_row-sm-offset-3">
-                        <div className="col-xs-12 col-sm-6">
-                            <div
-                                className={classnames("form-group", {
-                                    "has-error": this.state.errors.identifier
-                                })}
-                            >
-                                <div className="input-group">
-                                    <span className="input-group-addon">
-                                        <i className="fa fa-user" />
-                                    </span>
-                                    <input
-                                        className="form-control"
-                                        placeholder="username or email address"
-                                        name="identifier"
-                                        onChange={e => this.updateForm(e)}
-                                        value={this.state.identifier}
-                                    />
-                                </div>
-                                {this.state.errors.identifier && (
-                                    <span className="help-block">
-                                        {this.state.errors.identifier}
-                                    </span>
-                                )}
-                            </div>
-                            <br />
-                            <div
-                                className={classnames("form-group", {
-                                    "has-error": this.state.errors.password
-                                })}
-                            >
-                                <div className="input-group">
-                                    <span className="input-group-addon">
-                                        <i className="fa fa-lock" />
-                                    </span>
-                                    <input
-                                        className="form-control"
-                                        placeholder="Password"
-                                        name="password"
-                                        type="password"
-                                        onChange={e => this.updateForm(e)}
-                                        value={this.state.password}
-                                    />
-                                </div>
-                                {this.state.errors.password && (
-                                    <span className="help-block">
-                                        {this.state.errors.password}
-                                    </span>
-                                )}
-                            </div>
-                            <br />
-                            <button
-                                className="btn btn-primary"
-                                onClick={() => this.submitForm()}
-                            >
-                                Login
-                            </button>
-                            {this.state.identifier ? (
-                                <button
-                                    className="btn btn-success pull-right"
-                                    onClick={() => this.submitForm()}
-                                >
-                                    Go
-                                </button>
-                            ) : (
-                                <button
-                                    className="btn btn-warning pull-right"
-                                    onClick={e => this.onAutoFill(e)}
-                                >
-                                    Demo
-                                </button>
+                <div className="row">
+                    <div className="col-md-6 col-md-offset-3">
+                        <h2>
+                            Please Sign Up or <a href="/login">Login</a>
+                        </h2>
+                        <div
+                            className={classnames("form-group", {
+                                "has-error": this.state.errors.identifier
+                            })}
+                        >
+                            <label className="control-label">
+                                Username/Email
+                            </label>
+                            <input
+                                className="form-control"
+                                type="text"
+                                name="identifier"
+                                placeholder="Your username or email address"
+                                value={this.state.identifier}
+                                onChange={e => this.updateForm(e)}
+                            />
+                            {this.state.errors.identifier && (
+                                <span className="help-block">
+                                    {this.state.errors.identifier}
+                                </span>
                             )}
                         </div>
+                        <div
+                            className={classnames("form-group", {
+                                "has-error": this.state.errors.password
+                            })}
+                        >
+                            <label className="control-label">Password</label>
+                            <input
+                                className="form-control"
+                                type="password"
+                                name="password"
+                                placeholder="Password"
+                                value={this.state.password}
+                                onChange={e => this.updateForm(e)}
+                            />
+                            {this.state.errors.password && (
+                                <span className="help-block">
+                                    {this.state.errors.password}
+                                </span>
+                            )}
+                        </div>
+                        <button
+                            className="btn btn-primary"
+                            onClick={() => this.submitForm()}
+                        >
+                            Login
+                        </button>
+                        {this.state.identifier ? (
+                            <button
+                                className="btn btn-success pull-right"
+                                onClick={() => this.submitForm()}
+                            >
+                                Go
+                            </button>
+                        ) : (
+                            <button
+                                className="btn btn-warning pull-right"
+                                onClick={e => this.onAutoFill(e)}
+                            >
+                                Demo
+                            </button>
+                        )}
                     </div>
                 </div>
             </div>

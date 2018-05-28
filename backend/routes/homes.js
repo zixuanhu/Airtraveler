@@ -20,6 +20,7 @@ router.post("/create", (req, res) => {
     const setup_for_guest = req.body.setup_for_guest;
     const target = req.body.target;
     const user_id = req.body.user_id;
+    const address = req.body.address
     Home.forge(
         {
             title: title,
@@ -34,7 +35,8 @@ router.post("/create", (req, res) => {
             bath_availability: bath_availability,
             setup_for_guest: setup_for_guest,
             target: target,
-            user_id: user_id
+            user_id: user_id,
+            address: address
         },
         {
             hasTimestamps: true
@@ -50,6 +52,7 @@ router.post("/create", (req, res) => {
             });
         })
         .catch(err => {
+            console.log(err)
             console.log("******POST /api/home/create FAIL!!******");
             return res.json({
                 success: false,

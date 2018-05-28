@@ -1,5 +1,7 @@
 import React from "react";
 import classnames from "classnames";
+import PhoneInput, {format} from "react-phone-input-auto-format";
+
 
 class UserProfile extends React.Component {
     constructor(props) {
@@ -20,7 +22,7 @@ class UserProfile extends React.Component {
 
     componentWillMount() {
         this.props.findUser(this.props.routeParams.identifer).then(() => {
-              
+
                 this.setState({
                     user: this.props.user,
                     email: this.props.user.email,
@@ -90,7 +92,7 @@ class UserProfile extends React.Component {
             });
             return;
         }
-        if (isNaN((this.state.phonenumber).replace(/(\s*$)/g, ""))) {
+        if (this.state.phonenumber.length != 14) {
             let errors = this.state.errors;
             errors.phonenumber = "the phonenumber is invalid";
             this.setState({
@@ -148,11 +150,23 @@ class UserProfile extends React.Component {
     }
 
     updateForm(e) {
+
         e.preventDefault();
         this.setState({
             [e.target.name]: e.target.value
         });
     }
+
+    onAutoFill(e) {
+        e.preventDefault();
+        this.setState({
+            gender: true,
+            firstname: "zixuan",
+            lastname: "hu",
+            phonenumber: format('5037248577')
+        })
+    }
+
 
     image() {
         if (this.state.img) {
@@ -187,15 +201,28 @@ class UserProfile extends React.Component {
 
     }
 
+    setPhoneNumber(e) {
+        e.preventDefault();
+
+        if (e.target.value.length < 15) {
+            this.setState({
+                [e.target.name]: format(e.target.value)
+            });
+        }
+
+    }
+
 
     editProfile() {
+        console.log(this.state.phonenumber)
+
         return (
             <div className="container">
                 <br/>
 
                 <div className="row">
                     <div className="col-md-6 col-md-offset-3">
-                        <h2>Please Edit</h2>
+                        <h2>Profile</h2>
                         <div>
                             <label className="control-label">
                                 Profile picture
@@ -307,20 +334,24 @@ class UserProfile extends React.Component {
                             })}
                         >
                             <label className="control-label">Phone number</label>
+
                             <input
                                 className="form-control"
                                 type="text"
                                 name="phonenumber"
                                 placeholder="phonenumber"
                                 value={this.state.phonenumber}
-                                onChange={e => this.updateForm(e)}
-                            />
+                                onChange={e => {
+                                    this.setPhoneNumber(e)
+                                }}/>
+
                             {this.state.errors.phonenumber && (
                                 <span className="help-block">
                                     {this.state.errors.phonenumber}
                                 </span>
                             )}
                         </div>
+
                         <div>
                             <label className="control-label">
                                 Self Instruction
@@ -344,6 +375,21 @@ class UserProfile extends React.Component {
                         >
                             Submit
                         </button>
+                        {(this.state.username && this.state.firstname && this.state.lastname && this.state.gender && this.state.phonenumber) ? (
+                            <button
+                                className="btn btn-success pull-right"
+                                onClick={() => this.submitForm()}
+                            >
+                                Go
+                            </button>
+                        ) : (
+                            <button
+                                className="btn btn-warning pull-right"
+                                onClick={e => this.onAutoFill(e)}
+                            >
+                                Demo
+                            </button>
+                        )}
                     </div>
                 </div>
             </div>

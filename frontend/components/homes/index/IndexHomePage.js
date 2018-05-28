@@ -231,18 +231,28 @@ class indexhomePage extends React.Component {
 
     }
 
+    room() {
+        return (
+            <div></div>
+        )
+    }
+
     render() {
-
-
         return (
             <div>
-                <div className="container cards">
-                    {this.pagination()}
-                    {this.searchBar()}
-                    {this.homeCards()}
-                </div>
+                {this.room()}
             </div>
-        );
+        )
+
+        // return (
+        //     <div>
+        //         <div className="container cards">
+        //             {this.pagination()}
+        //             {this.searchBar()}
+        //             {this.homeCards()}
+        //         </div>
+        //     </div>
+        // );
     }
 }
 
