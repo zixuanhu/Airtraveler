@@ -1,7 +1,6 @@
 import React from "react";
 import {withGoogleMap, GoogleMap, Marker} from "react-google-maps";
 
-
 const CoreMap = withGoogleMap(props => {
     return (
         <GoogleMap
@@ -24,6 +23,7 @@ const CoreMap = withGoogleMap(props => {
 const HomeGoogleMap = ({lat, lng}) => {
     lat = parseFloat(lat);
     lng = parseFloat(lng);
+  
     return (
         <CoreMap
             loadingElement={

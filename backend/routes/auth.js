@@ -3,6 +3,7 @@ import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 import jwtSecret from "../config/jwtSecret";
 import User from "../models/user";
+
 let router = express.Router();
 router.put("/editprofile", (req, res) => {
     console.log("****** pass POST /api/auth/editProfile!!******");
@@ -10,11 +11,11 @@ router.put("/editprofile", (req, res) => {
     const email = req.body.email;
     const oldusername = req.body.oldusername;
 
-    User.query({ where: { username: oldusername } })
+    User.query({where: {username: oldusername}})
         .fetch()
         .then(user => {
             user
-                .set({ username: username, email: email }, User)
+                .set({username: username, email: email}, User)
                 .save()
                 .then(user => {
                     console.log("pass here");
@@ -27,29 +28,29 @@ router.put("/editprofile", (req, res) => {
                     );
                     console.log("******POST /api/auth/edit SUCCESS!!******");
 
-                    return res.json({ token });
+                    return res.json({token});
                 })
                 .catch(error => {
                     console.log(
                         "******POST /api/auth/editProfile!! fail******"
                     );
-                    return res.json({ error: error });
+                    return res.json({error: error});
                 });
         });
 });
 router.post("/finduserexists", (req, res) => {
     const identifer = req.body.identifer;
     User.query({
-        where: { username: identifer },
-        orWhere: { email: identifer }
+        where: {username: identifer},
+        orWhere: {email: identifer}
     })
         .fetch()
         .then(user => {
-            return res.json({ user: user });
+            return res.json({user: user});
         })
         .catch(error => {
             console.log("******POST /api/auth/findUserFAIL!!******");
-            return res.json({ error: error });
+            return res.json({error: error});
         });
 });
 // POST api/auth/signup :signup
@@ -68,16 +69,16 @@ router.post("/signup", (req, res) => {
             img: img,
             password_digest: password_digest
         },
-        { hasTimestamps: true }
+        {hasTimestamps: true}
     )
         .save()
         .then(user => {
             console.log("******POST api/auth/signup SUCCESS!!******");
-            return res.json({ success: true, user: user });
+            return res.json({success: true, user: user});
         })
         .catch(error => {
             console.log("******POST api/auth/signup FAIL!!******");
-            return res.json({ success: false, error: error });
+            return res.json({success: false, error: error});
         });
 });
 
@@ -87,8 +88,8 @@ router.post("/login", (req, res) => {
     const password = req.body.password;
 
     User.query({
-        where: { username: identifier },
-        orWhere: { email: identifier }
+        where: {username: identifier},
+        orWhere: {email: identifier}
     })
         .fetch()
         .then(user => {
@@ -104,19 +105,19 @@ router.post("/login", (req, res) => {
                         jwtSecret.jwtSecret
                     );
                     console.log("******POST /api/auth/login SUCCESS!!******");
-                    return res.json({ token });
+                    return res.json({token});
                 } else {
                     console.log("******POST /api/auth/login FAIL!!******");
-                    return res.json({ error: "password" });
+                    return res.json({error: "password"});
                 }
             } else {
                 console.log("******POST /api/auth/login FAIL!!******");
-                return res.json({ error: "user" });
+                return res.json({error: "user"});
             }
         })
         .catch(error => {
             console.log("******POST /api/auth/login FAIL!!******");
-            return res.json({ error: error });
+            return res.json({error: error});
         });
 });
 
@@ -128,8 +129,8 @@ router.post("/checkexists", (req, res) => {
     const email = req.body.email;
     //console.log(email);
     User.query({
-        where: { username: username },
-        orWhere: { email: email }
+        where: {username: username},
+        orWhere: {email: email}
     })
         .fetch()
         .then(user => {
@@ -137,7 +138,7 @@ router.post("/checkexists", (req, res) => {
                 "******POST /api/usernamechecker/checker FindUsername!!******"
             );
             if (user === null) {
-                return res.json({ exist: false });
+                return res.json({exist: false});
             }
             const usernameexist = user.get("username") === username;
             const emailexist = user.get("email") === email;
@@ -151,7 +152,7 @@ router.post("/checkexists", (req, res) => {
                 "******POST /api/usernamechecker/signup Donot FindUsername!!******"
             );
 
-            return res.json({ error: error });
+            return res.json({error: error});
         });
 });
 

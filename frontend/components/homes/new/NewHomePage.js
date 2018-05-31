@@ -1,8 +1,10 @@
 import React from "react";
 import classnames from "classnames";
-
+import PlacesAutocomplete, {
+    geocodeByAddress,
+    getLatLng
+} from "react-places-autocomplete";
 import OptionFieldGroup from "../../common/OptionFieldGroup";
-
 import propertyTypeOptions from "../asset/propertytype/propertytype";
 import roomTypeOptions from "../asset/roomtype/roomtype";
 import guestAvailabilityOptions from "../asset/availbility/guest";
@@ -33,8 +35,46 @@ class Newhome extends React.Component {
             setup_for_guest: "",
             target: "",
             errors: {},
+            lat: "",
+            lng: '',
             readyToSubmit: false
         };
+    }
+
+    handleChange(address) {
+        let errors = this.state.errors;
+        errors.address = "please select a valid address"
+        this.setState({
+            address: address,
+            errors: errors
+        })
+    }
+
+    handleSelect(address) {
+        geocodeByAddress(address)
+            .then(results => getLatLng(results[0]))
+            .then(latLng => {
+                console.log("Success", latLng);
+                let errors = this.state.errors;
+                errors.address = ""
+                this.setState({
+                    address: address,
+                    lat: latLng.lat,
+                    lng: latLng.lng,
+                    errors: errors
+                })
+            })
+            .catch(error => {
+                console.error("Error", error);
+            });
+    }
+
+    onError() {
+        let errors = this.state.errors
+        errors.address = "please select a valid address";
+        this.setState({
+            errors: errors
+        });
     }
 
     updateForm(e) {
@@ -42,6 +82,69 @@ class Newhome extends React.Component {
         this.setState({
             [e.target.name]: e.target.value
         });
+    }
+
+    getaddress() {
+        return (
+            <PlacesAutocomplete
+                value={this.state.address}
+                onChange={e => this.handleChange(e)}
+                onSelect={e => this.handleSelect(e)}
+                onError={() => this.onError()}
+            >
+                {({getInputProps, suggestions, getSuggestionItemProps}) =>
+
+                    (
+                        <div
+                            className={classnames("form-group", {
+                                "has-error": this.state.errors.address
+                            })}
+                        >
+                            <input
+
+                                {...getInputProps({
+                                    placeholder: "Enter your address",
+                                    className: "form-control"
+                                })}
+                            />
+                            {this.state.errors.address && (
+                                <span className="help-block">
+                                    {this.state.errors.address}
+                                </span>
+                            )}
+                            <div className="autocomplete-dropdown-container">
+                                {suggestions.map(suggestion => {
+                                    const className = suggestion.active
+                                        ? "suggestion-item--active"
+                                        : "suggestion-item";
+                                    // inline style for demonstration purpose
+                                    const style = suggestion.active
+                                        ? {
+                                            backgroundColor: "#fafafa",
+                                            cursor: "pointer"
+                                        }
+                                        : {
+                                            backgroundColor: "#ffffff",
+                                            cursor: "pointer"
+                                        };
+                                    return (
+                                        <div
+                                            {...getSuggestionItemProps(suggestion, {
+                                                className,
+                                                style
+                                            })}
+                                        >
+                                            <span>{suggestion.description}</span>
+                                        </div>
+                                    );
+                                })}
+                            </div>
+
+                        </div>
+                    )}
+
+            </PlacesAutocomplete>
+        );
     }
 
     onSubmit() {
@@ -56,6 +159,9 @@ class Newhome extends React.Component {
         const bath_availability = this.state.bath_availability;
         const setup_for_guest = this.state.setup_for_guest;
         const target = this.state.target;
+        const address = this.state.address;
+        const lat = this.state.lat;
+        const lng = this.state.lng;
         let errors = {};
         if (!title) {
             errors.title = "The tile cannot be empty";
@@ -90,6 +196,9 @@ class Newhome extends React.Component {
         if (!target) {
             errors.target = "Please select the your target promotion";
         }
+        if (!address || !lng || !lat) {
+            errors.address = "please select a valid address"
+        }
         if (isEmpty(errors)) {
             if (this.state.img.length === 0) {
                 this.state.img = [
@@ -123,6 +232,8 @@ class Newhome extends React.Component {
             setup_for_guest: "Pay to clean up",
             target: "Family",
             address: "903 s 34th pl, renton, WA, USA",
+            lat: 47.4488664,
+            lng: 122.2067841,
             readyToSubmit: true
         });
     }
@@ -331,15 +442,7 @@ class Newhome extends React.Component {
                         options={roomTypeOptions}
                     />
                     <label className="control-label">address</label>
-                    <input
-                        className="form-control"
-                        value={this.state.address}
-                        name="address"
-                        placeholder=''
-                        onChange={e => {
-                            this.updateForm(e)
-                        }}
-                    />
+                    <div>{this.getaddress()}</div>
                 </div>
 
                 <div className="jumbotron">

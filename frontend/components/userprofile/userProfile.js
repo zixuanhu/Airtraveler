@@ -1,6 +1,6 @@
 import React from "react";
 import classnames from "classnames";
-import PhoneInput, {format} from "react-phone-input-auto-format";
+import  {format} from "react-phone-input-auto-format";
 
 
 class UserProfile extends React.Component {

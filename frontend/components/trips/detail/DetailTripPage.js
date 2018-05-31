@@ -1,5 +1,5 @@
 import React from "react";
-import Tripindex from "../index/IndexTripPage";
+
 import isEmpty from "lodash/isEmpty";
 import GoogleMap from "./GoogleMap";
 
@@ -32,20 +32,17 @@ class Tripdetail extends React.Component {
     render() {
         const trip = this.state.trip;
         const home = this.state.home;
-        // console.log(this.state);
-        // if (!isEmpty(home)) {
-        //     debugger;
-        // }
+
         return (
             <div>
                 reserved_id:{trip.reserved_id}
-                <br />
+                <br/>
                 check_in:{moment(trip.check_in).format("MMMM Do YYYY, h")}
-                <br />
+                <br/>
                 check_out:{moment(trip.check_out).format("MMMM Do YYYY, h")}
-                <br />
+                <br/>
                 title:{home.title}
-                <br />
+                <br/>
                 room_type:{home.room_type}
                 <button
                     onClick={() => {
@@ -57,7 +54,7 @@ class Tripdetail extends React.Component {
                 {isEmpty(home) ? (
                     "loading..."
                 ) : (
-                    <GoogleMap lat={home.lat} lng={home.lng} />
+                    <GoogleMap lat={home.lat} lng={home.lng}/>
                 )}
             </div>
         );

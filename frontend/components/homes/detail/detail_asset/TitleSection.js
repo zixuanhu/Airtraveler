@@ -51,7 +51,6 @@ const ProfileLink = ({user}) => {
 };
 const TitleSection = ({info}) => {
 
-    const airbnbLocation = info.address;
     const divStyle = {
         display: "inline-block",
         margin: "10px 120px 20px 0"
@@ -78,12 +77,6 @@ const TitleSection = ({info}) => {
         <Section>
             <div style={divStyle}>
                 <p style={titleStyle}>{info.title}</p>
-                <br/>
-                <a href="#" style={linkStyle}>
-                    <span>{airbnbLocation}</span>
-                </a>
-
-
             </div>
             <ProfileLink user={info.hostprofile}/>
         </Section>

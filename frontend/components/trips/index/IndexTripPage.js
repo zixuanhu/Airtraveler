@@ -23,14 +23,14 @@ class Tripindex extends React.Component {
                 }
             )
         }
+
     }
 
     buildTripCard(trip, key) {
         const img = trip.home.img[0];
         const check_in = moment(trip.check_in).format('MMMM Do YYYY, h');
         const check_out = moment(trip.check_out).format('MMMM Do YYYY, h');
-        //debugger
-
+        const address = trip.home.address;
         return (
             <div className="container" key={key}>
                 <div className="row">
@@ -55,7 +55,7 @@ class Tripindex extends React.Component {
                                             `/trip/${trip.id}`
                                         )
                                     }}>
-                                        <p className="card-title">Long Beach, Ca</p>
+                                        <p className="card-title">{address}</p>
                                         <p>111 W. Ocean Boulevard, <br/>
                                             Fourth Floor,<br/>
                                             WA

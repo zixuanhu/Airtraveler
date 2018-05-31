@@ -5,6 +5,8 @@ import Trip from '../detail_asset/Trip/TripContainer';
 import TitleSection from '../detail_asset/TitleSection';
 import Space from '../detail_asset/Space'
 import OverviewInfo from '../detail_asset/OverviewInfo';
+import GoogleMap from '../detail_asset/GoogleMap';
+import isEmpty from "lodash/isEmpty";
 
 class HomeDetailPage extends React.Component {
     constructor(props) {
@@ -15,10 +17,14 @@ class HomeDetailPage extends React.Component {
             title: "",
             description: "",
             img: [],
+            lng: '',
+            lat: '',
             user: {},
             price: "",
+            target: '',
             room_type: "",
             property_type: "",
+            setup_plan: "",
             guest_availability: "",
             room_availability: "",
             beds_availability: "",
@@ -69,9 +75,12 @@ class HomeDetailPage extends React.Component {
                     beds_availability: home.beds_availability,
                     bath_availability: home.bath_availability,
                     target: home.target,
-                    setup_for_guest: home.setup_for_guest,
+                    lat: home.lat,
+                    lng: home.lng,
+                    setup_plan: home.setup_for_guest,
                     property_type: home.property_type
                 });
+
             });
         });
     }
@@ -88,15 +97,16 @@ class HomeDetailPage extends React.Component {
         const info = {
             title: this.state.title,
             hostprofile: this.state.hostprofile,
-            address: this.state.address
         };
 
         const homeInfo = {
             beds_availability: this.state.room_availability,
             bath_availability: this.state.bath_availability,
             guest_availability: this.state.guest_availability,
+            target: this.state.target,
             room_type: this.state.room_type,
-            property_type: this.state.property_type
+            property_type: this.state.property_type,
+            setup_plan: this.state.setup_plan
         };
 
 
@@ -115,6 +125,11 @@ class HomeDetailPage extends React.Component {
                         <OverviewInfo overviewInfoText={this.state.description}
                                       host_info={this.state.user}/>
                         <Space homeInfo={homeInfo}/>
+                        {isEmpty(this.state.lat) ? (
+                            "loading..."
+                        ) : (
+                            <GoogleMap lat={this.state.lat} lng={this.state.lng}/>
+                        )}
                     </div>
 
                     <Trip

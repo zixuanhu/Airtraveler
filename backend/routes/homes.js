@@ -20,7 +20,9 @@ router.post("/create", (req, res) => {
     const setup_for_guest = req.body.setup_for_guest;
     const target = req.body.target;
     const user_id = req.body.user_id;
-    const address = req.body.address
+    const address = req.body.address;
+    const lat = req.body.lat;
+    const lng = req.body.lng;
     Home.forge(
         {
             title: title,
@@ -36,7 +38,9 @@ router.post("/create", (req, res) => {
             setup_for_guest: setup_for_guest,
             target: target,
             user_id: user_id,
-            address: address
+            address: address,
+            lat: lat,
+            lng: lng
         },
         {
             hasTimestamps: true
@@ -61,26 +65,7 @@ router.post("/create", (req, res) => {
         });
 });
 
-router.get("/searchhomelist/:page", (req, res) => {
-    const page = req.params.page;
-    console.log("******POST /api/homes/homelist PASS!!******");
-    Home.query(function (qb) {
-        qb.orderBy('price', 'DESC');
-    })
-        .fetchPage({page: page, pageSize: 18})
-        .then(homes => {
-            return res.json({
-                homes: homes,
-                pagination: homes.pagination
-            });
-        })
-        .catch(error => {
-            console.log("******POST  /api/homes/homelist FAIL!!******");
-            return res.json({
-                error: error
-            });
-        });
-});
+
 router.get("/:home_id", (req, res) => {
     console.log("******GET /api/homes/:home_id PASS!!******");
     const id = req.params.home_id;
@@ -105,18 +90,62 @@ router.get("/:home_id", (req, res) => {
 });
 
 
-router.get("/searchhomelist/:keyword/:page", (req, res) => {
+router.post("/searchhomelist/:page", (req, res) => {
     console.log("******POST /api/homes/searchhomelist PASS!!******");
 
-    const keyword = req.params.keyword;
+    const keyword = req.body.keyword.toLocaleLowerCase();
     const page = req.params.page;
+    const maxprice = req.body.price;
+    const guest_availability = req.body.guest_availability;
+    const rooms_availability = req.body.rooms_availability;
+    const beds_availability = req.body.beds_availability;
+    const bath_availability = req.body.bath_availability;
+    const room_type = req.body.room_type;
+    const property_type = req.body.property_type;
+    const setup_for_guest = req.body.setup_for_guest;
+    const target = req.body.target;
+    const address = req.body.destination;
+    console.log(address)
+    Home
+        .query(function (home) {
+            home.where(function () {
+                this.whereRaw(`LOWER(title) LIKE '%${keyword}%'`);
+                this.orWhereRaw(`LOWER(description) LIKE '%${keyword}%'`);
+                this.orWhereRaw(`LOWER(address) LIKE '%${keyword}%'`);
+            });
+            if (maxprice) {
+                home.where('price', '<=', `${maxprice}`);
+            }
+            if (guest_availability) {
+                home.where('guest_availability', '>=', `${guest_availability}`);
+            }
+            if (rooms_availability) {
+                home.where('rooms_availability', '>=', `${rooms_availability}`);
+            }
+            if (beds_availability) {
+                home.where('beds_availability', '>=', `${beds_availability}`);
+            }
+            if (bath_availability) {
+                home.where('bath_availability', '>=', `${bath_availability}`);
+            }
+            if (room_type) {
+                home.where({'room_type': `${room_type}`});
+            }
+            if (property_type) {
+                home.where({'property_type': `${property_type}`});
+            }
+            if (setup_for_guest) {
+                home.where({'setup_for_guest': `${setup_for_guest}`});
+            }
+            if (target) {
+                home.where({'target': `${target}`});
+            }
+            if (address) {
+                home.whereRaw(`LOWER(address) LIKE '%${address}%'`)
+            }
 
 
-    Home.query(function (home) {
-        home.where('title', 'LIKE', `%${keyword}%`);
-        home.orWhere('description', 'LIKE', `%${keyword}%`);
-        home.orderBy('price', 'DESC');
-    })
+        })
         .fetchPage({page: page, pageSize: 18})
         .then(homes => {
             console.log(homes.pagination)

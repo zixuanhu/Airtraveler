@@ -3,6 +3,8 @@ const bcrypt = require("bcrypt");
 const BUILD_USER_NUM = 10;
 const BUILD_HOME_NUM = BUILD_USER_NUM * 10;
 const BUILD_TRIP_NUM = BUILD_USER_NUM * 20;
+const {format} = require("react-phone-input-auto-format");
+
 
 function buildUserSeed(knex) {
     let res = [];
@@ -13,10 +15,10 @@ function buildUserSeed(knex) {
                 username: `User_${i}`,
                 img: "http://pic.uzzf.com/up/2017-3/14901722897158766.jpg",
                 password_digest: bcrypt.hashSync("password", 10),
-                phonenumber: faker.phone.phoneNumberFormat(),
+                phonenumber: format(faker.phone.phoneNumberFormat()),
                 gender: Math.random() > 0.5,
                 firstname: faker.name.firstName(),
-                lastname: faker.name.firstName(),
+                lastname: faker.name.lastName(),
                 description: faker.lorem.sentence(),
                 created_at: new Date(),
                 updated_at: new Date()
@@ -47,7 +49,7 @@ const images = [
     "https://editeestrela.net/wp-content/uploads/2017/08/Contemporary-and-Modern-Bedding.jpg",
     "https://i.ytimg.com/vi/jLNr3sKSkqU/maxresdefault.jpg",
     "http://diyblogdesigns.com/img/2018/04/brown-floors-mini-orating-italian-design-modern-oration-low-ideas-fireplace-apartment-sitting-wall-pictures-building-picture-stylish-above-simple-area-stone-color-room-furniture-sh.jpg",
-   "http://cdn.home-designing.com/wp-content/uploads/2017/11/black-block-sofa-white-walls-minimalist-tv-room.jpg",
+    "http://cdn.home-designing.com/wp-content/uploads/2017/11/black-block-sofa-white-walls-minimalist-tv-room.jpg",
     "http://rilane.com/images/2016140/white-and-grey-minimalist-living-room.jpg",
     "https://avatars.mds.yandex.net/get-pdb/33827/65b7327a-76b9-4925-9e70-1f28ba22c64d/orig",
     "https://avatars.mds.yandex.net/get-pdb/69339/19adae0a-5c90-4acf-ad5a-1410680b1ab3/orig",
@@ -91,7 +93,6 @@ const images = [
     "http://syrius.top/wp-content/uploads/2018/05/minimalist-bedroom-design-for-small-rooms-bedroom-minimalist-bedroom-design-for-small-room-intended-for-minimalist-bedroom-design-minimalist-bedroom-design-minimalist-bedroom-design-small-rooms.jpg",
     "https://theedisonhouston.com/wp-content/uploads/2017/12/built-in-wall-units-for-dining-room-built-in-wall-units-bedroom.jpg",
     "https://i.pinimg.com/originals/69/e5/c1/69e5c18a5e2b144f460741c5d80c25ea.jpg",
-    "http://nordwood.pro/wp-content/uploads/2018/05/white-furniture-room-ideas-full-size-of-bedroom-bedroom-furniture-room-ideas-white-rug-bedroom-ideas-furniture-white-furniture-living-room-ideas-for-apartments.jpg",
     "https://hgtvhome.sndimg.com/content/dam/images/hgtv/fullset/2016/9/27/2/CI_Dwell-with-Dignity-before-and-after-bed-8.jpg.rend.hgtvcom.966.725.suffix/1475019892091.jpeg",
     "http://www.loversiq.com/daut/as/f/m/my-white-bedroom-modmissy-layers-of-cotton-linens-on-the-bed-give-a-cool-as-sensation-i-made-duvet-cover-from-2-sheets-that-we-hubby-and-brought-back_bedroom-white-sheets_bedroom_cheap-bedroom-sets-ki.jpg",
     "https://www.clickbratislava.com/wp-content/uploads/2017/12/prettiest-bedroom-in-the-world-worlds-best-bedrooms-home-design-super-small-bedroom-design.jpg",
@@ -100,8 +101,7 @@ const images = [
     "http://www.decobizz.com/pictures/20131204/simple-master-bedroom-ceiling-decoration-effect-picture.jpg",
     "http://www.loversiq.com/daut/as/f/b/beautiful-white-brown-wood-glass-luxury-design-best-neutral-bedroom-ideas-floor-mattres-cushion-night-lamp-clubchairs_bedroom-flooring-ideas_bedroom_girls-bedroom-ideas-diy-decor-paint-furniture-decor.jpg",
     "http://viksistemi.com/wp-content/uploads/2018/02/high-end-interior-design-houses-window-kitchens-will-have-a-mix-of-matte-white-lacquer-and-elm-millwork-marble-islands-be-paired-with-wood-breakfast-bars-credit-redundant-pixel.jpg",
-    "http://openasia.club/wp-content/uploads/2017/12/high-end-bedroom-design-delightful-high-end-bedroom-design-4-high-gloss-bedroom-designs.jpg",
-
+    "http://openasia.club/wp-content/uploads/2017/12/high-end-bedroom-design-delightful-high-end-bedroom-design-4-high-gloss-bedroom-designs.jpg"
 ];
 
 const property_type = [
@@ -167,10 +167,9 @@ const address_pool = [
     "2225 Grant Rd,Los Altos, CA,USA",
     "635 Emerald Meadows Ct,Saint Charles, MO,USA",
     "345 N Glenn Ave,Fresno, CA,USA",
-    "401 E Hendy Ave,Sunnyvale, CA,USA",
-
-
+    "401 E Hendy Ave,Sunnyvale, CA,USA"
 ];
+
 const googleMapsClient = require("@google/maps").createClient({
     key: "AIzaSyD-ItGZm4M2T9YPPL8Lzn4H1mSueAjFFlQ"
 });
@@ -182,18 +181,21 @@ for (let address of address_pool) {
         new Promise(resolve => {
             let obj = {};
             obj["address"] = address;
-            googleMapsClient.geocode({
-                address: address
-            }, (err, response) => {
-                if (!err) {
-                    response = JSON.parse(JSON.stringify(response));
-                    const info = response.json.results[0].geometry.location;
-                    obj["lat"] = info.lat;
-                    obj["lng"] = info.lng;
-                    geoValidLocations.push(obj);
-                    resolve();
+            googleMapsClient.geocode(
+                {
+                    address: address
+                },
+                (err, response) => {
+                    if (!err) {
+                        response = JSON.parse(JSON.stringify(response));
+                        const info = response.json.results[0].geometry.location;
+                        obj["lat"] = info.lat;
+                        obj["lng"] = info.lng;
+                        geoValidLocations.push(obj);
+                        resolve();
+                    }
                 }
-            });
+            );
         })
     );
 }
@@ -215,7 +217,7 @@ function buildHomeSeed(knex) {
                 img: imgs,
                 property_type: faker.random.arrayElement(property_type),
                 room_type: faker.random.arrayElement(room_type),
-                price: faker.random.number(),
+                price: Math.floor(Math.random() * 500),
                 guest_availability: Math.floor(Math.random() * 16 + 1),
                 rooms_availability: Math.floor(Math.random() * 8 + 1),
                 beds_availability: Math.floor(Math.random() * 4 + 1),

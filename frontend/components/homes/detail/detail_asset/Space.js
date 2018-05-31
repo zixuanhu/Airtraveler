@@ -60,6 +60,8 @@ const Space = ({homeInfo}) => {
                     {homeInfo.property_type}
                 </SpaceDetail>
                 <SpaceDetail section="Room type: ">{homeInfo.room_type}</SpaceDetail>
+                <SpaceDetail section="target: ">{homeInfo.target}</SpaceDetail>
+                <SpaceDetail section="setup plan: ">{homeInfo.setup_plan}</SpaceDetail>
             </div>
 
             <br/>

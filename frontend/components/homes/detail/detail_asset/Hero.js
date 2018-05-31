@@ -6,13 +6,12 @@ class Hero extends React.Component {
         super(props);
         // debugger
         this.state = {
-            curIndex: 0,
-            length: 0
+            curIndex: 0
         };
     }
 
 
-    priviousImg(e) {
+    priviousImg(e, length) {
         e.preventDefault();
         if (this.state.curIndex > 0) {
             const newIndex = this.state.curIndex - 1;
@@ -21,7 +20,7 @@ class Hero extends React.Component {
             })
         } else {
             this.setState({
-                curIndex: this.state.length - 1
+                curIndex: length - 1
             })
         }
     }
@@ -49,6 +48,7 @@ class Hero extends React.Component {
             //imgs = ["http://p4.qhimg.com/t012e241300f617cdcc.jpg", "http://upload.qianlong.com/2017/1211/1512959184473.jpg", "https://pic1.zhimg.com/v2-6c980e7306327e80ca1bc6e2ef55dbd2_1200x500.jpg"]
             length = imgs.length
         }
+
         const divStyle = {
             position: "relative",
             backgroundImage: "url(" + imgs[this.state.curIndex] + ")",
@@ -61,7 +61,7 @@ class Hero extends React.Component {
         return (
             <div style={divStyle} className="detail-imgs">
                 <svg className="arrow" id="left-control" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 65.8"
-                     enableBackground="new 0 0 50 65.8" onClick={e => this.priviousImg(e)}>
+                     enableBackground="new 0 0 50 65.8" onClick={e => this.priviousImg(e, length)}>
                     <g>
                         <path d="M42.7,5.5L12,36.2c-0.7,0.7-1.9,0.7-2.6,0l-2-2c-0.7-0.7-0.7-1.9,0-2.6L38,0.8c0.7-0.7,1.9-0.7,2.6,0l2,2
          C43.4,3.6,43.4,4.8,42.7,5.5z"/>

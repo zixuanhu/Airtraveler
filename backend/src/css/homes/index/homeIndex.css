@@ -18,6 +18,21 @@
     font-weight: 300;
 }
 
+.search-bar {
+    margin-top: 10px;
+    width: 300px;
+    padding: 30px;
+    background: lightgray;
+    margin-left: 100px;
+}
+
+.cards-container {
+    width: 1200px;
+
+}
+
+
+
 
 
 

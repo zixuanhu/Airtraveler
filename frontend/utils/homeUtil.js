@@ -10,11 +10,9 @@ export const edithomeUtil = homeData => {
 };
 
 export const searchhomesUtil = searchinfo => {
-    if (searchinfo.keyword) {
-        return axios.get(`/api/homes/searchhomelist/${searchinfo.keyword}/${searchinfo.activePage}`);
-    } else {
-        return axios.get(`/api/homes/searchhomelist/${searchinfo.activePage}`);
-    }
+
+    return axios.post(`/api/homes/searchhomelist/${searchinfo.activePage}`, searchinfo);
+
 };
 export const userhomelist = id => {
     return axios.get(`/api/manage/${id}`);
