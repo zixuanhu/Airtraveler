@@ -64,7 +64,7 @@ class indexhomePage extends React.Component {
         searchinfo.property_type = this.state.property_type;
         searchinfo.setup_for_guest = this.state.setup_for_guest;
         searchinfo.target = this.state.target;
-        searchinfo.destination=this.state.destination;
+        searchinfo.destination = this.state.destination;
         searchinfo.activePage = 1;
         this.props.searchhomes(searchinfo).then(() => {
             this.setState({
@@ -99,7 +99,7 @@ class indexhomePage extends React.Component {
         searchinfo.property_type = this.state.property_type;
         searchinfo.setup_for_guest = this.state.setup_for_guest;
         searchinfo.target = this.state.target;
-        searchinfo.destination=this.state.destination;
+        searchinfo.destination = this.state.destination;
         searchinfo.activePage = this.state.activePage;
         this.props.searchhomes(searchinfo).then(() => {
             this.setState({
@@ -354,7 +354,7 @@ class indexhomePage extends React.Component {
                         options={guestAvailabilityOptions}
                     />
                     <OptionFieldGroup
-                        label="Room Availability"
+                        label="Room number"
                         name="rooms_availability"
                         value={this.state.rooms_availability}
                         onChange={e => this.updateForm(e)}
@@ -362,7 +362,7 @@ class indexhomePage extends React.Component {
                         options={guestAvailabilityOptions}
                     />
                     <OptionFieldGroup
-                        label="Beds Availability"
+                        label="Beds number"
                         name="beds_availability"
                         value={this.state.beds_availability}
                         onChange={e => this.updateForm(e)}
@@ -370,7 +370,7 @@ class indexhomePage extends React.Component {
                         options={guestAvailabilityOptions}
                     />
                     <OptionFieldGroup
-                        label="Baths Availability"
+                        label="Baths number"
                         name="bath_availability"
                         value={this.state.bath_availability}
                         onChange={e => this.updateForm(e)}
