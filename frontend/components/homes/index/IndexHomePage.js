@@ -263,7 +263,6 @@ class indexhomePage extends React.Component {
                         />
 
                         <br/>
-                        <p className="hometitle">ID: {home.id} </p>
                         <p className="hometitle">{home.title} </p>
                         <p className="homeprice">${home.price}</p>
                     </div>
@@ -274,136 +273,135 @@ class indexhomePage extends React.Component {
     }
 
     searchBar() {
-        console.log(this.state.price)
         return (
-            <div className="row " style={{marginLeft: "2px"}}>
-                <div className="search-bar">
-                    <div
-                        className="input-group"
-                        onKeyDown={e => this.keyDown(e)}
-                    >
-                        <input
-                            type="text"
-                            name="keyword"
-                            className="form-control"
-                            placeholder="Search"
-                            id="txtSearch"
-                            value={this.state.keyword}
-                            onChange={e => this.updateForm(e)}
-                        />
 
-                        <div className="input-group-btn">
-                            <button
-                                className="btn btn-primary"
-                                type="submit"
-                                onClick={e => this.search(e)}
-                            >
-                                <span className="glyphicon glyphicon-search"/>
-                            </button>
-                        </div>
-                    </div>
-                    <br/>
-                    <div>
-                        <label className="control-label">Destination</label>
-                        <input
-                            className="form-control"
-                            type="text"
-                            name="destination"
-                            placeholder="destination"
-                            value={this.state.destination}
-                            onChange={e => this.updateForm(e)}
-                        />
-                    </div>
-                    <br/>
-                    <div className="slidecontainer">
-                        <input type="range"
-                               min="1"
-                               max="500"
-                               name="price"
-                               onChange={e => {
-                                   this.updateForm(e)
-                               }}
-                               value={this.state.price}
-                               className="slider" id="myRange"/>
-                    </div>
-                    <label>max price: ${this.state.price}/day</label>
+            <div className="search-bar">
+                <div
+                    className="input-group"
+                    onKeyDown={e => this.keyDown(e)}
+                >
+                    <input
+                        type="text"
+                        name="keyword"
+                        className="form-control"
+                        placeholder="Search"
+                        id="txtSearch"
+                        value={this.state.keyword}
+                        onChange={e => this.updateForm(e)}
+                    />
 
-                    <br/>
-                    <OptionFieldGroup
-                        label="Property Type"
-                        name="property_type"
-                        value={this.state.property_type}
+                    <div className="input-group-btn">
+                        <button
+                            className="btn btn-primary"
+                            type="submit"
+                            onClick={e => this.search(e)}
+                        >
+                            <span className="glyphicon glyphicon-search"/>
+                        </button>
+                    </div>
+                </div>
+                <br/>
+                <div>
+                    <label className="control-label">Destination</label>
+                    <input
+                        className="form-control"
+                        type="text"
+                        name="destination"
+                        placeholder="destination"
+                        value={this.state.destination}
                         onChange={e => this.updateForm(e)}
-                        error={this.state.errors.property_type}
-                        options={propertyTypeOptions}
-                    />
-                    <OptionFieldGroup
-                        label="Room Type"
-                        name="room_type"
-                        value={this.state.room_type}
-                        onChange={e => this.updateForm(e)}
-                        error={this.state.errors.room_type}
-                        options={roomTypeOptions}
-                    />
-                    <OptionFieldGroup
-                        label="Guest Number"
-                        name="guest_availability"
-                        value={this.state.guest_availability}
-                        onChange={e => this.updateForm(e)}
-                        error={this.state.errors.guest_availability}
-                        options={guestAvailabilityOptions}
-                    />
-                    <OptionFieldGroup
-                        label="Room number"
-                        name="rooms_availability"
-                        value={this.state.rooms_availability}
-                        onChange={e => this.updateForm(e)}
-                        error={this.state.errors.rooms_availability}
-                        options={guestAvailabilityOptions}
-                    />
-                    <OptionFieldGroup
-                        label="Beds number"
-                        name="beds_availability"
-                        value={this.state.beds_availability}
-                        onChange={e => this.updateForm(e)}
-                        error={this.state.errors.beds_availability}
-                        options={guestAvailabilityOptions}
-                    />
-                    <OptionFieldGroup
-                        label="Baths number"
-                        name="bath_availability"
-                        value={this.state.bath_availability}
-                        onChange={e => this.updateForm(e)}
-                        error={this.state.errors.bath_availability}
-                        options={guestAvailabilityOptions}
-                    />
-                    <OptionFieldGroup
-                        label="Setup Plan"
-                        name="setup_for_guest"
-                        value={this.state.setup_for_guest}
-                        onChange={e => this.updateForm(e)}
-                        error={this.state.errors.setup_for_guest}
-                        options={setupForGuestOptions}
-                    />
-                    <OptionFieldGroup
-                        label="You are"
-                        name="target"
-                        value={this.state.target}
-                        onChange={e => this.updateForm(e)}
-                        error={this.state.errors.target}
-                        options={targetOptions}
                     />
                 </div>
+                <br/>
+                <div className="slidecontainer">
+                    <input type="range"
+                           min="1"
+                           max="500"
+                           name="price"
+                           onChange={e => {
+                               this.updateForm(e)
+                           }}
+                           value={this.state.price}
+                           className="slider" id="myRange"/>
+                </div>
+                <label>max price: ${this.state.price}/day</label>
+
+                <br/>
+                <OptionFieldGroup
+                    label="Property Type"
+                    name="property_type"
+                    value={this.state.property_type}
+                    onChange={e => this.updateForm(e)}
+                    error={this.state.errors.property_type}
+                    options={propertyTypeOptions}
+                />
+                <OptionFieldGroup
+                    label="Room Type"
+                    name="room_type"
+                    value={this.state.room_type}
+                    onChange={e => this.updateForm(e)}
+                    error={this.state.errors.room_type}
+                    options={roomTypeOptions}
+                />
+                <OptionFieldGroup
+                    label="Guest Number"
+                    name="guest_availability"
+                    value={this.state.guest_availability}
+                    onChange={e => this.updateForm(e)}
+                    error={this.state.errors.guest_availability}
+                    options={guestAvailabilityOptions}
+                />
+                <OptionFieldGroup
+                    label="Room number"
+                    name="rooms_availability"
+                    value={this.state.rooms_availability}
+                    onChange={e => this.updateForm(e)}
+                    error={this.state.errors.rooms_availability}
+                    options={guestAvailabilityOptions}
+                />
+                <OptionFieldGroup
+                    label="Beds number"
+                    name="beds_availability"
+                    value={this.state.beds_availability}
+                    onChange={e => this.updateForm(e)}
+                    error={this.state.errors.beds_availability}
+                    options={guestAvailabilityOptions}
+                />
+                <OptionFieldGroup
+                    label="Baths number"
+                    name="bath_availability"
+                    value={this.state.bath_availability}
+                    onChange={e => this.updateForm(e)}
+                    error={this.state.errors.bath_availability}
+                    options={guestAvailabilityOptions}
+                />
+                <OptionFieldGroup
+                    label="Setup Plan"
+                    name="setup_for_guest"
+                    value={this.state.setup_for_guest}
+                    onChange={e => this.updateForm(e)}
+                    error={this.state.errors.setup_for_guest}
+                    options={setupForGuestOptions}
+                />
+                <OptionFieldGroup
+                    label="You are"
+                    name="target"
+                    value={this.state.target}
+                    onChange={e => this.updateForm(e)}
+                    error={this.state.errors.target}
+                    options={targetOptions}
+                />
             </div>
+
         );
     }
 
     render() {
         return (
-            <div style={{minWidth: "1200px"}}>
-                <div className="col-md-3 col-sm-3">{this.searchBar()}</div>
+            <div style={{minWidth: "1200px"}} className='row'>
+                <div className="col-md-3 col-sm-3 column" style={{left: '10'}}>{this.searchBar()}</div>
                 <div
-                    className="col-md-9 col-sm-9"
+                    className="col-md-9 col-sm-9 column"
                     style={{minWidth: "900px", maxWidth: '1200px'}}
                 >
                     {this.homeCards()}

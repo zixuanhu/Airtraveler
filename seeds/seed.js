@@ -97,7 +97,6 @@ const images = [
     "http://www.loversiq.com/daut/as/f/m/my-white-bedroom-modmissy-layers-of-cotton-linens-on-the-bed-give-a-cool-as-sensation-i-made-duvet-cover-from-2-sheets-that-we-hubby-and-brought-back_bedroom-white-sheets_bedroom_cheap-bedroom-sets-ki.jpg",
     "https://www.clickbratislava.com/wp-content/uploads/2017/12/prettiest-bedroom-in-the-world-worlds-best-bedrooms-home-design-super-small-bedroom-design.jpg",
     "http://flipiy.com/wp-content/uploads/2017/10/best-25-cool-bedroom-ideas-ideas-on-pinterest-teenager-girl-throughout-cool-rooms-for-girls.jpg",
-    "http://hyperworks.co/wp-content/uploads/2018/05/cool-designs-for-rooms-cool-and-calm-high-end-bedroom-design-ideas-by-g-interior-shining-designs.jpg",
     "http://www.decobizz.com/pictures/20131204/simple-master-bedroom-ceiling-decoration-effect-picture.jpg",
     "http://www.loversiq.com/daut/as/f/b/beautiful-white-brown-wood-glass-luxury-design-best-neutral-bedroom-ideas-floor-mattres-cushion-night-lamp-clubchairs_bedroom-flooring-ideas_bedroom_girls-bedroom-ideas-diy-decor-paint-furniture-decor.jpg",
     "http://viksistemi.com/wp-content/uploads/2018/02/high-end-interior-design-houses-window-kitchens-will-have-a-mix-of-matte-white-lacquer-and-elm-millwork-marble-islands-be-paired-with-wood-breakfast-bars-credit-redundant-pixel.jpg",
