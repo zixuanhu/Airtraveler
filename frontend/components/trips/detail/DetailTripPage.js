@@ -2,6 +2,7 @@ import React from "react";
 import Linkify from 'react-linkify';
 import isEmpty from "lodash/isEmpty";
 import GoogleMap from "./GoogleMap";
+import moment from "moment/moment";
 
 class Tripdetail extends React.Component {
     constructor(props) {
@@ -108,10 +109,12 @@ class Tripdetail extends React.Component {
 
     }
 
+
     render() {
         const trip = this.state.trip;
         const home = this.state.home;
         const host = this.state.host;
+        const livingNights = ~~moment.duration(moment(trip.check_out).diff(moment(trip.check_in))).asDays() + 1
 
         return (
             <div className="container">
@@ -123,14 +126,14 @@ class Tripdetail extends React.Component {
                             <br/>
                             <div className='col-sm-6'>
                                 <h4>Check In</h4>
-                                <h5>{moment(trip.check_in).format("MMMM Do YYYY, h")}</h5>
+                                <h5>{moment(trip.check_in).format("MMMM Do YYYY, h:mm")}</h5>
                                 <br/>
                             </div>
 
 
                             <div className='col-sm-6'>
                                 <h4>Check Out</h4>
-                                <h5>{moment(trip.check_out).format("MMMM Do YYYY, h")}</h5>
+                                <h5>{moment(trip.check_out).format("MMMM Do YYYY, h:mm")}</h5>
                                 <br/>
                             </div>
 
@@ -153,8 +156,8 @@ class Tripdetail extends React.Component {
                         <br/>
                         <div>
                             <h4> Billing</h4>
-                            <p>1 night totle</p>
-                            <p>${home.price}</p>
+                            <p>{livingNights} night totle</p>
+                            <p>${livingNights * home.price}</p>
                         </div>
                         <br/>
                         <hr/>
@@ -182,15 +185,32 @@ class Tripdetail extends React.Component {
                                 <p>Have a question about your reservation? The best way to get information is to ask
                                     your
                                     host directly.</p>
+                                <div className="well">
+                                    <div>
+                                        <i
+                                            className="glyphicon glyphicon-envelope"
+                                            style={{
+                                                margin: "0 10px 0 0",
+                                                fontSize: "22px",
+                                                color: "#66afe9"
+                                            }}
+                                        />
+                                        <Linkify>{host.email}</Linkify>
+                                    </div>
+                                    <div>
+                                        <i
+                                            className="glyphicon glyphicon-earphone"
+                                            style={{
+                                                margin: "0 10px 0 0",
+                                                fontSize: "22px",
+                                                color: "#66afe9"
+                                            }}
+                                        />
+                                        {host.phonenumber}
+                                    </div>
+                                </div>
                             </div>
-                            <div className="well">
-                                <li>
-                                    email: <Linkify>{host.email}</Linkify>
-                                </li>
-                                <li>
-                                    phone: {host.phonenumber}
-                                </li>
-                            </div>
+
                             <br/>
                         </div>
                         <br/>

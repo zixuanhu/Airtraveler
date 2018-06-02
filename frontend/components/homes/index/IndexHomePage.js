@@ -397,16 +397,18 @@ class indexhomePage extends React.Component {
     }
 
     render() {
+
         return (
-            <div style={{minWidth: "1200px"}} className='row'>
-                <div className="col-md-3 col-sm-3 column" style={{left: '10px'}}>{this.searchBar()}</div>
-                <div
-                    className="col-md-9 col-sm-9 column"
-                    style={{minWidth: "900px", maxWidth: '1200px'}}
-                >
-                    {this.homeCards()}
+            <div className='container'>
+                <div className="row">
+                    <div className="column sidesearch">
+                        {this.searchBar()}
+                    </div>
+                    <div className="column home">
+                        {this.homeCards()}
+                    </div>
                 </div>
-                <div style={{clear: "both"}}> {this.pagination()}</div>
+                <div>{this.pagination()}</div>
             </div>
         );
     }

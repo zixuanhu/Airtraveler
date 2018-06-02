@@ -5,8 +5,8 @@
 
 .trip-card {
 
-    height: 500px;
-    width: 376px;
+    height: 100%;
+    width: 90%;
     margin: 30px -10px;
     padding: 10px;
     border-radius: 5px;
@@ -20,10 +20,8 @@
 
 .trip-card:hover {
     padding-top: 5px;
-    height: 500px;
-    width: 376px;
+    width: 100%;
     margin: 5px -10px;
-    padding: 10px;
     border-radius: 5px;
     position: relative;
     transition: 0.3s;
@@ -63,5 +61,54 @@
     margin-left: 5%;
     margin-right: 5%;
 }
+
+.column {
+    float: left;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+/* Left and right column */
+.column.sidetrip {
+    width: 30%;
+
+}
+
+/* Middle column */
+.column.home {
+    width: 70%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 1000px) {
+    .column.home {
+        width: 100%;
+    }
+
+    .column.sidetrip {
+        width: 70%;
+        min-width: 200px;
+        margin-left: 15%;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
 
 

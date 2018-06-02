@@ -109,35 +109,42 @@ class HomeDetailPage extends React.Component {
             setup_plan: this.state.setup_plan
         };
 
-
         return (
             <div>
-
                 <Hero heroPic={heroPic}
                       onChange={e => {
                           this.change(e)
                       }}/>
-                <div className="container-fluid">
-                    <div style={marginStyle} className="home-info">
+                <div className='container'>
+                    <div className="row">
 
-                        <TitleSection info={info}/>
-                        <IconInfo homeinfo={homeInfo}/>
-                        <OverviewInfo overviewInfoText={this.state.description}
-                                      host_info={this.state.user}/>
-                        <Space homeInfo={homeInfo}/>
-                        {isEmpty(this.state.lat) ? (
-                            "loading..."
-                        ) : (
-                            <GoogleMap lat={this.state.lat} lng={this.state.lng}/>
-                        )}
+                        <div className="column home">
+                            <div className="container-fluid">
+                                <div style={marginStyle} className="home-info">
+
+                                    <TitleSection info={info}/>
+                                    <IconInfo homeinfo={homeInfo}/>
+                                    <OverviewInfo overviewInfoText={this.state.description}
+                                                  host_info={this.state.user}/>
+                                    <Space homeInfo={homeInfo}/>
+                                    {isEmpty(this.state.lat) ? (
+                                        "loading..."
+                                    ) : (
+                                        <GoogleMap lat={this.state.lat} lng={this.state.lng}/>
+                                    )}
+                                </div>
+                            </div>
+                        </div>
+                        <div className="column sidetrip">
+
+                            <Trip
+                                home_id={this.props.params.home_id}/>
+                        </div>
                     </div>
-
-                    <Trip
-                        home_id={this.props.params.home_id}
-                    />
                 </div>
             </div>
         );
+
     }
 }
 

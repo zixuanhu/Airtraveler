@@ -4,6 +4,7 @@ import DateTimeField from "react-datetime";
 import OptionFieldGroup from "../../../../common/OptionFieldGroup";
 import guestAvailabilityOptions from "./guestavailbiity";
 import faker from "faker";
+import moment from 'moment';
 
 class Trip extends React.Component {
     constructor(props) {
@@ -68,20 +69,49 @@ class Trip extends React.Component {
     }
 
     updatecheckinDate(e) {
-        const check_in_time = moment(e).format("MMM DD YYYY h");
-        let error = this.state.errors;
-        if (check_in_time != "Invalid date") {
+        let errors = this.state.errors;
+        errors.check_out = "";
+        let living_nights = 1
+        if (this.state.check_out !== '') {
+            living_nights = ~~moment.duration((this.state.check_out).diff(e)).asDays() + 1
+        }
+        if (e < moment(this.state.check_out) || this.state.check_out === '') {
             this.setState({
                 check_in: e,
+                living_nights: living_nights,
+                errors: errors
+            });
+        } else {
+            errors.check_out = "check out date have to later than check in date";
+            this.setState({
+                check_in: e,
+                living_nights: 1,
+                errors: errors
+            });
+        }
+
+    }
+
+    updatecheckoutDate(e) {
+        let error = this.state.errors;
+        error.check_out = "";
+        if (e > moment(this.state.check_in)) {
+            this.setState({
+                check_out: e,
+                living_nights: ~~moment.duration((e).diff(this.state.check_in)).asDays() + 1,
                 errors: error
             });
         } else {
-            error.check_in = "this is an invalid time";
+            error.check_out = "check out date have to later than check in date";
             this.setState({
+                check_out: e,
+                living_nights: 1,
                 errors: error
-            });
+            })
+            ;
         }
     }
+
 
     newTrip(e) {
         e.preventDefault();
@@ -119,22 +149,6 @@ class Trip extends React.Component {
 
     }
 
-    updatecheckoutDate(e) {
-
-        let error = this.state.errors;
-        error.check_out = "";
-        if (e > this.state.check_in) {
-            this.setState({
-                check_out: e,
-                errors: error
-            });
-        } else {
-            error.check_out = "check out date have to later than check in date";
-            this.setState({
-                errors: error
-            });
-        }
-    }
 
     validcheckin(current) {
         return current.isAfter(moment().subtract(1, "day"));

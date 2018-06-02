@@ -4,6 +4,7 @@
     border-radius: 3px;
     transition: 0.5s ease;
     backface-visibility: hidden;
+
 }
 
 .hometitle {
@@ -20,16 +21,46 @@
 
 .search-bar {
     margin-top: 10px;
-    width: 300px;
-    padding: 30px;
+    width: 100%;
     background: lightgray;
+    padding: 5%;
 }
 
 .cards-container {
     width: 1200px;
+}
+
+.column {
+    float: left;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+/* Left and right column */
+.column.sidesearch {
+    width: 25%;
 
 }
 
+/* Middle column */
+.column.home {
+    width: 70%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 769px) {
+    .column.sidesearch, .column.home {
+        width: 100%;
+    }
+}
 
 
 
