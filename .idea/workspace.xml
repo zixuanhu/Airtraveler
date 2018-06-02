@@ -2,19 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e3827670-0343-43de-b235-158dbff8bf01" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/frontend/components/common/OptionFieldGroupForSearch.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/css/homes/home-common.css" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/css/homes/home-common.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/css/homes/index/homeIndex.css" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/css/homes/index/homeIndex.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/components/authorized/authoried.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/components/authorized/authoriedContainer.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/components/homes/detail/detail_asset/Trip/Trip.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/homes/detail/detail_asset/Trip/Trip.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/components/homes/index/IndexHomePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/homes/index/IndexHomePage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/components/homes/new/NewHomePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/homes/new/NewHomePage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/components/navbar/NavigationBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/navbar/NavigationBar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/components/userprofile/userProfile.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/userprofile/userProfile.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/routes/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/routes/routes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/seeds/seed.js" beforeDir="false" afterPath="$PROJECT_DIR$/seeds/seed.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -471,7 +459,7 @@
       <workItem from="1527649666985" duration="18317000" />
       <workItem from="1527807454941" duration="15834000" />
       <workItem from="1527973050016" duration="1000" />
-      <workItem from="1527973076737" duration="4576000" />
+      <workItem from="1527973076737" duration="5220000" />
     </task>
     <task id="LOCAL-00001" summary="push">
       <created>1526109273634</created>
@@ -505,13 +493,12 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="177503000" />
+    <option name="totallyTimeSpent" value="178147000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1657" y="23" width="2217" height="946" extended-state="0" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.76297575" visible="true" weight="0.15700594" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.76297575" visible="true" weight="0.15700594" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
@@ -519,7 +506,7 @@
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32810616" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Structure" order="1" sideWeight="0.23702422" side_tool="true" weight="0.19594873" />
-      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.38405797" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.38405797" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
