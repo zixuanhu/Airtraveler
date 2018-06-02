@@ -462,7 +462,7 @@ class Newhome extends React.Component {
                         value={this.state.rooms_availability}
                         onChange={e => this.updateForm(e)}
                         error={this.state.errors.rooms_availability}
-                        options={guestAvailabilityOptions}
+                        options={roomsAvailabilityOptions}
                     />
                     <OptionFieldGroup
                         label="Beds Availability"
@@ -470,7 +470,7 @@ class Newhome extends React.Component {
                         value={this.state.beds_availability}
                         onChange={e => this.updateForm(e)}
                         error={this.state.errors.beds_availability}
-                        options={guestAvailabilityOptions}
+                        options={bedsAvailabilityOptions}
                     />
                     <OptionFieldGroup
                         label="Baths Availability"
@@ -478,7 +478,7 @@ class Newhome extends React.Component {
                         value={this.state.bath_availability}
                         onChange={e => this.updateForm(e)}
                         error={this.state.errors.bath_availability}
-                        options={guestAvailabilityOptions}
+                        options={bathAvailabilityOptions}
                     />
                 </div>
                 <div className="jumbotron">

@@ -1,6 +1,6 @@
 import React from "react";
 import {Pagination} from "react-bootstrap";
-import OptionFieldGroup from "../../common/OptionFieldGroup";
+import OptionFieldGroup from "../../common/OptionFieldGroupForSearch";
 
 import propertyTypeOptions from "../asset/propertytype/propertytype";
 import roomTypeOptions from "../asset/roomtype/roomtype";
@@ -9,7 +9,6 @@ import roomsAvailabilityOptions from "../asset/availbility/room";
 import bedsAvailabilityOptions from "../asset/availbility/beds";
 import bathAvailabilityOptions from "../asset/availbility/bath";
 import setupForGuestOptions from "../asset/setup/guestsetup";
-import targetOptions from "../asset/target/target";
 
 class indexhomePage extends React.Component {
     constructor(props) {
@@ -109,12 +108,71 @@ class indexhomePage extends React.Component {
         });
     }
 
+    prevPage(e) {
+        e.preventDefault()
+        let curPage = this.state.activePage;
+        if (curPage > 1) {
+            curPage--
+        }
+        let searchinfo = {};
+        searchinfo.keyword = this.state.searchingkeyword;
+        searchinfo.price = this.state.price
+        searchinfo.guest_availability = this.state.guest_availability;
+        searchinfo.rooms_availability = this.state.rooms_availability;
+        searchinfo.beds_availability = this.state.beds_availability;
+        searchinfo.bath_availability = this.state.bath_availability;
+        searchinfo.room_type = this.state.room_type;
+        searchinfo.property_type = this.state.property_type;
+        searchinfo.setup_for_guest = this.state.setup_for_guest;
+        searchinfo.target = this.state.target;
+        searchinfo.destination = this.state.destination;
+        searchinfo.activePage = curPage;
+        this.props.searchhomes(searchinfo).then(() => {
+            this.setState({
+                homes: this.props.homes,
+                pagination: this.props.homes.pagination,
+                activePage: curPage
+            });
+        });
+    }
+
+    nextPage(e) {
+        e.preventDefault()
+        let curPage = this.state.activePage;
+        if (curPage < this.state.pagination.pageCount) {
+            curPage++
+        }
+        let searchinfo = {};
+        searchinfo.keyword = this.state.searchingkeyword;
+        searchinfo.price = this.state.price
+        searchinfo.guest_availability = this.state.guest_availability;
+        searchinfo.rooms_availability = this.state.rooms_availability;
+        searchinfo.beds_availability = this.state.beds_availability;
+        searchinfo.bath_availability = this.state.bath_availability;
+        searchinfo.room_type = this.state.room_type;
+        searchinfo.property_type = this.state.property_type;
+        searchinfo.setup_for_guest = this.state.setup_for_guest;
+        searchinfo.target = this.state.target;
+        searchinfo.destination = this.state.destination;
+        searchinfo.activePage = curPage;
+        this.props.searchhomes(searchinfo).then(() => {
+            this.setState({
+                homes: this.props.homes,
+                pagination: this.props.homes.pagination,
+                activePage: curPage
+            });
+        });
+    }
+
     pagination() {
         let pages = [];
 
         const pageCount = this.state.pagination.pageCount;
         const activePage = this.state.activePage;
-        pages.push(<Pagination.Prev key="prev"/>);
+        pages.push(
+            <Pagination.Prev
+                key="prev"
+                onClick={e => this.prevPage(e)}/>);
 
         if (pageCount <= 8) {
             for (let i = 1; i <= pageCount; i++) {
@@ -237,7 +295,10 @@ class indexhomePage extends React.Component {
             }
         }
 
-        pages.push(<Pagination.Next key="next"/>);
+        pages.push(
+            <Pagination.Next
+                key="next"
+                onClick={e => this.nextPage(e)}/>);
         return <Pagination>{pages}</Pagination>;
     }
 
@@ -263,6 +324,10 @@ class indexhomePage extends React.Component {
                         />
 
                         <br/>
+                        <div>
+                            <span className="homePlus">PLUS</span>
+                            {home.room_type} · {home.property_type}
+                        </div>
                         <p className="hometitle">{home.title} </p>
                         <p className="homeprice">${home.price}</p>
                     </div>
@@ -357,7 +422,7 @@ class indexhomePage extends React.Component {
                     value={this.state.rooms_availability}
                     onChange={e => this.updateForm(e)}
                     error={this.state.errors.rooms_availability}
-                    options={guestAvailabilityOptions}
+                    options={roomsAvailabilityOptions}
                 />
                 <OptionFieldGroup
                     label="Beds number"
@@ -365,7 +430,7 @@ class indexhomePage extends React.Component {
                     value={this.state.beds_availability}
                     onChange={e => this.updateForm(e)}
                     error={this.state.errors.beds_availability}
-                    options={guestAvailabilityOptions}
+                    options={bedsAvailabilityOptions}
                 />
                 <OptionFieldGroup
                     label="Baths number"
@@ -373,7 +438,7 @@ class indexhomePage extends React.Component {
                     value={this.state.bath_availability}
                     onChange={e => this.updateForm(e)}
                     error={this.state.errors.bath_availability}
-                    options={guestAvailabilityOptions}
+                    options={bathAvailabilityOptions}
                 />
                 <OptionFieldGroup
                     label="Setup Plan"
@@ -382,14 +447,6 @@ class indexhomePage extends React.Component {
                     onChange={e => this.updateForm(e)}
                     error={this.state.errors.setup_for_guest}
                     options={setupForGuestOptions}
-                />
-                <OptionFieldGroup
-                    label="You are"
-                    name="target"
-                    value={this.state.target}
-                    onChange={e => this.updateForm(e)}
-                    error={this.state.errors.target}
-                    options={targetOptions}
                 />
             </div>
 

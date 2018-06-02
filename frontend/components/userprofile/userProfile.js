@@ -1,7 +1,7 @@
 import React from "react";
 import classnames from "classnames";
-import  {format} from "react-phone-input-auto-format";
-
+import {format} from "react-phone-input-auto-format";
+import isEmpty from "lodash/isEmpty";
 
 class UserProfile extends React.Component {
     constructor(props) {
@@ -64,41 +64,37 @@ class UserProfile extends React.Component {
     }
 
     submitForm() {
+        let errors = {};
         if (this.state.username === "") {
-            let errors = {};
+
             errors.username = "the username cannot be empty";
-            this.setState({
-                errors: errors
-            });
         }
         if (
             this.state.username.includes(
                 "@" || "#" || " " || "$" || "%" || "^" || "+" || "-" || "="
             )
         ) {
-            let errors = this.state.errors;
             errors.username =
                 "please DO NOT includes special symbols like (@ # $ ^ * ) or space in username";
-            this.setState({
-                errors: errors
-            });
-            return;
         }
         if (!this.state.email.includes("@")) {
-            let errors = this.state.errors;
             errors.email = "the email is invalid";
-            this.setState({
-                errors: errors
-            });
-            return;
         }
         if (this.state.phonenumber.length != 14) {
-            let errors = this.state.errors;
             errors.phonenumber = "the phonenumber is invalid";
+        }
+        if (!this.state.firstname) {
+            errors.firstname = "the first name cannot be empty";
+        }
+        if (!this.state.lastname) {
+            errors.lastname = "the last name cannot be empty";
+        }
+
+        if (!isEmpty(errors)) {
             this.setState({
                 errors: errors
             });
-            return;
+            return
         }
 
         let readyToSubmit = true;
@@ -110,7 +106,6 @@ class UserProfile extends React.Component {
                     respond.data.usernameexist &&
                     this.state.user.username !== this.state.username
                 ) {
-                    let errors = this.state.errors;
                     errors.username =
                         "this username is existed, please choose another one";
                     this.setState({
@@ -270,7 +265,11 @@ class UserProfile extends React.Component {
                                 </span>
                             )}
                         </div>
-                        <div>
+                        <div
+                            className={classnames("form-group", {
+                                "has-error": this.state.errors.firstname
+                            })}
+                        >
                             <label className="control-label">First Name</label>
                             <input
                                 className="form-control"
@@ -280,9 +279,17 @@ class UserProfile extends React.Component {
                                 value={this.state.firstname}
                                 onChange={e => this.updateForm(e)}
                             />
+                            {this.state.errors.firstname && (
+                                <span className="help-block">
+                                    {this.state.errors.firstname}
+                                </span>
+                            )}
                         </div>
                         <br/>
-                        <div>
+                        <div
+                            className={classnames("form-group", {
+                                "has-error": this.state.errors.lastname
+                            })}>
                             <label className="control-label">Last Name</label>
                             <input
                                 className="form-control"
@@ -292,6 +299,11 @@ class UserProfile extends React.Component {
                                 value={this.state.lastname}
                                 onChange={e => this.updateForm(e)}
                             />
+                            {this.state.errors.lastname && (
+                                <span className="help-block">
+                                    {this.state.errors.lastname}
+                                </span>
+                            )}
                         </div>
                         <br/>
                         <div>

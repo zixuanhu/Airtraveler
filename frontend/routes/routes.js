@@ -4,7 +4,7 @@ import Root from "../components/Root";
 import HomepageContainer from "../components/homepage/HomepageContainer";
 import SignUpContainer from "../components/signup/SignUpContainer";
 import LoginContainer from "../components/login/LoginContainer";
-import authorizedContainer from "../components/authorized/authoriedContainer";
+
 import UserProfileContainer from "../components/userprofile/UserProfileContainer";
 import NewHomeContainer from "../components/homes/new/NewHomePageContainer";
 import IndexHomeContainer from "../components/homes/index/IndexHomePageContainer";
@@ -19,10 +19,6 @@ export default (
         <IndexRoute component={HomepageContainer}/>
         <Route path="/signup" component={SignUpContainer}/>
         <Route path="/login" component={LoginContainer}/>
-        <Route
-            path="/authoried/:authitem/:identifer"
-            component={authorizedContainer}
-        />
         <Route
             path="/userprofile/:identifer"
             component={UserProfileContainer}

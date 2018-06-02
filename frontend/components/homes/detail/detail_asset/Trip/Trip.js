@@ -41,12 +41,11 @@ class Trip extends React.Component {
 
     totalprice() {
         const totalprice = this.state.price * this.state.living_nights;
-        return (
-            <div>
-                <p>
-                    ${this.state.price} * {this.state.living_nights} nights
-                </p>
-                <p>Total ${totalprice}</p>
+        return
+        (<div>
+                <p>${this.state.price} * {this.state.living_nights} nights</p>
+                <p> Total ${totalprice}</p>
+
             </div>
         );
     }
@@ -156,7 +155,6 @@ class Trip extends React.Component {
 
 
     render() {
-        console.log(this.state);
         return (
             <div className="trip-card ">
                 <h4>${this.state.price}/per night</h4>
