@@ -52,19 +52,10 @@ class Trip extends React.Component {
 
     updateguestnumber(e) {
         e.preventDefault();
-        let errors = this.state.errors
-        if (e.target.value > this.state.guest_availability) {
-            errors.guest_number = "the guest number is higher then guest availability"
-            this.setState({
-                errors: errors
-            })
-        } else {
-            errors.guest_number = ""
-            this.setState({
-                guest_number: e.target.value,
-                errors: errors
-            });
-        }
+        this.setState({
+            guest_number: e.target.value
+        });
+
     }
 
     updatecheckinDate(e) {
@@ -128,9 +119,7 @@ class Trip extends React.Component {
         if (this.state.guest_number === 0) {
             error.guest_number = "please choose your guest number"
         }
-        if (this.state.guest_number > this.state.guest_availability) {
-            error.guest_number = "the guest number is higher then guest availability"
-        }
+
         if (error.check_in || error.check_out || error.guest_number) {
             this.setState({
                 errors: error

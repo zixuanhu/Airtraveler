@@ -37,7 +37,12 @@ class Tripindex extends React.Component {
 
                     <div>
 
-                        <div className="card-wrap horizontal codepen">
+                        <div className="card-wrap horizontal codepen"
+                             onClick={() => {
+                                 this.context.router.push(
+                                     `/trip/${trip.id}`
+                                 )
+                             }}>
 
                             <div className="card-img-container">
 
@@ -50,15 +55,9 @@ class Tripindex extends React.Component {
                             <div className="card-info">
 
                                 <div className="card-address">
-                                    <a onClick={() => {
-                                        this.context.router.push(
-                                            `/trip/${trip.id}`
-                                        )
-                                    }}>
-                                        <p className="card-title">{address}</p>
-                                        <p>111 W. Ocean Boulevard, <br/>
-                                            Fourth Floor,<br/>
-                                            WA
+                                    <a>
+                                        <p className="card-title">{trip.home.title}</p>
+                                        <p>{address}
                                         </p>
                                     </a>
                                 </div>
@@ -72,8 +71,6 @@ class Tripindex extends React.Component {
 
                         </div>
                     </div>
-
-
                 </div>
             </div>
         )

@@ -465,7 +465,7 @@ class indexhomePage extends React.Component {
                         {this.homeCards()}
                     </div>
                 </div>
-                <div>{this.pagination()}</div>
+                <div style={{textAlign: 'center'}}>{this.pagination()}</div>
             </div>
         );
     }

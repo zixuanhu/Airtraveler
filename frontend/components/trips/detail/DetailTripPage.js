@@ -3,6 +3,8 @@ import Linkify from 'react-linkify';
 import isEmpty from "lodash/isEmpty";
 import GoogleMap from "./GoogleMap";
 import moment from "moment/moment";
+import {Link} from 'react-router'
+
 
 class Tripdetail extends React.Component {
     constructor(props) {
@@ -31,10 +33,21 @@ class Tripdetail extends React.Component {
         });
     }
 
-    delete() {
-        this.props.deletetrip(this.state.trip_id).then(() => {
-            this.context.router.push(`/trips/${this.props.user.id}`);
-        });
+    map() {
+        //(`https://maps.google.com/maps?q=${this.state.home.lat},${this.state.home.log}&z=17&hl=en`);
+    }
+
+    cancelTrip(e) {
+        e.preventDefault();
+        const r = confirm("Are you sure you wants to cancle the trip?");
+        if (r == true) {
+            this.props.deletetrip(this.state.trip_id).then(() => {
+                this.context.router.push(`/trips/${this.props.user.id}`);
+            });
+            alert("Your trip has been cancled!");
+        }
+
+
     }
 
     priviousImg(e, length) {
@@ -116,6 +129,7 @@ class Tripdetail extends React.Component {
         const host = this.state.host;
         const livingNights = ~~moment.duration(moment(trip.check_out).diff(moment(trip.check_in))).asDays() + 1
 
+
         return (
             <div className="container">
                 <div>Reservation code: {trip.reserved_id}</div>
@@ -143,7 +157,11 @@ class Tripdetail extends React.Component {
                             <br/>
                             <h4>Address</h4>
                             <p>{home.address}</p>
-                            <a>get Direction</a>
+
+                            <a
+                                href={`https://maps.google.com/maps?q=${this.state.home.lat},${this.state.home.log}`}
+                                target="_blank"
+                            >get Direction</a>
                             {isEmpty(home.lat) ? (
                                 "loading..."
                             ) : (
@@ -162,7 +180,10 @@ class Tripdetail extends React.Component {
                         <br/>
                         <hr/>
                         <div>
-                            <a>Cancle the trip</a>
+                            <a onClick={e => {
+                                this.cancelTrip(e)
+                            }}>Cancle the trip</a>
+
                         </div>
 
                     </div>
@@ -226,33 +247,6 @@ class Tripdetail extends React.Component {
 
         )
 
-        //
-        // return (
-        //
-
-        // reserved_id:{trip.reserved_id}
-        // <br/>
-        // check_in:{moment(trip.check_in).format("MMMM Do YYYY, h")}
-        // <br/>
-        // check_out:{moment(trip.check_out).format("MMMM Do YYYY, h")}
-        // <br/>
-        // title:{home.title}
-        // <br/>
-        // room_type:{home.room_type}
-        // <button
-        //             onClick={() => {
-        //                 this.delete();
-        //             }}
-        //         >
-        //             delete
-        //         </button>
-        //         {isEmpty(home) ? (
-        //             "loading..."
-        //         ) : (
-        //             <GoogleMap lat={home.lat} lng={home.lng}/>
-        //         )}
-        //     </div>
-        // );
     }
 }
 

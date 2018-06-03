@@ -3,6 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="e3827670-0343-43de-b235-158dbff8bf01" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/css/trips/tripcard.css" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/css/trips/tripcard.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/components/homes/detail/detail_asset/Trip/Trip.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/homes/detail/detail_asset/Trip/Trip.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/components/homes/index/IndexHomePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/homes/index/IndexHomePage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/components/trips/detail/DetailTripPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/trips/detail/DetailTripPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/components/trips/index/IndexTripPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/trips/index/IndexTripPage.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -30,11 +35,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="NavigationBar.js" pinned="false" current-in-tab="true">
+          <file leaf-file-name="NavigationBar.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/frontend/components/navbar/NavigationBar.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="338">
-                  <caret line="110" column="55" selection-start-line="110" selection-start-column="55" selection-end-line="110" selection-end-column="55" />
+                <state relative-caret-position="182">
+                  <caret line="108" column="16" lean-forward="true" selection-start-line="108" selection-start-column="16" selection-end-line="108" selection-end-column="16" />
                 </state>
               </provider>
             </entry>
@@ -56,8 +61,8 @@
           <file leaf-file-name="Trip.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/frontend/components/homes/detail/detail_asset/Trip/Trip.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="704">
-                  <caret line="48" column="12" selection-start-line="48" selection-start-column="12" selection-end-line="48" selection-end-column="12" />
+                <state relative-caret-position="223">
+                  <caret line="118" column="44" lean-forward="true" selection-start-line="118" selection-start-column="44" selection-end-line="118" selection-end-column="44" />
                   <folding>
                     <element signature="e#0#26#0" expanded="true" />
                   </folding>
@@ -65,11 +70,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="IndexHomePage.js" pinned="false" current-in-tab="false">
+          <file leaf-file-name="IndexHomePage.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/frontend/components/homes/index/IndexHomePage.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="202">
-                  <caret line="326" column="29" selection-start-line="326" selection-start-column="29" selection-end-line="326" selection-end-column="29" />
+                <state relative-caret-position="6364">
+                  <caret line="460" column="55" lean-forward="true" selection-start-line="460" selection-start-column="55" selection-end-line="460" selection-end-column="55" />
                   <folding>
                     <element signature="e#0#26#0" expanded="true" />
                   </folding>
@@ -81,11 +86,23 @@
       </split-first>
       <split-second>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-          <file leaf-file-name="homeIndex.css" pinned="false" current-in-tab="true">
+          <file leaf-file-name="homeIndex.css" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/backend/src/css/homes/index/homeIndex.css">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1332">
-                  <caret line="74" column="24" selection-start-line="74" selection-start-column="24" selection-end-line="74" selection-end-column="24" />
+                <state relative-caret-position="270">
+                  <caret line="15" column="1" lean-forward="true" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="DetailTripPage.js" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/frontend/components/trips/detail/DetailTripPage.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="207">
+                  <caret line="161" column="115" selection-start-line="161" selection-start-column="115" selection-end-line="161" selection-end-column="115" />
+                  <folding>
+                    <element signature="e#0#26#0" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -130,7 +147,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>on</find>
       <find>cName</find>
       <find>price</find>
       <find>book</find>
@@ -160,6 +176,7 @@
       <find>debu</find>
       <find>$</find>
       <find>Total</find>
+      <find>add</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -198,27 +215,27 @@
         <option value="$PROJECT_DIR$/backend/routes/homes.js" />
         <option value="$PROJECT_DIR$/frontend/components/homes/detail/detail_asset/TitleSection.js" />
         <option value="$PROJECT_DIR$/frontend/components/homes/detail/detail_asset/GoogleMap.js" />
-        <option value="$PROJECT_DIR$/frontend/components/trips/index/IndexTripPage.js" />
         <option value="$PROJECT_DIR$/frontend/components/trips/detail/GoogleMap.js" />
         <option value="$PROJECT_DIR$/backend/src/css/trips/tripDetail.scss" />
         <option value="$PROJECT_DIR$/backend/src/css/main.css" />
         <option value="$PROJECT_DIR$/backend/src/css/mainscss.scss" />
         <option value="$PROJECT_DIR$/backend/index.html" />
         <option value="$PROJECT_DIR$/frontend/components/trips/detail/DetailTripPageContainer.js" />
-        <option value="$PROJECT_DIR$/backend/src/css/trips/tripcard.css" />
         <option value="$PROJECT_DIR$/backend/src/css/homes/detail/DetailHomePage.css" />
         <option value="$PROJECT_DIR$/frontend/components/homes/detail/detail_index/HomeDetailPage.js" />
-        <option value="$PROJECT_DIR$/frontend/components/trips/detail/DetailTripPage.js" />
         <option value="$PROJECT_DIR$/frontend/components/common/OptionFieldGroupForSearch.js" />
         <option value="$PROJECT_DIR$/frontend/components/homes/new/NewHomePage.js" />
         <option value="$PROJECT_DIR$/frontend/components/userprofile/UserProfile.js" />
         <option value="$PROJECT_DIR$/seeds/seed.js" />
-        <option value="$PROJECT_DIR$/frontend/components/homes/detail/detail_asset/Trip/Trip.js" />
-        <option value="$PROJECT_DIR$/frontend/components/homes/index/IndexHomePage.js" />
         <option value="$PROJECT_DIR$/backend/src/css/homes/home-common.css" />
         <option value="$PROJECT_DIR$/backend/src/css/homes/index/homeIndex.css" />
         <option value="$PROJECT_DIR$/frontend/routes/routes.js" />
         <option value="$PROJECT_DIR$/frontend/components/navbar/NavigationBar.js" />
+        <option value="$PROJECT_DIR$/frontend/components/homes/detail/detail_asset/Trip/Trip.js" />
+        <option value="$PROJECT_DIR$/frontend/components/trips/index/IndexTripPage.js" />
+        <option value="$PROJECT_DIR$/backend/src/css/trips/tripcard.css" />
+        <option value="$PROJECT_DIR$/frontend/components/homes/index/IndexHomePage.js" />
+        <option value="$PROJECT_DIR$/frontend/components/trips/detail/DetailTripPage.js" />
       </list>
     </option>
   </component>
@@ -239,8 +256,8 @@
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1657" />
-    <option name="y" value="23" />
+    <option name="x" value="944" />
+    <option name="y" value="32" />
     <option name="width" value="2217" />
     <option name="height" value="946" />
   </component>
@@ -293,6 +310,14 @@
             <path>
               <item name="Airtraveler_06012018" type="b2602c69:ProjectViewProjectNode" />
               <item name="Airtraveler_06012018" type="462c0819:PsiDirectoryNode" />
+              <item name="backend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
+              <item name="trips" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Airtraveler_06012018" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Airtraveler_06012018" type="462c0819:PsiDirectoryNode" />
               <item name="frontend" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -313,22 +338,23 @@
               <item name="Airtraveler_06012018" type="462c0819:PsiDirectoryNode" />
               <item name="frontend" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="homes" type="462c0819:PsiDirectoryNode" />
+              <item name="trips" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Airtraveler_06012018" type="b2602c69:ProjectViewProjectNode" />
               <item name="Airtraveler_06012018" type="462c0819:PsiDirectoryNode" />
               <item name="frontend" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="homes" type="462c0819:PsiDirectoryNode" />
+              <item name="trips" type="462c0819:PsiDirectoryNode" />
+              <item name="detail" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Airtraveler_06012018" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Airtraveler_06012018" type="462c0819:PsiDirectoryNode" />
+              <item name="frontend" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="trips" type="462c0819:PsiDirectoryNode" />
               <item name="index" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Airtraveler_06012018" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Airtraveler_06012018" type="462c0819:PsiDirectoryNode" />
-              <item name="frontend" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="navbar" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Airtraveler_06012018" type="b2602c69:ProjectViewProjectNode" />
@@ -459,7 +485,7 @@
       <workItem from="1527649666985" duration="18317000" />
       <workItem from="1527807454941" duration="15834000" />
       <workItem from="1527973050016" duration="1000" />
-      <workItem from="1527973076737" duration="5220000" />
+      <workItem from="1527973076737" duration="9541000" />
     </task>
     <task id="LOCAL-00001" summary="push">
       <created>1526109273634</created>
@@ -493,12 +519,13 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="178147000" />
+    <option name="totallyTimeSpent" value="182468000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1657" y="23" width="2217" height="946" extended-state="0" />
+    <frame x="944" y="32" width="2217" height="946" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.76297575" visible="true" weight="0.15700594" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.76297575" visible="true" weight="0.15700594" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
@@ -506,7 +533,7 @@
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32810616" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Structure" order="1" sideWeight="0.23702422" side_tool="true" weight="0.19594873" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.38405797" />
+      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.38405797" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -668,13 +695,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/components/trips/index/IndexTripPage.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="28" column="30" selection-start-line="28" selection-start-column="30" selection-end-line="28" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/frontend/components/homes/index/IndexHomePageContainer.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
@@ -745,13 +765,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/backend/src/css/trips/tripcard.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2196">
-          <caret line="122" column="20" selection-start-line="122" selection-start-column="20" selection-end-line="122" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/frontend/components/common/OptionFieldGroupForSearch.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="288">
@@ -783,16 +796,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="86">
           <caret line="10" column="18" lean-forward="true" selection-start-line="10" selection-start-column="18" selection-end-line="10" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/components/trips/detail/DetailTripPage.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="168" column="47" selection-start-line="168" selection-start-column="47" selection-end-line="168" selection-end-column="47" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -877,16 +880,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/components/homes/detail/detail_asset/Trip/Trip.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="704">
-          <caret line="48" column="12" selection-start-line="48" selection-start-column="12" selection-end-line="48" selection-end-column="12" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/frontend/components/homes/detail/detail_asset/GoogleMap.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="185">
@@ -894,27 +887,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/components/homes/index/IndexHomePage.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="202">
-          <caret line="326" column="29" selection-start-line="326" selection-start-column="29" selection-end-line="326" selection-end-column="29" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/backend/src/css/homes/home-common.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="498">
           <caret line="52" column="18" lean-forward="true" selection-start-line="52" selection-start-column="18" selection-end-line="52" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/src/css/homes/index/homeIndex.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1332">
-          <caret line="74" column="24" selection-start-line="74" selection-start-column="24" selection-end-line="74" selection-end-column="24" />
         </state>
       </provider>
     </entry>
@@ -927,9 +903,6 @@
           </folding>
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/index.js">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/frontend/components/Root.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -948,6 +921,33 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/components/navbar/NavigationBar.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="108" column="16" lean-forward="true" selection-start-line="108" selection-start-column="16" selection-end-line="108" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/components/homes/detail/detail_asset/Trip/Trip.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="223">
+          <caret line="118" column="44" lean-forward="true" selection-start-line="118" selection-start-column="44" selection-end-line="118" selection-end-column="44" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/src/css/homes/index/homeIndex.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="15" column="1" lean-forward="true" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/index.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/frontend/components/homes/detail/detail_index/HomeDetailPage.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="62">
@@ -958,10 +958,37 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/components/navbar/NavigationBar.js">
+    <entry file="file://$PROJECT_DIR$/frontend/components/homes/index/IndexHomePage.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="338">
-          <caret line="110" column="55" selection-start-line="110" selection-start-column="55" selection-end-line="110" selection-end-column="55" />
+        <state relative-caret-position="6364">
+          <caret line="460" column="55" lean-forward="true" selection-start-line="460" selection-start-column="55" selection-end-line="460" selection-end-column="55" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/src/css/trips/tripcard.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="395">
+          <caret line="27" column="1" lean-forward="true" selection-start-line="27" selection-start-column="1" selection-end-line="27" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/components/trips/index/IndexTripPage.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="51" lean-forward="true" selection-start-line="51" selection-end-line="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/components/trips/detail/DetailTripPage.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="161" column="115" selection-start-line="161" selection-start-column="115" selection-end-line="161" selection-end-column="115" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
