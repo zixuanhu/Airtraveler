@@ -44,11 +44,36 @@ const Icon = props => {
 const IconInfo = ({homeinfo}) => {
 
     return (
+
         <Section>
-            <Icon cName="home">{homeinfo.room_type}</Icon>
-            <Icon cName="users">{homeinfo.guest_availability}guests</Icon>
-            <Icon cName="bath">{homeinfo.bath_availability}bathrooms</Icon>
-            <Icon cName="bed">{homeinfo.beds_availability}bedsrooms</Icon>
+            <Icon cName="home">
+                <span className={homeinfo.readyToload ? "" : "animated-background"}>
+                    <span style={homeinfo.readyToload ? {opacity: '1'} : {opacity: '0'}}>
+                        {homeinfo.room_type}
+                    </span>
+                </span>
+            </Icon>
+            <Icon cName="users">
+                <span className={homeinfo.readyToload ? "" : "animated-background"}>
+                    <span style={homeinfo.readyToload ? {opacity: '1'} : {opacity: '0'}}>
+                        {homeinfo.guest_availability}guests
+                    </span>
+                </span>
+            </Icon>
+            <Icon cName="bath">
+                <span className={homeinfo.readyToload ? "" : "animated-background"}>
+                    <span style={homeinfo.readyToload ? {opacity: '1'} : {opacity: '0'}}>
+                        {homeinfo.bath_availability}bathrooms
+                    </span>
+                </span>
+            </Icon>
+            <Icon cName="bed">
+                <span className={homeinfo.readyToload ? "" : "animated-background"}>
+                    <span style={homeinfo.readyToload ? {opacity: '1'} : {opacity: '0'}}>
+                        {homeinfo.beds_availability}bedsrooms
+                    </span>
+                </span>
+            </Icon>
         </Section>
     );
 };

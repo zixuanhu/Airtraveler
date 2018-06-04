@@ -108,7 +108,8 @@ class NavigationBar extends React.Component {
 
         return (
             <div>
-                <nav className="navbar navbar-default ">
+                <nav className="navbar navbar-default navbar-fixed-top nav-border">
+
                     <div className="container-fluid">
                         <div className="navbar-header">
                             <button
@@ -125,12 +126,32 @@ class NavigationBar extends React.Component {
                                 <span className="icon-bar"/>
                                 <span className="icon-bar"/>
                             </button>
+
+                            <a
+                                className="navbar-brand"
+                                style={{padding: '8px'}}
+                                onClick={() => this.context.router.push("/")}
+                            >
+                                <img
+                                    style={{
+                                        width: 35,
+                                        height: 35,
+                                        borderRadius: 5
+
+                                    }}
+                                    src='http://res.cloudinary.com/airtraveler/image/upload/v1528068405/zixuanlogo.jpg'
+                                    alt="Brand"
+                                />
+
+                            </a>
                             <a
                                 className="navbar-brand"
                                 onClick={() => this.context.router.push("/")}
                             >
-                                AirTaveler
+                                Airtraveler
+
                             </a>
+
                         </div>
 
                         <div

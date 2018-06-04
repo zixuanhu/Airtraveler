@@ -8,6 +8,7 @@ class Tripindex extends React.Component {
 
         this.state = {
             trips: {},
+            readyToload: false,
             user_id: this.props.params.user_id
         }
 
@@ -23,6 +24,11 @@ class Tripindex extends React.Component {
                 }
             )
         }
+        setTimeout(() => {
+            this.setState({
+                readyToload: true
+            });
+        }, 1000);
 
     }
 
@@ -44,27 +50,65 @@ class Tripindex extends React.Component {
                                  )
                              }}>
 
-                            <div className="card-img-container">
+                            <div className={this.state.readyToload ? "" : "animated-background"}>
+                                <div style={this.state.readyToload ? {opacity: '1'} : {opacity: '0', marginTop: '5px'}}>
 
-                                <figure>
-                                    <img src={img}/>
-                                </figure>
-
+                                    <figure>
+                                        <img src={img}/>
+                                    </figure>
+                                </div>
                             </div>
 
                             <div className="card-info">
 
                                 <div className="card-address">
                                     <a>
-                                        <p className="card-title">{trip.home.title}</p>
-                                        <p>{address}
+
+                                        <p className="card-title">
+                                            <span className={this.state.readyToload ? "" : "animated-background"}>
+                                            <span style={this.state.readyToload ? {opacity: '1'} : {
+                                                opacity: '0',
+                                                marginTop: '5px'
+                                            }}>
+                                                {trip.home.title}
+                                            </span>
+                                            </span>
+                                        </p>
+                                        <p>
+                                            <span className={this.state.readyToload ? "" : "animated-background"}>
+                                            <span style={this.state.readyToload ? {opacity: '1'} : {
+                                                opacity: '0',
+                                                marginTop: '5px'
+                                            }}>
+                                                {address}
+                                            </span>
+                                            </span>
                                         </p>
                                     </a>
                                 </div>
 
                                 <div className="card-phone">
-                                    <p><span> Check in</span>{check_in}</p>
-                                    <p><span>Check out</span>{check_out}</p>
+                                    <p>
+                                         <span className={this.state.readyToload ? "" : "animated-background"}>
+                                            <span style={this.state.readyToload ? {opacity: '1'} : {
+                                                opacity: '0',
+                                                marginTop: '5px'
+                                            }}>
+                                             <span> Check in</span>{check_in}
+                                             </span>
+                                         </span>
+                                    </p>
+                                    <p>
+                                         <span className={this.state.readyToload ? "" : "animated-background"}>
+                                            <span style={this.state.readyToload ? {opacity: '1'} : {
+                                                opacity: '0',
+                                                marginTop: '5px'
+                                            }}>
+                                             <span> Check out</span>{check_out}
+                                             </span>
+                                         </span>
+                                    </p>
+
                                 </div>
 
                             </div>

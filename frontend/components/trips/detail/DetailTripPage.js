@@ -3,7 +3,6 @@ import Linkify from 'react-linkify';
 import isEmpty from "lodash/isEmpty";
 import GoogleMap from "./GoogleMap";
 import moment from "moment/moment";
-import {Link} from 'react-router'
 
 
 class Tripdetail extends React.Component {
@@ -159,7 +158,7 @@ class Tripdetail extends React.Component {
                             <p>{home.address}</p>
 
                             <a
-                                href={`https://maps.google.com/maps?q=${this.state.home.lat},${this.state.home.log}`}
+                                href={`https://maps.google.com/maps?q=${this.state.home.lat},${this.state.home.lng}&z=17&hl=en`}
                                 target="_blank"
                             >get Direction</a>
                             {isEmpty(home.lat) ? (

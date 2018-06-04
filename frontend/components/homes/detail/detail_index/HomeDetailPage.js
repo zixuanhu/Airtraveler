@@ -1,11 +1,11 @@
 import React from "react";
 import Hero from "../detail_asset/Hero";
 import IconInfo from "../detail_asset/Iconinfo";
-import Trip from '../detail_asset/Trip/TripContainer';
-import TitleSection from '../detail_asset/TitleSection';
-import Space from '../detail_asset/Space'
-import OverviewInfo from '../detail_asset/OverviewInfo';
-import GoogleMap from '../detail_asset/GoogleMap';
+import Trip from "../detail_asset/Trip/TripContainer";
+import TitleSection from "../detail_asset/TitleSection";
+import Space from "../detail_asset/Space";
+import OverviewInfo from "../detail_asset/OverviewInfo";
+import GoogleMap from "../detail_asset/GoogleMap";
 import isEmpty from "lodash/isEmpty";
 
 class HomeDetailPage extends React.Component {
@@ -17,14 +17,15 @@ class HomeDetailPage extends React.Component {
             title: "",
             description: "",
             img: [],
-            lng: '',
-            lat: '',
+            lng: "",
+            lat: "",
             user: {},
             price: "",
-            target: '',
+            target: "",
             room_type: "",
             property_type: "",
             setup_plan: "",
+            readyToload: false,
             guest_availability: "",
             room_availability: "",
             beds_availability: "",
@@ -80,23 +81,30 @@ class HomeDetailPage extends React.Component {
                     setup_plan: home.setup_for_guest,
                     property_type: home.property_type
                 });
-
             });
         });
+        setTimeout(() => {
+            this.setState({
+                readyToload: true
+            });
+        }, 1000);
     }
 
 
     render() {
         const marginStyle = {
             marginLeft: this.state.marginLeft,
-            marginRight: 50,
-
+            marginRight: 50
         };
-        const heroPic = this.state.img;
+        const heroPic = {
+            img: this.state.img,
+            readyToload: this.state.readyToload
+        };
 
         const info = {
             title: this.state.title,
             hostprofile: this.state.hostprofile,
+            readyToload: this.state.readyToload
         };
 
         const homeInfo = {
@@ -106,46 +114,63 @@ class HomeDetailPage extends React.Component {
             target: this.state.target,
             room_type: this.state.room_type,
             property_type: this.state.property_type,
-            setup_plan: this.state.setup_plan
+            setup_plan: this.state.setup_plan,
+            readyToload: this.state.readyToload
         };
+        const overviewInfoText = {
+            description: this.state.description,
+            readyToload: this.state.readyToload,
+            host: this.state.user
+
+        }
 
         return (
-            <div>
-                <Hero heroPic={heroPic}
-                      onChange={e => {
-                          this.change(e)
-                      }}/>
-                <div className='container'>
+            <div
+            >
+                <Hero
+                    heroPic={heroPic}
+                    onChange={e => {
+                        this.change(e);
+                    }}
+                />
+                <div className="container">
                     <div className="row">
-
                         <div className="column home">
                             <div className="container-fluid">
-                                <div style={marginStyle} className="home-info">
-
+                                <div
+                                    style={marginStyle}
+                                    className="home-info"
+                                >
                                     <TitleSection info={info}/>
                                     <IconInfo homeinfo={homeInfo}/>
-                                    <OverviewInfo overviewInfoText={this.state.description}
-                                                  host_info={this.state.user}/>
+                                    <OverviewInfo
+                                        overviewInfoText={
+                                            overviewInfoText
+                                        }
+
+                                    />
                                     <Space homeInfo={homeInfo}/>
                                     {isEmpty(this.state.lat) ? (
                                         "loading..."
                                     ) : (
-                                        <GoogleMap lat={this.state.lat} lng={this.state.lng}/>
+                                        <GoogleMap
+                                            lat={this.state.lat}
+                                            lng={this.state.lng}
+                                            readyToload={this.state.readyToload}
+                                        />
                                     )}
                                 </div>
                             </div>
                         </div>
                         <div className="column sidetrip">
-
-                            <Trip
-                                home_id={this.props.params.home_id}/>
+                            <Trip home_id={this.props.params.home_id} readyToload={this.state.readyToload}/>
                         </div>
                     </div>
                 </div>
             </div>
         );
-
     }
+
 }
 
 export default HomeDetailPage;

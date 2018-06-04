@@ -9,6 +9,9 @@ class Root extends React.Component {
     render() {
         return (
             <div>
+                <br />
+                <br />
+                <br />
                 <NavigationBarContainer />
                 <div className="children-components">{this.props.children}</div>
                 <Footer />

@@ -4,6 +4,7 @@
 @import url("./homes/detail/DetailHomePage.css");
 @import url("./homes/home-common.css");
 @import url('./trips/tripcard.css');
+@import url('loader.css');
 
 a:hover {
     cursor: pointer;

@@ -2,3 +2,83 @@
     padding-top: 7px;
     padding-bottom: 5px;
 }
+
+.nav-border {
+    border-bottom: 3px solid transparent;
+    border-image: linear-gradient(to right, #F80, #a61d55);
+    border-image-slice: 10;
+}
+
+.column {
+    float: left;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+/* Left and right column */
+.column.contact {
+    width: 20%;
+
+}
+
+.column.social {
+    width: 15%;
+
+}
+
+/* Middle column */
+.column.copyright {
+    width: 65%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 1005px) {
+    .column.copyright {
+        width: 50%;
+    }
+
+    .column.contact {
+        width: 30%;
+
+    }
+
+    .column.social {
+        width: 20%;
+
+    }
+}
+
+@media screen and (max-width: 780px) {
+    .column.copyright {
+        width: 30%;
+    }
+
+    .column.social {
+        width: 30%;
+
+    }
+
+    .column.contact {
+        width: 30%;
+
+    }
+}
+
+
+
+
+
+
+
+
+
+
+

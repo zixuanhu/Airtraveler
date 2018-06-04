@@ -49,19 +49,50 @@ const Space = ({homeInfo}) => {
     return (
         <Section title="The space">
             <div style={tableDivStyle}>
-                <SpaceDetail section="Accomodates: ">
-                    {homeInfo.guest_availability}
-                </SpaceDetail>
-                <SpaceDetail section="Bathrooms: ">
-                    {homeInfo.bath_availability}
-                </SpaceDetail>
-                <SpaceDetail section="Bedrooms: ">{homeInfo.beds_availability}</SpaceDetail>
-                <SpaceDetail section="Property type: ">
-                    {homeInfo.property_type}
-                </SpaceDetail>
-                <SpaceDetail section="Room type: ">{homeInfo.room_type}</SpaceDetail>
-                <SpaceDetail section="target: ">{homeInfo.target}</SpaceDetail>
-                <SpaceDetail section="setup plan: ">{homeInfo.setup_plan}</SpaceDetail>
+                <div className={homeInfo.readyToload ? "" : "animated-background"}>
+                    <div style={homeInfo.readyToload ? {opacity: '1'} : {opacity: '0', marginTop: '5px'}}>
+                        <SpaceDetail section="Accomodates: ">
+                            {homeInfo.guest_availability}
+                        </SpaceDetail>
+                    </div>
+                </div>
+                <div className={homeInfo.readyToload ? "" : "animated-background"}>
+                    <div style={homeInfo.readyToload ? {opacity: '1'} : {opacity: '0', marginTop: '5px'}}>
+                        <SpaceDetail section="Bathrooms: ">
+                            {homeInfo.bath_availability}
+                        </SpaceDetail>
+                    </div>
+                </div>
+                <div className={homeInfo.readyToload ? "" : "animated-background"}>
+                    <div style={homeInfo.readyToload ? {opacity: '1'} : {opacity: '0', marginTop: '5px'}}>
+                        <SpaceDetail section="Bedrooms: ">{homeInfo.beds_availability}</SpaceDetail>
+                    </div>
+                </div>
+                <div className={homeInfo.readyToload ? "" : "animated-background"}>
+                    <div style={homeInfo.readyToload ? {opacity: '1'} : {opacity: '0', marginTop: '5px'}}>
+                        <SpaceDetail section="Property type: ">
+                            {homeInfo.property_type}
+                        </SpaceDetail>
+                    </div>
+                </div>
+                <div className={homeInfo.readyToload ? "" : "animated-background"}>
+                    <div style={homeInfo.readyToload ? {opacity: '1'} : {opacity: '0', marginTop: '5px'}}>
+                        <SpaceDetail section="Room type: ">{homeInfo.room_type}</SpaceDetail>
+                    </div>
+                </div>
+
+                <div className={homeInfo.readyToload ? "" : "animated-background"}>
+                    <div style={homeInfo.readyToload ? {opacity: '1'} : {opacity: '0', marginTop: '5px'}}>
+                        <SpaceDetail section="target: ">{homeInfo.target}</SpaceDetail>
+                    </div>
+                </div>
+                <div className={homeInfo.readyToload ? "" : "animated-background"}>
+                    <div style={homeInfo.readyToload ? {opacity: '1'} : {opacity: '0', marginTop: '5px'}}>
+                        <SpaceDetail section="setup plan: ">{homeInfo.setup_plan}</SpaceDetail>
+                    </div>
+                </div>
+
+
             </div>
 
             <br/>

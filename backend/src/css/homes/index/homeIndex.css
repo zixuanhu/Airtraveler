@@ -5,6 +5,11 @@
     transition: 0.5s ease;
     backface-visibility: hidden;
     margin-bottom: 3px;
+    max-width: 334px;
+}
+
+.Plus {
+    color: #a61d55;
 }
 
 .homePlus {
@@ -19,7 +24,8 @@
     font-size: 22px;
     font-weight: 500;
     line-height: 120%;
-    margin-top: 5px;
+    margin: 0 0 1px;
+    color: #263471;
 }
 
 .homeprice {
@@ -27,11 +33,21 @@
     font-weight: 300;
 }
 
+.search-title {
+    background-color: #febb02;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 3px;
+    font-size: 18px;
+    font-weight: 600;
+}
+
 .search-bar {
     margin-top: 10px;
     width: 100%;
-    background: lightgray;
+    background: #ffd2a2;
     padding: 5%;
+    border-radius: 5px;
 }
 
 .cards-container {
@@ -58,7 +74,6 @@
 
 /* Clear floats after the columns */
 .row:after {
-    content: "";
     display: table;
     clear: both;
 }
@@ -67,6 +82,7 @@
 @media screen and (max-width: 1005px) {
     .column.home {
         width: 100%;
+        margin-left: 15%;
     }
 
     .column.sidesearch {
@@ -76,11 +92,20 @@
     }
 }
 
+.CalendarDay__highlighted_calendar {
+    background: #82E0AA;
+    color: #186A3B;
+}
 
+.CalendarDay__highlighted_calendar:hover {
+    background: #58D68D;
+    color: #186A3B;
+}
 
-
-
-
+.CalendarDay__highlighted_calendar:active {
+    background: #58D68D;
+    color: #186A3B;
+}
 
 
 

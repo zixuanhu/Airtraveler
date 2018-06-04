@@ -33,6 +33,7 @@ const TextConverter = props => {
     };
 
     return (
+
         <Section>
             <div style={divStyle}>
                 {props.textBlock.split("\b").map(textChunk => {
@@ -61,34 +62,38 @@ const TextConverter = props => {
                 })}
             </div>
         </Section>
+
     );
 };
 
-const OverviewInfo = ({overviewInfoText, host_info}) => (
+const OverviewInfo = ({overviewInfoText}) => (
+    <div className={overviewInfoText.readyToload ? "" : "animated-background"}>
+        <div style={overviewInfoText.readyToload ? {opacity: '1'} : {opacity: '0', marginTop: '10px'}}>
+            <Section>
+                <a name="overview"/>
+                <br/>
+                <TextConverter
+                    textBlock={overviewInfoText.description}
+                    idName={OverviewInfo}
+                />
 
-    <Section>
-        <a name="overview"/>
-        <br/>
-        <TextConverter
-            textBlock={overviewInfoText}
-            idName={OverviewInfo}
-        />
+                <a role="button" data-toggle="collapse" href="#collapseExample"
+                   aria-expanded="false" aria-controls="collapseExample">
+                    Contact host
+                </a>
+                <div className="collapse" id="collapseExample">
+                    <div className="well">
+                        <li>
+                            email:<Linkify>{overviewInfoText.host.email}</Linkify>
+                        </li>
+                        <li>
+                            phone:{overviewInfoText.host.phonenumber}
+                        </li>
 
-        <a role="button" data-toggle="collapse" href="#collapseExample"
-           aria-expanded="false" aria-controls="collapseExample">
-            Contact host
-        </a>
-        <div className="collapse" id="collapseExample">
-            <div className="well">
-                <li>
-                    email:<Linkify>{host_info.email}</Linkify>
-                </li>
-                <li>
-                    phone:{host_info.phonenumber}
-                </li>
-
-            </div>
+                    </div>
+                </div>
+            </Section>
         </div>
-    </Section>
+    </div>
 );
 export default OverviewInfo

@@ -9,6 +9,7 @@ import roomsAvailabilityOptions from "../asset/availbility/room";
 import bedsAvailabilityOptions from "../asset/availbility/beds";
 import bathAvailabilityOptions from "../asset/availbility/bath";
 import setupForGuestOptions from "../asset/setup/guestsetup";
+import classnames from "classnames";
 
 class indexhomePage extends React.Component {
     constructor(props) {
@@ -29,6 +30,7 @@ class indexhomePage extends React.Component {
             beds_availability: "",
             bath_availability: "",
             setup_for_guest: "",
+            readyToload: false,
             target: ""
         };
     }
@@ -40,6 +42,11 @@ class indexhomePage extends React.Component {
                 pagination: this.props.homes.pagination
             });
         });
+        setTimeout(() => {
+            this.setState({
+                readyToload: true
+            });
+        }, 1500);
     }
 
     keyDown(e) {
@@ -310,144 +317,174 @@ class indexhomePage extends React.Component {
                 <div
                     key={i}
                     className="col-sm-6 col-md-4 "
+
                     onClick={() =>
                         this.context.router.push(`/homes/${home.id}`)
                     }
-                >
-                    <div className="card">
-                        <img
-                            className="homeimg"
-                            src={
-                                home.img[0] ||
-                                "http://pic.uzzf.com/up/2017-3/14901722897158766.jpg"
-                            }
-                        />
 
-                        <br/>
-                        <div>
-                            <span className="homePlus">PLUS</span>
-                            {home.room_type} · {home.property_type}
+                >
+                    <div className={this.state.readyToload ? "" : "animated-background"
+                    }
+                    >
+                        <div className="card "
+                             style={this.loadingStyle()}
+                        >
+                            <img
+                                className="homeimg"
+                                src={
+                                    home.img[0] ||
+                                    "http://pic.uzzf.com/up/2017-3/14901722897158766.jpg"
+                                }
+                            />
+
+                            <br/>
+                            <div className="Plus">
+                                <span className="homePlus">PLUS</span>
+                                {home.room_type} · {home.property_type}
+                            </div>
+                            <p className="hometitle">{home.title} </p>
+                            <p className="homeprice">${home.price} per night</p>
                         </div>
-                        <p className="hometitle">{home.title} </p>
-                        <p className="homeprice">${home.price}</p>
                     </div>
                 </div>
-            );
+            )
+            ;
         }
-        return homeCards;
+        return (
+            <div>
+                <div className={this.state.readyToload ? "" : "animated-background"}>
+                    <h3 style={this.loadingStyle()}>There are {this.state.pagination.rowCount} homes for you</h3>
+                </div>
+                {homeCards}
+            </div>);
+    }
+
+    loadingStyle() {
+        if (!this.state.readyToload)
+            return ({opacity: '0'})
     }
 
     searchBar() {
         return (
-
-            <div className="search-bar">
-                <div
-                    className="input-group"
-                    onKeyDown={e => this.keyDown(e)}
+            <div className={this.state.readyToload ? "" : "animated-background"}>
+                <div className="search-bar"
+                     style={this.loadingStyle()}
                 >
-                    <input
-                        type="text"
-                        name="keyword"
-                        className="form-control"
-                        placeholder="Search"
-                        id="txtSearch"
-                        value={this.state.keyword}
-                        onChange={e => this.updateForm(e)}
-                    />
+                    <div className='search-title'> Find the best one for you</div>
+                    <div
 
-                    <div className="input-group-btn">
-                        <button
-                            className="btn btn-primary"
-                            type="submit"
-                            onClick={e => this.search(e)}
-                        >
-                            <span className="glyphicon glyphicon-search"/>
-                        </button>
+                        className="input-group"
+                        onKeyDown={e => this.keyDown(e)}
+                    >
+                        <input
+                            type="text"
+                            name="keyword"
+                            className="form-control"
+                            placeholder="Search"
+                            id="txtSearch"
+                            value={this.state.keyword}
+                            onChange={e => this.updateForm(e)}
+                        />
+
+                        <div className="input-group-btn">
+                            <button
+                                style={{
+                                    backgroundColor: '#A66F35',
+                                    borderColor: '#A66F35'
+                                }}
+                                className="btn btn-primary"
+                                type="submit"
+                                onClick={e => this.search(e)}
+                            >
+                                <span className="glyphicon glyphicon-search"/>
+                            </button>
+                        </div>
                     </div>
-                </div>
-                <br/>
-                <div>
-                    <label className="control-label">Destination</label>
-                    <input
-                        className="form-control"
-                        type="text"
-                        name="destination"
-                        placeholder="destination"
-                        value={this.state.destination}
+                    <br/>
+                    <div>
+                        <label className="control-label">Destination</label>
+                        <input
+                            className="form-control"
+                            type="text"
+                            name="destination"
+                            placeholder="destination"
+                            value={this.state.destination}
+                            onChange={e => this.updateForm(e)}
+                            onKeyDown={e => this.keyDown(e)}
+                        />
+                    </div>
+                    <br/>
+                    <div className="slidecontainer">
+                        <input type="range"
+                               min="1"
+                               max="500"
+                               name="price"
+                               onChange={e => {
+                                   this.updateForm(e)
+                               }}
+                               value={this.state.price}
+                               className="slider" id="myRange"/>
+                    </div>
+                    <label>max price: ${this.state.price}/day</label>
+
+                    <br/>
+                    <OptionFieldGroup
+                        label="Property Type"
+                        name="property_type"
+                        value={this.state.property_type}
                         onChange={e => this.updateForm(e)}
+                        error={this.state.errors.property_type}
+                        options={propertyTypeOptions}
+                    />
+                    <OptionFieldGroup
+                        label="Room Type"
+                        name="room_type"
+                        value={this.state.room_type}
+                        onChange={e => this.updateForm(e)}
+                        error={this.state.errors.room_type}
+                        options={roomTypeOptions}
+                    />
+                    <OptionFieldGroup
+                        label="Guest Number"
+                        name="guest_availability"
+                        value={this.state.guest_availability}
+                        onChange={e => this.updateForm(e)}
+                        error={this.state.errors.guest_availability}
+                        options={guestAvailabilityOptions}
+                    />
+                    <OptionFieldGroup
+                        label="Room number"
+                        name="rooms_availability"
+                        value={this.state.rooms_availability}
+                        onChange={e => this.updateForm(e)}
+                        error={this.state.errors.rooms_availability}
+                        options={roomsAvailabilityOptions}
+                    />
+                    <OptionFieldGroup
+                        label="Beds number"
+                        name="beds_availability"
+                        value={this.state.beds_availability}
+                        onChange={e => this.updateForm(e)}
+                        error={this.state.errors.beds_availability}
+                        options={bedsAvailabilityOptions}
+                    />
+                    <OptionFieldGroup
+                        label="Baths number"
+                        name="bath_availability"
+                        value={this.state.bath_availability}
+                        onChange={e => this.updateForm(e)}
+                        error={this.state.errors.bath_availability}
+                        options={bathAvailabilityOptions}
+                    />
+                    <OptionFieldGroup
+                        label="Setup Plan"
+                        name="setup_for_guest"
+                        value={this.state.setup_for_guest}
+                        onChange={e => this.updateForm(e)}
+                        error={this.state.errors.setup_for_guest}
+                        options={setupForGuestOptions}
                     />
                 </div>
-                <br/>
-                <div className="slidecontainer">
-                    <input type="range"
-                           min="1"
-                           max="500"
-                           name="price"
-                           onChange={e => {
-                               this.updateForm(e)
-                           }}
-                           value={this.state.price}
-                           className="slider" id="myRange"/>
-                </div>
-                <label>max price: ${this.state.price}/day</label>
-
-                <br/>
-                <OptionFieldGroup
-                    label="Property Type"
-                    name="property_type"
-                    value={this.state.property_type}
-                    onChange={e => this.updateForm(e)}
-                    error={this.state.errors.property_type}
-                    options={propertyTypeOptions}
-                />
-                <OptionFieldGroup
-                    label="Room Type"
-                    name="room_type"
-                    value={this.state.room_type}
-                    onChange={e => this.updateForm(e)}
-                    error={this.state.errors.room_type}
-                    options={roomTypeOptions}
-                />
-                <OptionFieldGroup
-                    label="Guest Number"
-                    name="guest_availability"
-                    value={this.state.guest_availability}
-                    onChange={e => this.updateForm(e)}
-                    error={this.state.errors.guest_availability}
-                    options={guestAvailabilityOptions}
-                />
-                <OptionFieldGroup
-                    label="Room number"
-                    name="rooms_availability"
-                    value={this.state.rooms_availability}
-                    onChange={e => this.updateForm(e)}
-                    error={this.state.errors.rooms_availability}
-                    options={roomsAvailabilityOptions}
-                />
-                <OptionFieldGroup
-                    label="Beds number"
-                    name="beds_availability"
-                    value={this.state.beds_availability}
-                    onChange={e => this.updateForm(e)}
-                    error={this.state.errors.beds_availability}
-                    options={bedsAvailabilityOptions}
-                />
-                <OptionFieldGroup
-                    label="Baths number"
-                    name="bath_availability"
-                    value={this.state.bath_availability}
-                    onChange={e => this.updateForm(e)}
-                    error={this.state.errors.bath_availability}
-                    options={bathAvailabilityOptions}
-                />
-                <OptionFieldGroup
-                    label="Setup Plan"
-                    name="setup_for_guest"
-                    value={this.state.setup_for_guest}
-                    onChange={e => this.updateForm(e)}
-                    error={this.state.errors.setup_for_guest}
-                    options={setupForGuestOptions}
-                />
             </div>
 
         );
