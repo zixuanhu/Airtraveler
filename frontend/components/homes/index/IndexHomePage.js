@@ -205,6 +205,7 @@ class indexhomePage extends React.Component {
 
         const pageCount = this.state.pagination.pageCount;
         const activePage = this.state.activePage;
+
         pages.push(
             <Pagination.Prev
                 key="prev"
@@ -230,6 +231,8 @@ class indexhomePage extends React.Component {
                     );
             }
         }
+
+
         if (pageCount > 8) {
             if (activePage < 4) {
                 for (let i = 1; i < 5; i++) {
@@ -300,7 +303,7 @@ class indexhomePage extends React.Component {
                     </Pagination.Item>
                 );
                 pages.push(<Pagination.Ellipsis key="headellipsis"/>);
-                for (let i = activePage - 2; i <= activePage + 2; i++) {
+                for (let i = parseInt(activePage) - 2; i <= parseInt(activePage) + 2; i++) {
                     if (i === activePage) {
                         pages.push(
                             <Pagination.Item key={i} name="activePage" active>
