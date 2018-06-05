@@ -23,10 +23,10 @@ export default (
         <Route path="/homes" component={IndexHomeContainer} />
         <Route path="/trips/:user_id" component={IndexTripPageContainer} />
         <Route path="/trip/:trip_id" component={DetailTripPageContainer} />
-        <Route
+        {/* <Route
             path="/userprofile/:identifer"
             component={UserProfileContainer}
-        />
+        /> */}
         {/* <Route path="/login" component={LoginContainer} />
         <Route path="/signup" component={SignUpContainer} /> */}
     </Route>

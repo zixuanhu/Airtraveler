@@ -1,5 +1,5 @@
 import React from "react";
-import {debug} from "util";
+import { debug } from "util";
 
 class NavigationBar extends React.Component {
     constructor(props) {
@@ -38,7 +38,7 @@ class NavigationBar extends React.Component {
                             src={this.props.user.img}
                             alt="profilpic"
                         />
-                        <span className="caret"/>
+                        <span className="caret" />
                     </a>
                     <ul className="dropdown-menu">
                         <li>
@@ -74,7 +74,7 @@ class NavigationBar extends React.Component {
                                 Edit Profile
                             </a>
                         </li>
-                        <li role="separator" className="divider"/>
+                        <li role="separator" className="divider" />
                         <li>
                             <a
                                 onClick={() =>
@@ -94,6 +94,11 @@ class NavigationBar extends React.Component {
         const guestLink = (
             <div className="nav navbar-nav navbar-right">
                 <li>
+                    <a onClick={() => this.context.router.push(`/homes`)}>
+                        Homes
+                    </a>
+                </li>
+                <li>
                     <a onClick={() => this.context.router.push("/login")}>
                         Log in
                     </a>
@@ -109,7 +114,6 @@ class NavigationBar extends React.Component {
         return (
             <div>
                 <nav className="navbar navbar-default navbar-fixed-top nav-border">
-
                     <div className="container-fluid">
                         <div className="navbar-header">
                             <button
@@ -122,14 +126,14 @@ class NavigationBar extends React.Component {
                                 <span className="sr-only">
                                     Toggle navigation
                                 </span>
-                                <span className="icon-bar"/>
-                                <span className="icon-bar"/>
-                                <span className="icon-bar"/>
+                                <span className="icon-bar" />
+                                <span className="icon-bar" />
+                                <span className="icon-bar" />
                             </button>
 
                             <a
                                 className="navbar-brand"
-                                style={{padding: '8px'}}
+                                style={{ padding: "8px" }}
                                 onClick={() => this.context.router.push("/")}
                             >
                                 <img
@@ -137,21 +141,17 @@ class NavigationBar extends React.Component {
                                         width: 35,
                                         height: 35,
                                         borderRadius: 5
-
                                     }}
-                                    src='http://res.cloudinary.com/airtraveler/image/upload/v1528068405/zixuanlogo.jpg'
+                                    src="http://res.cloudinary.com/airtraveler/image/upload/v1528068405/zixuanlogo.jpg"
                                     alt="Brand"
                                 />
-
                             </a>
                             <a
                                 className="navbar-brand"
                                 onClick={() => this.context.router.push("/")}
                             >
                                 Airtraveler
-
                             </a>
-
                         </div>
 
                         <div
