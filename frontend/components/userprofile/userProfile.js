@@ -1,6 +1,6 @@
 import React from "react";
 import classnames from "classnames";
-import {format} from "react-phone-input-auto-format";
+import { format } from "react-phone-input-auto-format";
 import isEmpty from "lodash/isEmpty";
 
 class UserProfile extends React.Component {
@@ -22,26 +22,23 @@ class UserProfile extends React.Component {
 
     componentWillMount() {
         this.props.findUser(this.props.routeParams.identifer).then(() => {
-
+            this.setState({
+                user: this.props.user,
+                email: this.props.user.email,
+                username: this.props.user.username,
+                img: this.props.user.img,
+                description: this.props.user.description,
+                firstname: this.props.user.firstname,
+                lastname: this.props.user.lastname,
+                gender: this.props.user.gender
+            });
+            if (this.props.user.phonenumber !== null) {
                 this.setState({
-                    user: this.props.user,
-                    email: this.props.user.email,
-                    username: this.props.user.username,
-                    img: this.props.user.img,
-                    description: this.props.user.description,
-                    firstname: this.props.user.firstname,
-                    lastname: this.props.user.lastname,
-                    gender: this.props.user.gender
-                })
-                if (this.props.user.phonenumber !== null) {
-                    this.setState({
-                        phonenumber: this.props.user.phonenumber
-                    })
-                }
+                    phonenumber: this.props.user.phonenumber
+                });
             }
-        )
+        });
     }
-
 
     onUploadImage(e) {
         e.preventDefault();
@@ -66,7 +63,6 @@ class UserProfile extends React.Component {
     submitForm() {
         let errors = {};
         if (this.state.username === "") {
-
             errors.username = "the username cannot be empty";
         }
         if (
@@ -94,7 +90,7 @@ class UserProfile extends React.Component {
             this.setState({
                 errors: errors
             });
-            return
+            return;
         }
 
         let readyToSubmit = true;
@@ -145,7 +141,6 @@ class UserProfile extends React.Component {
     }
 
     updateForm(e) {
-
         e.preventDefault();
         this.setState({
             [e.target.name]: e.target.value
@@ -158,29 +153,30 @@ class UserProfile extends React.Component {
             gender: true,
             firstname: "zixuan",
             lastname: "hu",
-            phonenumber: format('5037248577')
-        })
+            phonenumber: format("5037248577")
+        });
     }
-
 
     image() {
         if (this.state.img) {
-            return (<div
-                style={{
-                    cursor: "pointer"
-                }}
-                onClick={e => this.onUploadImage(e)}
-            >
-                <img
-                    src={this.state.img}
-                    className="img-rounded"
+            return (
+                <div
                     style={{
-                        width: 50,
-                        height: 50,
-                        borderRadius: 50
+                        cursor: "pointer"
                     }}
-                />
-            </div>);
+                    onClick={e => this.onUploadImage(e)}
+                >
+                    <img
+                        src={this.state.img}
+                        className="img-rounded"
+                        style={{
+                            width: 50,
+                            height: 50,
+                            borderRadius: 50
+                        }}
+                    />
+                </div>
+            );
         } else
             return (
                 <div
@@ -191,9 +187,7 @@ class UserProfile extends React.Component {
                     }}
                     onClick={e => this.onUploadImage(e)}
                 />
-
             );
-
     }
 
     setPhoneNumber(e) {
@@ -204,16 +198,14 @@ class UserProfile extends React.Component {
                 [e.target.name]: format(e.target.value)
             });
         }
-
     }
 
-
     editProfile() {
-        console.log(this.state.phonenumber)
+        console.log(this.state.phonenumber);
 
         return (
             <div className="container">
-                <br/>
+                <br />
 
                 <div className="row">
                     <div className="col-md-6 col-md-offset-3">
@@ -285,11 +277,12 @@ class UserProfile extends React.Component {
                                 </span>
                             )}
                         </div>
-                        <br/>
+                        <br />
                         <div
                             className={classnames("form-group", {
                                 "has-error": this.state.errors.lastname
-                            })}>
+                            })}
+                        >
                             <label className="control-label">Last Name</label>
                             <input
                                 className="form-control"
@@ -305,7 +298,7 @@ class UserProfile extends React.Component {
                                 </span>
                             )}
                         </div>
-                        <br/>
+                        <br />
                         <div>
                             <label className="control-label">Gender</label>
                             <label className="checkbox-inline">
@@ -339,13 +332,15 @@ class UserProfile extends React.Component {
                                 female
                             </label>
                         </div>
-                        <br/>
+                        <br />
                         <div
                             className={classnames("form-group", {
                                 "has-error": this.state.errors.username
                             })}
                         >
-                            <label className="control-label">Phone number</label>
+                            <label className="control-label">
+                                Phone number
+                            </label>
 
                             <input
                                 className="form-control"
@@ -354,8 +349,9 @@ class UserProfile extends React.Component {
                                 placeholder="phonenumber"
                                 value={this.state.phonenumber}
                                 onChange={e => {
-                                    this.setPhoneNumber(e)
-                                }}/>
+                                    this.setPhoneNumber(e);
+                                }}
+                            />
 
                             {this.state.errors.phonenumber && (
                                 <span className="help-block">
@@ -379,7 +375,7 @@ class UserProfile extends React.Component {
                                 onChange={e => this.updateForm(e)}
                             />
                         </div>
-                        <br/>
+                        <br />
 
                         <button
                             className="btn btn-primary"
@@ -387,7 +383,11 @@ class UserProfile extends React.Component {
                         >
                             Submit
                         </button>
-                        {(this.state.username && this.state.firstname && this.state.lastname && this.state.gender && this.state.phonenumber) ? (
+                        {this.state.username &&
+                        this.state.firstname &&
+                        this.state.lastname &&
+                        this.state.gender &&
+                        this.state.phonenumber ? (
                             <button
                                 className="btn btn-success pull-right"
                                 onClick={() => this.submitForm()}
@@ -413,8 +413,7 @@ class UserProfile extends React.Component {
     }
 }
 
-UserProfile
-    .contextTypes = {
+UserProfile.contextTypes = {
     router: React.PropTypes.object.isRequired
 };
 export default UserProfile;

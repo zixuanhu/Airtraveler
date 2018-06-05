@@ -54,14 +54,14 @@ class SignUp extends React.Component {
                 if (
                     this.state.username.includes(
                         "@" ||
-                        "#" ||
-                        " " ||
-                        "$" ||
-                        "%" ||
-                        "^" ||
-                        "+" ||
-                        "-" ||
-                        "="
+                            "#" ||
+                            " " ||
+                            "$" ||
+                            "%" ||
+                            "^" ||
+                            "+" ||
+                            "-" ||
+                            "="
                     )
                 ) {
                     let errors = this.state.errors;
@@ -141,7 +141,7 @@ class SignUp extends React.Component {
     signUppage() {
         return (
             <div className="container">
-                <br/>
+                <br />
                 <div className="row">
                     <div className="col-md-6 col-md-offset-3">
                         <h2> Please Sign Up </h2>
@@ -161,7 +161,6 @@ class SignUp extends React.Component {
                             />
                             {this.state.errors.username && (
                                 <span className="help-block">
-
                                     {this.state.errors.username}
                                 </span>
                             )}
@@ -182,7 +181,6 @@ class SignUp extends React.Component {
                             />
                             {this.state.errors.email && (
                                 <span className="help-block">
-
                                     {this.state.errors.email}
                                 </span>
                             )}
@@ -203,7 +201,6 @@ class SignUp extends React.Component {
                             />
                             {this.state.errors.password && (
                                 <span className="help-block">
-
                                     {this.state.errors.password}
                                 </span>
                             )}
@@ -226,7 +223,6 @@ class SignUp extends React.Component {
                             />
                             {this.state.errors.password_confirm && (
                                 <span className="help-block">
-
                                     {this.state.errors.password_confirm}
                                 </span>
                             )}
@@ -254,9 +250,7 @@ class SignUp extends React.Component {
                             </button>
                         )}
                     </div>
-
                 </div>
-
             </div>
         );
     }

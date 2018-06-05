@@ -1,9 +1,8 @@
-import {connect} from "react-redux";
+import { connect } from "react-redux";
 import IndexTripPage from "./IndexTripPage";
 import * as tripActions from "../../../actions/tripActions";
 
 export const mapStateToProps = state => {
-
     return {
         user: state.auth.user,
         trips: state.trip.trips,
@@ -19,4 +18,7 @@ export const mapDispatchToProps = dispatch => {
     };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(IndexTripPage);
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(IndexTripPage);
