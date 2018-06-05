@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e3827670-0343-43de-b235-158dbff8bf01" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/frontend/components/manage/Login.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/components/manage/LoginContainer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/components/manage/SignUp.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/components/manage/SignUpContainer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/routes/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/routes/routes.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -32,13 +32,24 @@
           <file leaf-file-name="routes.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/frontend/routes/routes.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="386">
-                  <caret line="31" column="57" lean-forward="true" selection-start-line="31" selection-start-column="6" selection-end-line="31" selection-end-column="57" />
+                <state relative-caret-position="387">
+                  <caret line="32" column="1" selection-start-line="32" selection-start-column="1" selection-end-line="32" selection-end-column="59" />
                   <folding>
                     <element signature="e#0#26#0" expanded="true" />
+                    <element signature="e#883#950#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="SignUp.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/frontend/components/manage/SignUp.js">
+              <provider selected="true" editor-type-id="text-editor" />
+            </entry>
+          </file>
+          <file leaf-file-name="SignUpContainer.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/frontend/components/manage/SignUpContainer.js">
+              <provider selected="true" editor-type-id="text-editor" />
             </entry>
           </file>
           <file leaf-file-name="Login.js" pinned="false" current-in-tab="false">
@@ -399,13 +410,6 @@
               <item name="Airtraveler_06032018" type="462c0819:PsiDirectoryNode" />
               <item name="frontend" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="login" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Airtraveler_06032018" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Airtraveler_06032018" type="462c0819:PsiDirectoryNode" />
-              <item name="frontend" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
               <item name="manage" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -414,6 +418,13 @@
               <item name="frontend" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
               <item name="navbar" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Airtraveler_06032018" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Airtraveler_06032018" type="462c0819:PsiDirectoryNode" />
+              <item name="frontend" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="signup" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Airtraveler_06032018" type="b2602c69:ProjectViewProjectNode" />
@@ -466,6 +477,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/frontend/components/manage" />
       <recent name="$PROJECT_DIR$/frontend/components/homes/detail/detail_asset" />
       <recent name="$PROJECT_DIR$/frontend/components/homes/detail/detail_asset/Trip" />
       <recent name="$PROJECT_DIR$/frontend/components/homes/detail/detail_index" />
@@ -575,7 +587,7 @@
       <workItem from="1528066940217" duration="4333000" />
       <workItem from="1528077441180" duration="15305000" />
       <workItem from="1528161961991" duration="1210000" />
-      <workItem from="1528172159253" duration="836000" />
+      <workItem from="1528172159253" duration="1309000" />
     </task>
     <task id="LOCAL-00001" summary="push">
       <created>1526109273634</created>
@@ -609,21 +621,22 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="212832000" />
+    <option name="totallyTimeSpent" value="213305000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1492" y="29" width="2190" height="946" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.7570922" visible="true" weight="0.15896489" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.7567568" visible="true" weight="0.15896489" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="Find" order="1" visible="true" weight="0.32971016" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32810616" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info id="npm" order="2" side_tool="true" />
-      <window_info id="Structure" order="1" sideWeight="0.2429078" side_tool="true" visible="true" weight="0.15896489" />
-      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.3188406" />
+      <window_info id="Structure" order="1" sideWeight="0.24324325" side_tool="true" visible="true" weight="0.15896489" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.3188406" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -632,7 +645,6 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" />
     </layout>
     <layout-to-restore>
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -721,14 +733,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/frontend/components/homes/new/GoogleMap.js" />
-    <entry file="file://$PROJECT_DIR$/frontend/components/signup/SignUpContainer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="19" selection-start-column="19" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/frontend/utils/homeUtil.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="169">
@@ -1054,12 +1058,19 @@
         <state relative-caret-position="-26" />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/components/manage/SignUpContainer.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/components/manage/SignUp.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/frontend/routes/routes.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="386">
-          <caret line="31" column="57" lean-forward="true" selection-start-line="31" selection-start-column="6" selection-end-line="31" selection-end-column="57" />
+        <state relative-caret-position="387">
+          <caret line="32" column="1" selection-start-line="32" selection-start-column="1" selection-end-line="32" selection-end-column="59" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
+            <element signature="e#883#950#0" expanded="true" />
           </folding>
         </state>
       </provider>

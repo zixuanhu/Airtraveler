@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
+import SignUp from "./SignUp";
 import * as authActions from "../../actions/authActions";
-import Login from "./Login";
 
 export const mapStateToProps = state => {
     return {};
@@ -8,8 +8,15 @@ export const mapStateToProps = state => {
 
 export const mapDispatchToProps = dispatch => {
     return {
+        signup: userData => {
+            return dispatch(authActions.signup(userData));
+        },
         login: userData => {
             return dispatch(authActions.login(userData));
+        },
+        checkExist: (username, email) => {
+            const userData = { username: username, email: email };
+            return dispatch(authActions.checkExist(userData));
         }
     };
 };
@@ -17,4 +24,4 @@ export const mapDispatchToProps = dispatch => {
 export default connect(
     mapStateToProps,
     mapDispatchToProps
-)(Login);
+)(SignUp);

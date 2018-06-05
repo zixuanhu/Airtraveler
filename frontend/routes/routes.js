@@ -10,7 +10,7 @@ import IndexHomeContainer from "../components/homes/index/IndexHomePageContainer
 import IndexTripPageContainer from "../components/trips/index/IndexTripPageContainer";
 import DetailTripPageContainer from "../components/trips/detail/DetailTripPageContainer";
 // import UserProfileContainer from "../components/userprofile/UserProfileContainer";
-// import SignUpContainer from "../components/signup/SignUpContainer";
+import SignUpContainer from "../components/manage/SignUpContainer";
 
 import LoginContainer from "../components/manage/LoginContainer";
 
@@ -30,6 +30,6 @@ export default (
             component={UserProfileContainer}
         /> */}
         <Route path="/login" component={LoginContainer}/>
-        {/* <Route path="/signup" component={SignUpContainer} /> */}
+        <Route path="/signup" component={SignUpContainer}/>
     </Route>
 );
