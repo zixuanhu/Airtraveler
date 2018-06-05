@@ -14,6 +14,7 @@ class Tripdetail extends React.Component {
             trip: {},
             home: {},
             host: {},
+            readyToload: false,
             curIndex: 0
         };
     }
@@ -30,11 +31,13 @@ class Tripdetail extends React.Component {
                 })
             })
         });
+        setTimeout(() => {
+            this.setState({
+                readyToload: true
+            });
+        }, 1000);
     }
 
-    map() {
-        //(`https://maps.google.com/maps?q=${this.state.home.lat},${this.state.home.log}&z=17&hl=en`);
-    }
 
     cancelTrip(e) {
         e.preventDefault();
@@ -95,27 +98,34 @@ class Tripdetail extends React.Component {
         };
 
         return (
-            <div style={divStyle} className="detail-imgs">
-                <svg className="arrow" id="left-control" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 65.8"
-                     enableBackground="new 0 0 50 65.8" onClick={e => this.priviousImg(e, length)}>
-                    <g>
-                        <path d="M42.7,5.5L12,36.2c-0.7,0.7-1.9,0.7-2.6,0l-2-2c-0.7-0.7-0.7-1.9,0-2.6L38,0.8c0.7-0.7,1.9-0.7,2.6,0l2,2
+            <div className={this.state.readyToload ? "" : "animated-background"}>
+                <div style={this.state.readyToload ? {opacity: '1'} : {opacity: '0', marginTop: '5px'}}>
+
+                    <div style={divStyle} className="detail-imgs">
+                        <svg className="arrow" id="left-control" xmlns="http://www.w3.org/2000/svg"
+                             viewBox="0 0 50 65.8"
+                             enableBackground="new 0 0 50 65.8" onClick={e => this.priviousImg(e, length)}>
+                            <g>
+                                <path d="M42.7,5.5L12,36.2c-0.7,0.7-1.9,0.7-2.6,0l-2-2c-0.7-0.7-0.7-1.9,0-2.6L38,0.8c0.7-0.7,1.9-0.7,2.6,0l2,2
          C43.4,3.6,43.4,4.8,42.7,5.5z"/>
-                        <path d="M42.7,60.3L12,29.6c-0.7-0.7-1.9-0.7-2.6,0l-2,2c-0.7,0.7-0.7,1.9,0,2.6L38,65c0.7,0.7,1.9,0.7,2.6,0l2-2
+                                <path d="M42.7,60.3L12,29.6c-0.7-0.7-1.9-0.7-2.6,0l-2,2c-0.7,0.7-0.7,1.9,0,2.6L38,65c0.7,0.7,1.9,0.7,2.6,0l2-2
          C43.4,62.2,43.4,61,42.7,60.3z"/>
-                    </g>
-                </svg>
+                            </g>
+                        </svg>
 
 
-                <svg className="arrow" id="right-control" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 65.8"
-                     enableBackground="new 0 0 50 65.8" onClick={e => this.nextImg(e, length)}>
-                    <g>
-                        <path d="M7.3,5.5L38,36.2c0.7,0.7,1.9,0.7,2.6,0l2-2c0.7-0.7,0.7-1.9,0-2.6L12,0.8c-0.7-0.7-1.9-0.7-2.6,0l-2,2
+                        <svg className="arrow" id="right-control" xmlns="http://www.w3.org/2000/svg"
+                             viewBox="0 0 50 65.8"
+                             enableBackground="new 0 0 50 65.8" onClick={e => this.nextImg(e, length)}>
+                            <g>
+                                <path d="M7.3,5.5L38,36.2c0.7,0.7,1.9,0.7,2.6,0l2-2c0.7-0.7,0.7-1.9,0-2.6L12,0.8c-0.7-0.7-1.9-0.7-2.6,0l-2,2
                C6.6,3.6,6.6,4.8,7.3,5.5z"/>
-                        <path d="M7.3,60.3L38,29.6c0.7-0.7,1.9-0.7,2.6,0l2,2c0.7,0.7,0.7,1.9,0,2.6L12,65c-0.7,0.7-1.9,0.7-2.6,0l-2-2
+                                <path d="M7.3,60.3L38,29.6c0.7-0.7,1.9-0.7,2.6,0l2,2c0.7,0.7,0.7,1.9,0,2.6L12,65c-0.7,0.7-1.9,0.7-2.6,0l-2-2
                C6.6,62.2,6.6,61,7.3,60.3z"/>
-                    </g>
-                </svg>
+                            </g>
+                        </svg>
+                    </div>
+                </div>
             </div>
         );
 
@@ -131,7 +141,13 @@ class Tripdetail extends React.Component {
 
         return (
             <div className="container">
-                <div>Reservation code: {trip.reserved_id}</div>
+                <div>Reservation code: <span className={this.state.readyToload ? "" : "animated-background"}>
+                                        < span style={this.state.readyToload ? {opacity: '1'} : {
+                                            opacity: '0',
+                                            marginTop: '5px'
+                                        }}> {trip.reserved_id}
+                                        </span>
+                </span></div>
                 <hr/>
                 <div className="row">
                     <div className="column middle" style={{border: '3px solid #cccccc'}}>
@@ -139,14 +155,30 @@ class Tripdetail extends React.Component {
                             <br/>
                             <div className='col-sm-6'>
                                 <h4>Check In</h4>
-                                <h5>{moment(trip.check_in).format("MMMM Do YYYY, h:mm")}</h5>
+                                <div className={this.state.readyToload ? "" : "animated-background"}>
+                                    <div style={this.state.readyToload ? {opacity: '1'} : {
+                                        opacity: '0',
+                                        marginTop: '5px'
+                                    }}>
+
+                                        <h5>{moment(trip.check_in).format("MMMM Do YYYY, h:mm")}</h5>
+                                    </div>
+                                </div>
                                 <br/>
                             </div>
 
 
                             <div className='col-sm-6'>
                                 <h4>Check Out</h4>
-                                <h5>{moment(trip.check_out).format("MMMM Do YYYY, h:mm")}</h5>
+                                <div className={this.state.readyToload ? "" : "animated-background"}>
+                                    <div style={this.state.readyToload ? {opacity: '1'} : {
+                                        opacity: '0',
+                                        marginTop: '5px'
+                                    }}>
+
+                                        <h5>{moment(trip.check_out).format("MMMM Do YYYY, h:mm")}</h5>
+                                    </div>
+                                </div>
                                 <br/>
                             </div>
 
@@ -155,16 +187,26 @@ class Tripdetail extends React.Component {
                         <div>
                             <br/>
                             <h4>Address</h4>
-                            <p>{home.address}</p>
+                            <div className={this.state.readyToload ? "" : "animated-background"}>
+                                <div style={this.state.readyToload ? {opacity: '1'} : {opacity: '0', marginTop: '5px'}}>
 
+                                    <p>{home.address}</p>
+                                </div>
+                            </div>
                             <a
                                 href={`https://maps.google.com/maps?q=${this.state.home.lat},${this.state.home.lng}&z=17&hl=en`}
                                 target="_blank"
-                            >get Direction</a>
+                            >get Direction </a>|
+
+                            <a onClick={() => {
+                                this.context.router.push(
+                                    `/homes/${home.id}`
+                                )
+                            }}> Visiting list</a>
                             {isEmpty(home.lat) ? (
                                 "loading..."
                             ) : (
-                                <GoogleMap lat={home.lat} lng={home.lng}/>
+                                <GoogleMap lat={home.lat} lng={home.lng} readyToload={this.state.readyToload}/>
                             )}
 
                         </div>
@@ -173,8 +215,13 @@ class Tripdetail extends React.Component {
                         <br/>
                         <div>
                             <h4> Billing</h4>
-                            <p>{livingNights} night totle</p>
-                            <p>${livingNights * home.price}</p>
+                            <div className={this.state.readyToload ? "" : "animated-background"}>
+                                <div style={this.state.readyToload ? {opacity: '1'} : {opacity: '0', marginTop: '5px'}}>
+
+                                    <p>{livingNights} night totle</p>
+                                    <p>${livingNights * home.price}</p>
+                                </div>
+                            </div>
                         </div>
                         <br/>
                         <hr/>
@@ -189,22 +236,54 @@ class Tripdetail extends React.Component {
                     <div className="column side">
                         <div style={{border: '3px solid #cccccc'}}>
                             <br/>
-                            <div>
-                                <img style={{
-                                    width: 80,
-                                    height: 80,
-                                    borderRadius: 50,
-                                    display: 'block',
-                                    marginLeft: 'auto',
-                                    marginRight: 'auto'
-                                }} src={host.img}/>
+                            <div className={this.state.readyToload ? "" : "animated-background"}
+                                 style={{
+                                     width: 80,
+                                     height: 80,
+                                     borderRadius: 50,
+                                     display: 'block',
+                                     marginLeft: 'auto',
+                                     marginRight: 'auto'
+                                 }}>
+                                <div style={this.state.readyToload ? {opacity: '1'} : {opacity: '0', marginTop: '5px'}}>
+
+                                    <img style={{
+                                        width: 80,
+                                        height: 80,
+                                        borderRadius: 50,
+                                        display: 'block',
+                                        marginLeft: 'auto',
+                                        marginRight: 'auto'
+                                    }} src={host.img}/>
+                                </div>
                             </div>
                             <br/>
                             <div style={{textAlign: "center"}}>
-                                <h5>Your host, {host.firstname} {host.lastname}</h5>
-                                <p>Have a question about your reservation? The best way to get information is to ask
+
+
+                                <h5>
+                                    <span className={this.state.readyToload ? "" : "animated-background"}>
+                                        < span style={this.state.readyToload ? {opacity: '1'} : {
+                                            opacity: '0',
+                                            marginTop: '5px'
+                                        }}>
+                                        Your host, {host.firstname} {host.lastname}
+                                        </span>
+                                        </span>
+                                </h5>
+
+                                <p>
+                                     <span className={this.state.readyToload ? "" : "animated-background"}>
+                                        < span style={this.state.readyToload ? {opacity: '1'} : {
+                                            opacity: '0',
+                                            marginTop: '5px'
+                                        }}>
+                                    Have a question about your reservation? The best way to get information is to ask
                                     your
-                                    host directly.</p>
+                                    host directly.
+                                 </span>
+                                        </span>
+                                </p>
                                 <div className="well">
                                     <div>
                                         <i
@@ -215,7 +294,14 @@ class Tripdetail extends React.Component {
                                                 color: "#66afe9"
                                             }}
                                         />
+                                        <span className={this.state.readyToload ? "" : "animated-background"}>
+                                        < span style={this.state.readyToload ? {opacity: '1'} : {
+                                            opacity: '0',
+                                            marginTop: '5px'
+                                        }}>
                                         <Linkify>{host.email}</Linkify>
+                                               </span>
+                                        </span>
                                     </div>
                                     <div>
                                         <i
@@ -226,7 +312,14 @@ class Tripdetail extends React.Component {
                                                 color: "#66afe9"
                                             }}
                                         />
+                                        <span className={this.state.readyToload ? "" : "animated-background"}>
+                                        < span style={this.state.readyToload ? {opacity: '1'} : {
+                                            opacity: '0',
+                                            marginTop: '5px'
+                                        }}>
                                         {host.phonenumber}
+                                           </span>
+                                        </span>
                                     </div>
                                 </div>
                             </div>

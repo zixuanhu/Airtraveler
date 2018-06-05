@@ -21,35 +21,39 @@ const CoreMap = withGoogleMap(props => {
     );
 });
 
-const HomeGoogleMap = ({lat, lng}) => {
+const HomeGoogleMap = ({lat, lng, readyToload}) => {
     lat = parseFloat(lat);
     lng = parseFloat(lng);
     return (
-        <CoreMap
-            loadingElement={
-                <div
-                    style={{
-                        height: `100%`
-                    }}
+        <div className={readyToload ? "" : "animated-background"}>
+            <div style={readyToload ? {opacity: '1'} : {opacity: '0', marginTop: '5px'}}>
+                <CoreMap
+                    loadingElement={
+                        <div
+                            style={{
+                                height: `100%`
+                            }}
+                        />
+                    }
+                    containerElement={
+                        <div
+                            style={{
+                                height: `400px`
+                            }}
+                        />
+                    }
+                    mapElement={
+                        <div
+                            style={{
+                                height: `100%`
+                            }}
+                        />
+                    }
+                    lat={lat}
+                    lng={lng}
                 />
-            }
-            containerElement={
-                <div
-                    style={{
-                        height: `400px`
-                    }}
-                />
-            }
-            mapElement={
-                <div
-                    style={{
-                        height: `100%`
-                    }}
-                />
-            }
-            lat={lat}
-            lng={lng}
-        />
+            </div>
+        </div>
     );
 };
 

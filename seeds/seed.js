@@ -1,10 +1,9 @@
 const faker = require("faker");
 const bcrypt = require("bcrypt");
-const BUILD_USER_NUM = 10;
+const BUILD_USER_NUM = 100;
 const BUILD_HOME_NUM = BUILD_USER_NUM * 10;
-const BUILD_TRIP_NUM = BUILD_USER_NUM * 20;
-const {format} = require("react-phone-input-auto-format");
-
+const BUILD_TRIP_NUM = BUILD_USER_NUM * 5;
+const { format } = require("react-phone-input-auto-format");
 
 function buildUserSeed(knex) {
     let res = [];
@@ -23,7 +22,7 @@ function buildUserSeed(knex) {
                 created_at: new Date(),
                 updated_at: new Date()
             })
-        );
+
     }
     return res;
 }
@@ -253,23 +252,23 @@ function buildTripSeed(knex) {
     return res;
 }
 
-exports.seed = function (knex, Promise) {
+exports.seed = function(knex, Promise) {
     return Promise.all(getGeoAddress).then(() => {
         return knex("users")
             .del()
-            .then(function () {
+            .then(function() {
                 return Promise.all(buildUserSeed(knex));
             })
-            .then(function () {
+            .then(function() {
                 return knex("homes")
                     .del()
-                    .then(function () {
+                    .then(function() {
                         return Promise.all(buildHomeSeed(knex));
                     })
-                    .then(function () {
+                    .then(function() {
                         return knex("trips")
                             .del()
-                            .then(function () {
+                            .then(function() {
                                 return Promise.all(buildTripSeed(knex));
                             });
                     });

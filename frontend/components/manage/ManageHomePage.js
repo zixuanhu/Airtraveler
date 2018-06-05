@@ -7,6 +7,7 @@ class ManageHomePage extends React.Component {
         super(props);
         this.state = {
             homes: [],
+            readyToload: false,
             errors: {}
         };
     }
@@ -16,6 +17,11 @@ class ManageHomePage extends React.Component {
             this.setState({
                 homes: this.props.homes
             }));
+        setTimeout(() => {
+            this.setState({
+                readyToload: true
+            });
+        }, 1000);
     }
 
     homeCards() {
@@ -32,18 +38,26 @@ class ManageHomePage extends React.Component {
                     }
                 >
                     <div className="card">
-                        <img
-                            className="homeimg"
-                            src={
-                                home.img[0] ||
-                                "http://pic.uzzf.com/up/2017-3/14901722897158766.jpg"
-                            }
-                        />
+                        <div className={this.state.readyToload ? "" : "animated-background"}>
+                            <div style={this.state.readyToload ? {opacity: '1'} : {opacity: '0', marginTop: '5px'}}>
 
-                        <br/>
-                        <p className="hometitle">ID: {home.id} </p>
-                        <p className="hometitle">{home.title} </p>
-                        <p className="homeprice">${home.price}</p>
+                                <img
+                                    className="homeimg"
+                                    src={
+                                        home.img[0] ||
+                                        "http://pic.uzzf.com/up/2017-3/14901722897158766.jpg"
+                                    }
+                                />
+
+                                <br/>
+                                <div className="Plus">
+                                    <span className="homePlus">PLUS</span>
+                                    {home.room_type} · {home.property_type}
+                                </div>
+                                <p className="hometitle">{home.title} </p>
+                                <p className="homeprice">${home.price} per night</p>
+                            </div>
+                        </div>
 
                     </div>
                 </div>

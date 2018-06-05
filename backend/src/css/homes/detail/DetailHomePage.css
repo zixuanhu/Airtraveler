@@ -12,19 +12,20 @@
     border-radius: 5px;
     position: relative;
     transition: 0.3s;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border: solid 1px lightgrey;
     transition: 0.3s;
     float: left
 
 }
 
+.btn-trip {
+    color: #fff;
+    background-color: #f0ad4e;
+    border-color: #eea236;
+}
+
 .trip-card:hover {
-    padding-top: 5px;
-    width: 100%;
-    margin: 5px -10px;
-    border-radius: 5px;
-    position: relative;
-    transition: 0.3s;
+
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 
 }

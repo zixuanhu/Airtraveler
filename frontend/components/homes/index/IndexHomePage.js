@@ -9,7 +9,7 @@ import roomsAvailabilityOptions from "../asset/availbility/room";
 import bedsAvailabilityOptions from "../asset/availbility/beds";
 import bathAvailabilityOptions from "../asset/availbility/bath";
 import setupForGuestOptions from "../asset/setup/guestsetup";
-import classnames from "classnames";
+
 
 class indexhomePage extends React.Component {
     constructor(props) {
@@ -31,6 +31,7 @@ class indexhomePage extends React.Component {
             bath_availability: "",
             setup_for_guest: "",
             readyToload: false,
+            homereadyToload: false,
             target: ""
         };
     }
@@ -44,7 +45,8 @@ class indexhomePage extends React.Component {
         });
         setTimeout(() => {
             this.setState({
-                readyToload: true
+                readyToload: true,
+                homereadyToload: true
             });
         }, 1500);
     }
@@ -77,8 +79,16 @@ class indexhomePage extends React.Component {
                 homes: this.props.homes,
                 pagination: this.props.homes.pagination,
                 searchingkeyword: this.state.keyword,
-                activePage: 1
+                activePage: 1,
+                homereadyToload: false
             });
+
+            setTimeout(() => {
+                this.setState({
+                    homereadyToload: true
+                });
+            }, 1000);
+
         });
     }
 
@@ -110,8 +120,15 @@ class indexhomePage extends React.Component {
         this.props.searchhomes(searchinfo).then(() => {
             this.setState({
                 homes: this.props.homes,
-                pagination: this.props.homes.pagination
+                pagination: this.props.homes.pagination,
+                homereadyToload: false
             });
+            setTimeout(() => {
+                this.setState({
+                    homereadyToload: true
+                });
+            }, 1000);
+
         });
     }
 
@@ -138,8 +155,14 @@ class indexhomePage extends React.Component {
             this.setState({
                 homes: this.props.homes,
                 pagination: this.props.homes.pagination,
-                activePage: curPage
+                activePage: curPage,
+                homereadyToload: false
             });
+            setTimeout(() => {
+                this.setState({
+                    homereadyToload: true
+                });
+            }, 1000);
         });
     }
 
@@ -166,9 +189,15 @@ class indexhomePage extends React.Component {
             this.setState({
                 homes: this.props.homes,
                 pagination: this.props.homes.pagination,
-                activePage: curPage
+                activePage: curPage,
+                homereadyToload: false
             });
         });
+        setTimeout(() => {
+            this.setState({
+                homereadyToload: true
+            });
+        }, 1000);
     }
 
     pagination() {
@@ -323,11 +352,11 @@ class indexhomePage extends React.Component {
                     }
 
                 >
-                    <div className={this.state.readyToload ? "" : "animated-background"
+                    <div className={this.state.homereadyToload ? "" : "animated-background"
                     }
                     >
                         <div className="card "
-                             style={this.loadingStyle()}
+                             style={this.state.homereadyToload ? {opacity: '1'} : {opacity: '0', marginTop: '5px'}}
                         >
                             <img
                                 className="homeimg"
@@ -353,22 +382,19 @@ class indexhomePage extends React.Component {
         return (
             <div>
                 <div className={this.state.readyToload ? "" : "animated-background"}>
-                    <h3 style={this.loadingStyle()}>There are {this.state.pagination.rowCount} homes for you</h3>
+                    <h3 style={this.state.readyToload ? {opacity: '1'} : {opacity: '0', marginTop: '5px'}}>There
+                        are {this.state.pagination.rowCount} homes for you</h3>
                 </div>
                 {homeCards}
             </div>);
     }
 
-    loadingStyle() {
-        if (!this.state.readyToload)
-            return ({opacity: '0'})
-    }
 
     searchBar() {
         return (
             <div className={this.state.readyToload ? "" : "animated-background"}>
                 <div className="search-bar"
-                     style={this.loadingStyle()}
+                     style={this.state.readyToload ? {opacity: '1'} : {opacity: '0', marginTop: '5px'}}
                 >
                     <div className='search-title'> Find the best one for you</div>
                     <div

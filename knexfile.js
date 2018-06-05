@@ -6,5 +6,9 @@ module.exports = {
         connection: {
             database: "airtraveler"
         }
+    },
+    production: {
+        client: "pg",
+        connection: process.env.DATABASE_URL
     }
 };
