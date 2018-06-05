@@ -30,8 +30,8 @@
           <file leaf-file-name="routes.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/frontend/routes/routes.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="252">
-                  <caret line="24" column="29" selection-start-line="24" selection-start-column="29" selection-end-line="24" selection-end-column="29" />
+                <state relative-caret-position="54">
+                  <caret line="13" column="47" selection-start-line="13" selection-start-column="47" selection-end-line="13" selection-end-column="47" />
                 </state>
               </provider>
             </entry>
@@ -557,7 +557,7 @@
       <workItem from="1528066940217" duration="4333000" />
       <workItem from="1528077441180" duration="15305000" />
       <workItem from="1528161961991" duration="1210000" />
-      <workItem from="1528172159253" duration="175000" />
+      <workItem from="1528172159253" duration="280000" />
     </task>
     <task id="LOCAL-00001" summary="push">
       <created>1526109273634</created>
@@ -591,13 +591,13 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="212171000" />
+    <option name="totallyTimeSpent" value="212276000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1492" y="29" width="2190" height="946" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.7570922" visible="true" weight="0.15896489" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.7570922" visible="true" weight="0.15896489" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
@@ -605,7 +605,7 @@
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Structure" order="1" sideWeight="0.2429078" side_tool="true" visible="true" weight="0.15896489" />
-      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.3188406" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.3188406" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -1044,8 +1044,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/frontend/routes/routes.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="24" column="29" selection-start-line="24" selection-start-column="29" selection-end-line="24" selection-end-column="29" />
+        <state relative-caret-position="54">
+          <caret line="13" column="47" selection-start-line="13" selection-start-column="47" selection-end-line="13" selection-end-column="47" />
         </state>
       </provider>
     </entry>
