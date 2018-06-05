@@ -1,7 +1,6 @@
 import path from "path";
 import webpack from "webpack";
 
-
 export default {
     devtools: "eval-source-map",
     entry: [
@@ -27,6 +26,6 @@ export default {
         ]
     },
     resolve: {
-        extensions: ["", ".js"]
+        extensions: ["", ".js", ".css"]
     }
 };
