@@ -11,7 +11,7 @@ import IndexTripPageContainer from "../components/trips/index/IndexTripPageConta
 import DetailTripPageContainer from "../components/trips/detail/DetailTripPageContainer";
 // import UserProfileContainer from "../components/userprofile/UserProfileContainer";
 // import SignUpContainer from "../components/signup/SignUpContainer";
-// import LoginContainer from "../components/login/LoginContainer";
+import LoginContainer from "../components/login/LoginContainer";
 
 export default (
     <Route path="/" component={Root}>
@@ -27,7 +27,7 @@ export default (
             path="/userprofile/:identifer"
             component={UserProfileContainer}
         /> */}
-        {/* <Route path="/login" component={LoginContainer} />
-        <Route path="/signup" component={SignUpContainer} /> */}
+        <Route path="/login" component={LoginContainer} />
+        {/* <Route path="/signup" component={SignUpContainer} /> */}
     </Route>
 );
