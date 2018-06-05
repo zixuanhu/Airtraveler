@@ -9,7 +9,7 @@ import ManageHomePageContainer from "../components/manage/ManageHomePageContaine
 import IndexHomeContainer from "../components/homes/index/IndexHomePageContainer";
 import IndexTripPageContainer from "../components/trips/index/IndexTripPageContainer";
 import DetailTripPageContainer from "../components/trips/detail/DetailTripPageContainer";
-import UserProfileContainer from "../components/userprofile/UserProfileContainer";
+// import UserProfileContainer from "../components/userprofile/UserProfileContainer";
 // import SignUpContainer from "../components/signup/SignUpContainer";
 // import LoginContainer from "../components/login/LoginContainer";
 
