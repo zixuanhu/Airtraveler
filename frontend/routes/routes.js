@@ -6,13 +6,12 @@ import NewHomeContainer from "../components/homes/new/NewHomePageContainer";
 import HomeDetailPageContainer from "../components/homes/detail/detail_index/HomeDetailPageContainer";
 import HomeEditPageContainer from "../components/homes/edit/HomeEditPageContainer";
 import ManageHomePageContainer from "../components/manage/ManageHomePageContainer";
-// import SignUpContainer from "../components/signup/SignUpContainer";
-// import LoginContainer from "../components/login/LoginContainer";
-
-// import UserProfileContainer from "../components/userprofile/UserProfileContainer";
+import UserProfileContainer from "../components/userprofile/UserProfileContainer";
 import IndexHomeContainer from "../components/homes/index/IndexHomePageContainer";
 import IndexTripPageContainer from "../components/trips/index/IndexTripPageContainer";
 import DetailTripPageContainer from "../components/trips/detail/DetailTripPageContainer";
+import SignUpContainer from "../components/signup/SignUpContainer";
+import LoginContainer from "../components/login/LoginContainer";
 
 export default (
     <Route path="/" component={Root}>
@@ -24,13 +23,11 @@ export default (
         <Route path="/homes" component={IndexHomeContainer} />
         <Route path="/trips/:user_id" components={IndexTripPageContainer} />
         <Route path="/trip/:trip_id" components={DetailTripPageContainer} />
-        {/* <Route path="/login" component={LoginContainer} /> */}
-        {/* <Route path="/signup" component={SignUpContainer} /> */}
-        {/* 
         <Route
             path="/userprofile/:identifer"
             component={UserProfileContainer}
         />
-         */}
+        <Route path="/login" component={LoginContainer} />
+        <Route path="/signup" component={SignUpContainer} />
     </Route>
 );
