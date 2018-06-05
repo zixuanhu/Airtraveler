@@ -13,7 +13,7 @@ import DetailTripPageContainer from "../components/trips/detail/DetailTripPageCo
 // import SignUpContainer from "../components/signup/SignUpContainer";
 import LoginContainer from "../components";
 import login from "../components/login";
-import trip from "../components/trips";
+import trip from "../components/trips/index/IndexTripPageContainer";
 
 export default (
     <Route path="/" component={Root}>
