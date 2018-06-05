@@ -9,7 +9,7 @@ import ManageHomePageContainer from "../components/manage/ManageHomePageContaine
 import IndexHomeContainer from "../components/homes/index/IndexHomePageContainer";
 import IndexTripPageContainer from "../components/trips/index/IndexTripPageContainer";
 import DetailTripPageContainer from "../components/trips/detail/DetailTripPageContainer";
-// import UserProfileContainer from "../components/userprofile/UserProfileContainer";
+import UserProfileContainer from "../components/manage/UserProfileContainer";
 import SignUpContainer from "../components/manage/SignUpContainer";
 
 import LoginContainer from "../components/manage/LoginContainer";
@@ -25,10 +25,10 @@ export default (
         <Route path="/homes" component={IndexHomeContainer}/>
         <Route path="/trips/:user_id" component={IndexTripPageContainer}/>
         <Route path="/trip/:trip_id" component={DetailTripPageContainer}/>
-        {/* <Route
+        <Route
             path="/userprofile/:identifer"
             component={UserProfileContainer}
-        /> */}
+        />
         <Route path="/login" component={LoginContainer}/>
         <Route path="/signup" component={SignUpContainer}/>
     </Route>
