@@ -11,7 +11,7 @@ import IndexTripPageContainer from "../components/trips/index/IndexTripPageConta
 import DetailTripPageContainer from "../components/trips/detail/DetailTripPageContainer";
 // import UserProfileContainer from "../components/userprofile/UserProfileContainer";
 // import SignUpContainer from "../components/signup/SignUpContainer";
-import LoginContainer from "../components/login";
+import LoginContainer from "../components";
 
 export default (
     <Route path="/" component={Root}>
