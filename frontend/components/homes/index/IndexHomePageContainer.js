@@ -1,9 +1,8 @@
-import {connect} from "react-redux";
-import indexHomePage from "./indexHomePage";
+import { connect } from "react-redux";
+import IndexHomePage from "./IndexHomePage";
 import * as homeActions from "../../../actions/homeActions";
 
 export const mapStateToProps = state => {
-
     return {
         homes: state.home.homes
     };
@@ -17,4 +16,7 @@ export const mapDispatchToProps = dispatch => {
     };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(indexHomePage);
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(IndexHomePage);
