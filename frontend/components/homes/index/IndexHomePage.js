@@ -1,5 +1,5 @@
 import React from "react";
-import { Pagination } from "react-bootstrap";
+import {Pagination} from "react-bootstrap";
 import OptionFieldGroup from "../../common/OptionFieldGroupForSearch";
 
 import propertyTypeOptions from "../asset/propertytype/propertytype";
@@ -204,7 +204,7 @@ class IndexhomePage extends React.Component {
         const activePage = this.state.activePage;
 
         pages.push(
-            <Pagination.Prev key="prev" onClick={e => this.prevPage(e)} />
+            <Pagination.Prev key="prev" onClick={e => this.prevPage(e)}/>
         );
 
         if (pageCount <= 8) {
@@ -248,7 +248,7 @@ class IndexhomePage extends React.Component {
                             </Pagination.Item>
                         );
                 }
-                pages.push(<Pagination.Ellipsis key="endellipsis" />);
+                pages.push(<Pagination.Ellipsis key="endellipsis"/>);
                 pages.push(
                     <Pagination.Item
                         key={pageCount}
@@ -268,7 +268,7 @@ class IndexhomePage extends React.Component {
                         {1}
                     </Pagination.Item>
                 );
-                pages.push(<Pagination.Ellipsis key="headellipsis" />);
+                pages.push(<Pagination.Ellipsis key="headellipsis"/>);
                 for (let i = pageCount - 4; i <= pageCount; i++) {
                     if (i === activePage) {
                         pages.push(
@@ -297,7 +297,7 @@ class IndexhomePage extends React.Component {
                         {1}
                     </Pagination.Item>
                 );
-                pages.push(<Pagination.Ellipsis key="headellipsis" />);
+                pages.push(<Pagination.Ellipsis key="headellipsis"/>);
                 for (
                     let i = parseInt(activePage) - 2;
                     i <= parseInt(activePage) + 2;
@@ -320,7 +320,7 @@ class IndexhomePage extends React.Component {
                             </Pagination.Item>
                         );
                 }
-                pages.push(<Pagination.Ellipsis key="endellipsis" />);
+                pages.push(<Pagination.Ellipsis key="endellipsis"/>);
                 pages.push(
                     <Pagination.Item
                         key={pageCount}
@@ -334,7 +334,7 @@ class IndexhomePage extends React.Component {
         }
 
         pages.push(
-            <Pagination.Next key="next" onClick={e => this.nextPage(e)} />
+            <Pagination.Next key="next" onClick={e => this.nextPage(e)}/>
         );
         return <Pagination>{pages}</Pagination>;
     }
@@ -343,6 +343,8 @@ class IndexhomePage extends React.Component {
         let homeCards = [];
         for (let i = 0; i < this.state.homes.length; i++) {
             const home = this.state.homes[i];
+            const images = home.img
+
             homeCards.push(
                 <div
                     key={i}
@@ -362,19 +364,20 @@ class IndexhomePage extends React.Component {
                             className="card "
                             style={
                                 this.state.homereadyToload
-                                    ? { opacity: "1" }
-                                    : { opacity: "0", marginTop: "5px" }
+                                    ? {opacity: "1"}
+                                    : {opacity: "0", marginTop: "5px"}
                             }
                         >
-                            <img
-                                className="homeimg"
-                                src={
-                                    home.img[0] ||
-                                    "http://pic.uzzf.com/up/2017-3/14901722897158766.jpg"
-                                }
-                            />
-
-                            <br />
+                            <div className='homeimg-box'>
+                                <img
+                                    className="homeimg "
+                                    src={
+                                        home.img[0] ||
+                                        "http://pic.uzzf.com/up/2017-3/14901722897158766.jpg"
+                                    }
+                                />
+                            </div>
+                            <br/>
                             <div className="Plus">
                                 <span className="homePlus">PLUS</span>
                                 {home.room_type} · {home.property_type}
@@ -396,8 +399,8 @@ class IndexhomePage extends React.Component {
                     <h3
                         style={
                             this.state.readyToload
-                                ? { opacity: "1" }
-                                : { opacity: "0", marginTop: "5px" }
+                                ? {opacity: "1"}
+                                : {opacity: "0", marginTop: "5px"}
                         }
                     >
                         There are {this.state.pagination.rowCount} homes for you
@@ -417,8 +420,8 @@ class IndexhomePage extends React.Component {
                     className="search-bar"
                     style={
                         this.state.readyToload
-                            ? { opacity: "1" }
-                            : { opacity: "0", marginTop: "5px" }
+                            ? {opacity: "1"}
+                            : {opacity: "0", marginTop: "5px"}
                     }
                 >
                     <div className="search-title">
@@ -449,11 +452,11 @@ class IndexhomePage extends React.Component {
                                 type="submit"
                                 onClick={e => this.search(e)}
                             >
-                                <span className="glyphicon glyphicon-search" />
+                                <span className="glyphicon glyphicon-search"/>
                             </button>
                         </div>
                     </div>
-                    <br />
+                    <br/>
                     <div>
                         <label className="control-label">Destination</label>
                         <input
@@ -466,7 +469,7 @@ class IndexhomePage extends React.Component {
                             onKeyDown={e => this.keyDown(e)}
                         />
                     </div>
-                    <br />
+                    <br/>
                     <div className="slidecontainer">
                         <input
                             type="range"
@@ -483,7 +486,7 @@ class IndexhomePage extends React.Component {
                     </div>
                     <label>max price: ${this.state.price}/day</label>
 
-                    <br />
+                    <br/>
                     <OptionFieldGroup
                         label="Property Type"
                         name="property_type"
@@ -552,7 +555,7 @@ class IndexhomePage extends React.Component {
                     <div className="column sidesearch">{this.searchBar()}</div>
                     <div className="column home">{this.homeCards()}</div>
                 </div>
-                <div style={{ textAlign: "center" }}>{this.pagination()}</div>
+                <div style={{textAlign: "center"}}>{this.pagination()}</div>
             </div>
         );
     }

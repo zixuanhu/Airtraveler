@@ -1,6 +1,6 @@
 import React from "react";
 import classnames from "classnames";
-import { format } from "react-phone-input-auto-format";
+import {format} from "react-phone-input-auto-format";
 import isEmpty from "lodash/isEmpty";
 
 class UserProfile extends React.Component {
@@ -205,7 +205,7 @@ class UserProfile extends React.Component {
 
         return (
             <div className="container">
-                <br />
+                <br/>
 
                 <div className="row">
                     <div className="col-md-6 col-md-offset-3">
@@ -277,7 +277,7 @@ class UserProfile extends React.Component {
                                 </span>
                             )}
                         </div>
-                        <br />
+                        <br/>
                         <div
                             className={classnames("form-group", {
                                 "has-error": this.state.errors.lastname
@@ -298,7 +298,7 @@ class UserProfile extends React.Component {
                                 </span>
                             )}
                         </div>
-                        <br />
+                        <br/>
                         <div>
                             <label className="control-label">Gender</label>
                             <label className="checkbox-inline">
@@ -314,7 +314,7 @@ class UserProfile extends React.Component {
                                         })
                                     }
                                 />
-                                male
+                                &nbsp;male
                             </label>
                             <label className="checkbox-inline">
                                 <input
@@ -329,10 +329,11 @@ class UserProfile extends React.Component {
                                         })
                                     }
                                 />
-                                female
+
+                                &nbsp;female
                             </label>
                         </div>
-                        <br />
+                        <br/>
                         <div
                             className={classnames("form-group", {
                                 "has-error": this.state.errors.username
@@ -375,7 +376,7 @@ class UserProfile extends React.Component {
                                 onChange={e => this.updateForm(e)}
                             />
                         </div>
-                        <br />
+                        <br/>
 
                         <button
                             className="btn btn-primary"

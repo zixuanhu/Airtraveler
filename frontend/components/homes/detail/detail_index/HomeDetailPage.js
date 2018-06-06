@@ -133,34 +133,34 @@ class HomeDetailPage extends React.Component {
                         this.change(e);
                     }}
                 />
-                <div className="container">
+                <div className='container'>
                     <div className="row">
                         <div className="column home">
-                            <div className="container-fluid">
-                                <div
-                                    style={marginStyle}
-                                    className="home-info"
-                                >
-                                    <TitleSection info={info}/>
-                                    <IconInfo homeinfo={homeInfo}/>
-                                    <OverviewInfo
-                                        overviewInfoText={
-                                            overviewInfoText
-                                        }
 
+                            <div
+                                style={marginStyle}
+                                className="home-info"
+                            >
+                                <TitleSection info={info}/>
+                                <IconInfo homeinfo={homeInfo}/>
+                                <OverviewInfo
+                                    overviewInfoText={
+                                        overviewInfoText
+                                    }
+
+                                />
+                                <Space homeInfo={homeInfo}/>
+                                {isEmpty(this.state.lat) ? (
+                                    "loading..."
+                                ) : (
+                                    <GoogleMap
+                                        lat={this.state.lat}
+                                        lng={this.state.lng}
+                                        readyToload={this.state.readyToload}
                                     />
-                                    <Space homeInfo={homeInfo}/>
-                                    {isEmpty(this.state.lat) ? (
-                                        "loading..."
-                                    ) : (
-                                        <GoogleMap
-                                            lat={this.state.lat}
-                                            lng={this.state.lng}
-                                            readyToload={this.state.readyToload}
-                                        />
-                                    )}
-                                </div>
+                                )}
                             </div>
+
                         </div>
                         <div className="column sidetrip">
                             <Trip home_id={this.props.params.home_id} readyToload={this.state.readyToload}/>

@@ -16,7 +16,7 @@ class Footer extends React.Component {
                     <div className="column copyright"
                          style={{
                              fontSize: "15px",
-                             color: "#66afe9",
+                             color: "#337ab7",
 
                          }}>
                         <br/>
@@ -38,7 +38,7 @@ class Footer extends React.Component {
                                     display: "flex",
                                     alignItems: "center",
                                     fontSize: "15px",
-                                    color: "#66afe9"
+                                    color: "#337ab7"
                                 }}>
                                 Social Link
                             </li>
@@ -90,7 +90,7 @@ class Footer extends React.Component {
                                     display: "flex",
                                     alignItems: "center",
                                     fontSize: "15px",
-                                    color: "#66afe9"
+                                    color: "#337ab7"
                                 }}>
                                 Contact Author
                             </li>

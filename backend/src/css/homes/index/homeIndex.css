@@ -1,11 +1,18 @@
-.homeimg {
+.homeimg-box {
     width: 100%;
     height: 150px;
-    border-radius: 3px;
-    transition: 0.5s ease;
-    backface-visibility: hidden;
+    overflow: hidden;
     margin-bottom: 3px;
     max-width: 334px;
+    border-radius: 3px;
+}
+
+.homeimg {
+    display: block;
+    width: 100%;
+    height: 100%;
+    transition: 0.5s ease;
+    backface-visibility: hidden;
 }
 
 .Plus {
@@ -21,7 +28,7 @@
 }
 
 .hometitle {
-    font-size: 22px;
+    font-size: 100%;
     font-weight: 500;
     line-height: 120%;
     margin: 0 0 1px;
@@ -92,18 +99,6 @@
     }
 }
 
-@media screen and (max-width: 350px) {
-    .column.home {
-        width: 100%;
-
-    }
-
-    .column.sidesearch {
-        width: 100%;
-
-    }
-}
-
 .CalendarDay__highlighted_calendar {
     background: #82E0AA;
     color: #186A3B;
@@ -119,7 +114,21 @@
     color: #186A3B;
 }
 
+.card img {
+    transition: all .2s ease-in-out;
+    -webkit-transition: all .2s ease-in-out;
+    -moz-transition: all .2s ease-in-out;
+    -ms-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
+}
 
+.card:hover img {
+    transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    -o-transform: scale(1.2)
+}
 
 
 
