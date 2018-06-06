@@ -92,6 +92,18 @@
     }
 }
 
+@media screen and (max-width: 350px) {
+    .column.home {
+        width: 100%;
+
+    }
+
+    .column.sidesearch {
+        width: 100%;
+
+    }
+}
+
 .CalendarDay__highlighted_calendar {
     background: #82E0AA;
     color: #186A3B;
