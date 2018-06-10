@@ -212,6 +212,7 @@ function buildHomeSeed(knex) {
     for (let i = 1; i <= BUILD_HOME_NUM; i++) {
         const address = faker.random.arrayElement(geoValidLocations);
         let imgs = [];
+        
         imgs.push(faker.random.arrayElement(images));
         imgs.push(faker.random.arrayElement(images));
         imgs.push(faker.random.arrayElement(images));
