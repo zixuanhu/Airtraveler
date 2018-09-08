@@ -6,7 +6,9 @@ class Homepage extends React.Component {
             <div className="jumbotron">
                 <h1>Homepage</h1>
             </div>
-
+            <div className="example">
+                <div className="dot"></div>
+            </div>
         </div>;
     }
 }

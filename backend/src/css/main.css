@@ -5,6 +5,7 @@
 @import url("./homes/home-common.css");
 @import url('./trips/tripcard.css');
 @import url('loader.css');
+@import url('rippledot.css');
 
 a:hover {
     cursor: pointer;
